@@ -6,7 +6,7 @@
   </head>
   <body>
     <div class="wrapper">
-      <div class="title">Vendor Login Form</div>
+      <div class="title">Vendor Login</div>
       <form action="/vLogin">
         <div class="field">
           <input type="text" name='email' required>
@@ -24,6 +24,8 @@
         </div>
         
         <div class="signup-link">Need an Account? <a href="vendorregis">Vendor Registration</a></div>
+        
+        <div align="center"><a href="index.jsp">Go Back</a></div>
       </form>
     </div>
 

@@ -6,7 +6,7 @@
   </head>
   <body>
     <div class="wrapper">
-      <div class="title">Customer Login Form</div>
+      <div class="title">Customer Login</div>
       <p style="color: red;text-align: center;">${errmsg }</p>
       <form action="/cLogin">
         <div class="field">
@@ -24,7 +24,10 @@
           <input type="submit" value="Login">
         </div>
         
+        
         <div class="signup-link">Need an Account? <a href="customerregis">Customer Registration</a></div>
+        
+        <div align="center"><a href="index.jsp">Go Back</a></div>
       </form>
     </div>
 

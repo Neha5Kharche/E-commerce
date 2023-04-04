@@ -19,6 +19,7 @@ public class MyController {
 	VendorService vService;
 	@Autowired
 	CustomerService cService;
+
 	
 	@RequestMapping("/")
 	public ModelAndView indexView()
@@ -121,4 +122,43 @@ public ModelAndView customerHome()
 	return mv;
 }
 
+
+
+
+@RequestMapping("/customergrocery")
+public ModelAndView customergroceryview()
+{
+	ModelAndView mv = new ModelAndView("customergrocery");
+    return mv;
+}
+@RequestMapping("/customerbeauty")
+public ModelAndView customerbeautyview()
+{
+	ModelAndView mv = new ModelAndView("customerbeauty");
+    return mv;
+}
+@RequestMapping("/customerkitchen")
+public ModelAndView customerkitchenView()
+{
+	ModelAndView mv = new ModelAndView("customerkitchen");
+    return mv;
+}
+@RequestMapping("/homedelivery")
+public ModelAndView homedeliveryView()
+{
+	ModelAndView mv = new ModelAndView("homedelivery");
+    return mv;
+}
+@RequestMapping("/pickupatstore")
+public ModelAndView pickupatstoreView()
+{
+	ModelAndView mv = new ModelAndView("pickupatstore");
+    return mv;
+}
+@RequestMapping("/customerhomedelivery")
+public ModelAndView customerhomedeliveryView()
+{
+	ModelAndView mv = new ModelAndView("customerhomedelivery");
+    return mv;
+}
 }
