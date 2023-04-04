@@ -121,4 +121,41 @@ public ModelAndView customerHome()
 	return mv;
 }
 
+@RequestMapping("/adminlogin")
+public ModelAndView adminloginview()
+{
+	ModelAndView mv = new ModelAndView("adminlogin");
+	mv.addObject("errmsg", "");
+	return mv;
+}
+
+@RequestMapping("/addproduct")
+public ModelAndView addproductview()
+{
+	ModelAndView mv = new ModelAndView("addproduct");
+	mv.addObject("errmsg", "");
+	return mv;
+}
+
+@RequestMapping("/addservice")
+public ModelAndView addserviceview()
+{
+	ModelAndView mv = new ModelAndView("addservice");
+	mv.addObject("errmsg", "");
+	return mv;
+}
+
+@RequestMapping("/addservicecategory")
+public ModelAndView addservicecategoryview()
+{
+	ModelAndView mv = new ModelAndView("addservicecategory");
+	mv.addObject("errmsg", "");
+	return mv;
+}
+@RequestMapping("/servicecategory")
+public ModelAndView servicecategoryview()
+{
+	ModelAndView mv = new ModelAndView("servicecategory");
+    return mv;
+}
 }
