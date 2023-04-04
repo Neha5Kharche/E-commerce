@@ -12,31 +12,30 @@
       <header>Customer Home</header>
       
        <div class="field">
-          <input type="submit" value="Add Product">
+          <input type="submit" value="Products">
         </div>
         <div class="field">
-          <input type="submit" value="Product list">
+          <input type="submit" value="Product By Category">
         </div>
         <div class="field">
-          <input type="submit" value="Add Category">
+          <input type="submit" value="Search Products by Category">
         </div>
         <div class="field">
-          <input type="submit" value="Get Category List">
+          <input type="submit" value="Services">
         </div>
         <div class="field">
-          <input type="submit" value="Add Service">
+          <input type="submit" value="Vendor Service Details">
         </div>
         <div class="field">
-          <input type="submit" value="Service List">
+          <input type="submit" value="Services By Category">
         </div>
         <div class="field">
-          <input type="submit" value="Add service category">
+          <input type="submit" value="Search Service By Category">
         </div>
-        <div class="field">
-          <input type="submit" value="Get Category List">
-        </div>
+        
       </div>
     </div>
+     
 
     <script>
       const pass_field = document.querySelector('.pass-key');

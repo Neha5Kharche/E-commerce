@@ -35,7 +35,7 @@ public ModelAndView vendorloginview()
 }
 
 @RequestMapping("/vendorregis")
-public ModelAndView vendorregisview(vendor v)
+public ModelAndView vendorregisView(vendor v)
 {
 	
 	ModelAndView mv = new ModelAndView("vendorregis");
@@ -114,10 +114,62 @@ public ModelAndView customerLogin(String email,String password)
 }
 
 
-@RequestMapping("/chome")
-public ModelAndView customerHome()
+@RequestMapping("/customerhome")
+public ModelAndView customerhomeView()
 {
 	ModelAndView mv = new ModelAndView("customerhome");
+	return mv;
+}
+
+@RequestMapping("/addproduct")
+public ModelAndView addproductView()
+{
+	ModelAndView mv = new ModelAndView("addproduct");
+	return mv;
+}
+
+@RequestMapping("/productcategory")
+public ModelAndView productcategoryView()
+{
+	ModelAndView mv = new ModelAndView("productcategory");
+	return mv;
+}
+@RequestMapping("/addproductcategory")
+public ModelAndView addproductcategoryView()
+{
+	ModelAndView mv = new ModelAndView("addproductcategory");
+	return mv;
+}
+
+@RequestMapping("/grocery")
+public ModelAndView groceryView()
+{
+	ModelAndView mv = new ModelAndView("grocery");
+	return mv;
+}
+
+@RequestMapping("/beautyproducts")
+public ModelAndView beautyproductsView()
+{
+	ModelAndView mv = new ModelAndView("beautyproducts");
+	return mv;
+}
+@RequestMapping("/kitchenproducts")
+public ModelAndView kitchenproductsView()
+{
+	ModelAndView mv = new ModelAndView("kitchenproducts");
+	return mv;
+}
+@RequestMapping("/editproduct")
+public ModelAndView editproductView()
+{
+	ModelAndView mv = new ModelAndView("editproduct");
+	return mv;
+}
+@RequestMapping("/servicecategory")
+public ModelAndView servicecategoryView()
+{
+	ModelAndView mv = new ModelAndView("servicecategory");
 	return mv;
 }
 
