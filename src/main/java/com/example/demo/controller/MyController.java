@@ -158,4 +158,35 @@ public ModelAndView servicecategoryview()
 	ModelAndView mv = new ModelAndView("servicecategory");
     return mv;
 }
+
+@RequestMapping("/fq")
+public ModelAndView fqview()
+{
+	ModelAndView mv = new ModelAndView("fq");
+	mv.addObject("errmsg", "");
+    return mv;
+}
+@RequestMapping("/help")
+public ModelAndView helpview()
+{
+	ModelAndView mv = new ModelAndView("help");
+	mv.addObject("errmsg", "");
+    return mv;
+}
+@RequestMapping("/adminreslovehelp")
+public ModelAndView adminreslovehelpview()
+{
+	ModelAndView mv = new ModelAndView("adminreslovehelp");
+	mv.addObject("errmsg", "");
+    return mv;
+}
+@RequestMapping("/venhome")
+public ModelAndView venhomeview()
+{
+	ModelAndView mv = new ModelAndView("venhome");
+	mv.addObject("errmsg", "");
+    return mv;
+}
+
+
 }
