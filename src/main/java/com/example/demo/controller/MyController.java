@@ -19,11 +19,12 @@ public class MyController {
 	VendorService vService;
 	@Autowired
 	CustomerService cService;
+
 	
 	@RequestMapping("/")
-	public ModelAndView index2View()
+	public ModelAndView indexView()
 	{
-		ModelAndView mv = new ModelAndView("index2");
+		ModelAndView mv = new ModelAndView("index");
 		return mv;
 	}
 	
@@ -74,6 +75,19 @@ public ModelAndView vendorHome()
 	return mv;
 }
 
+@RequestMapping("/clients")
+public ModelAndView clientsView()
+{
+	ModelAndView mv = new ModelAndView("clients");
+	return mv;
+}
+@RequestMapping("/contact")
+public ModelAndView contactView()
+{
+	ModelAndView mv = new ModelAndView("contact");
+	return mv;
+}
+
 @RequestMapping("/customerlogin")
 public ModelAndView customerloginview()
 {
@@ -114,59 +128,71 @@ public ModelAndView customerLogin(String email,String password)
 }
 
 
-@RequestMapping("/customerhome")
-public ModelAndView customerhomeView()
+@RequestMapping("/chome")
+public ModelAndView customerHome()
 {
 	ModelAndView mv = new ModelAndView("customerhome");
 	return mv;
 }
 
 
+
+
+
+@RequestMapping("/customergrocery")
+public ModelAndView customergroceryview()
+{
+	ModelAndView mv = new ModelAndView("customergrocery");
+    return mv;
+}
+@RequestMapping("/customerbeauty")
+public ModelAndView customerbeautyview()
+{
+	ModelAndView mv = new ModelAndView("customerbeauty");
+    return mv;
+}
+@RequestMapping("/customerkitchen")
+public ModelAndView customerkitchenView()
+{
+	ModelAndView mv = new ModelAndView("customerkitchen");
+    return mv;
+}
+@RequestMapping("/homedelivery")
+public ModelAndView homedeliveryView()
+{
+	ModelAndView mv = new ModelAndView("homedelivery");
+    return mv;
+}
+@RequestMapping("/pickupatstore")
+public ModelAndView pickupatstoreView()
+{
+	ModelAndView mv = new ModelAndView("pickupatstore");
+    return mv;
+}
+@RequestMapping("/customerhomedelivery")
+public ModelAndView customerhomedeliveryView()
+{
+	ModelAndView mv = new ModelAndView("customerhomedelivery");
+    return mv;
+}
+
+@RequestMapping("/adminlogin")
+public ModelAndView adminloginview()
+{
+	ModelAndView mv = new ModelAndView("adminlogin");
+	mv.addObject("errmsg", "");
+	return mv;
+
+}
+
 @RequestMapping("/addproduct")
-public ModelAndView addproductView()
+public ModelAndView addproductview()
 {
 	ModelAndView mv = new ModelAndView("addproduct");
+	mv.addObject("errmsg", "");
 	return mv;
 }
 
-@RequestMapping("/productcategory")
-public ModelAndView productcategoryView()
-{
-	ModelAndView mv = new ModelAndView("productcategory");
-	return mv;
-}
-@RequestMapping("/addproductcategory")
-public ModelAndView addproductcategoryView()
-{
-	ModelAndView mv = new ModelAndView("addproductcategory");
-	return mv;
-}
-
-@RequestMapping("/grocery")
-public ModelAndView groceryView()
-{
-	ModelAndView mv = new ModelAndView("grocery");
-	return mv;
-}
-
-@RequestMapping("/beautyproducts")
-public ModelAndView beautyproductsView()
-{
-	ModelAndView mv = new ModelAndView("beautyproducts");
-	return mv;
-}
-@RequestMapping("/kitchenproducts")
-public ModelAndView kitchenproductsView()
-{
-	ModelAndView mv = new ModelAndView("kitchenproducts");
-	return mv;
-}
-@RequestMapping("/editproduct")
-public ModelAndView editproductView()
-{
-	ModelAndView mv = new ModelAndView("editproduct");
-	return mv;
-}
 @RequestMapping("/addservice")
 public ModelAndView addserviceview()
 {
@@ -189,16 +215,39 @@ public ModelAndView servicecategoryview()
     return mv;
 }
 
-@RequestMapping("/homedelivery")
-public ModelAndView homedeliveryView()
+
+@RequestMapping("/fq")
+public ModelAndView fqview()
 {
-	ModelAndView mv = new ModelAndView("homedelivery");
+	ModelAndView mv = new ModelAndView("fq");
+	mv.addObject("errmsg", "");
     return mv;
 }
-@RequestMapping("/pickupatstore")
-public ModelAndView pickupatstoreView()
+@RequestMapping("/help")
+public ModelAndView helpview()
 {
-	ModelAndView mv = new ModelAndView("pickupatstore");
+	ModelAndView mv = new ModelAndView("help");
+	mv.addObject("errmsg", "");
+    return mv;
+}
+@RequestMapping("/adminreslovehelp")
+public ModelAndView adminreslovehelpview()
+{
+	ModelAndView mv = new ModelAndView("adminreslovehelp");
+	mv.addObject("errmsg", "");
+    return mv;
+}
+@RequestMapping("/venhome")
+public ModelAndView venhomeview()
+{
+	ModelAndView mv = new ModelAndView("venhome");
+	mv.addObject("errmsg", "");
+    return mv;
+}
+@RequestMapping("/productcategory")
+public ModelAndView productcategoryview()
+{
+	ModelAndView mv = new ModelAndView("productcategory");
     return mv;
 }
 
