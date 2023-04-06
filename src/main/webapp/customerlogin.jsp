@@ -82,17 +82,27 @@
                         <div class="form-group">
                            <input type="password" class="email-bt" placeholder="Password" name="cPassword">
                         </div>
+                        <div class="form-check d-flex justify-content-start mb-4">
+              <input class="form-check-input" type="checkbox" value="" id="customerlogin" />
+              <label class="form-check-label" for="customerlogin"> Remember password </label>
+              <a href="#!">&nbsp;&nbsp;&nbsp;Forgot password?</a>
+            
+        
+            </div>
+            
+            
                        
-                        <div class="send_btn"><a href="#">Login</a></div><div class="send_btn"><a href="#">Clear</a></div>
+                        <div class="send_btn"><a href="chome">Login</a></div><div class="send_btn"><a href="customerlogin">Clear</a></div>
+                        
+                     
                      </div>
+                     <br>
+                     <p>Don't have an account? <a href="customerregis" class="link-info">Register here</a></p>
                   </div>
                   <div class="col-md-6">
-                     <div class="map_main">
-                        <div class="map-responsive">
-                           <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&amp;q=Eiffel+Tower+Paris+France" width="600" height="400" frameborder="0" style="border:0; width: 100%;" allowfullscreen=""></iframe>
-                        </div>
-                     </div>
+                     <img alt="Login image" src="images/customerlogin.avif" width="500" height="300" style="border:0; width: 100%;">
                   </div>
+                  
                </div>
             </div>
          </div>
@@ -155,4 +165,3 @@
       <script src="../../dist/js/bootstrap.min.js"></script>
    </body>
 </html>
-

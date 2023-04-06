@@ -121,7 +121,7 @@
                            <input type="password" class="email-bt" placeholder="Password" name="vPassword">
                         </div>
                        
-                        <div class="send_btn"><a href="#">Login</a></div> <div class="send_btn"><a href="#">Clear</a></div>
+                        <div class="send_btn"><a href="#">Login</a></div> <div class="send_btn"><a href="adminlogin">Clear</a></div>
                      </div>
                   </div>
                   
