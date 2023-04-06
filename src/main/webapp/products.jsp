@@ -1,5 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -10,7 +8,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
-      <title>Caraft</title>
+      <title>Products</title>
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
@@ -39,120 +37,68 @@
          <div class="container">
             <nav class="navbar navbar-dark bg-dark">
                <a class="logo" href="index.html"><img src="images/logo.png"></a>
-               
+               <div class="search_section">
+                  <ul>
+                     <li><a href="#">Log In</a></li>
+                     <li><a href="#"><img src="images/shopping-bag.png"></a></li>
+                     <li><a href="#"><img src="images/search-icon.png"></a></li>
+                  </ul>
+               </div>
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
                <span class="navbar-toggler-icon"></span>
                </button>
                <div class="collapse navbar-collapse" id="navbarsExample01">
                   <ul class="navbar-nav mr-auto">
                      <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link" href="/">Home</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="category.html">View Category</a>
-                     </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="category.html">Add Category</a>
+                        <a class="nav-link" href="/vendorlogin">Vendor</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="products.html">View Products</a>
+                        <a class="nav-link" href="/customerlogin">Customers</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="products.html">Add Products</a>
+                        <a class="nav-link" href="/clients">Client</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Logout</a>
+                        <a class="nav-link" href="/contact">Contact Us</a>
                      </li>
                   </ul>
                </div>
             </nav>
          </div>
-        
       </div>
       <!--header section end -->
-      <!--category section start -->
-      <div class="container">
-         <div class="category_section">
-            <div class="row">
-               <div class="col-lg-2 col-sm-12">
-                  <h1 class="category_text">Category</h1>
-               </div>
-               <div class="col-lg-10 col-sm-12 main">
-                  <div class="col">
-                     <div class="box_main">
-                        <div class="icon_1"></div>
-                        <h4 class="fashion_text active">New Fashion</h4>
-                     </div>
-                  </div>
-                  <div class="col">
-                     <div class="box_main">
-                        <div class="icon_2"></div>
-                        <h4 class="fashion_text">Clothing</h4>
-                     </div>
-                  </div>
-                  <div class="col">
-                     <div class="box_main">
-                        <div class="icon_3"></div>
-                        <h4 class="fashion_text">Watches</h4>
-                     </div>
-                  </div>
-                  <div class="col">
-                     <div class="box_main">
-                        <div class="icon_4"></div>
-                        <h4 class="fashion_text">Accessories</h4>
-                     </div>
-                  </div>
-                  <div class="col">
-                     <div class="box_main">
-                        <div class="icon_5"></div>
-                        <h4 class="fashion_text">Sweaters & Jackets</h4>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-        
-      </div>
-      <!-- category section end -->
-      <!-- beauty product section start -->
-      <div class="beauty_section layout_padding">
+      <!-- product section start -->
+      <div class="product_section layout_padding">
          <div class="container">
-            <div class="row">
-               <div class="col-lg-4 col-sm-12">
-                  <div class="beauty_box">
-                     <h1 class="bed_text">Beauty products</h1>
-                     <div><img src="images/img-5.png" class="image_3"></div>
-                     <div class="seemore_bt"><a href="#">see More</a></div>
+            <h1 class="feature_taital">FEATURED PRODUCTS</h1>
+            <p class="feature_text">It is a long established fact that a reader will be distracted by the readable content of a page when looking</p>
+            <div class="product_section_2">
+               <div class="row">
+                  <div class="col-sm-5">
+                     <div class="feature_box">
+                        <h1 class="readable_text">Readable content of</h1>
+                        <div><img src="images/img-7.png" class="image_7"></div>
+                     </div>
+                     <div class="feature_box_1">
+                        <h1 class="readable_text">Readable content of</h1>
+                        <div><img src="images/img-7.png" class="image_7"></div>
+                     </div>
                   </div>
-               </div>
-               <div class="col-lg-8 col-sm-12">
-                  <div class="beauty_box_1">
-                     <h1 class="bed_text_1">Explore trending electronics</h1>
-                     <div><img src="images/img-6.png" class="image_3"></div>
-                     <div class="seemore_bt_1"><a href="#">see More</a></div>
+                  <div class="col-sm-7">
+                     <div class="feature_box_2">
+                        <h1 class="readable_text">Readable content of</h1>
+                        <div><img src="images/img-8.png" class="image_8"></div>
+                        <div class="seemore_bt"><a href="#">see More</a></div>
+                     </div>
                   </div>
                </div>
             </div>
          </div>
       </div>
-      <!-- beauty product section end -->
-      
-      
-      <!-- newsletter section start -->
-      <div class="newsletter_section layout_padding">
-         <div class="container">
-            <h6 class="conect_text">Connect to caraft</h6>
-            <h1 class="newsletter_taital">Join Our Newsletter</h1>
-            <p class="newsletter_text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration </p>
-            <div class="input-group mb-3">
-               <input type="text" class="form-control" placeholder="Enter your email" aria-label="Enter your email" aria-describedby="basic-addon2">
-               <div class="input-group-append">
-                  <span class="input-group-text" id="basic-addon2">Subscribe</span>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- newsletter section end -->
+      <!-- product section end -->
       <!-- footer section start -->
       <div class="footer_section layout_padding">
          <div class="container">

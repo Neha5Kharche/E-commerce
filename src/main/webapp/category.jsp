@@ -1,5 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -10,7 +8,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
-      <title>Caraft</title>
+      <title>Category</title>
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
@@ -39,35 +37,37 @@
          <div class="container">
             <nav class="navbar navbar-dark bg-dark">
                <a class="logo" href="index.html"><img src="images/logo.png"></a>
-               
+               <div class="search_section">
+                  <ul>
+                     <li><a href="#">Log In</a></li>
+                     <li><a href="#"><img src="images/shopping-bag.png"></a></li>
+                     <li><a href="#"><img src="images/search-icon.png"></a></li>
+                  </ul>
+               </div>
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
                <span class="navbar-toggler-icon"></span>
                </button>
                <div class="collapse navbar-collapse" id="navbarsExample01">
                   <ul class="navbar-nav mr-auto">
                      <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link" href="/">Home</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="category.html">View Category</a>
-                     </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="category.html">Add Category</a>
+                        <a class="nav-link" href="/vendorlogin">Vendor</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="products.html">View Products</a>
+                        <a class="nav-link" href="/customerlogin">Customers</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="products.html">Add Products</a>
+                        <a class="nav-link" href="/clients">Client</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Logout</a>
+                        <a class="nav-link" href="/contact">Contact Us</a>
                      </li>
                   </ul>
                </div>
             </nav>
          </div>
-        
       </div>
       <!--header section end -->
       <!--category section start -->
@@ -111,48 +111,33 @@
                </div>
             </div>
          </div>
-        
-      </div>
-      <!-- category section end -->
-      <!-- beauty product section start -->
-      <div class="beauty_section layout_padding">
-         <div class="container">
+         <div class="category_section_2">
             <div class="row">
                <div class="col-lg-4 col-sm-12">
-                  <div class="beauty_box">
-                     <h1 class="bed_text">Beauty products</h1>
-                     <div><img src="images/img-5.png" class="image_3"></div>
+                  <div class="beds_section active">
+                     <h1 class="bed_text">Up to 50% off | Beds</h1>
+                     <div><img src="images/img-2.png" class="image_2"></div>
                      <div class="seemore_bt"><a href="#">see More</a></div>
                   </div>
                </div>
-               <div class="col-lg-8 col-sm-12">
-                  <div class="beauty_box_1">
-                     <h1 class="bed_text_1">Explore trending electronics</h1>
-                     <div><img src="images/img-6.png" class="image_3"></div>
-                     <div class="seemore_bt_1"><a href="#">see More</a></div>
+               <div class="col-lg-4 col-sm-12">
+                  <div class="beds_section">
+                     <h1 class="bed_text">organized in style</h1>
+                     <div><img src="images/img-3.png" class="image_2"></div>
+                     <div class="seemore_bt"><a href="#">see More</a></div>
+                  </div>
+               </div>
+               <div class="col-lg-4 col-sm-12">
+                  <div class="beds_section">
+                     <h1 class="bed_text">Refurbished mixer</h1>
+                     <div><img src="images/img-4.png" class="image_2"></div>
+                     <div class="seemore_bt"><a href="#">see More</a></div>
                   </div>
                </div>
             </div>
          </div>
       </div>
-      <!-- beauty product section end -->
-      
-      
-      <!-- newsletter section start -->
-      <div class="newsletter_section layout_padding">
-         <div class="container">
-            <h6 class="conect_text">Connect to caraft</h6>
-            <h1 class="newsletter_taital">Join Our Newsletter</h1>
-            <p class="newsletter_text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration </p>
-            <div class="input-group mb-3">
-               <input type="text" class="form-control" placeholder="Enter your email" aria-label="Enter your email" aria-describedby="basic-addon2">
-               <div class="input-group-append">
-                  <span class="input-group-text" id="basic-addon2">Subscribe</span>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- newsletter section end -->
+      <!-- category section end -->
       <!-- footer section start -->
       <div class="footer_section layout_padding">
          <div class="container">

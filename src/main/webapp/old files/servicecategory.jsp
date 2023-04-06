@@ -27,6 +27,15 @@
                       </tr>
                     </thead>
                     <tbody>
+                    
+                    <tr>
+                        <td align="center">2</td>
+                        <td><div class="field">
+          <input type="submit" value="Hair spa">
+        </div></td>
+                        
+                        
+                      </tr>
                       <tr>
                         <td align="center">1</td>
                         <td><div class="field">
@@ -38,7 +47,7 @@
                       <tr>
                         <td align="center">2</td>
                         <td><div class="field">
-          <input type="submit" value="Pickup at Store">
+          <input type="submit" value="Buy 1 get 1 free">
         </div></td>
                         
                         

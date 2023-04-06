@@ -7,54 +7,64 @@
             <div class="card shadow-2-strong">
               <div class="card-body p-0">
                 <div class="table-responsive table-scroll" data-mdb-perfect-scrollbar="true" style="position: relative; height: 700px">
-                <h2 align="center">PICKUP AT SERVICE</h2>
+                <h2 align="center">BEAUTY PRODUCTS</h2>
                   <table class="table table-dark mb-0">
                     <thead style="background-color: #ffb3b3;">
                       <tr class="text-uppercase text-success">
-                      <th scope="col">Service Name</th>
+                      <th scope="col">Product Id</th>
+                        <th scope="col">Product Name</th>
                         <th scope="col">Price</th>
-                        <th scope="col">Category</th>
                         <th scope="col">Status</th>
-                        <th scope="col">Contact Number</th>
-                        <th scope="col">ZipCode</th>
+                        <th scope="col">Edit</th>
                         
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                      <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                         <td></td>
+                      <td>1</td>
+                        <td>Face Cream</td>
+                        <td>200.0</td>
+                        <td>Available</td>
                         
                         
                       </tr>
                       <tr>
-                      <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                         <td></td>
+                      <td>2</td>
+                        <td>Powder</td>
+                        <td>150.0</td>
+                        <td>Available</td>
+                        
                         
                       </tr>
                       <tr>
-                      <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                         <td></td>
-                      
+                      <td>3</td>
+                        <td>Moisturiser</td>
+                        <td>300.0</td>
+                        <td>Not Available</td>
+                        
+                        
+                      </tr>
+                      <tr>
+                      <td>4</td>
+                        <td>Toner</td>
+                        <td>170.0</td>
+                        <td>Available</td>
+                        
+                        
+                      </tr>
+                      <tr>
+                      <td>5</td>
+                        <td>FaceWash</td>
+                        <td>90.0</td>
+                        <td>Available</td>
+                        
                         
                       </tr>
                       
                     </tbody>
                   </table>
                   
-                  <div align="center"> <a href="#">Go Back</a></div>
+                  <button onclick="history.back()">Go Back</button>
           <div class="field">
           <input type="submit"  value="Log Off">
         </div>

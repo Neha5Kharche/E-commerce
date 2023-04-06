@@ -75,6 +75,19 @@ public ModelAndView vendorHome()
 	return mv;
 }
 
+@RequestMapping("/clients")
+public ModelAndView clientsView()
+{
+	ModelAndView mv = new ModelAndView("clients");
+	return mv;
+}
+@RequestMapping("/contact")
+public ModelAndView contactView()
+{
+	ModelAndView mv = new ModelAndView("contact");
+	return mv;
+}
+
 @RequestMapping("/customerlogin")
 public ModelAndView customerloginview()
 {
@@ -122,7 +135,7 @@ public ModelAndView customerHome()
 	return mv;
 }
 
-<<<<<<< HEAD
+
 
 
 
@@ -162,14 +175,14 @@ public ModelAndView customerhomedeliveryView()
 	ModelAndView mv = new ModelAndView("customerhomedelivery");
     return mv;
 }
-=======
+
 @RequestMapping("/adminlogin")
 public ModelAndView adminloginview()
 {
 	ModelAndView mv = new ModelAndView("adminlogin");
 	mv.addObject("errmsg", "");
 	return mv;
->>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
+
 }
 
 @RequestMapping("/addproduct")
@@ -201,4 +214,12 @@ public ModelAndView servicecategoryview()
 	ModelAndView mv = new ModelAndView("servicecategory");
     return mv;
 }
+
+@RequestMapping("/productcategory")
+public ModelAndView productcategoryview()
+{
+	ModelAndView mv = new ModelAndView("productcategory");
+    return mv;
+}
+
 }
