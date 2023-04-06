@@ -250,6 +250,36 @@ public ModelAndView productcategoryview()
 	ModelAndView mv = new ModelAndView("productcategory");
     return mv;
 }
+@RequestMapping("/newfashion")
+public ModelAndView newfashionview()
+{
+	ModelAndView mv = new ModelAndView("newfashion");
+    return mv;
+}
+@RequestMapping("/clothing")
+public ModelAndView clothingview()
+{
+	ModelAndView mv = new ModelAndView("clothing");
+    return mv;
+}
+@RequestMapping("/watches")
+public ModelAndView watchesview()
+{
+	ModelAndView mv = new ModelAndView("watches");
+    return mv;
+}
+@RequestMapping("/jackets")
+public ModelAndView jacketsview()
+{
+	ModelAndView mv = new ModelAndView("jackets");
+    return mv;
+}
+@RequestMapping("/accessories")
+public ModelAndView accessoriesview()
+{
+	ModelAndView mv = new ModelAndView("accessories");
+    return mv;
+}
 
 
 }

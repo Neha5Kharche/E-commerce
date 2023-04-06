@@ -49,7 +49,7 @@
                         <a class="nav-link" href="index.html">Home</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="/vhome">View Category</a>
+                        <a class="nav-link" href="category.html">View Category</a>
                      </li>
                       <li class="nav-item">
                         <a class="nav-link" href="category.html">Add Category</a>
@@ -61,7 +61,7 @@
                         <a class="nav-link" href="products.html">Add Products</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="/">Logout</a>
+                        <a class="nav-link" href="contact.html">Logout</a>
                      </li>
                   </ul>
                </div>
@@ -91,29 +91,29 @@
       <script src="../../dist/js/bootstrap.min.js"></script>
       
       <body style="background-color:rgb(140, 140, 140);">
-      <div class="container mt-100">
-  
+
+<div class="container mt-100">
                             		
 <div class="category_section_2">
             <div class="row">
                <div class="col-lg-4 col-sm-12">
                   <div class="beds_section active">
-                     <h1 class="bed_text">Jeans</h1>
-                     <div><img src="https://assets.ajio.com/medias/sys_master/root/20230316/Br8X/64133ca7f997dde6f4024aa8/-1117Wx1400H-443009290-indigo-MODEL.jpg" class="image_2"></div>
+                     <h1 class="bed_text">Jeans Jackets</h1>
+                     <div><img src="https://assets.ajio.com/medias/sys_master/root/20220729/k1UW/62e3e85eaeb26921afab89e4/-473Wx593H-461787955-blue-MODEL.jpg" class="image_2"></div>
                      <div class="seemore_bt"><a href="#">see More</a></div>
                   </div>
                </div>
                <div class="col-lg-4 col-sm-12">
                   <div class="beds_section">
-                     <h1 class="bed_text">Shirt</h1>
-                     <div><img src="https://assets.ajio.com/medias/sys_master/root/20221109/u2JJ/636b8eddaeb269659c7f912c/-1117Wx1400H-462323964-white-MODEL.jpg" class="image_2"></div>
+                     <h1 class="bed_text">Sweater</h1>
+                     <div><img src="https://assets.ajio.com/medias/sys_master/root/20221125/2spC/6380e1f7f997ddfdbd9e25e5/-473Wx593H-469277268-khaki-MODEL.jpg" class="image_2"></div>
                      <div class="seemore_bt"><a href="#">see More</a></div>
                   </div>
                </div>
                <div class="col-lg-4 col-sm-12">
                   <div class="beds_section">
-                     <h1 class="bed_text">cap</h1>
-                     <div><img src="https://assets.ajio.com/medias/sys_master/root/20230306/CSC4/6406085cf997dde6f4e08184/-473Wx593H-442086812-yellow-MODEL.jpg" class="image_2"></div>
+                     <h1 class="bed_text">Hoodies</h1>
+                     <div><img src="https://assets.ajio.com/medias/sys_master/root/20210806/0JhK/610c59d07cdb8cb824edd54e/-473Wx593H-462745357-blue-MODEL.jpg" class="image_2"></div>
                      <div class="seemore_bt"><a href="#">see More</a></div>
                   </div>
                </div>
@@ -122,30 +122,31 @@
          
          <div class="product_section layout_padding">
          <div class="container">
-            <h1 class="feature_taital">NEW ARRIVAL</h1>
+            <h1 class="feature_taital">Sweater and Jackets</h1>
             
             <div class="product_section_2">
                <div class="row">
                   <div class="col-sm-5">
                      <div class="feature_box">
-                        <h1 class="readable_text">FLAT 50% OFF</h1>
-                        <div><img src="https://assets.ajio.com/medias/sys_master/root/20211111/yDyH/618d0d03f997ddf8f101d921/-1117Wx1400H-460991629-white-MODEL.jpg" class="image_7"></div>
+                        <h1 class="readable_text">FLAT 70% OFF</h1>
+                        <div><img src="https://assets.ajio.com/medias/sys_master/root/20220928/aqDJ/633351c7f997dd1f8d21134d/-473Wx593H-465063005-blue-MODEL.jpg" class="image_7"></div>
                      </div>
                      <div class="feature_box_1">
-                        <h1 class="readable_text">FLAT 50% OFF</h1>
-                        <div><img src="https://assets.ajio.com/medias/sys_master/root/20210421/w1aX/607f5923f997dd7b64b977e9/-1117Wx1400H-462331136-green-MODEL.jpg" class="image_7"></div>
+                        <h1 class="readable_text">FLAT 30% OFF</h1>
+                        <div><img src="https://assets.ajio.com/medias/sys_master/root/20221031/BoTq/635fdf4af997ddfdbd4c2df6/-473Wx593H-469239334-blue-MODEL.jpg" class="image_7"></div>
                      </div>
                   </div>
                   <div class="col-sm-7">
                      <div class="feature_box_2">
-                        <h1 class="readable_text">FLAT 20% OFF</h1>
-                        <div><img src="https://assets.ajio.com/medias/sys_master/root/20230207/c764/63e293a0aeb269c651173305/-473Wx593H-443009961-green-MODEL2.jpg" class="image_8"></div>
-                      
+                        <h1 class="readable_text">FLAT 50% OFF</h1>
+                        <div><img src="https://assets.ajio.com/medias/sys_master/root/20230207/gj8Z/63e27e6faeb269c65116b2e4/-473Wx593H-420432852-grey-MODEL.jpg" class="image_8"></div>
+                        
                      </div>
                   </div>
                </div>
             </div>
          </div>
+      </div>
       </div>
       
                             	
@@ -187,3 +188,4 @@
    </body>
 
 </html>
+l>
