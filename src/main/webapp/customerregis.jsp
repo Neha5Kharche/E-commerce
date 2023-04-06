@@ -39,18 +39,11 @@
          <div class="container">
             <nav class="navbar navbar-dark bg-dark">
                <a class="logo" href="index.html"><img src="images/logo.png"></a>
-               <div class="search_section">
-                  <ul>
-                     <li><a href="#">Log In</a></li>
-                     <li><a href="#"><img src="images/shopping-bag.png"></a></li>
-                     <li><a href="#"><img src="images/search-icon.png"></a></li>
-                  </ul>
-               </div>
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
                <span class="navbar-toggler-icon"></span>
                </button>
                <div class="collapse navbar-collapse" id="navbarsExample01">
-                 <ul class="navbar-nav mr-auto">
+                  <ul class="navbar-nav mr-auto">
                      <li class="nav-item active">
                         <a class="nav-link" href="/">Home</a>
                      </li>
@@ -78,28 +71,57 @@
       <!-- contact section start -->
       <div class="contact_section layout_padding">
          <div class="container">
-            <h1 class="touch_taital"> Customer Login</h1>
+            <h1 class="touch_taital">Customer Registration</h1>
             <div class="contact_section_2">
                <div class="row">
+               <div class="col-md-6">
+                  <img alt="Login image" src="images/customerreg.png" width="500" height="300" style="border:0; width: 100%;">
+                     
+                  </div>
                   <div class="col-md-6">
                      <div class="email_text">
                         <div class="form-group">
-                           <input type="text" class="email-bt" placeholder="User Name" name="cEmail">
+                           <input type="text" class="email-bt" placeholder="First Name" name='cfirstname' pattern="[A-Za-z]+" minlength="4" maxlength="12" required>
                         </div>
                         <div class="form-group">
-                           <input type="password" class="email-bt" placeholder="Password" name="cPassword">
+                           <input type="text" class="email-bt" placeholder="Last Name" name='clastname' pattern="[A-Za-z]+" minlength="4" maxlength="12" required>
+                        </div>
+                        <div class="form-group">
+                           <input type="date" class="email-bt" placeholder="Date Of Birth" name='cdob' required>
+                        </div>
+                        <div class="form-group">
+                           <input type="text" class="email-bt" placeholder="Gender" name="gender">
+                           
+                        </div>
+                        <div class="form-group">
+                           <input type="text" class="email-bt" placeholder="Contact Number" name='ccontact' pattern="[0-9]{10}" required>
+                        </div>
+                        <div class="form-group">
+                           <input type="text" class="email-bt" placeholder="Address" name='caddress' pattern="[a-zA-Z0-9]+" required>
+                        </div>
+                        <div class="form-group">
+                           <input type="text" class="email-bt" placeholder="City" name='city' pattern="[A-Za-z]+" required>
+                        </div>
+                        <div class="form-group">
+                           <input type="text" class="email-bt" placeholder="State" name='state' pattern="[A-Za-z]+" required>
+                        </div>
+                        <div class="form-group">
+                           <input type="text" class="email-bt" placeholder="Zip Code" name='zipcode' pattern="[0-9]{10}" required>
+                        </div>
+                        <div class="form-group">
+                           <input type="email" class="email-bt" placeholder="Email" name='email' pattern="[a-zA-Z0-9]+" required>
+                        </div>
+                        <div class="form-group">
+                           <input type="password" class="email-bt" placeholder="Password" name='password' pattern="[a-zA-Z0-9]+" required>
                         </div>
                        
-                        <div class="send_btn"><a href="#">Login</a></div><div class="send_btn"><a href="#">Clear</a></div>
+                        <div class="send_btn"><a href="#">Register</a></div> <div class="send_btn"><a href="customerregis">Clear</a></div> <div class="send_btn">
+                        <br>
+                        <a href="customerlogin">Go Back</a></div>
+                     
                      </div>
                   </div>
-                  <div class="col-md-6">
-                     <div class="map_main">
-                        <div class="map-responsive">
-                           <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&amp;q=Eiffel+Tower+Paris+France" width="600" height="400" frameborder="0" style="border:0; width: 100%;" allowfullscreen=""></iframe>
-                        </div>
-                     </div>
-                  </div>
+                  
                </div>
             </div>
          </div>
