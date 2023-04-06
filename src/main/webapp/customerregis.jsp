@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -8,7 +10,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
-      <title>Products</title>
+      <title>Contact</title>
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
@@ -48,7 +50,7 @@
                <span class="navbar-toggler-icon"></span>
                </button>
                <div class="collapse navbar-collapse" id="navbarsExample01">
-                  <ul class="navbar-nav mr-auto">
+                 <ul class="navbar-nav mr-auto">
                      <li class="nav-item active">
                         <a class="nav-link" href="/">Home</a>
                      </li>
@@ -73,35 +75,36 @@
          </div>
       </div>
       <!--header section end -->
-      <!-- product section start -->
-      <div class="product_section layout_padding">
+      <!-- contact section start -->
+      <div class="contact_section layout_padding">
          <div class="container">
-            <h1 class="feature_taital">FEATURED PRODUCTS</h1>
-            <p class="feature_text">It is a long established fact that a reader will be distracted by the readable content of a page when looking</p>
-            <div class="product_section_2">
+            <h1 class="touch_taital"> Customer Login</h1>
+            <div class="contact_section_2">
                <div class="row">
-                  <div class="col-sm-5">
-                     <div class="feature_box">
-                        <h1 class="readable_text">Readable content of</h1>
-                        <div><img src="images/img-7.png" class="image_7"></div>
-                     </div>
-                     <div class="feature_box_1">
-                        <h1 class="readable_text">Readable content of</h1>
-                        <div><img src="images/img-7.png" class="image_7"></div>
+                  <div class="col-md-6">
+                     <div class="email_text">
+                        <div class="form-group">
+                           <input type="text" class="email-bt" placeholder="User Name" name="cEmail">
+                        </div>
+                        <div class="form-group">
+                           <input type="password" class="email-bt" placeholder="Password" name="cPassword">
+                        </div>
+                       
+                        <div class="send_btn"><a href="#">Login</a></div><div class="send_btn"><a href="#">Clear</a></div>
                      </div>
                   </div>
-                  <div class="col-sm-7">
-                     <div class="feature_box_2">
-                        <h1 class="readable_text">Readable content of</h1>
-                        <div><img src="images/img-8.png" class="image_8"></div>
-                        <div class="seemore_bt"><a href="#">see More</a></div>
+                  <div class="col-md-6">
+                     <div class="map_main">
+                        <div class="map-responsive">
+                           <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&amp;q=Eiffel+Tower+Paris+France" width="600" height="400" frameborder="0" style="border:0; width: 100%;" allowfullscreen=""></iframe>
+                        </div>
                      </div>
                   </div>
                </div>
             </div>
          </div>
       </div>
-      <!-- product section end -->
+      <!-- contact section end -->
       <!-- footer section start -->
       <div class="footer_section layout_padding">
          <div class="container">
@@ -159,4 +162,3 @@
       <script src="../../dist/js/bootstrap.min.js"></script>
    </body>
 </html>
-

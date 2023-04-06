@@ -37,13 +37,6 @@
          <div class="container">
             <nav class="navbar navbar-dark bg-dark">
                <a class="logo" href="index.html"><img src="images/logo.png"></a>
-               <div class="search_section">
-                  <ul>
-                     <li><a href="#">Log In</a></li>
-                     <li><a href="#"><img src="images/shopping-bag.png"></a></li>
-                     <li><a href="#"><img src="images/search-icon.png"></a></li>
-                  </ul>
-               </div>
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
                <span class="navbar-toggler-icon"></span>
                </button>
@@ -51,6 +44,9 @@
                  <ul class="navbar-nav mr-auto">
                      <li class="nav-item active">
                         <a class="nav-link" href="/">Home</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/adminlogin">Admin</a>
                      </li>
                      <li class="nav-item">
                         <a class="nav-link" href="/vendorlogin">Vendor</a>

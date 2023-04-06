@@ -53,6 +53,9 @@
                         <a class="nav-link" href="/">Home</a>
                      </li>
                      <li class="nav-item">
+                        <a class="nav-link" href="/adminlogin">Admin</a>
+                     </li>
+                     <li class="nav-item">
                         <a class="nav-link" href="/vendorlogin">Vendor</a>
                      </li>
                      <li class="nav-item">
