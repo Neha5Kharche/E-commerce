@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -8,7 +10,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
-      <title>Products</title>
+      <title>Contact</title>
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
@@ -37,13 +39,6 @@
          <div class="container">
             <nav class="navbar navbar-dark bg-dark">
                <a class="logo" href="index.html"><img src="images/logo.png"></a>
-               <div class="search_section">
-                  <ul>
-                     <li><a href="#">Log In</a></li>
-                     <li><a href="#"><img src="images/shopping-bag.png"></a></li>
-                     <li><a href="#"><img src="images/search-icon.png"></a></li>
-                  </ul>
-               </div>
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
                <span class="navbar-toggler-icon"></span>
                </button>
@@ -52,7 +47,7 @@
                      <li class="nav-item active">
                         <a class="nav-link" href="/">Home</a>
                      </li>
-                     <li class="nav-item">
+                     <li class="nav-item active">
                         <a class="nav-link" href="/adminlogin">Admin</a>
                      </li>
                      <li class="nav-item">
@@ -73,35 +68,34 @@
          </div>
       </div>
       <!--header section end -->
-      <!-- product section start -->
-      <div class="product_section layout_padding">
+      <!-- contact section start -->
+      <div class="contact_section layout_padding">
          <div class="container">
-            <h1 class="feature_taital">FEATURED PRODUCTS</h1>
-            <p class="feature_text">It is a long established fact that a reader will be distracted by the readable content of a page when looking</p>
-            <div class="product_section_2">
+            <h1 class="touch_taital">Admin Login</h1>
+            <div class="contact_section_2">
                <div class="row">
-                  <div class="col-sm-5">
-                     <div class="feature_box">
-                        <h1 class="readable_text">Readable content of</h1>
-                        <div><img src="images/img-7.png" class="image_7"></div>
-                     </div>
-                     <div class="feature_box_1">
-                        <h1 class="readable_text">Readable content of</h1>
-                        <div><img src="images/img-7.png" class="image_7"></div>
+               <div class="col-md-6">
+                  <img alt="Login image" src="images/login.jpeg" width="500" height="300" style="border:0; width: 100%;">
+                     
+                  </div>
+                  <div class="col-md-6">
+                     <div class="email_text">
+                        <div class="form-group">
+                           <input type="text" class="email-bt" placeholder="User Name" name="vEmail">
+                        </div>
+                        <div class="form-group">
+                           <input type="password" class="email-bt" placeholder="Password" name="vPassword">
+                        </div>
+                       
+                        <div class="send_btn"><a href="#">Login</a></div> <div class="send_btn"><a href="#">Clear</a></div>
                      </div>
                   </div>
-                  <div class="col-sm-7">
-                     <div class="feature_box_2">
-                        <h1 class="readable_text">Readable content of</h1>
-                        <div><img src="images/img-8.png" class="image_8"></div>
-                        <div class="seemore_bt"><a href="#">see More</a></div>
-                     </div>
-                  </div>
+                  
                </div>
             </div>
          </div>
       </div>
-      <!-- product section end -->
+      <!-- contact section end -->
       <!-- footer section start -->
       <div class="footer_section layout_padding">
          <div class="container">
@@ -159,4 +153,3 @@
       <script src="../../dist/js/bootstrap.min.js"></script>
    </body>
 </html>
-
