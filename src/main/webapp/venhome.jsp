@@ -3,266 +3,101 @@
 <!DOCTYPE html>
 <html>
 <head>
-<body>
-<header>
-<link href="navbar.css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
-rel="stylesheet" 
-integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
-crossorigin="anonymous">
-<div class="logo">
-<img src="../css/same logo.jpeg" alt="Logo" width="80px">
-</div>
-<nav>
-<ul>
-<li><a href="#">HOME</a></li>
-
-<li><a href="#">PRODUCTS</a></li>
-<li><a href="#">SERVICES</a></li>
-
-<li><a href="#">FAQ</a></li>
-<li><a href="#">SIGN OUT</a></li>
-</ul>
-</nav>
-</header>
-</body>
-</head>
-<head>
 <meta charset="ISO-8859-1">
-<link href="venhome.css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
-rel="stylesheet" 
-integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
-crossorigin="anonymous">
 <title>Insert title here</title>
 </head>
-<body style="background-color:powderblue;">
+<body>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>Caraft</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- owl carousel style -->
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.2.4/assets/owl.carousel.min.css" />
+      <!-- bootstrap css -->
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+      <!-- style css -->
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="css/responsive.css">
+      <!-- fevicon -->
+      <link rel="icon" href="images/fevicon.png" type="image/gif" />
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <!-- owl stylesheets --> 
+      <link rel="stylesheet" href="css/owl.carousel.min.css">
+      <link rel="stylesheet" href="css/owl.theme.default.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+   </head>
+   <body>
+      <!--header section start -->
+      <div class="header_section">
+         <div class="container">
+            <nav class="navbar navbar-dark bg-dark">
+               <a class="logo" href="index.html"><img src="images/logo.png"></a>
+               
+               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse" id="navbarsExample01">
+                  <ul class="navbar-nav mr-auto">
+                     <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="category.html">View Category</a>
+                     </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="category.html">Add Category</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="products.html">View Products</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="products.html">Add Products</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Logout</a>
+                     </li>
+                  </ul>
+               </div>
+            </nav>
+         </div>
+        
+      </div>
+      <!--header section end -->
+      
+      
+      <!-- Javascript files-->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery-3.0.0.min.js"></script>
+      <script src="js/plugin.js"></script>
+      <!-- sidebar -->
+      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="js/custom.js"></script>
+      <!-- javascript --> 
+      <script src="js/owl.carousel.js"></script>
+      <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script> 
+      <script type="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2//2.0.0-beta.2.4/owl.carousel.min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+      <script src="../../assets/js/vendor/popper.min.js"></script>
+      <script src="../../dist/js/bootstrap.min.js"></script>
+   </body>
 
-<br>
-<br>
-<div class="container">
-    
-  
-     <h1 align="center">PRODUCT LIST</h1>
-   
-     <h4 align="center">HOME APPALIANCE</h4>
- 
-    <div class="row mt-2 g-4">
-        <div class="col-md-3">
-            <div class="card p-1">
-                <div class="d-flex justify-content-between align-items-center p-2">
-                    <div class="flex-column lh-1 imagename"> <span>Mobile</span> <span>Phones</span> </div>
-                    <div> <img src="https://i.imgur.com/b9zkoz0.jpg" height="100" width="100" /> </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card p-2">
-                <div class="d-flex justify-content-between align-items-center p-2">
-                    <div class="flex-column lh-1 imagename"> <span>Head</span> <span>Phones</span> </div>
-                    <div> <img src="https://i.imgur.com/SHWASPG.png" height="100" width="100" /> </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card p-2">
-                <div class="d-flex justify-content-between align-items-center p-2">
-                    <div class="flex-column lh-1 imagename"> <span>Smart</span> <span>Watches</span> </div>
-                    <div> <img src=" https://i.imgur.com/Ya0OXCv.png" height="100" width="100" /> </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card p-2">
-                <div class="d-flex justify-content-between align-items-center p-2">
-                    <div class="flex-column lh-1 imagename"> <span>Air</span> <span>Purifiers</span> </div>
-                    <div> <img src="https://i.imgur.com/2gvGwbh.png" height="100" width="100" /> </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card p-2tr5">
-                <div class="d-flex justify-content-between align-items-center p-2">
-                    <div class="flex-column lh-1 imagename"> <span>Vacuum</span> <span>Cleaners</span> </div>
-                    <div> <img src="https://i.imgur.com/UMQJpSG.png" height="100" width="100" /> </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card p-2">
-                <div class="d-flex justify-content-between align-items-center p-2">
-                    <div class="flex-column lh-1 imagename"> <span>Washing</span> <span>Machines</span> </div>
-                    <div> <img src="https://i.imgur.com/e9CyhXR.png" height="100" width="100" /> </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card p-2">
-                <div class="d-flex justify-content-between align-items-center p-2">
-                    <div class="flex-column lh-1 imagename"> <span>Smart</span> <span>Televisions</span> </div>
-                    <div> <img src=" https://i.imgur.com/Zq8VigZ.png" height="100" width="100" /> </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card p-2">
-                <div class="d-flex justify-content-between align-items-center p-2">
-                    <div class="flex-column lh-1 imagename"> <span>Laptops</span> </div>
-                    <div> <img src="https://i.imgur.com/6pK5oZl.jpg" height="100" width="100" /> </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+</html>
 
-<ul>
-<br>
- <h4 align="center">BEAUTY PRODUCTS</h4>
-<div class="container">
-<div class="row mt-2 g-4">
-        <div class="col-md-3">
-            <div class="card p-1">
-                <div class="d-flex justify-content-between align-items-center p-2">
-                    <div class="flex-column lh-1 imagename"> <span>Face</span> <span>Wash</span> </div>
-                    <div> <img src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/51AXiOkoijL._SL1000_.jpg" height="100" width="100" /> </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card p-2">
-                <div class="d-flex justify-content-between align-items-center p-2">
-                    <div class="flex-column lh-1 imagename"> <span>Face</span> <span>Pack</span> </div>
-                    <div> <img src="https://www.bigbasket.com/media/uploads/p/s/100014799_8-himalaya-oil-clear-mud-face-pack.jpg" height="100" width="100" /> </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card p-2">
-                <div class="d-flex justify-content-between align-items-center p-2">
-                    <div class="flex-column lh-1 imagename"> <span>Eye</span> <span>Liner</span> </div>
-                    <div> <img src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/517W3pUxYpL._SL1500_.jpg" height="100" width="100" /> </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card p-2">
-                <div class="d-flex justify-content-between align-items-center p-2">
-                    <div class="flex-column lh-1 imagename"> <span>Nourishing</span> <span>Shampoo</span> </div>
-                    <div> <img src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/917k58eneHL._SL1500_.jpg" height="100" width="100" /> </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card p-2tr5">
-                <div class="d-flex justify-content-between align-items-center p-2">
-                    <div class="flex-column lh-1 imagename"> <span>Hair</span> <span>Serum</span> </div>
-                    <div> <img src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/61srJPOof7L._SL1500_.jpg" height="100" width="100" /> </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card p-2">
-                <div class="d-flex justify-content-between align-items-center p-2">
-                    <div class="flex-column lh-1 imagename"> <span>Hair</span> <span>Gel</span> </div>
-                    <div> <img src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/41wA8k0GZWL._SX300_SY300_QL70_FMwebp_.jpg" height="100" width="100" /> </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card p-2">
-                <div class="d-flex justify-content-between align-items-center p-2">
-                    <div class="flex-column lh-1 imagename"> <span>Derma</span> <span>Roller</span> </div>
-                    <div> <img src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/41RrsN-XrIL._SX300_SY300_QL70_FMwebp_.jpg" height="100" width="100" /> </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card p-2">
-                <div class="d-flex justify-content-between align-items-center p-2">
-                    <div class="flex-column lh-1 imagename"> <span>Hair Nutriment</span> </div>
-                    <div> <img src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/410VZYyjeUS.jpg" height="100" width="100" /> </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-</ul>
-</br>
-
-<ul>
-<br>
- <h4 align="center">GROCERIES</h4>
-<div class="container">
-<div class="row mt-2 g-4">
-        <div class="col-md-3">
-            <div class="card p-1">
-                <div class="d-flex justify-content-between align-items-center p-2">
-                    <div class="flex-column lh-1 imagename"> <span>Toor</span> <span>Dal</span> </div>
-                    <div> <img src="https://4.imimg.com/data4/FU/SL/MY-8065331/organic-toor-dal-1000x1000.jpg" height="100" width="100" /> </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card p-2">
-                <div class="d-flex justify-content-between align-items-center p-2">
-                    <div class="flex-column lh-1 imagename"> <span>Basmati</span> <span>Rice</span> </div>
-                    <div> <img src="https://5.imimg.com/data5/QQ/WJ/BE/SELLER-9972534/indian-basmati-rice-500x500.jpg" height="100" width="100" /> </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card p-2">
-                <div class="d-flex justify-content-between align-items-center p-2">
-                    <div class="flex-column lh-1 imagename"> <span>Refined</span> <span>oil</span> </div>
-                    <div> <img src="https://5.imimg.com/data5/SELLER/Default/2021/2/SX/UC/MD/15754389/refine-sunflower-oil-1000x1000.jpg" height="100" width="100" /> </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card p-2">
-                <div class="d-flex justify-content-between align-items-center p-2">
-                    <div class="flex-column lh-1 imagename"> <span>Almond</span> </div>
-                    <div> <img src="https://5.imimg.com/data5/JO/YU/MY-45579509/selection_753-500x500.png" height="100" width="100" /> </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card p-2tr5">
-                <div class="d-flex justify-content-between align-items-center p-2">
-                    <div class="flex-column lh-1 imagename"> <span>Pea</span> <span>Nuts</span> </div>
-                    <div> <img src="https://5.imimg.com/data5/NS/CV/MY-468492/60000540-roasted-peanut-plain-100g-front-500x500.jpg" height="100" width="100" /> </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card p-2">
-                <div class="d-flex justify-content-between align-items-center p-2">
-                    <div class="flex-column lh-1 imagename"> <span>chenna</span> <span>Dal</span> </div>
-                    <div> <img src="https://4.imimg.com/data4/BU/XU/MY-4680907/fress-chana-dal-500x500.jpg" height="100" width="100" /> </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card p-2">
-                <div class="d-flex justify-content-between align-items-center p-2">
-                    <div class="flex-column lh-1 imagename"> <span>Soya</span> <span>Paneer</span> </div>
-                    <div> <img src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/81HKcaf7vIL._SL1500_.jpg" height="100" width="100" /> </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card p-2">
-                <div class="d-flex justify-content-between align-items-center p-2">
-                    <div class="flex-column lh-1 imagename"> <span>Milk Shake</span> </div>
-                    <div> <img src="https://cpimg.tistatic.com/05836207/b/4/100-gm-Banana-Flavour-Milk-Shake-Mix.jpg" height="100" width="100" /> </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-</ul>
-</br>
-</br>
-</br>
 </body>
 </html>
