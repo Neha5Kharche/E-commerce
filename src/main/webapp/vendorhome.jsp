@@ -52,13 +52,13 @@
                         <a class="nav-link" href="category.html">Add Category</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="products.html">View Products</a>
+                        <a class="nav-link" href="viewproducts">View Products</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="products.html">Add Products</a>
+                        <a class="nav-link" href="addproducts">Add Products</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Logout</a>
+                        <a class="nav-link" href="index">Logout</a>
                      </li>
                   </ul>
                </div>

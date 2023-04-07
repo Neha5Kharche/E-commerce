@@ -135,47 +135,6 @@ public ModelAndView customerHome()
 	return mv;
 }
 
-
-
-
-
-@RequestMapping("/customergrocery")
-public ModelAndView customergroceryview()
-{
-	ModelAndView mv = new ModelAndView("customergrocery");
-    return mv;
-}
-@RequestMapping("/customerbeauty")
-public ModelAndView customerbeautyview()
-{
-	ModelAndView mv = new ModelAndView("customerbeauty");
-    return mv;
-}
-@RequestMapping("/customerkitchen")
-public ModelAndView customerkitchenView()
-{
-	ModelAndView mv = new ModelAndView("customerkitchen");
-    return mv;
-}
-@RequestMapping("/homedelivery")
-public ModelAndView homedeliveryView()
-{
-	ModelAndView mv = new ModelAndView("homedelivery");
-    return mv;
-}
-@RequestMapping("/pickupatstore")
-public ModelAndView pickupatstoreView()
-{
-	ModelAndView mv = new ModelAndView("pickupatstore");
-    return mv;
-}
-@RequestMapping("/customerhomedelivery")
-public ModelAndView customerhomedeliveryView()
-{
-	ModelAndView mv = new ModelAndView("customerhomedelivery");
-    return mv;
-}
-
 @RequestMapping("/adminlogin")
 public ModelAndView adminloginview()
 {
@@ -185,11 +144,18 @@ public ModelAndView adminloginview()
 
 }
 
-@RequestMapping("/addproduct")
-public ModelAndView addproductview()
+@RequestMapping("/addproducts")
+public ModelAndView addproductsView()
 {
-	ModelAndView mv = new ModelAndView("addproduct");
-	mv.addObject("errmsg", "");
+	ModelAndView mv = new ModelAndView("addproducts");
+	
+	return mv;
+}
+@RequestMapping("/editproduct")
+public ModelAndView editproductView()
+{
+	ModelAndView mv = new ModelAndView("editproduct");
+	
 	return mv;
 }
 
@@ -208,48 +174,20 @@ public ModelAndView addservicecategoryview()
 	mv.addObject("errmsg", "");
 	return mv;
 }
-@RequestMapping("/servicecategory")
-public ModelAndView servicecategoryview()
+@RequestMapping("/addproductcategory")
+public ModelAndView addproductcategoryview()
 {
-	ModelAndView mv = new ModelAndView("servicecategory");
-    return mv;
+	ModelAndView mv = new ModelAndView("addproductcategory");
+	mv.addObject("errmsg", "");
+	return mv;
 }
 
 
-@RequestMapping("/fq")
-public ModelAndView fqview()
-{
-	ModelAndView mv = new ModelAndView("fq");
-	mv.addObject("errmsg", "");
-    return mv;
-}
-@RequestMapping("/help")
-public ModelAndView helpview()
-{
-	ModelAndView mv = new ModelAndView("help");
-	mv.addObject("errmsg", "");
-    return mv;
-}
-@RequestMapping("/adminreslovehelp")
-public ModelAndView adminreslovehelpview()
-{
-	ModelAndView mv = new ModelAndView("adminreslovehelp");
-	mv.addObject("errmsg", "");
-    return mv;
-}
-@RequestMapping("/venhome")
-public ModelAndView venhomeview()
-{
-	ModelAndView mv = new ModelAndView("venhome");
-	mv.addObject("errmsg", "");
-    return mv;
-}
 @RequestMapping("/productcategory")
 public ModelAndView productcategoryview()
 {
 	ModelAndView mv = new ModelAndView("productcategory");
     return mv;
 }
-
 
 }
