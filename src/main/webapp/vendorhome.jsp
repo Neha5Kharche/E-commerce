@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <html lang="en">
    <head>
       <meta charset="utf-8">
@@ -52,21 +53,14 @@
                         <a class="nav-link" href="category.html">Add Category</a>
                      </li>
                      <li class="nav-item">
-<<<<<<< HEAD
-                        <a class="nav-link" href="viewproducts">View Products</a>
-=======
-                        <a class="nav-link" href="/viewproduct">View Products</a>
->>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
+<a class="nav-link" href="/viewproduct">View Products</a>
+
                      </li>
                      <li class="nav-item">
                         <a class="nav-link" href="addproducts">Add Products</a>
                      </li>
                      <li class="nav-item">
-<<<<<<< HEAD
-                        <a class="nav-link" href="index">Logout</a>
-=======
                         <a class="nav-link" href="/">Logout</a>
->>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
                      </li>
                   </ul>
                </div>
@@ -84,46 +78,15 @@
                   <h1 class="category_text">Category</h1>
                </div>
                <div class="col-lg-10 col-sm-12 main">
+               
                <a href="/newfashion">
                   <div class="col">
                      <div class="box_main">
-                        <div class="icon_1"></div>
-                        <h4 class="fashion_text active">New Fashion</h4>
+                        <div class="${pc.getProductCategoryIcon() }"></div>
+                        <h4 class="fashion_text active">${pc.getProductCategoryName }</h4>
                      </div>
                   </div>
                   </a>
-                  <a href="/clothing">
-                  <div class="col">
-                     <div class="box_main">
-                        <div class="icon_2"></div>
-                        <h4 class="fashion_text">Clothing</h4>
-                     </div>
-                  </div>
-                  </a>
-                  <a href="/watches">
-                  <div class="col">
-                     <div class="box_main">
-                        <div class="icon_3"></div>
-                        <h4 class="fashion_text">Watches</h4>
-                     </div>
-                  </div>
-                   </a>
-                  <a href="/accessories">
-                  <div class="col">
-                     <div class="box_main">
-                        <div class="icon_4"></div>
-                        <h4 class="fashion_text">Accessories</h4>
-                     </div>
-                  </div>
-                   </a>
-                   <a href="/jackets">
-                  <div class="col">
-                     <div class="box_main">
-                        <div class="icon_5"></div>
-                        <h4 class="fashion_text">Sweaters & Jackets</h4>
-                     </div>
-                  </div>
-                   </a>
                </div>
             </div>
          </div>

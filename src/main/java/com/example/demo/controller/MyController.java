@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -7,9 +9,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.example.demo.model.ProductCategory;
 import com.example.demo.model.customer;
 import com.example.demo.model.vendor;
 import com.example.demo.service.CustomerService;
+import com.example.demo.service.ProductCategoryService;
 import com.example.demo.service.VendorService;
 
 @Controller
@@ -19,6 +23,8 @@ public class MyController {
 	VendorService vService;
 	@Autowired
 	CustomerService cService;
+	@Autowired
+	ProductCategoryService productCategoryService;
 
 	
 	@RequestMapping("/")
@@ -71,7 +77,10 @@ public ModelAndView vendorLogin(String email,String password)
 @RequestMapping("/vhome")
 public ModelAndView vendorHome()
 {
+  ArrayList<ProductCategory> pc =	productCategoryService.getProductCategoryList();
+  
 	ModelAndView mv = new ModelAndView("vendorhome");
+  	mv.addObject("pc", pc);
 	return mv;
 }
 
@@ -179,12 +188,22 @@ public ModelAndView addproductcategoryview()
 {
 	ModelAndView mv = new ModelAndView("addproductcategory");
 	mv.addObject("errmsg", "");
+	mv.addObject("successfullymsg", "");
+	return mv;
+}
+
+@RequestMapping("/creatingProductCategory")
+public ModelAndView createproductcategoryview(ProductCategory productCategory)
+{
+	productCategoryService.addProductCategory(productCategory);
+	
+	ModelAndView mv = new ModelAndView("addproductcategory");
+	mv.addObject("errmsg", "");
+	mv.addObject("successfullymsg", "ProductCategory Create Successfully!!!");
 	return mv;
 }
 
 
-<<<<<<< HEAD
-=======
 @RequestMapping("/fq")
 public ModelAndView fqview()
 {
@@ -207,8 +226,6 @@ public ModelAndView adminresolvehelpview()
     return mv;
 }
 
-
->>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
 @RequestMapping("/productcategory")
 public ModelAndView productcategoryview()
 {

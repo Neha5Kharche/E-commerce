@@ -80,21 +80,28 @@
                   </div>
                  
                   <div class="col-md-6">
+                  <h2 style="text-align: center;color: green;" >${successfullymsg }</h2>
+                  <form action="creatingProductCategory" method="post">
                      <div class="email_text">
                         <div class="form-group">
-                           <input type="text" class="email-bt" placeholder="Category Name" name='' >
+                           <input type="text" class="email-bt" placeholder="Category Name" name='productCategoryName' >
                         </div>
                         <div class="form-group">
-                           <input type="text" class="email-bt" placeholder="Icon" name='' >
+                           <input type="text" class="email-bt" placeholder="Icon" name='productCategoryIcon' >
+                        </div>
+                        <div class="form-group">
+                           <input type="text" class="email-bt" placeholder="Image" name='productCategoryImage' >
                         </div>
                         
-                        
-                       
-                        <div class="send_btn"><a href="#">SUBMIT</a></div> <div class="send_btn"><a href="index">GO BACK</a></div> <div class="send_btn">
+                        <button type="submit" class="btn btn-outline-danger rounded-pill">SUBMIT</button>
+                        <button type="reset" class="btn btn-outline-warning rounded-pill">CLEAR</button>
+                       </form>
+                       <!-- <div class="send_btn"><a href="#">SUBMIT</a></div> <div class="send_btn"><a href="index">GO BACK</a></div> 
+                          <div class="send_btn">
                         <br>
                         
                      
-                     </div>
+                     </div>-->
                   </div>
                   
                </div>
