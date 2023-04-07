@@ -87,7 +87,11 @@
                            <input type="password" class="email-bt" placeholder="Password" name="vPassword">
                         </div>
                        
+<<<<<<< HEAD
                         <div class="send_btn"><a href="/adminresolvehelp">Login</a></div> <div class="send_btn"><a href="/adminlogin">Clear</a></div>
+=======
+                        <div class="send_btn"><a href="#">Login</a></div> <div class="send_btn"><a href="adminlogin">Clear</a></div>
+>>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
                      </div>
                   </div>
                   
