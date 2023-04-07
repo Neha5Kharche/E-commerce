@@ -31,11 +31,11 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
    </head>
    <body>
-      <!--header section start -->
+       <!--header section start -->
       <div class="header_section">
          <div class="container">
             <nav class="navbar navbar-dark bg-dark">
-               <a class="logo" href="index.html"><img src="images/logo.png"></a>
+               <a class="logo" href="/"><img src="images/logo.png"></a>
                
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
                <span class="navbar-toggler-icon"></span>
@@ -46,19 +46,27 @@
                         <a class="nav-link" href="index.html">Home</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="category.html">View Category</a>
+                        <a class="nav-link" href="/vhome">View Category</a>
                      </li>
                       <li class="nav-item">
                         <a class="nav-link" href="category.html">Add Category</a>
                      </li>
                      <li class="nav-item">
+<<<<<<< HEAD
                         <a class="nav-link" href="viewproducts">View Products</a>
+=======
+                        <a class="nav-link" href="/viewproduct">View Products</a>
+>>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
                      </li>
                      <li class="nav-item">
                         <a class="nav-link" href="addproducts">Add Products</a>
                      </li>
                      <li class="nav-item">
+<<<<<<< HEAD
                         <a class="nav-link" href="index">Logout</a>
+=======
+                        <a class="nav-link" href="/">Logout</a>
+>>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
                      </li>
                   </ul>
                </div>
@@ -67,6 +75,7 @@
         
       </div>
       <!--header section end -->
+      
       <!--category section start -->
       <div class="container">
          <div class="category_section">
@@ -75,36 +84,46 @@
                   <h1 class="category_text">Category</h1>
                </div>
                <div class="col-lg-10 col-sm-12 main">
+               <a href="/newfashion">
                   <div class="col">
                      <div class="box_main">
                         <div class="icon_1"></div>
                         <h4 class="fashion_text active">New Fashion</h4>
                      </div>
                   </div>
+                  </a>
+                  <a href="/clothing">
                   <div class="col">
                      <div class="box_main">
                         <div class="icon_2"></div>
                         <h4 class="fashion_text">Clothing</h4>
                      </div>
                   </div>
+                  </a>
+                  <a href="/watches">
                   <div class="col">
                      <div class="box_main">
                         <div class="icon_3"></div>
                         <h4 class="fashion_text">Watches</h4>
                      </div>
                   </div>
+                   </a>
+                  <a href="/accessories">
                   <div class="col">
                      <div class="box_main">
                         <div class="icon_4"></div>
                         <h4 class="fashion_text">Accessories</h4>
                      </div>
                   </div>
+                   </a>
+                   <a href="/jackets">
                   <div class="col">
                      <div class="box_main">
                         <div class="icon_5"></div>
                         <h4 class="fashion_text">Sweaters & Jackets</h4>
                      </div>
                   </div>
+                   </a>
                </div>
             </div>
          </div>
@@ -117,16 +136,16 @@
             <div class="row">
                <div class="col-lg-4 col-sm-12">
                   <div class="beauty_box">
-                     <h1 class="bed_text">Beauty products</h1>
+                    
                      <div><img src="images/img-5.png" class="image_3"></div>
-                     <div class="seemore_bt"><a href="#">see More</a></div>
+                     <div class="seemore_bt"><a href="/viewproduct">see More</a></div>
                   </div>
                </div>
                <div class="col-lg-8 col-sm-12">
                   <div class="beauty_box_1">
-                     <h1 class="bed_text_1">Explore trending electronics</h1>
+                    
                      <div><img src="images/img-6.png" class="image_3"></div>
-                     <div class="seemore_bt_1"><a href="#">see More</a></div>
+                     <div class="seemore_bt_1"><a href="/viewproduct">see More</a></div>
                   </div>
                </div>
             </div>

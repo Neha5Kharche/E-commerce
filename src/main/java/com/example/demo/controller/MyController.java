@@ -183,11 +183,92 @@ public ModelAndView addproductcategoryview()
 }
 
 
+<<<<<<< HEAD
+=======
+@RequestMapping("/fq")
+public ModelAndView fqview()
+{
+	ModelAndView mv = new ModelAndView("fq");
+	mv.addObject("errmsg", "");
+    return mv;
+}
+@RequestMapping("/help")
+public ModelAndView helpview()
+{
+	ModelAndView mv = new ModelAndView("help");
+	mv.addObject("errmsg", "");
+    return mv;
+}
+@RequestMapping("/adminresolvehelp")
+public ModelAndView adminresolvehelpview()
+{
+	ModelAndView mv = new ModelAndView("adminresolvehelp");
+	mv.addObject("errmsg", "");
+    return mv;
+}
+
+
+>>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
 @RequestMapping("/productcategory")
 public ModelAndView productcategoryview()
 {
 	ModelAndView mv = new ModelAndView("productcategory");
     return mv;
 }
+@RequestMapping("/newfashion")
+public ModelAndView newfashionview()
+{
+	ModelAndView mv = new ModelAndView("newfashion");
+    return mv;
+}
+@RequestMapping("/clothing")
+public ModelAndView clothingview()
+{
+	ModelAndView mv = new ModelAndView("clothing");
+    return mv;
+}
+@RequestMapping("/watches")
+public ModelAndView watchesview()
+{
+	ModelAndView mv = new ModelAndView("watches");
+    return mv;
+}
+@RequestMapping("/jackets")
+public ModelAndView jacketsview()
+{
+	ModelAndView mv = new ModelAndView("jackets");
+    return mv;
+}
+@RequestMapping("/accessories")
+public ModelAndView accessoriesview()
+{
+	ModelAndView mv = new ModelAndView("accessories");
+    return mv;
+}
+@RequestMapping("/viewproduct")
+public ModelAndView viewproductview()
+{
+	ModelAndView mv = new ModelAndView("viewproduct");
+    return mv;
+}
+@RequestMapping("/viewservicecategory")
+public ModelAndView viewservicecategoryview()
+{
+	ModelAndView mv = new ModelAndView("viewservicecategory");
+    return mv;
+}
+@RequestMapping("/viewservice")
+public ModelAndView viewserviceview()
+{
+	ModelAndView mv = new ModelAndView("viewservice");
+    return mv;
+}
+@RequestMapping("/vendorproducts")
+public ModelAndView vendorproductsview()
+{
+	ModelAndView mv = new ModelAndView("vendorproducts");
+    return mv;
+}
+
 
 }
