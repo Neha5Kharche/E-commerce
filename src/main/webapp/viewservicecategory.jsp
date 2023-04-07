@@ -34,7 +34,7 @@
    </head>
    <body>
    
-       <!--header section start -->
+      <!--header section start -->
       <div class="header_section">
          <div class="container">
             <nav class="navbar navbar-dark bg-dark">
@@ -89,95 +89,102 @@
       <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
       <script src="../../assets/js/vendor/popper.min.js"></script>
       <script src="../../dist/js/bootstrap.min.js"></script>
-<html lang="en" dir="ltr">
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<link href="fqq.css">
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-
-
-<title>Feedback Questionnaire</title>
-</head>
-<body>
-<section class="accordion-section clearfix mt-3" aria-label="Question Accordions">
-  <div class="container">
-  
-	               <h2 Align="center">Feedback Questionnaire</h2>
-	  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-		<div class="panel panel-default">
-		  <div class="panel-heading p-3 mb-3" role="tab" id="heading0">
-			<h3 class="panel-title">
-			  <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#accordion" href="#collapse0" aria-expanded="true" aria-controls="collapse0">
-				1.How do I place an order for your product or service?
-			  </a>
-			</h3>
-		  </div>
-		  <div id="collapse0" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading0">
-			<div class="panel-body px-3 mb-4">
-			  <p>To place an order for our product or service, simply navigate to the product page on our website and click the "Add to Cart" button. Once you have added all of the items you wish to purchase to your cart, proceed to checkout and follow the prompts to enter your billing and shipping information and complete your order.</p>
-			</div>
-		  </div>
-		</div>
-		
-		<div class="panel panel-default">
-		  <div class="panel-heading p-3 mb-3" role="tab" id="heading1">
-			<h3 class="panel-title">
-			  <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true" aria-controls="collapse1">
-				2.What is the pricing for your product or service, and are there any discounts or promotions available?
-			  </a>
-			</h3>
-		  </div>
-		  <div id="collapse1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading1">
-			<div class="panel-body px-3 mb-4">
-			  <p>Our pricing varies depending on the product or service you are interested in. Please visit our website to view the current pricing, and be sure to check for any available discounts or promotions that may be listed on the product page or in our newsletter.</p>
-			</div>
-		  </div>
-		</div>
-		
-		
-		<div class="panel panel-default">
-		  <div class="panel-heading p-3 mb-3" role="tab" id="heading2">
-			<h3 class="panel-title">
-			  <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="true" aria-controls="collapse2">
-				3.How long does it take to receive my order, and what shipping options are available?
-			  </a>
-			</h3>
-		  </div>
-		  <div id="collapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2">
-			<div class="panel-body px-3 mb-4">
-			  <p>Our shipping times and options vary depending on your location and the product or service you are ordering. We typically provide estimated shipping times and options during the checkout process, and you will receive a tracking number via email once your order has been shipped.</p>
-			</div>
-		  </div>
-		</div>
-		
-		<div class="panel panel-default">
-		  <div class="panel-heading p-3 mb-3" role="tab" id="heading3">
-			<h3 class="panel-title">
-			  <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="true" aria-controls="collapse3">
-				4.What is your return policy, and how do I request a refund or exchange if needed?
-			  </a>
-			</h3>
-		  </div>
-		  <div id="collapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading3">
-			<div class="panel-body px-3 mb-4">
-			  <p>Our return policy varies depending on the product or service you have purchased. Please visit our website to view our full return policy and instructions for requesting a refund or exchange if needed. In general, we aim to provide a hassle-free return process and will work with you to ensure your satisfaction with your purchase.</p>
-			</div>
-		  </div>
-		</div>
-	  </div>
-  
-  </div>
-</section>
-</body>
-</html>
-
-
- <!-- footer section start -->
+      
+      <body style="background-color:rgb(140, 140, 140);">
+      <div class="container mt-100">
+      
+      <h1 class="feature_taital">SPA</h1>
+      <div class="category_section_2">
+            <div class="row">
+               <div class="col-lg-4 col-sm-12">
+                  <div class="beds_section active">
+                     <h1 class="bed_text">BODY SPA</h1>
+                     <div><img src="http://bodytobodymassageinbandra.in/img/gallery/gallery11.jpg" class="image_2"></div>
+                     <div class="seemore_bt"><a href="/viewservice">see More</a></div>
+                  </div>
+               </div>
+               <div class="col-lg-4 col-sm-12">
+                  <div class="beds_section">
+                     <h1 class="bed_text">HEAD SPA</h1>
+                     <div><img src="https://files.myglamm.com/site-images/768x432/How-To-Do-Hair-Spa-At-Home.png" class="image_2"></div>
+                     <div class="seemore_bt"><a href="/viewservice">see More</a></div>
+                  </div>
+               </div>
+               <div class="col-lg-4 col-sm-12">
+                  <div class="beds_section">
+                     <h1 class="bed_text">ARYURVEDIC SPA</h1>
+                     <div><img src="https://images.onlymyhealth.com/imported/images/2022/February/09_Feb_2022/big_massage.jpg" class="image_2"></div>
+                     <div class="seemore_bt"><a href="/viewservice">see More</a></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         
+         
+         <div class="product_section layout_padding">
+         <div class="container">
+            <h1 class="feature_taital">LAUNDRY SERVICE</h1>
+            
+            <div class="product_section_2">
+               <div class="row">
+                  <div class="col-sm-5">
+                     <div class="feature_box">
+                        <h1 class="readable_text">WASHING</h1>
+                        <div><img src="http://laundryworld.co.in/images/hom_about.png" class="image_7"></div>
+                         <div class="seemore_bt"><a href="/viewservice">see More</a></div>
+                     </div>
+                     <div class="feature_box_1">
+                        <h1 class="readable_text">IRON</h1>
+                        <div><img src="https://www.thespruce.com/thmb/NiWE62euW8Q3HtcigNn323oP63s=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/how-to-dry-clean-at-home-5076182-hero-70252bac30f04d728efc9786db03f202.jpg" class="image_7"></div>
+                         <div class="seemore_bt"><a href="/viewservice">see More</a></div>
+                     </div>
+                  </div>
+                  <div class="col-sm-7">
+                     <div class="feature_box_2">
+                        <h1 class="readable_text">DRY CLEAN</h1>
+                        <div><img src="https://www.misiuacademy.com/wp-content/uploads/2018/10/slide3.jpg" class="image_8"></div>
+                         <div class="seemore_bt"><a href="/viewservice">see More</a></div>
+                      
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      
+      <div class="product_section layout_padding">
+       <div class="container">
+      <h1 class="feature_taital">AC REPAIR</h1>
+       <div class="category_section_2">
+            <div class="row">
+               <div class="col-lg-4 col-sm-12">
+                  <div class="beds_section active">
+                     <h1 class="bed_text">GENERAL SERVICE</h1>
+                     <div><img src="https://www.vijayhomeservices.com/assets/img/ac-repair-large.jpg" class="image_2"></div>
+                     <div class="seemore_bt"><a href="/viewservice">see More</a></div>
+                  </div>
+               </div>
+               <div class="col-lg-4 col-sm-12">
+                  <div class="beds_section">
+                     <h1 class="bed_text">GAS TOP-UP</h1>
+                     <div><img src="https://cdn.mrright.in/cdn/content/assets/2015-11/small/df2e6f0c9c6f405f818a5d3f9a3e00dd-ac%20gas%20refill%20or%20top-up.jpg?sv=2020-04-08&si=MrRightCDNAccessPolicy&sr=c&sig=%2B6fs9xgu5wLh9HEJ0lNaoOt8HIH6CHQYpw5F0vISsdk%3D" class="image_2"></div>
+                     <div class="seemore_bt"><a href="/viewservice">see More</a></div>
+                  </div>
+               </div>
+               <div class="col-lg-4 col-sm-12">
+                  <div class="beds_section">
+                     <h1 class="bed_text">FILTER DEEP-CLEAN</h1>
+                     <div><img src="https://clareservices.com/wp-content/uploads/2021/05/technician-service-removing-air-filter-air-conditioner-cleaning_35076-3617-640x426.jpg" class="image_2"></div>
+                     <div class="seemore_bt"><a href="/viewservice">see More</a></div>
+                  </div>
+               </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            
+            
+            <!-- footer section start -->
         
       <div class="footer_section layout_padding">
          <div class="container">
@@ -215,3 +222,7 @@
    </body>
 
 </html>
+            
+      
+      
+      

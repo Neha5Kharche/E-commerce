@@ -230,20 +230,15 @@ public ModelAndView helpview()
 	mv.addObject("errmsg", "");
     return mv;
 }
-@RequestMapping("/adminreslovehelp")
-public ModelAndView adminreslovehelpview()
+@RequestMapping("/adminresolvehelp")
+public ModelAndView adminresolvehelpview()
 {
-	ModelAndView mv = new ModelAndView("adminreslovehelp");
+	ModelAndView mv = new ModelAndView("adminresolvehelp");
 	mv.addObject("errmsg", "");
     return mv;
 }
-@RequestMapping("/venhome")
-public ModelAndView venhomeview()
-{
-	ModelAndView mv = new ModelAndView("venhome");
-	mv.addObject("errmsg", "");
-    return mv;
-}
+
+
 @RequestMapping("/productcategory")
 public ModelAndView productcategoryview()
 {
@@ -278,6 +273,30 @@ public ModelAndView jacketsview()
 public ModelAndView accessoriesview()
 {
 	ModelAndView mv = new ModelAndView("accessories");
+    return mv;
+}
+@RequestMapping("/viewproduct")
+public ModelAndView viewproductview()
+{
+	ModelAndView mv = new ModelAndView("viewproduct");
+    return mv;
+}
+@RequestMapping("/viewservicecategory")
+public ModelAndView viewservicecategoryview()
+{
+	ModelAndView mv = new ModelAndView("viewservicecategory");
+    return mv;
+}
+@RequestMapping("/viewservice")
+public ModelAndView viewserviceview()
+{
+	ModelAndView mv = new ModelAndView("viewservice");
+    return mv;
+}
+@RequestMapping("/vendorproducts")
+public ModelAndView vendorproductsview()
+{
+	ModelAndView mv = new ModelAndView("vendorproducts");
     return mv;
 }
 

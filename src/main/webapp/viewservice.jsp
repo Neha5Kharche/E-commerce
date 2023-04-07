@@ -49,7 +49,7 @@
                         <a class="nav-link" href="index.html">Home</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="/vhome">View Category</a>
+                        <a class="nav-link" href="category.html">View Category</a>
                      </li>
                       <li class="nav-item">
                         <a class="nav-link" href="category.html">Add Category</a>
@@ -61,7 +61,7 @@
                         <a class="nav-link" href="products.html">Add Products</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="/">Logout</a>
+                        <a class="nav-link" href="contact.html">Logout</a>
                      </li>
                   </ul>
                </div>
@@ -89,67 +89,117 @@
       <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
       <script src="../../assets/js/vendor/popper.min.js"></script>
       <script src="../../dist/js/bootstrap.min.js"></script>
-      
       <body style="background-color:rgb(140, 140, 140);">
+      
+      
       <div class="container mt-100">
-  
-                            		
-<div class="category_section_2">
+      <h1 class="feature_taital">SPA</h1>
+      <div class="category_section_2">
             <div class="row">
                <div class="col-lg-4 col-sm-12">
                   <div class="beds_section active">
-                     <h1 class="bed_text">Jeans</h1>
-                     <div><img src="https://assets.ajio.com/medias/sys_master/root/20230316/Br8X/64133ca7f997dde6f4024aa8/-1117Wx1400H-443009290-indigo-MODEL.jpg" class="image_2"></div>
-                     <div class="seemore_bt"><a href="#">see More</a></div>
+                     <h1 class="bed_text">BODY SPA</h1>
+                     <div><img src="http://bodytobodymassageinbandra.in/img/gallery/gallery11.jpg" class="image_2"></div>
+                       <div class="number">PRODUCT ID: 1</div>
+                       <div class="text">PRICE: 600</div>                
+                       <div class="text">STATUS: OPEN</div>
+                     
                   </div>
                </div>
                <div class="col-lg-4 col-sm-12">
                   <div class="beds_section">
-                     <h1 class="bed_text">Shirt</h1>
-                     <div><img src="https://assets.ajio.com/medias/sys_master/root/20221109/u2JJ/636b8eddaeb269659c7f912c/-1117Wx1400H-462323964-white-MODEL.jpg" class="image_2"></div>
-                     <div class="seemore_bt"><a href="#">see More</a></div>
+                     <h1 class="bed_text">HEAD SPA</h1>
+                     <div><img src="https://files.myglamm.com/site-images/768x432/How-To-Do-Hair-Spa-At-Home.png" class="image_2"></div>
+                     <div class="number">PRODUCT ID: 2</div>
+                       <div class="text">PRICE: 660</div>                
+                       <div class="text">STATUS: CLOSE</div>
                   </div>
                </div>
                <div class="col-lg-4 col-sm-12">
                   <div class="beds_section">
-                     <h1 class="bed_text">cap</h1>
-                     <div><img src="https://assets.ajio.com/medias/sys_master/root/20230306/CSC4/6406085cf997dde6f4e08184/-473Wx593H-442086812-yellow-MODEL.jpg" class="image_2"></div>
-                     <div class="seemore_bt"><a href="#">see More</a></div>
+                     <h1 class="bed_text">ARYURVEDIC SPA</h1>
+                     <div><img src="https://images.onlymyhealth.com/imported/images/2022/February/09_Feb_2022/big_massage.jpg" class="image_2"></div>
+                     <div class="number">PRODUCT ID: 3</div>
+                       <div class="text">PRICE: 800</div>                
+                       <div class="text">STATUS: OPEN</div>
                   </div>
                </div>
             </div>
          </div>
          
-         <div class="product_section layout_padding">
-         <div class="container">
-            <h1 class="feature_taital">NEW ARRIVAL</h1>
-            
-            <div class="product_section_2">
-               <div class="row">
-                  <div class="col-sm-5">
-                     <div class="feature_box">
-                        <h1 class="readable_text">FLAT 50% OFF</h1>
-                        <div><img src="https://assets.ajio.com/medias/sys_master/root/20211111/yDyH/618d0d03f997ddf8f101d921/-1117Wx1400H-460991629-white-MODEL.jpg" class="image_7"></div>
-                     </div>
-                     <div class="feature_box_1">
-                        <h1 class="readable_text">FLAT 50% OFF</h1>
-                        <div><img src="https://assets.ajio.com/medias/sys_master/root/20210421/w1aX/607f5923f997dd7b64b977e9/-1117Wx1400H-462331136-green-MODEL.jpg" class="image_7"></div>
-                     </div>
+         
+           <div class="container mt-100">
+      <h1 class="feature_taital">LAUNDRY</h1>
+      <div class="category_section_2">
+            <div class="row">
+               <div class="col-lg-4 col-sm-12">
+                  <div class="beds_section active">
+                     <h1 class="bed_text">WASHING</h1>
+                     <div><img src="http://laundryworld.co.in/images/hom_about.png" class="image_2"></div>
+                       <div class="number">PRODUCT ID: 4</div>
+                       <div class="text">PRICE: 300</div>                
+                       <div class="text">STATUS: OPEN</div>
+                     
                   </div>
-                  <div class="col-sm-7">
-                     <div class="feature_box_2">
-                        <h1 class="readable_text">FLAT 20% OFF</h1>
-                        <div><img src="https://assets.ajio.com/medias/sys_master/root/20230207/c764/63e293a0aeb269c651173305/-473Wx593H-443009961-green-MODEL2.jpg" class="image_8"></div>
-                      
-                     </div>
+               </div>
+               <div class="col-lg-4 col-sm-12">
+                  <div class="beds_section">
+                     <h1 class="bed_text">IRON</h1>
+                     <div><img src="https://www.thespruce.com/thmb/NiWE62euW8Q3HtcigNn323oP63s=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/how-to-dry-clean-at-home-5076182-hero-70252bac30f04d728efc9786db03f202.jpg" class="image_2"></div>
+                     <div class="number">PRODUCT ID: 5</div>
+                       <div class="text">PRICE: 620</div>                
+                       <div class="text">STATUS: CLOSE</div>
+                  </div>
+               </div>
+               <div class="col-lg-4 col-sm-12">
+                  <div class="beds_section">
+                     <h1 class="bed_text">DRY CLEAN</h1>
+                     <div><img src="https://www.misiuacademy.com/wp-content/uploads/2018/10/slide3.jpg" class="image_2"></div>
+                     <div class="number">PRODUCT ID: 6</div>
+                       <div class="text">PRICE: 500</div>                
+                       <div class="text">STATUS: OPEN</div>
                   </div>
                </div>
             </div>
          </div>
-      </div>
-      
-                            	
-        <!-- footer section start -->
+         
+          <div class="container mt-100">
+      <h1 class="feature_taital">AC REPAIR</h1>
+      <div class="category_section_2">
+            <div class="row">
+               <div class="col-lg-4 col-sm-12">
+                  <div class="beds_section active">
+                     <h1 class="bed_text">GENERAL SERVICE</h1>
+                     <div><img src="https://www.vijayhomeservices.com/assets/img/ac-repair-large.jpg" class="image_2"></div>
+                       <div class="number">PRODUCT ID: 7</div>
+                       <div class="text">PRICE: 400</div>                
+                       <div class="text">STATUS: OPEN</div>
+                     
+                  </div>
+               </div>
+               <div class="col-lg-4 col-sm-12">
+                  <div class="beds_section">
+                     <h1 class="bed_text">GAS TOP-UP</h1>
+                     <div><img src="https://cdn.mrright.in/cdn/content/assets/2015-11/small/df2e6f0c9c6f405f818a5d3f9a3e00dd-ac%20gas%20refill%20or%20top-up.jpg?sv=2020-04-08&si=MrRightCDNAccessPolicy&sr=c&sig=%2B6fs9xgu5wLh9HEJ0lNaoOt8HIH6CHQYpw5F0vISsdk%3D" class="image_2"></div>
+                     <div class="number">PRODUCT ID: 8</div>
+                       <div class="text">PRICE: 620</div>                
+                       <div class="text">STATUS: OPEN</div>
+                  </div>
+               </div>
+               <div class="col-lg-4 col-sm-12">
+                  <div class="beds_section">
+                     <h1 class="bed_text">FILTER DEEP-CLEAN</h1>
+                     <div><img src="https://clareservices.com/wp-content/uploads/2021/05/technician-service-removing-air-filter-air-conditioner-cleaning_35076-3617-640x426.jpg" class="image_2"></div>
+                     <div class="number">PRODUCT ID: 9</div>
+                       <div class="text">PRICE: 800</div>                
+                       <div class="text">STATUS: OPEN</div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         
+         
+         <!-- footer section start -->
         
       <div class="footer_section layout_padding">
          <div class="container">
@@ -187,3 +237,10 @@
    </body>
 
 </html>
+            
+       
+      
+      
+         
+      
+         

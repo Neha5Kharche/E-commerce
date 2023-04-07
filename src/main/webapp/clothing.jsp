@@ -34,11 +34,11 @@
    </head>
    <body>
    
-      <!--header section start -->
+       <!--header section start -->
       <div class="header_section">
          <div class="container">
             <nav class="navbar navbar-dark bg-dark">
-               <a class="logo" href="index.html"><img src="images/logo.png"></a>
+               <a class="logo" href="/"><img src="images/logo.png"></a>
                
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
                <span class="navbar-toggler-icon"></span>
@@ -46,22 +46,22 @@
                <div class="collapse navbar-collapse" id="navbarsExample01">
                   <ul class="navbar-nav mr-auto">
                      <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link" href="/">Home</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="category.html">View Category</a>
+                        <a class="nav-link" href="/vhome">View Category</a>
                      </li>
                       <li class="nav-item">
                         <a class="nav-link" href="category.html">Add Category</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="products.html">View Products</a>
+                        <a class="nav-link" href="/viewproduct">View Products</a>
                      </li>
                      <li class="nav-item">
                         <a class="nav-link" href="products.html">Add Products</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Logout</a>
+                        <a class="nav-link" href="/">Logout</a>
                      </li>
                   </ul>
                </div>
