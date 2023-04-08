@@ -9,12 +9,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.example.demo.model.Product;
 import com.example.demo.model.ProductCategory;
+
 import com.example.demo.model.customer;
 import com.example.demo.model.vendor;
 import com.example.demo.service.CustomerService;
 import com.example.demo.service.ProductCategoryService;
+import com.example.demo.service.ProductService;
+
 import com.example.demo.service.VendorService;
+
+import jakarta.servlet.http.HttpServletRequest;
 
 @Controller
 
@@ -25,6 +31,8 @@ public class MyController {
 	CustomerService cService;
 	@Autowired
 	ProductCategoryService productCategoryService;
+	@Autowired
+	ProductService productService;
 
 	
 	@RequestMapping("/")
@@ -75,14 +83,26 @@ public ModelAndView vendorLogin(String email,String password)
 
 
 @RequestMapping("/vhome")
-public ModelAndView vendorHome()
+public ModelAndView vendorHome(HttpServletRequest req)
 {
   ArrayList<ProductCategory> pc =	productCategoryService.getProductCategoryList();
-  
+  req.setAttribute("pcArray", pc);
 	ModelAndView mv = new ModelAndView("vendorhome");
   	mv.addObject("pc", pc);
 	return mv;
 }
+
+@RequestMapping("/ProductDetails")
+public ModelAndView productDetailsHome(HttpServletRequest req)
+{
+  ArrayList<ProductCategory> pc =	productCategoryService.getProductCategoryList();
+  req.setAttribute("pcArray", pc);
+	ModelAndView mv = new ModelAndView("viewproduct");
+  	mv.addObject("pc", pc);
+	return mv;
+}
+
+
 
 @RequestMapping("/clients")
 public ModelAndView clientsView()
@@ -153,13 +173,29 @@ public ModelAndView adminloginview()
 
 }
 
-@RequestMapping("/addproducts")
-public ModelAndView addproductsView()
+@RequestMapping("/addproduct")
+public ModelAndView addproductView(HttpServletRequest req)
 {
-	ModelAndView mv = new ModelAndView("addproducts");
-	
+	ArrayList<ProductCategory> pc =	productCategoryService.getProductCategoryList();
+	  req.setAttribute("pcArray", pc);
+	ModelAndView mv = new ModelAndView("addproduct");
+	mv.addObject("errmsg", "");
+	mv.addObject("successfullymsg", "");
 	return mv;
 }
+
+@RequestMapping("/creatingProduct")
+public ModelAndView createproductview(Product product)
+{
+	productService.addProduct(product);
+	ModelAndView mv = new ModelAndView("addproduct");
+	mv.addObject("errmsg", "");
+	mv.addObject("successfullymsg", "Product Create Successfully!!!");
+	return mv;
+}
+
+
+
 @RequestMapping("/editproduct")
 public ModelAndView editproductView()
 {
@@ -181,8 +217,11 @@ public ModelAndView addservicecategoryview()
 {
 	ModelAndView mv = new ModelAndView("addservicecategory");
 	mv.addObject("errmsg", "");
+	mv.addObject("successfullymsg", "");
 	return mv;
 }
+
+
 @RequestMapping("/addproductcategory")
 public ModelAndView addproductcategoryview()
 {
@@ -268,23 +307,30 @@ public ModelAndView viewproductview()
 	ModelAndView mv = new ModelAndView("viewproduct");
     return mv;
 }
-@RequestMapping("/viewservicecategory")
-public ModelAndView viewservicecategoryview()
-{
-	ModelAndView mv = new ModelAndView("viewservicecategory");
-    return mv;
-}
+
 @RequestMapping("/viewservice")
 public ModelAndView viewserviceview()
 {
 	ModelAndView mv = new ModelAndView("viewservice");
     return mv;
 }
-@RequestMapping("/vendorproducts")
-public ModelAndView vendorproductsview()
+@RequestMapping("/viewservicecategory")
+public ModelAndView viewservicecategoryview()
 {
-	ModelAndView mv = new ModelAndView("vendorproducts");
+	ModelAndView mv = new ModelAndView("viewservicecategory");
     return mv;
+}
+
+
+
+@RequestMapping("/vendorproducts")
+public ModelAndView vendorproductsview(@RequestParam("pid") String pid,HttpServletRequest req)
+{
+	 ArrayList<Product> pc =	productService.getByProductCategory(pid);
+	 req.setAttribute("productList", pc);
+	 ModelAndView mv = new ModelAndView("vendorproducts");
+	
+	return mv;
 }
 
 

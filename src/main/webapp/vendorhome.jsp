@@ -1,3 +1,8 @@
+
+<%@page import="java.util.Iterator"%>
+<%@page import="com.example.demo.model.ProductCategory"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <%@page import="java.util.ArrayList"%>
 <html lang="en">
    <head>
@@ -78,15 +83,26 @@
                   <h1 class="category_text">Category</h1>
                </div>
                <div class="col-lg-10 col-sm-12 main">
-               
-               <a href="/newfashion">
-                  <div class="col">
+              <% 
+              	ArrayList<ProductCategory> pcList = (ArrayList) request.getAttribute("pcArray");
+              	if(request.getAttribute("pcArray") != null)
+            	  {
+              		Iterator<ProductCategory> iterator = pcList.iterator();
+              		while(iterator.hasNext())
+              		{
+              			ProductCategory productCategory = iterator.next();
+              	
+            	  %>
+            	   <div class="col">
                      <div class="box_main">
-                        <div class="${pc.getProductCategoryIcon() }"></div>
-                        <h4 class="fashion_text active">${pc.getProductCategoryName }</h4>
+                     <a href="/vendorproducts?pid=<%= productCategory.getProductCategoryId() %>"><div class="<%= productCategory.getProductCategoryIcon() %>"></div>
+                        <h4 class="fashion_text active"><%= productCategory.getProductCategoryName() %></h4></a>
                      </div>
                   </div>
-                  </a>
+            	  <%
+              		}
+            	  }
+            	  %>
                </div>
             </div>
          </div>

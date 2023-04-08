@@ -1,3 +1,6 @@
+<%@page import="java.util.Iterator"%>
+<%@page import="com.example.demo.model.Product"%>
+<%@page import="java.util.ArrayList"%>
 <html lang="en">
    <head>
       <meta charset="utf-8">
@@ -32,12 +35,13 @@
       <style>
       .horizontal-scrollable > .row {
             overflow-x: auto;
-            white-space: nowrap;
+            white-space: normal;
             display: flex;
         }
           
-        .horizontal-scrollable > .row > .col-lg-4 .col-sm-12 > .beds_section {
+        .horizontal-scrollable > .row > .col-lg-2 .col-md-5 > .beds_section {
             display: inline-block;
+            white-space: normal;
             float: none;
         }
       </style>
@@ -138,124 +142,102 @@
       <h1 class="feature_taital">NEW FASHION</h1>
       <div class="category_section_2 horizontal-scrollable">
             <div class="row">
-               <div class="col-lg-4 col-sm-12">
-                  <div class="beds_section active">
+             <div class="col-lg-2 col-md-5">
+                  <div class="beds_section">
                      <h1 class="bed_text">Jeans</h1>
                      <div><img src="https://assets.ajio.com/medias/sys_master/root/20230316/Br8X/64133ca7f997dde6f4024aa8/-1117Wx1400H-443009290-indigo-MODEL.jpg" class="image_2"></div>
-                       <div class="number">PRODUCT ID: 1</div>
                        <div class="text">PRICE: 600</div>                
                        <div class="text">STATUS: AVAILABLE</div>
-                     
                   </div>
                </div>
-               <div class="col-md-4 col-sm-12">
-                  <div class="beds_section">
-                     <h1 class="bed_text">Shirt</h1>
-                     <div><img src="https://assets.ajio.com/medias/sys_master/root/20221109/u2JJ/636b8eddaeb269659c7f912c/-1117Wx1400H-462323964-white-MODEL.jpg" class="image_2"></div>
-                     <div class="number">PRODUCT ID: 2</div>
-                       <div class="text">PRICE: 660</div>                
-                       <div class="text">STATUS: AVAILABLE</div>
-                  </div>
-               </div>
-               <div class="col-md-4 col-sm-12">
-                  <div class="beds_section">
-                     <h1 class="bed_text">cap</h1>
-                     <div><img src="https://assets.ajio.com/medias/sys_master/root/20230306/CSC4/6406085cf997dde6f4e08184/-473Wx593H-442086812-yellow-MODEL.jpg" class="image_2"></div>
-                     <div class="number">PRODUCT ID: 3</div>
-                       <div class="text">PRICE: 600</div>                
-                       <div class="text">STATUS: NOT AVAILABLE</div>
-                  </div>
-               </div>
-               <div class="col-md-4 col-sm-12">
+               
+               <div class="col-lg-2 col-md-5">
                   <div class="beds_section">
                      <h1 class="bed_text">Jeans</h1>
-                     <div><img src="https://assets.ajio.com/medias/sys_master/root/20221222/LRKP/63a3fbc8f997ddfdbdec7d38/-473Wx593H-441146233-darkblue-MODEL.jpg" class="image_2"></div>
-                       <div class="number">PRODUCT ID: 4</div>
-                       <div class="text">PRICE: 610</div>                
+                     <div><img src="https://assets.ajio.com/medias/sys_master/root/20230316/Br8X/64133ca7f997dde6f4024aa8/-1117Wx1400H-443009290-indigo-MODEL.jpg" class="image_2"></div>
+                       <div class="text">PRICE: 600</div>                
                        <div class="text">STATUS: AVAILABLE</div>
-                     
                   </div>
                </div>
-               <div class="col-md-4 col-sm-12">
+               <div class="col-lg-2 col-md-5">
                   <div class="beds_section">
-                     <h1 class="bed_text">Shirt</h1>
-                     <div><img src="https://assets.ajio.com/medias/sys_master/root/20230127/IqdQ/63d3b8a6aeb269c651fd34c1/-473Wx593H-469157903-peach-MODEL.jpg" class="image_2"></div>
-                     <div class="number">PRODUCT ID: 5</div>
-                       <div class="text">PRICE: 610</div>                
+                     <h1 class="bed_text">Jeans</h1>
+                     <div><img src="https://assets.ajio.com/medias/sys_master/root/20230316/Br8X/64133ca7f997dde6f4024aa8/-1117Wx1400H-443009290-indigo-MODEL.jpg" class="image_2"></div>
+                       <div class="text">PRICE: 600</div>                
                        <div class="text">STATUS: AVAILABLE</div>
                   </div>
                </div>
-               <div class="col-md-4 col-sm-12">
+               <div class="col-lg-2 col-md-5">
                   <div class="beds_section">
-                     <h1 class="bed_text">cap</h1>
-                     <div><img src="https://assets.ajio.com/medias/sys_master/root/20210729/qPOq/6101a327aeb269a9e357f719/-473Wx593H-410250921-00936-MODEL.jpg" class="image_2"></div>
-                     <div class="number">PRODUCT ID: 6</div>
-                       <div class="text">PRICE: 660</div>                
+                     <h1 class="bed_text">Jeans</h1>
+                     <div><img src="https://assets.ajio.com/medias/sys_master/root/20230316/Br8X/64133ca7f997dde6f4024aa8/-1117Wx1400H-443009290-indigo-MODEL.jpg" class="image_2"></div>
+                       <div class="text">PRICE: 600</div>                
                        <div class="text">STATUS: AVAILABLE</div>
                   </div>
                </div>
+               <div class="col-lg-2 col-md-5">
+                  <div class="beds_section">
+                     <h1 class="bed_text">Jeans</h1>
+                     <div><img src="https://assets.ajio.com/medias/sys_master/root/20230316/Br8X/64133ca7f997dde6f4024aa8/-1117Wx1400H-443009290-indigo-MODEL.jpg" class="image_2"></div>
+                       <div class="text">PRICE: 600</div>                
+                       <div class="text">STATUS: AVAILABLE</div>
+                  </div>
+               </div>
+               <div class="col-lg-2 col-md-5">
+                  <div class="beds_section">
+                     <h1 class="bed_text">Jeans</h1>
+                     <div><img src="https://assets.ajio.com/medias/sys_master/root/20230316/Br8X/64133ca7f997dde6f4024aa8/-1117Wx1400H-443009290-indigo-MODEL.jpg" class="image_2"></div>
+                       <div class="text">PRICE: 600</div>                
+                       <div class="text">STATUS: AVAILABLE</div>
+                  </div>
+               </div>
+               <div class="col-lg-2 col-md-5">
+                  <div class="beds_section">
+                     <h1 class="bed_text">Jeans</h1>
+                     <div><img src="https://assets.ajio.com/medias/sys_master/root/20230316/Br8X/64133ca7f997dde6f4024aa8/-1117Wx1400H-443009290-indigo-MODEL.jpg" class="image_2"></div>
+                       <div class="text">PRICE: 600</div>                
+                       <div class="text">STATUS: AVAILABLE</div>
+                  </div>
+               </div>
+               <div class="col-lg-2 col-md-5">
+                  <div class="beds_section">
+                     <h1 class="bed_text">Jeans</h1>
+                     <div><img src="https://assets.ajio.com/medias/sys_master/root/20230316/Br8X/64133ca7f997dde6f4024aa8/-1117Wx1400H-443009290-indigo-MODEL.jpg" class="image_2"></div>
+                       <div class="text">PRICE: 600</div>                
+                       <div class="text">STATUS: AVAILABLE</div>
+                  </div>
+               </div>
+               
+              
             </div>
            
          </div>
          <h1 class="feature_taital">CLOTHING</h1>
-         <div class="category_section_2">
-            <div class="row">
-               <div class="col-lg-4 col-sm-12">
-                  <div class="beds_section active">
-                     <h1 class="bed_text">Summer Collection</h1>
-                     <div><img src="https://assets.ajio.com/medias/sys_master/root/20220309/J5nw/6227b58eaeb26921afcddc58/-473Wx593H-469154793-yellow-MODEL.jpg" class="image_2"></div>
-                     <div class="number">PRODUCT ID: 7</div>
-                       <div class="text">PRICE: 670</div>                
-                       <div class="text">STATUS: NOT AVAILABLE</div>
-                  </div>
-               </div>
-               <div class="col-lg-4 col-sm-12">
-                  <div class="beds_section">
-                     <h1 class="bed_text">Winter Wear</h1>
-                     <div><img src="https://assets.ajio.com/medias/sys_master/root/20220729/C3Z8/62e40c7aaeb26921afacd6d9/-1117Wx1400H-441141909-ecru-MODEL.jpg" class="image_2"></div>
-                     <div class="number">PRODUCT ID: 8</div>
-                       <div class="text">PRICE: 800</div>                
-                       <div class="text">STATUS: AVAILABLE</div>
-                  </div>
-               </div>
-               <div class="col-lg-4 col-sm-12">
-                  <div class="beds_section">
-                     <h1 class="bed_text">Ethnic Wear</h1>
-                     <div><img src="https://assets.ajio.com/medias/sys_master/root/20230111/V5uV/63be9798aeb269c651d7c6e0/-473Wx593H-465590247-yellow-MODEL.jpg" class="image_2"></div>
-                     <div class="number">PRODUCT ID: 9</div>
-                       <div class="text">PRICE: 900</div>                
-                       <div class="text">STATUS: AVAILABLE</div>
-                  </div>
-               </div>
-            </div>
+         <div class="category_section_2 ">
              <div class="row">
-               <div class="col-lg-4 col-sm-12">
-                  <div class="beds_section active">
-                     <h1 class="bed_text">Summer Collection</h1>
-                     <div><img src="https://assets.ajio.com/medias/sys_master/root/20220802/O4kf/62e8d46cf997dd03e216fd99/-473Wx593H-464655188-multi-MODEL.jpg" class="image_2"></div>
-                     <div class="number">PRODUCT ID: 10</div>
-                       <div class="text">PRICE: 650</div>                
-                       <div class="text">STATUS: AVAILABLE</div>
-                  </div>
-               </div>
-               <div class="col-lg-4 col-sm-12">
+             <% 
+              	ArrayList<Product> ProductList = (ArrayList) request.getAttribute("productList");
+              	if(request.getAttribute("productList") != null)
+            	  {
+              		Iterator<Product> iterator = ProductList.iterator();
+              		while(iterator.hasNext())
+              		{
+              			Product productDetails = iterator.next();
+              	
+            	  %>
+               <div class="col-lg-2 col-md-5">
                   <div class="beds_section">
-                     <h1 class="bed_text">Winter Wear</h1>
-                     <div><img src="https://assets.ajio.com/medias/sys_master/root/20220722/1yhI/62dab568f997dd03e2eac71a/-473Wx593H-441141907-maroon-MODEL.jpg" class="image_2"></div>
-                     <div class="number">PRODUCT ID: 11</div>
-                       <div class="text">PRICE: 400</div>                
-                       <div class="text">STATUS: AVAILABLE</div>
+                     <h1 class="bed_text"><%= productDetails.getProductName() %></h1>
+                     <div><img src="<%= productDetails.getProductImage() %>" class="image_2"></div>
+                     <div class="number">PRODUCT ID: <%= productDetails.getProductId() %></div>
+                       <div class="text">PRICE: <%= productDetails.getProductPrice() %></div>                
+                       <div class="text">STATUS: <%= productDetails.getProductStatus() %></div>
                   </div>
                </div>
-               <div class="col-lg-4 col-sm-12">
-                  <div class="beds_section">
-                     <h1 class="bed_text">Ethnic Wear</h1>
-                     <div><img src="https://assets.ajio.com/medias/sys_master/root/20220617/jwpI/62ac44b7f997dd03e286fa95/-473Wx593H-464468199-green-MODEL.jpg" class="image_2"></div>
-                     <div class="number">PRODUCT ID: 12</div>
-                       <div class="text">PRICE: 950</div>                
-                       <div class="text">STATUS: AVAILABLE</div>
-                  </div>
-               </div>
+                <%
+              		}
+            	  }
+            	  %>
             </div>
          </div>
           <h1 class="feature_taital">WATCHES</h1>                    		

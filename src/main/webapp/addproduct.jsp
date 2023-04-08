@@ -1,3 +1,6 @@
+<%@page import="java.util.Iterator"%>
+<%@page import="com.example.demo.model.ProductCategory"%>
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -79,33 +82,53 @@
                      
                   </div>
                  
+                 
                   <div class="col-md-6">
+                  <h2 style="text-align: center;color: green;" >${successfullymsg }</h2>
+                  <form action="creatingProduct" method="post">
                      <div class="email_text">
                         <div class="form-group">
-                           <input type="text" class="email-bt" placeholder="Product Name" name='' >
+                           <input type="text" class="email-bt" placeholder="Product Name" name='productName' >
                         </div>
                         <div class="form-group">
-                            <input type="text" class="email-bt" placeholder="Price" name='' >
+                            <input type="text" class="email-bt" placeholder="Price" name='productPrice' >
                         </div>
                         <div class="form-group">
-                            <input type="text" class="email-bt" placeholder="Status" name='' >
+                            <input type="text" class="email-bt" placeholder="Status" name='productStatus' >
                         </div>
                         <div class="form-group">
                         
-                        <input type="text" class="email-bt" placeholder="Category" name='' >
+                       
+                        <select class="email-bt" name='productCategory'>
+                        	<option>--Select Category --</option>
+                        	<% 
+					              	ArrayList<ProductCategory> pcList = (ArrayList) request.getAttribute("pcArray");
+					              	if(request.getAttribute("pcArray") != null)
+					            	  {
+					              		Iterator<ProductCategory> iterator = pcList.iterator();
+					              		while(iterator.hasNext())
+					              		{
+					              			ProductCategory productCategory = iterator.next();
+              	
+            	 			 %>
+            	 			 	<option value="<%= productCategory.getProductCategoryId() %>"><%= productCategory.getProductCategoryName() %></option>
+            	 			 <%
+					              		}
+					            	  }
+            	 			 %>
+                        </select>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="email-bt" placeholder="Vendor Id" name='' >
+                            <input type="text" class="email-bt" placeholder="Vendor Id" name='vendorId' >
                         </div>
                         <div class="form-group">
-                            <input type="text" class="email-bt" placeholder="Image" name='' >
+                            <input type="text" class="email-bt" placeholder="Image" name='productImage' >
                         </div>
                         
                        
-                        <div class="send_btn"><a href="#">SUBMIT</a></div> <div class="send_btn"><a href="index">LOGOFF</a></div> <div class="send_btn">
-                        
-                        <br>
-                        <a href="vendorhome">Go Back</a></div>
+                         <button type="submit" class="btn btn-outline-success rounded-pill">SUBMIT</button>
+                        <button type="reset" class="btn btn-outline-danger rounded-pill">CLEAR</button>
+                       </form>
                     </div>
                   </div>
                   

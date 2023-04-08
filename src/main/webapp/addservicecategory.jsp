@@ -81,15 +81,18 @@
                  
                   <div class="col-md-6">
                      <div class="email_text">
+                       <div class="form-group">
+                           <input type="text" class="email-bt" placeholder="Category Name" name='serviceCategoryName' >
+                        </div>
                         <div class="form-group">
-                           <input type="text" class="email-bt" placeholder="Category Name" name='' >
+                           <input type="text" class="email-bt" placeholder="Icon" name='serviceCategoryIcon' >
+                        </div>
+                        <div class="form-group">
+                           <input type="text" class="email-bt" placeholder="Image" name='serviceCategoryImage' >
                         </div>
                         
-                        
-                       
-                        <div class="send_btn"><a href="#">SUBMIT</a></div> <div class="send_btn"><a href="index">GO BACK</a></div> <div class="send_btn">
-                        <br>
-                        
+                        <button type="submit" class="btn btn-outline-danger rounded-pill">SUBMIT</button>
+                        <button type="reset" class="btn btn-outline-warning rounded-pill">CLEAR</button>
                      
                      </div>
                   </div>
