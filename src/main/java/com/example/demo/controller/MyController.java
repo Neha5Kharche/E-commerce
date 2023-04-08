@@ -299,6 +299,11 @@ public ModelAndView vendorproductsview()
 	ModelAndView mv = new ModelAndView("vendorproducts");
     return mv;
 }
-
+@RequestMapping("/nav")
+public ModelAndView navview()
+{
+	ModelAndView mv = new ModelAndView("nav");
+    return mv;
+}
 
 }
