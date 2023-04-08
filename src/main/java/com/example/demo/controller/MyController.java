@@ -46,6 +46,7 @@ public class MyController {
 public ModelAndView vendorloginview()
 {
 	ModelAndView mv = new ModelAndView("vendorlogin");
+	mv.addObject("errmsg","");
 	return mv;
 }
 
@@ -68,15 +69,16 @@ public ModelAndView vendorRegister(vendor v)
 }
 
 @RequestMapping("/vLogin")
-public ModelAndView vendorLogin(String email,String password)
+public ModelAndView vendorLogin(@RequestParam("vEmail")String email,String vpassword)
 {
-	boolean result=vService.login(email,password);
+	boolean result=vService.login(email,vpassword);
 	if (result==true) {
 		ModelAndView mv = new ModelAndView("vendorhome");
 		return mv;
 	}
 	else {
 		ModelAndView mv = new ModelAndView("vendorlogin");
+		mv.addObject("errmsg", "Invalid Username or Password");
 		return mv;
 	}
 }
@@ -271,10 +273,12 @@ public ModelAndView productcategoryview()
 	ModelAndView mv = new ModelAndView("productcategory");
     return mv;
 }
-@RequestMapping("/newfashion")
-public ModelAndView newfashionview()
+@RequestMapping("/viewcategorys")
+public ModelAndView newfashionview(HttpServletRequest req)
 {
-	ModelAndView mv = new ModelAndView("newfashion");
+	ArrayList<ProductCategory> pc =	productCategoryService.getProductCategoryList();
+	req.setAttribute("pcArray", pc);
+	ModelAndView mv = new ModelAndView("viewcategorys");
     return mv;
 }
 @RequestMapping("/clothing")
@@ -324,12 +328,15 @@ public ModelAndView viewservicecategoryview()
 
 
 @RequestMapping("/vendorproducts")
-public ModelAndView vendorproductsview(@RequestParam("pid") String pid,HttpServletRequest req)
+public ModelAndView vendorproductsview(@RequestParam("pid") String pid,String cName,HttpServletRequest req)
 {
+	 ArrayList<ProductCategory> pcArray =	productCategoryService.getProductCategoryList();
+	  req.setAttribute("pcArray", pcArray);
 	 ArrayList<Product> pc =	productService.getByProductCategory(pid);
 	 req.setAttribute("productList", pc);
+	 
 	 ModelAndView mv = new ModelAndView("vendorproducts");
-	
+	 mv.addObject("cName", cName);
 	return mv;
 }
 

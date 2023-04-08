@@ -1,3 +1,4 @@
+<%@page import="com.example.demo.model.ProductCategory"%>
 <%@page import="java.util.Iterator"%>
 <%@page import="com.example.demo.model.Product"%>
 <%@page import="java.util.ArrayList"%>
@@ -65,13 +66,13 @@
                         <a class="nav-link" href="/vhome">View Category</a>
                      </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="category.html">Add Category</a>
+                        <a class="nav-link" href="/addproductcategory">Add Category</a>
                      </li>
                      <li class="nav-item">
                         <a class="nav-link" href="/viewproduct">View Products</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="products.html">Add Products</a>
+                        <a class="nav-link" href="/addproduct">Add Products</a>
                      </li>
                      <li class="nav-item">
                         <a class="nav-link" href="/">Logout</a>
@@ -85,137 +86,45 @@
       <!--header section end -->
       
       <!--category section start -->
-      <div class="container">
+     <div class="container">
          <div class="category_section">
             <div class="row">
                <div class="col-lg-2 col-sm-12">
                   <h1 class="category_text">Category</h1>
                </div>
                <div class="col-lg-10 col-sm-12 main">
-               <a href="/newfashion">
-                  <div class="col">
+              <% 
+              	ArrayList<ProductCategory> pcList = (ArrayList) request.getAttribute("pcArray");
+              	if(request.getAttribute("pcArray") != null)
+            	  {
+              		Iterator<ProductCategory> iterator = pcList.iterator();
+              		while(iterator.hasNext())
+              		{
+              			ProductCategory productCategory = iterator.next();
+              	
+            	  %>
+            	   <div class="col">
                      <div class="box_main">
-                        <div class="icon_1"></div>
-                        <h4 class="fashion_text active">New Fashion</h4>
+                     <a href="/vendorproducts?pid=<%= productCategory.getProductCategoryId()%>&cName=<%= productCategory.getProductCategoryName() %>"><div class="<%= productCategory.getProductCategoryIcon() %>"></div>
+                        <h4 class="fashion_text active"><%= productCategory.getProductCategoryName() %></h4></a>
                      </div>
                   </div>
-                  </a>
-                  <a href="/clothing">
-                  <div class="col">
-                     <div class="box_main">
-                        <div class="icon_2"></div>
-                        <h4 class="fashion_text">Clothing</h4>
-                     </div>
-                  </div>
-                  </a>
-                  <a href="/watches">
-                  <div class="col">
-                     <div class="box_main">
-                        <div class="icon_3"></div>
-                        <h4 class="fashion_text">Watches</h4>
-                     </div>
-                  </div>
-                   </a>
-                  <a href="/accessories">
-                  <div class="col">
-                     <div class="box_main">
-                        <div class="icon_4"></div>
-                        <h4 class="fashion_text">Accessories</h4>
-                     </div>
-                  </div>
-                   </a>
-                   <a href="/jackets">
-                  <div class="col">
-                     <div class="box_main">
-                        <div class="icon_5"></div>
-                        <h4 class="fashion_text">Sweaters & Jackets</h4>
-                     </div>
-                  </div>
-                   </a>
+            	  <%
+              		}
+            	  }
+            	  %>
                </div>
             </div>
          </div>
         
       </div>
       <!-- category section end -->
-      <!-- beauty product section start -->
-      <h1 class="feature_taital">NEW FASHION</h1>
-      <div class="category_section_2 horizontal-scrollable">
+      <!-- beauty product section start -->   
+      <!-- new code added -->
+          <h1 class="feature_taital">${cName}</h1>                    		
+<div class="category_section_2">
             <div class="row">
-             <div class="col-lg-2 col-md-5">
-                  <div class="beds_section">
-                     <h1 class="bed_text">Jeans</h1>
-                     <div><img src="https://assets.ajio.com/medias/sys_master/root/20230316/Br8X/64133ca7f997dde6f4024aa8/-1117Wx1400H-443009290-indigo-MODEL.jpg" class="image_2"></div>
-                       <div class="text">PRICE: 600</div>                
-                       <div class="text">STATUS: AVAILABLE</div>
-                  </div>
-               </div>
-               
-               <div class="col-lg-2 col-md-5">
-                  <div class="beds_section">
-                     <h1 class="bed_text">Jeans</h1>
-                     <div><img src="https://assets.ajio.com/medias/sys_master/root/20230316/Br8X/64133ca7f997dde6f4024aa8/-1117Wx1400H-443009290-indigo-MODEL.jpg" class="image_2"></div>
-                       <div class="text">PRICE: 600</div>                
-                       <div class="text">STATUS: AVAILABLE</div>
-                  </div>
-               </div>
-               <div class="col-lg-2 col-md-5">
-                  <div class="beds_section">
-                     <h1 class="bed_text">Jeans</h1>
-                     <div><img src="https://assets.ajio.com/medias/sys_master/root/20230316/Br8X/64133ca7f997dde6f4024aa8/-1117Wx1400H-443009290-indigo-MODEL.jpg" class="image_2"></div>
-                       <div class="text">PRICE: 600</div>                
-                       <div class="text">STATUS: AVAILABLE</div>
-                  </div>
-               </div>
-               <div class="col-lg-2 col-md-5">
-                  <div class="beds_section">
-                     <h1 class="bed_text">Jeans</h1>
-                     <div><img src="https://assets.ajio.com/medias/sys_master/root/20230316/Br8X/64133ca7f997dde6f4024aa8/-1117Wx1400H-443009290-indigo-MODEL.jpg" class="image_2"></div>
-                       <div class="text">PRICE: 600</div>                
-                       <div class="text">STATUS: AVAILABLE</div>
-                  </div>
-               </div>
-               <div class="col-lg-2 col-md-5">
-                  <div class="beds_section">
-                     <h1 class="bed_text">Jeans</h1>
-                     <div><img src="https://assets.ajio.com/medias/sys_master/root/20230316/Br8X/64133ca7f997dde6f4024aa8/-1117Wx1400H-443009290-indigo-MODEL.jpg" class="image_2"></div>
-                       <div class="text">PRICE: 600</div>                
-                       <div class="text">STATUS: AVAILABLE</div>
-                  </div>
-               </div>
-               <div class="col-lg-2 col-md-5">
-                  <div class="beds_section">
-                     <h1 class="bed_text">Jeans</h1>
-                     <div><img src="https://assets.ajio.com/medias/sys_master/root/20230316/Br8X/64133ca7f997dde6f4024aa8/-1117Wx1400H-443009290-indigo-MODEL.jpg" class="image_2"></div>
-                       <div class="text">PRICE: 600</div>                
-                       <div class="text">STATUS: AVAILABLE</div>
-                  </div>
-               </div>
-               <div class="col-lg-2 col-md-5">
-                  <div class="beds_section">
-                     <h1 class="bed_text">Jeans</h1>
-                     <div><img src="https://assets.ajio.com/medias/sys_master/root/20230316/Br8X/64133ca7f997dde6f4024aa8/-1117Wx1400H-443009290-indigo-MODEL.jpg" class="image_2"></div>
-                       <div class="text">PRICE: 600</div>                
-                       <div class="text">STATUS: AVAILABLE</div>
-                  </div>
-               </div>
-               <div class="col-lg-2 col-md-5">
-                  <div class="beds_section">
-                     <h1 class="bed_text">Jeans</h1>
-                     <div><img src="https://assets.ajio.com/medias/sys_master/root/20230316/Br8X/64133ca7f997dde6f4024aa8/-1117Wx1400H-443009290-indigo-MODEL.jpg" class="image_2"></div>
-                       <div class="text">PRICE: 600</div>                
-                       <div class="text">STATUS: AVAILABLE</div>
-                  </div>
-               </div>
-               
-              
-            </div>
-           
-         </div>
-         <h1 class="feature_taital">CLOTHING</h1>
-         <div class="category_section_2 ">
-             <div class="row">
-             <% 
+            <% 
               	ArrayList<Product> ProductList = (ArrayList) request.getAttribute("productList");
               	if(request.getAttribute("productList") != null)
             	  {
@@ -225,53 +134,28 @@
               			Product productDetails = iterator.next();
               	
             	  %>
-               <div class="col-lg-2 col-md-5">
-                  <div class="beds_section">
+            	  <div class="col-lg-2 col-md-5">
+            	  <div class="beds_section active">
                      <h1 class="bed_text"><%= productDetails.getProductName() %></h1>
                      <div><img src="<%= productDetails.getProductImage() %>" class="image_2"></div>
-                     <div class="number">PRODUCT ID: <%= productDetails.getProductId() %></div>
                        <div class="text">PRICE: <%= productDetails.getProductPrice() %></div>                
                        <div class="text">STATUS: <%= productDetails.getProductStatus() %></div>
+                     
                   </div>
-               </div>
-                <%
+             	</div>
+               <%
               		}
             	  }
             	  %>
-            </div>
-         </div>
-          <h1 class="feature_taital">WATCHES</h1>                    		
-<div class="category_section_2">
-            <div class="row">
-               <div class="col-lg-4 col-sm-12">
-                  <div class="beds_section active">
-                     <h1 class="bed_text">Analog</h1>
-                     <div><img src="https://assets.ajio.com/medias/sys_master/root/20210129/lKpJ/6013037aaeb26969815943ed/-473Wx593H-4918381990-multi-MODEL2.jpg" class="image_2"></div>
-                     <div class="number">PRODUCT ID: 13</div>
-                       <div class="text">PRICE: 300</div>                
-                       <div class="text">STATUS: NOT AVAILABLE</div>
-                  </div>
-               </div>
-               <div class="col-lg-4 col-sm-12">
-                  <div class="beds_section">
-                     <h1 class="bed_text">Digital</h1>
-                     <div><img src="https://assets.ajio.com/medias/sys_master/root/20230110/5o2X/63bd7debaeb269c651d50388/-473Wx593H-4932445010-multi-MODEL.jpg" class="image_2"></div>
-                     <div class="number">PRODUCT ID: 14</div>
-                       <div class="text">PRICE: 400</div>                
-                       <div class="text">STATUS: AVAILABLE</div>
-                  </div>
-               </div>
-               <div class="col-lg-4 col-sm-12">
-                  <div class="beds_section">
-                     <h1 class="bed_text">Smart</h1>
-                     <div><img src="https://assets.ajio.com/medias/sys_master/root/20230123/G5eg/63cea18ff997dd708e1b2795/-473Wx593H-4933253780-multi-MODEL.jpg" class="image_2"></div>
-                     <div class="number">PRODUCT ID: 15</div>
-                       <div class="text">PRICE: 800</div>                
-                       <div class="text">STATUS: AVAILABLE</div>
-                  </div>
+              		
                </div>
             </div>
+        
+            </div>
          </div>
+         
+         
+         
       <!-- beauty product section end -->
       
       
