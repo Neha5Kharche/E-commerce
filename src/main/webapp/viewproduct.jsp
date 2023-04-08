@@ -96,6 +96,8 @@
       <div class="category_section_2">
             <div class="row">
                <div class="col-lg-4 col-sm-12">
+               
+               
                   <div class="beds_section active">
                      <h1 class="bed_text">Jeans</h1>
                      <div><img src="https://assets.ajio.com/medias/sys_master/root/20230316/Br8X/64133ca7f997dde6f4024aa8/-1117Wx1400H-443009290-indigo-MODEL.jpg" class="image_2"></div>
@@ -162,7 +164,7 @@
          
          <div class="container mt-100">
          <h1 class="feature_taital">CLOTHING</h1>                   		
-<div class="category_section_2">
+		<div class="category_section_2">
             <div class="row">
                <div class="col-lg-4 col-sm-12">
                   <div class="beds_section active">
@@ -173,24 +175,8 @@
                        <div class="text">STATUS: NOT AVAILABLE</div>
                   </div>
                </div>
-               <div class="col-lg-4 col-sm-12">
-                  <div class="beds_section">
-                     <h1 class="bed_text">Winter Wear</h1>
-                     <div><img src="https://assets.ajio.com/medias/sys_master/root/20220729/C3Z8/62e40c7aaeb26921afacd6d9/-1117Wx1400H-441141909-ecru-MODEL.jpg" class="image_2"></div>
-                     <div class="number">PRODUCT ID: 8</div>
-                       <div class="text">PRICE: 800</div>                
-                       <div class="text">STATUS: AVAILABLE</div>
-                  </div>
-               </div>
-               <div class="col-lg-4 col-sm-12">
-                  <div class="beds_section">
-                     <h1 class="bed_text">Ethnic Wear</h1>
-                     <div><img src="https://assets.ajio.com/medias/sys_master/root/20230111/V5uV/63be9798aeb269c651d7c6e0/-473Wx593H-465590247-yellow-MODEL.jpg" class="image_2"></div>
-                     <div class="number">PRODUCT ID: 9</div>
-                       <div class="text">PRICE: 900</div>                
-                       <div class="text">STATUS: AVAILABLE</div>
-                  </div>
-               </div>
+               
+              
             </div>
          </div>
          

@@ -1,3 +1,9 @@
+
+<%@page import="java.util.Iterator"%>
+<%@page import="com.example.demo.model.ProductCategory"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@page import="java.util.ArrayList"%>
 <html lang="en">
    <head>
       <meta charset="utf-8">
@@ -52,10 +58,11 @@
                         <a class="nav-link" href="category.html">Add Category</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="/viewproduct">View Products</a>
+<a class="nav-link" href="/viewproduct">View Products</a>
+
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="products.html">Add Products</a>
+                        <a class="nav-link" href="addproducts">Add Products</a>
                      </li>
                      <li class="nav-item">
                         <a class="nav-link" href="/">Logout</a>
@@ -76,46 +83,26 @@
                   <h1 class="category_text">Category</h1>
                </div>
                <div class="col-lg-10 col-sm-12 main">
-               <a href="/newfashion">
-                  <div class="col">
+              <% 
+              	ArrayList<ProductCategory> pcList = (ArrayList) request.getAttribute("pcArray");
+              	if(request.getAttribute("pcArray") != null)
+            	  {
+              		Iterator<ProductCategory> iterator = pcList.iterator();
+              		while(iterator.hasNext())
+              		{
+              			ProductCategory productCategory = iterator.next();
+              	
+            	  %>
+            	   <div class="col">
                      <div class="box_main">
-                        <div class="icon_1"></div>
-                        <h4 class="fashion_text active">New Fashion</h4>
+                     <a href="/vendorproducts?pid=<%= productCategory.getProductCategoryId() %>"><div class="<%= productCategory.getProductCategoryIcon() %>"></div>
+                        <h4 class="fashion_text active"><%= productCategory.getProductCategoryName() %></h4></a>
                      </div>
                   </div>
-                  </a>
-                  <a href="/clothing">
-                  <div class="col">
-                     <div class="box_main">
-                        <div class="icon_2"></div>
-                        <h4 class="fashion_text">Clothing</h4>
-                     </div>
-                  </div>
-                  </a>
-                  <a href="/watches">
-                  <div class="col">
-                     <div class="box_main">
-                        <div class="icon_3"></div>
-                        <h4 class="fashion_text">Watches</h4>
-                     </div>
-                  </div>
-                   </a>
-                  <a href="/accessories">
-                  <div class="col">
-                     <div class="box_main">
-                        <div class="icon_4"></div>
-                        <h4 class="fashion_text">Accessories</h4>
-                     </div>
-                  </div>
-                   </a>
-                   <a href="/jackets">
-                  <div class="col">
-                     <div class="box_main">
-                        <div class="icon_5"></div>
-                        <h4 class="fashion_text">Sweaters & Jackets</h4>
-                     </div>
-                  </div>
-                   </a>
+            	  <%
+              		}
+            	  }
+            	  %>
                </div>
             </div>
          </div>
@@ -217,5 +204,6 @@
       <script src="../../assets/js/vendor/popper.min.js"></script>
       <script src="../../dist/js/bootstrap.min.js"></script>
    </body>
+
 </html>
 

@@ -43,7 +43,7 @@
                <span class="navbar-toggler-icon"></span>
                </button>
                <div class="collapse navbar-collapse" id="navbarsExample01">
-                  <ul class="navbar-nav mr-auto">
+                 <ul class="navbar-nav mr-auto">
                      <li class="nav-item active">
                         <a class="nav-link" href="/">Home</a>
                      </li>
@@ -74,21 +74,33 @@
             <h1 class="touch_taital">Vendor Login</h1>
             <div class="contact_section_2">
                <div class="row">
-               <div class="col-md-6">
-                  <img alt="Login image" src="images/login.jpeg" width="500" height="300" style="border:0; width: 100%;">
-                     
-                  </div>
                   <div class="col-md-6">
                      <div class="email_text">
                         <div class="form-group">
-                           <input type="text" class="email-bt" placeholder="User Name" name="vEmail">
+                           <input type="text" class="email-bt" placeholder="User Name" name="cEmail">
                         </div>
                         <div class="form-group">
-                           <input type="password" class="email-bt" placeholder="Password" name="vPassword">
+                           <input type="password" class="email-bt" placeholder="Password" name="cPassword">
                         </div>
+                        <div class="form-check d-flex justify-content-start mb-4">
+              <input class="form-check-input" type="checkbox" value="" id="customerlogin" />
+              <label class="form-check-label" for="customerlogin"> Remember password </label>
+              <a href="#!">&nbsp;&nbsp;&nbsp;Forgot password?</a>
+            
+        
+            </div>
+            
+            
                        
-                        <div class="send_btn"><a href="#">Login</a></div> <div class="send_btn"><a href="#">Clear</a></div>
+                        <div class="send_btn"><a href="vhome">Login</a></div><div class="send_btn"><a href="vendorlogin">Clear</a></div>
+                        
+                     
                      </div>
+                     <br>
+                     <p>Don't have an account? <a href="vendorregis" class="link-info">Register here</a></p>
+                  </div>
+                  <div class="col-md-6">
+                     <img alt="Login image" src="images/customerlogin.avif" width="500" height="300" style="border:0; width: 100%;">
                   </div>
                   
                </div>
@@ -98,4 +110,3 @@
      
    </body>
 </html>
-

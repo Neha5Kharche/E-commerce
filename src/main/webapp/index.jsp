@@ -207,5 +207,4 @@
       <script src="../../assets/js/vendor/popper.min.js"></script>
       <script src="../../dist/js/bootstrap.min.js"></script>
    </body>
-</html>
-
+</html>         
