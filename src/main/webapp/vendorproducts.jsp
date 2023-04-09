@@ -243,16 +243,7 @@
           <h1 class="feature_taital">WATCHES</h1>                    		
 <div class="category_section_2">
             <div class="row">
-               <div class="col-lg-4 col-sm-12">
-                  <div class="beds_section active">
-                     <h1 class="bed_text">Analog</h1>
-                     <div><img src="https://assets.ajio.com/medias/sys_master/root/20210129/lKpJ/6013037aaeb26969815943ed/-473Wx593H-4918381990-multi-MODEL2.jpg" class="image_2"></div>
-                     <div class="number">PRODUCT ID: 13</div>
-                       <div class="text">PRICE: 300</div>                
-                       <div class="text">STATUS: NOT AVAILABLE</div>
-                  </div>
-               </div>
-               <div class="col-lg-4 col-sm-12">
+            <div class="col-lg-4 col-sm-12">
                   <div class="beds_section">
                      <h1 class="bed_text">Digital</h1>
                      <div><img src="https://assets.ajio.com/medias/sys_master/root/20230110/5o2X/63bd7debaeb269c651d50388/-473Wx593H-4932445010-multi-MODEL.jpg" class="image_2"></div>
