@@ -26,5 +26,7 @@ public class ProductCategoryService {
 		productCategoryList.addAll(repo.findAll());
 		return productCategoryList;
 	}
+	
+	
 
 }

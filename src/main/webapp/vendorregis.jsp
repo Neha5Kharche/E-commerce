@@ -32,6 +32,7 @@
       <link rel="stylesheet" href="css/owl.carousel.min.css">
       <link rel="stylesheet" href="css/owl.theme.default.min.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
    </head>
    <body>
       <!--header section start -->
@@ -71,33 +72,42 @@
       <!-- contact section start -->
       <div class="contact_section layout_padding">
          <div class="container">
-            <h1 class="touch_taital">Customer Registration</h1>
+            <h1 class="touch_taital">Vendor Registration</h1>
             <div class="contact_section_2">
                <div class="row">
                <div class="col-md-6">
-                  <img alt="Login image" src="images/login.jpeg" width="500" height="300" style="border:0; width: 100%">
+                  <img alt="Login image" src="https://www.allen.ac.in/ace2324/assets/images/register.png" width="500" height="300" style="border:0; width: 100%;">
                      
                   </div>
+                  
                   <div class="col-md-6">
                      <div class="email_text">
+                     <form action="/registringvendor" method="post">
                         <div class="form-group">
-                           <input type="text" class="email-bt" placeholder="First Name" name='cfirstname' pattern="[A-Za-z]+" minlength="4" maxlength="12" required>
+                           <input type="text" class="email-bt" placeholder="First Name" name='vfirstname' pattern="[A-Za-z]+" minlength="4" maxlength="12" required>
                         </div>
                         <div class="form-group">
-                           <input type="text" class="email-bt" placeholder="Last Name" name='clastname' pattern="[A-Za-z]+" minlength="4" maxlength="12" required>
+                           <input type="text" class="email-bt" placeholder="Last Name" name='vlastname' pattern="[A-Za-z]+" minlength="4" maxlength="12" required>
                         </div>
                         <div class="form-group">
-                           <input type="date" class="email-bt" placeholder="Date Of Birth" name='cdob' required>
+                           <input type="date" class="email-bt" placeholder="Date Of Birth" name='vdob' required>
                         </div>
                         <div class="form-group">
-                           <input type="text" class="email-bt" placeholder="Gender" name="gender">
-                           
+                         Gender &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; 
+                          <input class="form-check-input " type="radio" name="cgender" value="Male" id="flexRadioDefault1">
+  						    <label class="form-check-label" for="flexRadioDefault1">
+							    Male
+							</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                           <input class="form-check-input " type="radio" name="cgender" value="Female" id="flexRadioDefault1">
+  						    <label class="form-check-label" for="flexRadioDefault1">
+							    Female
+							</label>
                         </div>
                         <div class="form-group">
-                           <input type="text" class="email-bt" placeholder="Contact Number" name='ccontact' pattern="[0-9]{10}" required>
+                           <input type="text" class="email-bt" placeholder="Contact Number" name='vcontact' pattern="[0-9]{10}" required>
                         </div>
                         <div class="form-group">
-                           <input type="text" class="email-bt" placeholder="Address" name='caddress' pattern="[a-zA-Z0-9]+" required>
+                           <textarea class="massage-bt" placeholder="Customer address" rows="5" id="comment" name="vaddress" pattern="[a-zA-Z0-9]+" required ></textarea>
                         </div>
                         <div class="form-group">
                            <input type="text" class="email-bt" placeholder="City" name='city' pattern="[A-Za-z]+" required>
@@ -106,19 +116,19 @@
                            <input type="text" class="email-bt" placeholder="State" name='state' pattern="[A-Za-z]+" required>
                         </div>
                         <div class="form-group">
-                           <input type="text" class="email-bt" placeholder="Zip Code" name='zipcode' pattern="[0-9]{10}" required>
+                           <input type="text" class="email-bt" placeholder="Zip Code" name='zipcode' pattern="[0-9]{6}" required>
                         </div>
                         <div class="form-group">
-                           <input type="email" class="email-bt" placeholder="Email" name='email' pattern="[a-zA-Z0-9]+" required>
+                           <input type="email" class="email-bt" placeholder="Email" name='email' pattern="[a-zA-Z0-9]+@[A-Za-z]+.[A-Za-z]+" required>
                         </div>
                         <div class="form-group">
-                           <input type="password" class="email-bt" placeholder="Password" name='password' pattern="[a-zA-Z0-9]+" required>
+                           <input type="password" class="email-bt" placeholder="Password" name='password' required>
                         </div>
                        
-                        <div class="send_btn"><a href="#">Register</a></div> <div class="send_btn"><a href="vendorregis">Clear</a></div> <div class="send_btn">
+                        <div class="send_btn"><button type="submit" class="btn btn-danger btn-lg">Register</button></div> <div class="send_btn"><button type="reset" class="btn btn-danger btn-lg">Clear</button></div> <div class="send_btn">
                         <br>
                         <a href="vendorlogin">Go Back</a></div>
-                     
+                     </form>
                      </div>
                   </div>
                   
@@ -182,5 +192,6 @@
       <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
       <script src="../../assets/js/vendor/popper.min.js"></script>
       <script src="../../dist/js/bootstrap.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
    </body>
 </html>
