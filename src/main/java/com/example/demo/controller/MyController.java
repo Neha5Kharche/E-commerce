@@ -338,44 +338,26 @@ public ModelAndView newserviceview(HttpServletRequest req)
 	ModelAndView mv = new ModelAndView("viewservicecategorys");
     return mv;
 }
-
-@RequestMapping("/clothing")
-public ModelAndView clothingview()
+@RequestMapping("/viewproducts")
+public ModelAndView productsview(HttpServletRequest req)
 {
-	ModelAndView mv = new ModelAndView("clothing");
-    return mv;
+	 
+	 ArrayList<Product> pc =	productService.getProductList();
+	 req.setAttribute("productList", pc);
+	 
+	 ModelAndView mv = new ModelAndView("viewproducts");
+	
+	   return mv;
 }
-@RequestMapping("/watches")
-public ModelAndView watchesview()
+@RequestMapping("/viewservices")
+public ModelAndView serviceview(HttpServletRequest req)
 {
-	ModelAndView mv = new ModelAndView("watches");
-    return mv;
-}
-@RequestMapping("/jackets")
-public ModelAndView jacketsview()
-{
-	ModelAndView mv = new ModelAndView("jackets");
-    return mv;
-}
-@RequestMapping("/accessories")
-public ModelAndView accessoriesview()
-{
-	ModelAndView mv = new ModelAndView("accessories");
-    return mv;
-}
-@RequestMapping("/viewproduct")
-public ModelAndView viewproductview()
-{
-	ModelAndView mv = new ModelAndView("viewproduct");
+	ArrayList<VendorServiceProvided> sc =	serviceService.getServiceList();
+	req.setAttribute("scArray", sc);
+	ModelAndView mv = new ModelAndView("viewservices");
     return mv;
 }
 
-@RequestMapping("/viewservice")
-public ModelAndView viewserviceview()
-{
-	ModelAndView mv = new ModelAndView("viewservice");
-    return mv;
-}
 @RequestMapping("/viewservicecategory")
 public ModelAndView viewservicecategoryview()
 {
@@ -457,6 +439,23 @@ public ModelAndView updateproductsview(Long productId,String productPrice,String
 {
 	 productService.updateProductDetails(productId, productPrice, productStatus);
 	ModelAndView mv = new ModelAndView("editproducts");
+	
+    return mv;
+}
+@RequestMapping("/editservices")
+public ModelAndView editservicesview(Long sid)
+{
+	VendorServiceProvided serviceDetails = serviceService.getByServiceId(sid);
+	ModelAndView mv = new ModelAndView("editservices");
+	mv.addObject("serviceDetails", serviceDetails);
+    return mv;
+}
+
+@RequestMapping("/updateservices")
+public ModelAndView updateservicesview(Long serviceId,String servicePrice,String serviceStatus)
+{
+	 serviceService.updateServiceDetails(serviceId, servicePrice, serviceStatus);
+	ModelAndView mv = new ModelAndView("editservices");
 	
     return mv;
 }

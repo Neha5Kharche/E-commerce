@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
+
 @Entity
 public class VendorServiceProvided {
 	
@@ -16,6 +17,7 @@ public class VendorServiceProvided {
 	private String serviceCategory;
 	private String serviceContactNo;
 	private String serviceImage;
+	private String serviceStatus;
 	public Long getServiceId() {
 		return serviceId;
 	}
@@ -58,13 +60,17 @@ public class VendorServiceProvided {
 	public void setServiceImage(String serviceImage) {
 		this.serviceImage = serviceImage;
 	}
+	public String getServiceStatus() {
+		return serviceStatus;
+	}
+	public void setServiceStatus(String serviceStatus) {
+		this.serviceStatus = serviceStatus;
+	}
 	@Override
 	public String toString() {
-		return "Service [serviceId=" + serviceId + ", serviceName=" + serviceName + ", servicePrice=" + servicePrice
-				+ ", serviceAddress=" + serviceAddress + ", serviceCategory=" + serviceCategory + ", serviceContactNo="
-				+ serviceContactNo + ", serviceImage=" + serviceImage + "]";
+		return "VendorServiceProvided [serviceId=" + serviceId + ", serviceName=" + serviceName + ", servicePrice="
+				+ servicePrice + ", serviceAddress=" + serviceAddress + ", serviceCategory=" + serviceCategory
+				+ ", serviceContactNo=" + serviceContactNo + ", serviceImage=" + serviceImage + ", serviceStatus="
+				+ serviceStatus + "]";
 	}
-	
-	
-
 }

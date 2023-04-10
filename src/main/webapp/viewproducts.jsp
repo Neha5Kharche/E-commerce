@@ -1,9 +1,7 @@
-<%@page import="java.util.Iterator"%>
 <%@page import="com.example.demo.model.ProductCategory"%>
+<%@page import="java.util.Iterator"%>
+<%@page import="com.example.demo.model.Product"%>
 <%@page import="java.util.ArrayList"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
 <html lang="en">
    <head>
       <meta charset="utf-8">
@@ -13,7 +11,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
-      <title>Contact</title>
+      <title>Caraft</title>
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
@@ -35,9 +33,22 @@
       <link rel="stylesheet" href="css/owl.carousel.min.css">
       <link rel="stylesheet" href="css/owl.theme.default.min.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+      <style>
+      .horizontal-scrollable > .row {
+            overflow-x: auto;
+            white-space: normal;
+            display: flex;
+        }
+          
+        .horizontal-scrollable > .row > .col-lg-2 .col-md-5 > .beds_section {
+            display: inline-block;
+            white-space: normal;
+            float: none;
+        }
+      </style>
    </head>
    <body>
-       <!--header section start -->
+         <!--header section start -->
       <div class="header_section">
          <div class="container">
             <nav class="navbar navbar-dark ">
@@ -49,7 +60,7 @@
                <div class="collapse navbar-collapse" id="navbarsExample01">
                   <ul class="navbar-nav mr-auto">
                      <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link" href="/vhome">Home</a>
                      </li>
 
                      <li class="nav-item dropdown">
@@ -77,7 +88,7 @@
           				 
 			        </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="/">Logout</a>
+                        <a class="nav-link" href="/vendorlogin">Logout</a>
                      </li>
 
                   </ul>
@@ -87,46 +98,71 @@
         
       </div>
       <!--header section end -->
-      <!-- contact section start -->
-      <div class="contact_section layout_padding">
+      <!--category section start -->
+      <!-- category section end -->
+      <!-- beauty product section start -->   
+      <!-- new code added -->
+          <h1 class="feature_taital">Product List</h1>                    		
+<div class="category_section_2">
+            <div class="row">
+            
+           
+           <h1 class="feature_taital">${cName}</h1>                    		
+<div class="category_section_2">
+            <div class="row">
+            <% 
+              	ArrayList<Product> ProductList = (ArrayList) request.getAttribute("productList");
+              	if(request.getAttribute("productList") != null)
+            	  {
+              		Iterator<Product> iterator = ProductList.iterator();
+              		while(iterator.hasNext())
+              		{
+              			Product productDetails = iterator.next();
+              	
+            	  %>
+            	  <div class="col-lg-2 col-md-5">
+            	  <div class="beds_section active">
+            	 
+                     <h1 class="bed_text"><%= productDetails.getProductName() %></h1>
+                     <div><img src="<%= productDetails.getProductImage() %>" class="image_2"></div>
+                       <div class="text">PRICE: <%= productDetails.getProductPrice() %></div>                
+                       <div class="text">STATUS: <%= productDetails.getProductStatus() %></div>
+
+                     <a href="/editproducts?pid=<%= productDetails.getProductId() %>">Edit Product
+                    </a>
+
+                  </div>
+             	</div>
+               <%
+              		}
+            	  }
+            	  %>
+
+               </div>
+            </div>
+        
+         
+         
+         
+         
+      <!-- beauty product section end -->
+      
+      
+      <!-- newsletter section start -->
+      <div class="newsletter_section layout_padding">
          <div class="container">
-            <h1 class="touch_taital">EDIT SERVICES</h1>
-            <div class="contact_section_2">
-               <div class="row">
-               <div class="col-md-6">
-                  <img alt="Login image" src="https://img.freepik.com/free-vector/maternity-care-products-abstract-concept-vector-illustration-maternity-special-products-healthy-natural-cosmetics-clean-care-goods-pregnant-newborn-skin-treatment-abstract-metaphor_335657-4100.jpg?w=2000" width="500" height="300" style="border:0; width: 100%">
-                     
-                  </div>
-                 
-                 
-                  <div class="col-md-6">
-                  <h2 style="text-align: center;color: green;" >${successfullymsg }</h2>
-                  <form action="updateservices" method="post">
-                     <div class="email_text">
-                       <div class="form-group">
-                           <input type="text" class="email-bt" placeholder="Service Name" name='serviceId' value="${serviceDetails.getServiceId() }" readonly>
-                        </div>
-                 <div class="form-group">
-                           <input type="text" class="email-bt" placeholder="Service Name" name='serviceName' value="${serviceDetails.getServiceName() }" readonly>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="email-bt" placeholder="Price" name='servicePrice' value="${serviceDetails.getServicePrice() }">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="email-bt" placeholder="Status" name='serviceStatus' value="${serviceDetails.getServiceStatus() }">
-                        </div>
-                
-                         <button type="submit" class="btn btn-outline-success rounded-pill">UPDATE</button>
-                        <button type="reset" class="btn btn-outline-danger rounded-pill">CLEAR</button>
-                       </form>
-                    </div>
-                  </div>
-                 
+            <h6 class="conect_text">Connect to caraft</h6>
+            <h1 class="newsletter_taital">Join Our Newsletter</h1>
+            <p class="newsletter_text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration </p>
+            <div class="input-group mb-3">
+               <input type="text" class="form-control" placeholder="Enter your email" aria-label="Enter your email" aria-describedby="basic-addon2">
+               <div class="input-group-append">
+                  <span class="input-group-text" id="basic-addon2">Subscribe</span>
                </div>
             </div>
          </div>
-      
-      <!-- contact section end -->
+      </div>
+      <!-- newsletter section end -->
       <!-- footer section start -->
       <div class="footer_section layout_padding">
          <div class="container">
@@ -184,3 +220,4 @@
       <script src="../../dist/js/bootstrap.min.js"></script>
    </body>
 </html>
+

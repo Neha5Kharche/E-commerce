@@ -64,7 +64,7 @@
 					            <li><a class="dropdown-item" href="/addproductcategory">Add Products Category</a></li>
 					            <li><a class="dropdown-item" href="/viewproductcategorys">View Products Category</a></li>
 					            <li><a class="dropdown-item" href="/addproduct">Add Products</a></li>
-					            <li><a class="dropdown-item" href="/vendorproducts">View Products</a></li>
+					            <li><a class="dropdown-item" href="/viewproducts">View Products</a></li>
 					          </ul>
           				 
 			        </li>
@@ -76,7 +76,7 @@
 					            <li><a class="dropdown-item" href="/addservicecategory">Add Service Category</a></li>
 					            <li><a class="dropdown-item" href="/viewservicecategorys">View Service Category</a></li>
 					            <li><a class="dropdown-item" href="/addservice">Add Service</a></li>
-					            <li><a class="dropdown-item" href="/vendorservices">View Service</a></li>
+					            <li><a class="dropdown-item" href="/viewservices">View Service</a></li>
 					          </ul>
           				 
 			        </li>

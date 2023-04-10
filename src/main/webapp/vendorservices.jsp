@@ -160,8 +160,10 @@
                        <div class="text">PRICE: <%= serviceDetails.getServicePrice() %></div>  
                        <div class="text">ADDRESS: <%= serviceDetails.getServiceAddress() %></div>
                        <div class="text">CONTACTNO: <%= serviceDetails.getServiceContactNo() %></div>
+                       <div class="text">STATUS: <%= serviceDetails.getServiceStatus() %></div>
                        
-                       <a href="/editproduct">Edit Product</a></div>
+                        <a href="/editservices?sid=<%= serviceDetails.getServiceId() %>">Edit Service
+                    </a>
                         </div>
              	</div>
                <%
