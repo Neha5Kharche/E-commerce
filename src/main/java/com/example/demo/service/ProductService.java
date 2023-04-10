@@ -36,6 +36,20 @@ ProductRepo repo;
 	}
 	
 	
+	public Product getByProductId(Long pid)
+	{
+		Product productDetails = repo.findById(pid).orElse(new Product());
+		
+		return  productDetails;
+	}
+	
+	public void updateProductDetails(Long pid,String pPrice,String pStatus)
+	{
+			repo.updateProductDetails(pid, pPrice, pStatus);
+		System.out.println(repo.findById(pid));
+	}
+	
+	
 
 }
 

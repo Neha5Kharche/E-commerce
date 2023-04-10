@@ -35,10 +35,11 @@
       <link rel="stylesheet" href="css/owl.carousel.min.css">
       <link rel="stylesheet" href="css/owl.theme.default.min.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
    </head>
    <body>
        <!--header section start -->
-      <div class="header_section">
+       <div class="header_section">
          <div class="container">
             <nav class="navbar navbar-dark bg-dark">
                <a class="logo" href="/"><img src="images/logo.png"></a>
@@ -51,22 +52,31 @@
                      <li class="nav-item active">
                         <a class="nav-link" href="index.html">Home</a>
                      </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="/viewcategorys">View Category</a>
-                     </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="addproductcategory">Add Category</a>
-                     </li>
-                     <li class="nav-item">
-<a class="nav-link" href="/viewproduct">View Products</a>
-
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="addproduct">Add Products</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="/">Logout</a>
-                     </li>
+                      <li class="nav-item dropdown">
+                     <a class="nav-link dropdown-toggle" href="#" id="navbarsExample01" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+					            Products
+					          </a>
+					          <ul class="dropdown-menu " aria-labelledby="navbarsExample01">
+					            <li><a class="dropdown-item" href="/addproductcategory">Add Products Category</a></li>
+					            <li><a class="dropdown-item" href="/viewproductcategorys">View Products Category</a></li>
+					            <li><a class="dropdown-item" href="/addproduct">Add Products</a></li>
+					            <li><a class="dropdown-item" href="/vendorproducts">View Products</a></li>
+					          </ul>
+          				 
+			        </li>
+			        <li class="nav-item dropdown">
+                     <a class="nav-link dropdown-toggle" href="#" id="navbarsExample01" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+					            Service
+					          </a>
+					          <ul class="dropdown-menu " aria-labelledby="navbarsExample01">
+					            <li><a class="dropdown-item" href="/addservicecategory">Add Service Category</a></li>
+					            <li><a class="dropdown-item" href="/viewservicecategorys">View Service Category</a></li>
+					            <li><a class="dropdown-item" href="/addservice">Add Service</a></li>
+					            <li><a class="dropdown-item" href="/vendorservices">View Service</a></li>
+					          </ul>
+          				 
+			        </li>
+                     
                   </ul>
                </div>
             </nav>
@@ -130,7 +140,19 @@
             </div>
          </div>
       </div>
+      
       <!-- beauty product section end -->
+      <div class="container">
+         <div class="category_section">
+            <div class="row">
+               <div class="col-lg-2 col-sm-12">
+                  <h1 class="category_text">Category</h1>
+               </div>
+               <div class="col-lg-10 col-sm-12 main">
+             </div>
+             </div>
+             </div>
+             </div>
       
       
       <!-- newsletter section start -->
@@ -203,6 +225,7 @@
       <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
       <script src="../../assets/js/vendor/popper.min.js"></script>
       <script src="../../dist/js/bootstrap.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
    </body>
 
 </html>

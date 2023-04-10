@@ -344,6 +344,50 @@ public ModelAndView vendorproductsview(@RequestParam("pid") String pid,String cN
 	 mv.addObject("cName", cName);
 	return mv;
 }
+@RequestMapping("/customerproducts")
+public ModelAndView customerproductsview(@RequestParam("pid") String pid,String cName,HttpServletRequest req)
+{
+	 ArrayList<ProductCategory> pcArray =	productCategoryService.getProductCategoryList();
+	  req.setAttribute("pcArray", pcArray);
+	 ArrayList<Product> pc =	productService.getByProductCategory(pid);
+	 req.setAttribute("productList", pc);
+	 
+	 ModelAndView mv = new ModelAndView("customerproducts");
+	 mv.addObject("cName", cName);
+	return mv;
+}
+@RequestMapping("/cuhome")
+public ModelAndView cuHome(HttpServletRequest req)
+{
+  ArrayList<ProductCategory> pc =	productCategoryService.getProductCategoryList();
+  req.setAttribute("pcArray", pc);
+	ModelAndView mv = new ModelAndView("cuhome");
+  	mv.addObject("pc", pc);
+	return mv;
+}
+@RequestMapping("/feedback")
+public ModelAndView feedbackview()
+{
+	ModelAndView mv = new ModelAndView("feedback");
+    return mv;
+}
+@RequestMapping("/editproducts")
+public ModelAndView editproductsview(Long pid)
+{
+	Product productDetails = productService.getByProductId(pid);
+	ModelAndView mv = new ModelAndView("editproducts");
+	mv.addObject("productDetails", productDetails);
+    return mv;
+}
+
+@RequestMapping("/updateproducts")
+public ModelAndView updateproductsview(Long productId,String productPrice,String productStatus)
+{
+	 productService.updateProductDetails(productId, productPrice, productStatus);
+	ModelAndView mv = new ModelAndView("editproducts");
+	
+    return mv;
+}
 
 
 }
