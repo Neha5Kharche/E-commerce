@@ -63,33 +63,7 @@
                      <li class="nav-item active">
                         <a class="nav-link" href="index.html">Home</a>
                      </li>
-<<<<<<< HEAD
-                      <li class="nav-item dropdown">
-                     <a class="nav-link dropdown-toggle" href="#" id="navbarsExample01" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-					            Products
-					          </a>
-					          <ul class="dropdown-menu " aria-labelledby="navbarsExample01">
-					            <li><a class="dropdown-item" href="/addproductcategory">Add Products Category</a></li>
-					            <li><a class="dropdown-item" href="/viewproductcategorys">View Products Category</a></li>
-					            <li><a class="dropdown-item" href="/addproduct">Add Products</a></li>
-					            <li><a class="dropdown-item" href="/vendorproducts">View Products</a></li>
-					          </ul>
-          				 
-			        </li>
-			        <li class="nav-item dropdown">
-                     <a class="nav-link dropdown-toggle" href="#" id="navbarsExample01" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-					            Service
-					          </a>
-					          <ul class="dropdown-menu " aria-labelledby="navbarsExample01">
-					            <li><a class="dropdown-item" href="/addservicecategory">Add Service Category</a></li>
-					            <li><a class="dropdown-item" href="/viewservicecategorys">View Service Category</a></li>
-					            <li><a class="dropdown-item" href="/addservice">Add Service</a></li>
-					            <li><a class="dropdown-item" href="/vendorservices">View Service</a></li>
-					          </ul>
-          				 
-			        </li>
-                     
-=======
+
                      <li class="nav-item dropdown">
                      <a class="nav-link dropdown-toggle" href="#" id="navbarsExample01" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 					            Products
@@ -117,7 +91,7 @@
                      <li class="nav-item">
                         <a class="nav-link" href="/">Logout</a>
                      </li>
->>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
+
                   </ul>
                </div>
             </nav>

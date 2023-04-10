@@ -36,11 +36,10 @@
       <link rel="stylesheet" href="css/owl.carousel.min.css">
       <link rel="stylesheet" href="css/owl.theme.default.min.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
-<<<<<<< HEAD
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-=======
+
+      
    		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
->>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
+
    </head>
    <body>
        <!--header section start -->
@@ -57,33 +56,7 @@
                      <li class="nav-item active">
                         <a class="nav-link" href="index.html">Home</a>
                      </li>
-<<<<<<< HEAD
-                      <li class="nav-item dropdown">
-                     <a class="nav-link dropdown-toggle" href="#" id="navbarsExample01" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-					            Products
-					          </a>
-					          <ul class="dropdown-menu " aria-labelledby="navbarsExample01">
-					            <li><a class="dropdown-item" href="/addproductcategory">Add Products Category</a></li>
-					            <li><a class="dropdown-item" href="/viewproductcategorys">View Products Category</a></li>
-					            <li><a class="dropdown-item" href="/addproduct">Add Products</a></li>
-					            <li><a class="dropdown-item" href="/vendorproducts">View Products</a></li>
-					          </ul>
-          				 
-			        </li>
-			        <li class="nav-item dropdown">
-                     <a class="nav-link dropdown-toggle" href="#" id="navbarsExample01" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-					            Service
-					          </a>
-					          <ul class="dropdown-menu " aria-labelledby="navbarsExample01">
-					            <li><a class="dropdown-item" href="/addservicecategory">Add Service Category</a></li>
-					            <li><a class="dropdown-item" href="/viewservicecategorys">View Service Category</a></li>
-					            <li><a class="dropdown-item" href="/addservice">Add Service</a></li>
-					            <li><a class="dropdown-item" href="/vendorservices">View Service</a></li>
-					          </ul>
-          				 
-			        </li>
-                     
-=======
+
                      <li class="nav-item dropdown">
                      <a class="nav-link dropdown-toggle" href="#" id="navbarsExample01" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 					            Products
@@ -111,7 +84,7 @@
                      <li class="nav-item">
                         <a class="nav-link" href="/">Logout</a>
                      </li>
->>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
+
                   </ul>
                </div>
             </nav>
@@ -176,8 +149,7 @@
          </div>
       </div>
       
-<<<<<<< HEAD
-=======
+
              <div class="container">
               <h1 class="category_text text-center">Service Category</h1>
          <div class="category_section">
@@ -234,19 +206,8 @@
       
       <div style="padding-bottom: 10%;margin-bottom: 10%"></div>
       
->>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
-      <!-- beauty product section end -->
-      <div class="container">
-         <div class="category_section">
-            <div class="row">
-               <div class="col-lg-2 col-sm-12">
-                  <h1 class="category_text">Category</h1>
-               </div>
-               <div class="col-lg-10 col-sm-12 main">
-             </div>
-             </div>
-             </div>
-             </div>
+
+      
       
      
       
