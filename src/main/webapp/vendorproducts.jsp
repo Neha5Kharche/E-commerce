@@ -157,11 +157,10 @@
                      <div><img src="<%= productDetails.getProductImage() %>" class="image_2"></div>
                        <div class="text">PRICE: <%= productDetails.getProductPrice() %></div>                
                        <div class="text">STATUS: <%= productDetails.getProductStatus() %></div>
-<<<<<<< HEAD
-                     <a href="/editproducts?pid=<%= productDetails.getProductId() %>">Edit Product</a>
-=======
+
+                     <a href="/editproducts?pid=<%= productDetails.getProductId() %>">Edit Product<
                       <a href="/editproduct">Edit Product</a>
->>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
+
                   </div>
              	</div>
                <%
