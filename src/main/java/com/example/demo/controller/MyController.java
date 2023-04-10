@@ -343,30 +343,6 @@ public ModelAndView newserviceview(HttpServletRequest req)
     return mv;
 }
 
-@RequestMapping("/clothing")
-public ModelAndView clothingview()
-{
-	ModelAndView mv = new ModelAndView("clothing");
-    return mv;
-}
-@RequestMapping("/watches")
-public ModelAndView watchesview()
-{
-	ModelAndView mv = new ModelAndView("watches");
-    return mv;
-}
-@RequestMapping("/jackets")
-public ModelAndView jacketsview()
-{
-	ModelAndView mv = new ModelAndView("jackets");
-    return mv;
-}
-@RequestMapping("/accessories")
-public ModelAndView accessoriesview()
-{
-	ModelAndView mv = new ModelAndView("accessories");
-    return mv;
-}
 @RequestMapping("/viewproduct")
 public ModelAndView viewproductview()
 {
@@ -386,12 +362,7 @@ public ModelAndView viewservicecategoryview()
 	ModelAndView mv = new ModelAndView("viewservicecategory");
     return mv;
 }
-@RequestMapping("/nav")
-public ModelAndView navview()
-{
-	ModelAndView mv = new ModelAndView("nav");
-    return mv;
-}
+
 
 
 @RequestMapping("/vendorproducts")

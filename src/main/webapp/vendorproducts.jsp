@@ -158,7 +158,7 @@
                        <div class="text">PRICE: <%= productDetails.getProductPrice() %></div>                
                        <div class="text">STATUS: <%= productDetails.getProductStatus() %></div>
 
-                     <a href="/editproducts?pid=<%= productDetails.getProductId() %>">Edit Product<
+                     <a href="/editproducts?pid=<%= productDetails.getProductId() %>">Edit Product</a>
                       <a href="/editproduct">Edit Product</a>
 
                   </div>
