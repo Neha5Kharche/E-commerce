@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -11,13 +12,15 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.example.demo.model.Product;
 import com.example.demo.model.ProductCategory;
-
+import com.example.demo.model.ServiceCategory;
+import com.example.demo.model.VendorServiceProvided;
 import com.example.demo.model.customer;
 import com.example.demo.model.vendor;
 import com.example.demo.service.CustomerService;
 import com.example.demo.service.ProductCategoryService;
 import com.example.demo.service.ProductService;
-
+import com.example.demo.service.ServiceCategoryService;
+import com.example.demo.service.ServiceService;
 import com.example.demo.service.VendorService;
 
 import jakarta.servlet.http.HttpServletRequest;
@@ -33,6 +36,11 @@ public class MyController {
 	ProductCategoryService productCategoryService;
 	@Autowired
 	ProductService productService;
+	@Autowired
+	ServiceCategoryService serviceCategoryService;
+	@Autowired
+	ServiceService serviceService;
+	
 
 	
 	@RequestMapping("/")
@@ -89,8 +97,11 @@ public ModelAndView vendorHome(HttpServletRequest req)
 {
   ArrayList<ProductCategory> pc =	productCategoryService.getProductCategoryList();
   req.setAttribute("pcArray", pc);
+  ArrayList<ServiceCategory> sc = serviceCategoryService.getServiceCategoryList();
+  req.setAttribute("scArray", sc);
 	ModelAndView mv = new ModelAndView("vendorhome");
   	mv.addObject("pc", pc);
+  	mv.addObject("sc", sc);
 	return mv;
 }
 
@@ -104,6 +115,24 @@ public ModelAndView productDetailsHome(HttpServletRequest req)
 	return mv;
 }
 
+//@RequestMapping("/vhome")
+//public ModelAndView vendorHomePage(HttpServletRequest req)
+//{
+//	ArrayList<ServiceCategory> sc = serviceCategoryService.getServiceCategoryList();
+//	req.setAttribute("scArray", sc);
+//	ModelAndView mv = new ModelAndView("vendorhome");
+//	
+//	return mv;
+//}
+@RequestMapping("/ServiceDetails")
+public ModelAndView serviceDetailsHome(HttpServletRequest req)
+{
+	ArrayList<ServiceCategory> sc = serviceCategoryService.getServiceCategoryList();
+	req.setAttribute("scArray", sc);
+	ModelAndView mv = new ModelAndView("viewservice");
+	mv.addObject("sc", sc);
+	return mv;
+}
 
 
 @RequestMapping("/clients")
@@ -195,34 +224,37 @@ public ModelAndView createproductview(Product product)
 	mv.addObject("successfullymsg", "Product Create Successfully!!!");
 	return mv;
 }
-
-
-
-@RequestMapping("/editproduct")
-public ModelAndView editproductView()
-{
-	ModelAndView mv = new ModelAndView("editproduct");
-	
-	return mv;
-}
-
 @RequestMapping("/addservice")
-public ModelAndView addserviceview()
+public ModelAndView addserviceView(HttpServletRequest req)
 {
+	ArrayList<ServiceCategory> sc = serviceCategoryService.getServiceCategoryList();
+	req.setAttribute("scArray", sc);
 	ModelAndView mv = new ModelAndView("addservice");
-	mv.addObject("errmsg", "");
-	return mv;
-}
-
-@RequestMapping("/addservicecategory")
-public ModelAndView addservicecategoryview()
-{
-	ModelAndView mv = new ModelAndView("addservicecategory");
 	mv.addObject("errmsg", "");
 	mv.addObject("successfullymsg", "");
 	return mv;
 }
+@RequestMapping("/creatingService")
+public ModelAndView createserviceView(VendorServiceProvided vendorService)
+{
+	serviceService.addService(vendorService);
+	ModelAndView mv = new ModelAndView("addservice");
+	mv.addObject("errmsg", "");
+	mv.addObject("successfullymsg", "Service Create Successfully!!!");
+	return mv;
+}
 
+
+
+
+@RequestMapping("/editproduct")
+
+public ModelAndView editview()
+{
+	ModelAndView mv = new ModelAndView("editproduct");
+	mv.addObject("errmsg", "");
+	return mv;
+}
 
 @RequestMapping("/addproductcategory")
 public ModelAndView addproductcategoryview()
@@ -243,6 +275,27 @@ public ModelAndView createproductcategoryview(ProductCategory productCategory)
 	mv.addObject("successfullymsg", "ProductCategory Create Successfully!!!");
 	return mv;
 }
+
+@RequestMapping("/addservicecategory")
+public ModelAndView addservicecategoryView()
+{
+	ModelAndView mv = new ModelAndView("addservicecategory");
+	mv.addObject("errmsg", "");
+	mv.addObject("successfullymsg", "");
+	return mv;
+}
+@RequestMapping("/creatingServiceCategory")
+public ModelAndView createservicecategoryview(ServiceCategory serviceCategory)
+{
+	serviceCategoryService.addServiceCategory(serviceCategory);
+	ModelAndView mv = new ModelAndView("addservicecategory");
+	mv.addObject("errmsg", "");
+	mv.addObject("successfullymsg", "ServiceCategory create Successfully!!!");
+	return mv;
+}
+
+
+
 
 
 @RequestMapping("/fq")
@@ -273,14 +326,23 @@ public ModelAndView productcategoryview()
 	ModelAndView mv = new ModelAndView("productcategory");
     return mv;
 }
-@RequestMapping("/viewcategorys")
+@RequestMapping("/viewproductcategorys")
 public ModelAndView newfashionview(HttpServletRequest req)
 {
 	ArrayList<ProductCategory> pc =	productCategoryService.getProductCategoryList();
 	req.setAttribute("pcArray", pc);
-	ModelAndView mv = new ModelAndView("viewcategorys");
+	ModelAndView mv = new ModelAndView("viewproductcategorys");
     return mv;
 }
+@RequestMapping("/viewservicecategorys")
+public ModelAndView newserviceview(HttpServletRequest req)
+{
+	ArrayList<ServiceCategory> sc =	serviceCategoryService.getServiceCategoryList();
+	req.setAttribute("scArray", sc);
+	ModelAndView mv = new ModelAndView("viewservicecategorys");
+    return mv;
+}
+
 @RequestMapping("/clothing")
 public ModelAndView clothingview()
 {
@@ -342,6 +404,20 @@ public ModelAndView vendorproductsview(@RequestParam("pid") String pid,String cN
 	 
 	 ModelAndView mv = new ModelAndView("vendorproducts");
 	 mv.addObject("cName", cName);
+	   return mv;
+}
+
+
+@RequestMapping("/vendorservices")
+public ModelAndView vendorservicesView(@RequestParam("sid") String sid,String sName,HttpServletRequest req)
+{
+	ArrayList<ServiceCategory> scArray = serviceCategoryService.getServiceCategoryList();
+	req.setAttribute("scArray", scArray);
+	ArrayList<VendorServiceProvided> sc = serviceService.getByServiceCategory(sid);
+	req.setAttribute("serviceList", sc);
+	
+	ModelAndView mv = new ModelAndView("vendorservices");
+	mv.addObject("sName", sName);
 	return mv;
 }
 @RequestMapping("/customerproducts")
@@ -388,6 +464,7 @@ public ModelAndView updateproductsview(Long productId,String productPrice,String
 	
     return mv;
 }
+
 
 
 }

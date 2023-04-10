@@ -1,3 +1,4 @@
+<%@page import="com.example.demo.model.ServiceCategory"%>
 <%@page import="com.example.demo.model.ProductCategory"%>
 <%@page import="java.util.Iterator"%>
 <%@page import="com.example.demo.model.Product"%>
@@ -33,7 +34,6 @@
       <link rel="stylesheet" href="css/owl.carousel.min.css">
       <link rel="stylesheet" href="css/owl.theme.default.min.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
       <style>
       .horizontal-scrollable > .row {
             overflow-x: auto;
@@ -49,7 +49,7 @@
       </style>
    </head>
    <body>
-        <!--header section start -->
+         <!--header section start -->
       <div class="header_section">
          <div class="container">
             <nav class="navbar navbar-dark ">
@@ -63,33 +63,6 @@
                      <li class="nav-item active">
                         <a class="nav-link" href="index.html">Home</a>
                      </li>
-<<<<<<< HEAD
-                      <li class="nav-item dropdown">
-                     <a class="nav-link dropdown-toggle" href="#" id="navbarsExample01" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-					            Products
-					          </a>
-					          <ul class="dropdown-menu " aria-labelledby="navbarsExample01">
-					            <li><a class="dropdown-item" href="/addproductcategory">Add Products Category</a></li>
-					            <li><a class="dropdown-item" href="/viewproductcategorys">View Products Category</a></li>
-					            <li><a class="dropdown-item" href="/addproduct">Add Products</a></li>
-					            <li><a class="dropdown-item" href="/vendorproducts">View Products</a></li>
-					          </ul>
-          				 
-			        </li>
-			        <li class="nav-item dropdown">
-                     <a class="nav-link dropdown-toggle" href="#" id="navbarsExample01" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-					            Service
-					          </a>
-					          <ul class="dropdown-menu " aria-labelledby="navbarsExample01">
-					            <li><a class="dropdown-item" href="/addservicecategory">Add Service Category</a></li>
-					            <li><a class="dropdown-item" href="/viewservicecategorys">View Service Category</a></li>
-					            <li><a class="dropdown-item" href="/addservice">Add Service</a></li>
-					            <li><a class="dropdown-item" href="/vendorservices">View Service</a></li>
-					          </ul>
-          				 
-			        </li>
-                     
-=======
                      <li class="nav-item dropdown">
                      <a class="nav-link dropdown-toggle" href="#" id="navbarsExample01" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 					            Products
@@ -117,7 +90,6 @@
                      <li class="nav-item">
                         <a class="nav-link" href="/">Logout</a>
                      </li>
->>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
                   </ul>
                </div>
             </nav>
@@ -125,79 +97,40 @@
         
       </div>
       <!--header section end -->
-                 
       <!--category section start -->
-     <div class="container">
-         <div class="category_section">
-            <div class="row">
-               <div class="col-lg-2 col-sm-12">
-                
-                <h1 class="category_text">Category</h1>
-               </div>
-               
-               <div class="col-lg-10 col-sm-12 main">
-              <% 
-              	ArrayList<ProductCategory> pcList = (ArrayList) request.getAttribute("pcArray");
-              	if(request.getAttribute("pcArray") != null)
-            	  {
-              		Iterator<ProductCategory> iterator = pcList.iterator();
-              		while(iterator.hasNext())
-              		{
-              			ProductCategory productCategory = iterator.next();
-              	
-            	  %>
-            	   <div class="col">
-                     <div class="box_main">
-                     <a href="/vendorproducts?pid=<%= productCategory.getProductCategoryId()%>&cName=<%= productCategory.getProductCategoryName() %>"><div style="width: 50px;margin: 0 auto; height: 60px;background-size: 100%;background-repeat: no-repeat;text-align: center;display: inline-block;background-image: url(<%= productCategory.getProductCategoryIcon()%>);"></div>
-                        <h4 class="fashion_text active"><%= productCategory.getProductCategoryName() %></h4></a>
-                     </div>
-                  </div>
-            	  <%
-              		}
-            	  }
-            	  %>
-               </div>
-            </div>
-         </div>
-        
-     
       <!-- category section end -->
-      
+      <!-- beauty product section start -->   
       <!-- new code added -->
-          <h1 class="feature_taital">${cName}</h1>                    		
+          <h1 class="feature_taital">Service Category List</h1>                    		
 <div class="category_section_2">
             <div class="row">
             <% 
-              	ArrayList<Product> ProductList = (ArrayList) request.getAttribute("productList");
-              	if(request.getAttribute("productList") != null)
+              	ArrayList<ServiceCategory> ServiceList = (ArrayList) request.getAttribute("scArray");
+              	if(request.getAttribute("scArray") != null)
             	  {
-              		Iterator<Product> iterator = ProductList.iterator();
+              		Iterator<ServiceCategory> iterator = ServiceList.iterator();
               		while(iterator.hasNext())
               		{
-              			Product productDetails = iterator.next();
+              			ServiceCategory serviceCategory = iterator.next();
               	
             	  %>
-            	  <div class="col-lg-2 col-md-5">
+            	  <div class="col-lg-4 col-sm-12">
             	  <div class="beds_section active">
-                     <h1 class="bed_text"><%= productDetails.getProductName() %></h1>
-                     <div><img src="<%= productDetails.getProductImage() %>" class="image_2"></div>
-                       <div class="text">PRICE: <%= productDetails.getProductPrice() %></div>                
-                       <div class="text">STATUS: <%= productDetails.getProductStatus() %></div>
-<<<<<<< HEAD
-                     <a href="/editproducts?pid=<%= productDetails.getProductId() %>">Edit Product</a>
-=======
-                      <a href="/editproduct">Edit Product</a>
->>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
+                     <h1 class="bed_text"><%= serviceCategory.getServiceCategoryName() %></h1>
+                     <div><img src="<%= serviceCategory.getServiceCategoryImage() %>" class="image_2"></div>
+                     <div class="seemore_bt"><a href="/serviceproducts?sid=<%= serviceCategory.getServiceCategoryId()%>&sName=<%= serviceCategory.getServiceCategoryName() %>"><a href="/vhome">See More</a></a></div>
                   </div>
              	</div>
                <%
               		}
             	  }
             	  %>
-
+              		
                </div>
             </div>
         
+            </div>
+         </div>
          
          
          
@@ -274,7 +207,6 @@
       <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
       <script src="../../assets/js/vendor/popper.min.js"></script>
       <script src="../../dist/js/bootstrap.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
    </body>
 </html>
 

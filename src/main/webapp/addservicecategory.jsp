@@ -34,38 +34,52 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
    </head>
    <body>
-      <!--header section start -->
+        <!--header section start -->
       <div class="header_section">
          <div class="container">
-            <nav class="navbar navbar-dark bg-dark">
-               <a class="logo" href="index.html"><img src="images/logo.png"></a>
+            <nav class="navbar navbar-dark ">
+               <a class="logo" href="/"><img src="images/logo.png"></a>
+               
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
                <span class="navbar-toggler-icon"></span>
                </button>
                <div class="collapse navbar-collapse" id="navbarsExample01">
                   <ul class="navbar-nav mr-auto">
                      <li class="nav-item active">
-                        <a class="nav-link" href="/">Home</a>
+                        <a class="nav-link" href="index.html">Home</a>
                      </li>
+                     <li class="nav-item dropdown">
+                     <a class="nav-link dropdown-toggle" href="#" id="navbarsExample01" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+					            Products
+					          </a>
+					          <ul class="dropdown-menu " aria-labelledby="navbarsExample01">
+					            <li><a class="dropdown-item" href="/addproductcategory">Add Products Category</a></li>
+					            <li><a class="dropdown-item" href="/viewproductcategorys">View Products Category</a></li>
+					            <li><a class="dropdown-item" href="/addproduct">Add Products</a></li>
+					            <li><a class="dropdown-item" href="/vendorproducts">View Products</a></li>
+					          </ul>
+          				 
+			        </li>
+			        <li class="nav-item dropdown">
+                     <a class="nav-link dropdown-toggle" href="#" id="navbarsExample01" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+					            Service
+					          </a>
+					          <ul class="dropdown-menu " aria-labelledby="navbarsExample01">
+					            <li><a class="dropdown-item" href="/addservicecategory">Add Service Category</a></li>
+					            <li><a class="dropdown-item" href="/viewservicecategorys">View Service Category</a></li>
+					            <li><a class="dropdown-item" href="/addservice">Add Service</a></li>
+					            <li><a class="dropdown-item" href="/vendorservices">View Service</a></li>
+					          </ul>
+          				 
+			        </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="/adminlogin">Admin</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="/vendorlogin">Vendor</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="/customerlogin">Customers</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="/clients">Client</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="/contact">Contact Us</a>
+                        <a class="nav-link" href="/">Logout</a>
                      </li>
                   </ul>
                </div>
             </nav>
          </div>
+        
       </div>
       <!--header section end -->
       <!-- contact section start -->
@@ -80,6 +94,8 @@
                   </div>
                  
                   <div class="col-md-6">
+                  <h2 style="text-align: center;color: green;" >${successfullymsg }</h2>
+                  <form action="creatingServiceCategory" method="post">
                      <div class="email_text">
                        <div class="form-group">
                            <input type="text" class="email-bt" placeholder="Category Name" name='serviceCategoryName' >
