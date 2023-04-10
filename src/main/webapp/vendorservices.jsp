@@ -1,9 +1,9 @@
-
+<%@page import="com.example.demo.model.VendorServiceProvided"%>
+<%@page import="org.springframework.stereotype.Service"%>
 <%@page import="com.example.demo.model.ServiceCategory"%>
-<%@page import="java.util.Iterator"%>
 <%@page import="com.example.demo.model.ProductCategory"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@page import="java.util.Iterator"%>
+<%@page import="com.example.demo.model.Product"%>
 <%@page import="java.util.ArrayList"%>
 <html lang="en">
    <head>
@@ -36,10 +36,22 @@
       <link rel="stylesheet" href="css/owl.carousel.min.css">
       <link rel="stylesheet" href="css/owl.theme.default.min.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
-   		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+      <style>
+      .horizontal-scrollable > .row {
+            overflow-x: auto;
+            white-space: normal;
+            display: flex;
+        }
+          
+        .horizontal-scrollable > .row > .col-lg-2 .col-md-5 > .beds_section {
+            display: inline-block;
+            white-space: normal;
+            float: none;
+        }
+      </style>
    </head>
    <body>
-       <!--header section start -->
+         <!--header section start -->
       <div class="header_section">
          <div class="container">
             <nav class="navbar navbar-dark ">
@@ -87,29 +99,31 @@
         
       </div>
       <!--header section end -->
-      
+                 
       <!--category section start -->
-      <div class="container">
-      <h1 class="category_text text-center">ProductCategory</h1>
+     <div class="container">
          <div class="category_section">
-         
             <div class="row">
+               <div class="col-lg-2 col-sm-12">
+                
+                <h1 class="category_text">Category</h1>
+               </div>
                
                <div class="col-lg-10 col-sm-12 main">
               <% 
-              	ArrayList<ProductCategory> pcList = (ArrayList) request.getAttribute("pcArray");
-              	if(request.getAttribute("pcArray") != null)
+              	ArrayList<ServiceCategory> scList = (ArrayList) request.getAttribute("scArray");
+              	if(request.getAttribute("scArray") != null)
             	  {
-              		Iterator<ProductCategory> iterator = pcList.iterator();
+              		Iterator<ServiceCategory> iterator = scList.iterator();
               		while(iterator.hasNext())
               		{
-              			ProductCategory productCategory = iterator.next();
+              			ServiceCategory serviceCategory = iterator.next();
               	
             	  %>
             	   <div class="col">
                      <div class="box_main">
-                     <a href="/vendorproducts?pid=<%= productCategory.getProductCategoryId()%>&cName=<%= productCategory.getProductCategoryName() %>"><div style="width: 50px;margin: 0 auto; height: 60px;background-size: 100%;background-repeat: no-repeat;text-align: center;display: inline-block;background-image: url(<%= productCategory.getProductCategoryIcon()%>);"></div>
-                        <h4 class="fashion_text active"><%= productCategory.getProductCategoryName() %></h4></a>
+                     <a href="/vendorservices?sid=<%= serviceCategory.getServiceCategoryId()%>&sName=<%= serviceCategory.getServiceCategoryName() %>"><div style="width: 50px;margin: 0 auto; height: 60px;background-size: 100%;background-repeat: no-repeat;text-align: center;display: inline-block;background-image: url(<%= serviceCategory.getServiceCategoryIcon()%>);"></div>
+                        <h4 class="fashion_text active"><%= serviceCategory.getServiceCategoryName() %></h4></a>
                      </div>
                   </div>
             	  <%
@@ -120,89 +134,55 @@
             </div>
          </div>
         
-      </div>
+     
       <!-- category section end -->
-      <!-- beauty product section start -->
-      <div class="beauty_section layout_padding">
-         <div class="container">
-            <div class="row">
-               <div class="col-lg-4 col-sm-12">
-                  <div class="beauty_box">
-                    
-                     <div><img src="images/img-5.png" class="image_3"></div>
-                     <div class="seemore_bt"><a href="/viewproduct">see More</a></div>
-                  </div>
-               </div>
-               <div class="col-lg-8 col-sm-12">
-                  <div class="beauty_box_1">
-                    
-                     <div><img src="images/img-6.png" class="image_3"></div>
-                     <div class="seemore_bt_1"><a href="/viewproduct">see More</a></div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
       
-             <div class="container">
-              <h1 class="category_text text-center">Service Category</h1>
-         <div class="category_section">
-         
+      <!-- new code added -->
+          <h1 class="feature_taital">${sName}</h1>                    		
+<div class="category_section_2">
             <div class="row">
-               
-               <div class="col-lg-10 col-sm-12 main">
+            <% 
+              	ArrayList<VendorServiceProvided> ServiceList = (ArrayList) request.getAttribute("serviceList");
+              	if(request.getAttribute("serviceList") != null)
+            	  {
+              		Iterator<VendorServiceProvided> iterator = ServiceList.iterator();
+              		while(iterator.hasNext())
+              		{
+              			VendorServiceProvided serviceDetails = iterator.next();
+              	
+            	  %>
+            	  <div class="col-lg-2 col-md-5">
+            	  <div class="beds_section active">
+                     <h1 class="bed_text"><%= serviceDetails.getServiceName() %></h1>
+                    <div><img src="<%= serviceDetails.getServiceImage() %>" class="image_2"></div>
+                       <div class="text">PRICE: <%= serviceDetails.getServicePrice() %></div>  
+                       <div class="text">ADDRESS: <%= serviceDetails.getServiceAddress() %></div>
+                       <div class="text">CONTACTNO: <%= serviceDetails.getServiceContactNo() %></div>
+                       
+                       <a href="/editproduct">Edit Product</a></div>
+                        </div>
+             	</div>
                <%
-               ArrayList<ServiceCategory> scList = (ArrayList) request.getAttribute("scArray");
-               if(request.getAttribute("scArray") != null)
-               {
-            	   Iterator<ServiceCategory> iterator = scList.iterator();
-            	   while(iterator.hasNext())
-            	   {
-            		   ServiceCategory serviceCategory = iterator.next();
-            	   %>
-            	   <div class="col">
-                     <div class="box_main">
-                     <a href="/vendorservices?sid=<%= serviceCategory.getServiceCategoryId()%>&sName=<%= serviceCategory.getServiceCategoryName()%>"><div style="width: 50px;margin: 0 auto; height: 60px;background-size: 100%;background-repeat: no-repeat;text-align: center;display: inline-block;background-image: url(<%= serviceCategory.getServiceCategoryIcon()%>);"></div>
-                        <h4 class="fashion_text active"><%= serviceCategory.getServiceCategoryName() %></h4></a>
-                         </div>
-                  </div>
-            	  <%
               		}
             	  }
             	  %>
+              		
                </div>
             </div>
-         </div>
         
-      </div>
-      
-      <div class="beauty_section layout_padding">
-         <div class="container">
-            <div class="row">
-               <div class="col-lg-4 col-sm-12">
-                  <div class="beauty_box">
-                    
-                     <div><img src="images/img-5.png" class="image_3"></div>
-                     <div class="seemore_bt"><a href="/viewproduct">see More</a></div>
-                  </div>
-               </div>
-               <div class="col-lg-8 col-sm-12">
-                  <div class="beauty_box_1">
-                    
-                     <div><img src="images/img-6.png" class="image_3"></div>
-                     <div class="seemore_bt_1"><a href="/viewproduct">see More</a></div>
-                  </div>
-               </div>
             </div>
          </div>
-      </div>
-      
-      
-      <div style="padding-bottom: 10%;margin-bottom: 10%"></div>
-      
+         
+         
+                       
+                       
+                                     
+                       
+              
+         
+         
       <!-- beauty product section end -->
       
-     
       
       <!-- newsletter section start -->
       <div class="newsletter_section layout_padding">
@@ -219,15 +199,6 @@
          </div>
       </div>
       <!-- newsletter section end -->
-      
-
-            	   
-               
-               
-               
-               
-               
-               
       <!-- footer section start -->
       <div class="footer_section layout_padding">
          <div class="container">
@@ -283,8 +254,6 @@
       <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
       <script src="../../assets/js/vendor/popper.min.js"></script>
       <script src="../../dist/js/bootstrap.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
    </body>
-
 </html>
 

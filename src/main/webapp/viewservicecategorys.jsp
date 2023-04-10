@@ -1,3 +1,4 @@
+<%@page import="com.example.demo.model.ServiceCategory"%>
 <%@page import="com.example.demo.model.ProductCategory"%>
 <%@page import="java.util.Iterator"%>
 <%@page import="com.example.demo.model.Product"%>
@@ -48,7 +49,7 @@
       </style>
    </head>
    <body>
-        <!--header section start -->
+         <!--header section start -->
       <div class="header_section">
          <div class="container">
             <nav class="navbar navbar-dark ">
@@ -96,65 +97,28 @@
         
       </div>
       <!--header section end -->
-                 
       <!--category section start -->
-     <div class="container">
-         <div class="category_section">
-            <div class="row">
-               <div class="col-lg-2 col-sm-12">
-                
-                <h1 class="category_text">Category</h1>
-               </div>
-               
-               <div class="col-lg-10 col-sm-12 main">
-              <% 
-              	ArrayList<ProductCategory> pcList = (ArrayList) request.getAttribute("pcArray");
-              	if(request.getAttribute("pcArray") != null)
-            	  {
-              		Iterator<ProductCategory> iterator = pcList.iterator();
-              		while(iterator.hasNext())
-              		{
-              			ProductCategory productCategory = iterator.next();
-              	
-            	  %>
-            	   <div class="col">
-                     <div class="box_main">
-                     <a href="/vendorproducts?pid=<%= productCategory.getProductCategoryId()%>&cName=<%= productCategory.getProductCategoryName() %>"><div style="width: 50px;margin: 0 auto; height: 60px;background-size: 100%;background-repeat: no-repeat;text-align: center;display: inline-block;background-image: url(<%= productCategory.getProductCategoryIcon()%>);"></div>
-                        <h4 class="fashion_text active"><%= productCategory.getProductCategoryName() %></h4></a>
-                     </div>
-                  </div>
-            	  <%
-              		}
-            	  }
-            	  %>
-               </div>
-            </div>
-         </div>
-        
-     
       <!-- category section end -->
-      
+      <!-- beauty product section start -->   
       <!-- new code added -->
-          <h1 class="feature_taital">${cName}</h1>                    		
+          <h1 class="feature_taital">Service Category List</h1>                    		
 <div class="category_section_2">
             <div class="row">
             <% 
-              	ArrayList<Product> ProductList = (ArrayList) request.getAttribute("productList");
-              	if(request.getAttribute("productList") != null)
+              	ArrayList<ServiceCategory> ServiceList = (ArrayList) request.getAttribute("scArray");
+              	if(request.getAttribute("scArray") != null)
             	  {
-              		Iterator<Product> iterator = ProductList.iterator();
+              		Iterator<ServiceCategory> iterator = ServiceList.iterator();
               		while(iterator.hasNext())
               		{
-              			Product productDetails = iterator.next();
+              			ServiceCategory serviceCategory = iterator.next();
               	
             	  %>
-            	  <div class="col-lg-2 col-md-5">
+            	  <div class="col-lg-4 col-sm-12">
             	  <div class="beds_section active">
-                     <h1 class="bed_text"><%= productDetails.getProductName() %></h1>
-                     <div><img src="<%= productDetails.getProductImage() %>" class="image_2"></div>
-                       <div class="text">PRICE: <%= productDetails.getProductPrice() %></div>                
-                       <div class="text">STATUS: <%= productDetails.getProductStatus() %></div>
-                      <a href="/editproduct">Edit Product</a>
+                     <h1 class="bed_text"><%= serviceCategory.getServiceCategoryName() %></h1>
+                     <div><img src="<%= serviceCategory.getServiceCategoryImage() %>" class="image_2"></div>
+                     <div class="seemore_bt"><a href="/serviceproducts?sid=<%= serviceCategory.getServiceCategoryId()%>&sName=<%= serviceCategory.getServiceCategoryName() %>"><a href="/vhome">See More</a></a></div>
                   </div>
              	</div>
                <%
