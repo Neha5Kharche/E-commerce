@@ -77,10 +77,14 @@ public ModelAndView vendorRegister(vendor v)
 }
 
 @RequestMapping("/vLogin")
-public ModelAndView vendorLogin(@RequestParam("vEmail")String email,String vpassword)
+public ModelAndView vendorLogin(@RequestParam("vEmail")String email,String vPassword,HttpServletRequest req)
 {
-	boolean result=vService.login(email,vpassword);
+	boolean result=vService.login(email,vPassword);
 	if (result==true) {
+		ArrayList<ProductCategory> pc =	productCategoryService.getProductCategoryList();
+		  req.setAttribute("pcArray", pc);
+		  ArrayList<ServiceCategory> sc = serviceCategoryService.getServiceCategoryList();
+		  req.setAttribute("scArray", sc);
 		ModelAndView mv = new ModelAndView("vendorhome");
 		return mv;
 	}
