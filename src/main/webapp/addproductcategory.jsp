@@ -46,7 +46,7 @@
                <div class="collapse navbar-collapse" id="navbarsExample01">
                   <ul class="navbar-nav mr-auto">
                      <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link" href="/vhome">Home</a>
                      </li>
                      <li class="nav-item dropdown">
                      <a class="nav-link dropdown-toggle" href="#" id="navbarsExample01" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -73,7 +73,7 @@
           				 
 			        </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="/">Logout</a>
+                        <a class="nav-link" href="/vendorlogin">Logout</a>
                      </li>
                   </ul>
                </div>

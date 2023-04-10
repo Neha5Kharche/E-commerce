@@ -61,7 +61,7 @@
                <div class="collapse navbar-collapse" id="navbarsExample01">
                   <ul class="navbar-nav mr-auto">
                      <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link" href="/vhome">Home</a>
                      </li>
 
                      <li class="nav-item dropdown">
@@ -89,7 +89,7 @@
           				 
 			        </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="/">Logout</a>
+                        <a class="nav-link" href="/vendorlogin">Logout</a>
                      </li>
 
                   </ul>
@@ -158,8 +158,13 @@
                        <div class="text">PRICE: <%= productDetails.getProductPrice() %></div>                
                        <div class="text">STATUS: <%= productDetails.getProductStatus() %></div>
 
+<<<<<<< HEAD
                      <a href="/editproducts?pid=<%= productDetails.getProductId() %>">Edit Product</a>
                       <a href="/editproduct">Edit Product</a>
+=======
+                     <a href="/editproducts?pid=<%= productDetails.getProductId() %>">Edit Product
+                    </a>
+>>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
 
                   </div>
              	</div>

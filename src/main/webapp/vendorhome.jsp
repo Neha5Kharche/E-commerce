@@ -54,9 +54,8 @@
                <div class="collapse navbar-collapse" id="navbarsExample01">
                   <ul class="navbar-nav mr-auto">
                      <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link" href="/vhome">Home</a>
                      </li>
-
                      <li class="nav-item dropdown">
                      <a class="nav-link dropdown-toggle" href="#" id="navbarsExample01" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 					            Products
@@ -65,7 +64,7 @@
 					            <li><a class="dropdown-item" href="/addproductcategory">Add Products Category</a></li>
 					            <li><a class="dropdown-item" href="/viewproductcategorys">View Products Category</a></li>
 					            <li><a class="dropdown-item" href="/addproduct">Add Products</a></li>
-					            <li><a class="dropdown-item" href="/vendorproducts">View Products</a></li>
+					            <li><a class="dropdown-item" href="/viewproducts">View Products</a></li>
 					          </ul>
           				 
 			        </li>
@@ -77,14 +76,13 @@
 					            <li><a class="dropdown-item" href="/addservicecategory">Add Service Category</a></li>
 					            <li><a class="dropdown-item" href="/viewservicecategorys">View Service Category</a></li>
 					            <li><a class="dropdown-item" href="/addservice">Add Service</a></li>
-					            <li><a class="dropdown-item" href="/vendorservices">View Service</a></li>
+					            <li><a class="dropdown-item" href="/viewservices">View Service</a></li>
 					          </ul>
           				 
 			        </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="/">Logout</a>
+                        <a class="nav-link" href="/vendorlogin">Logout</a>
                      </li>
-
                   </ul>
                </div>
             </nav>

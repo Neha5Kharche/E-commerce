@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.dao.ServiceRepo;
+import com.example.demo.model.Product;
 import com.example.demo.model.VendorServiceProvided;
 
 @Service
@@ -31,4 +32,18 @@ public class ServiceService {
 	   serviceCategoryList.addAll(repo.getByserviceCategory(serviceCategory));
 	   return serviceCategoryList;
    }
+   
+   public VendorServiceProvided getByServiceId(Long sid)
+	{
+		VendorServiceProvided serviceDetails = repo.findById(sid).orElse(new VendorServiceProvided());
+		
+		return  serviceDetails;
+	}
+	
+	public void updateServiceDetails(Long sid,String sPrice,String sStatus)
+	{
+			repo.updateServiceDetails(sid, sPrice, sStatus);
+		System.out.println(repo.findById(sid));
+	}
+	
 }

@@ -35,7 +35,6 @@
       <link rel="stylesheet" href="css/owl.carousel.min.css">
       <link rel="stylesheet" href="css/owl.theme.default.min.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
-     
    </head>
    <body>
        <!--header section start -->
@@ -52,6 +51,7 @@
                      <li class="nav-item active">
                         <a class="nav-link" href="index.html">Home</a>
                      </li>
+
                      <li class="nav-item dropdown">
                      <a class="nav-link dropdown-toggle" href="#" id="navbarsExample01" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 					            Products
@@ -79,6 +79,7 @@
                      <li class="nav-item">
                         <a class="nav-link" href="/">Logout</a>
                      </li>
+
                   </ul>
                </div>
             </nav>
@@ -89,7 +90,7 @@
       <!-- contact section start -->
       <div class="contact_section layout_padding">
          <div class="container">
-            <h1 class="touch_taital">ADD PRODUCTS</h1>
+            <h1 class="touch_taital">EDIT SERVICES</h1>
             <div class="contact_section_2">
                <div class="row">
                <div class="col-md-6">
@@ -100,57 +101,31 @@
                  
                   <div class="col-md-6">
                   <h2 style="text-align: center;color: green;" >${successfullymsg }</h2>
-                  <form action="creatingProduct" method="post">
+                  <form action="updateservices" method="post">
                      <div class="email_text">
-                        <div class="form-group">
-                           <input type="text" class="email-bt" placeholder="Product Name" name='productName' >
+                       <div class="form-group">
+                           <input type="text" class="email-bt" placeholder="Service Name" name='serviceId' value="${serviceDetails.getServiceId() }" readonly>
+                        </div>
+                 <div class="form-group">
+                           <input type="text" class="email-bt" placeholder="Service Name" name='serviceName' value="${serviceDetails.getServiceName() }" readonly>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="email-bt" placeholder="Price" name='productPrice' >
+                            <input type="text" class="email-bt" placeholder="Price" name='servicePrice' value="${serviceDetails.getServicePrice() }">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="email-bt" placeholder="Status" name='productStatus' >
+                            <input type="text" class="email-bt" placeholder="Status" name='serviceStatus' value="${serviceDetails.getServiceStatus() }">
                         </div>
-                        <div class="form-group">
-                        
-                       
-                        <select class="email-bt" name='productCategory'>
-                        	<option>--Select Category --</option>
-                        	<% 
-					              	ArrayList<ProductCategory> pcList = (ArrayList) request.getAttribute("pcArray");
-					              	if(request.getAttribute("pcArray") != null)
-					            	  {
-					              		Iterator<ProductCategory> iterator = pcList.iterator();
-					              		while(iterator.hasNext())
-					              		{
-					              			ProductCategory productCategory = iterator.next();
-              	
-            	 			 %>
-            	 			 	<option value="<%= productCategory.getProductCategoryId() %>"><%= productCategory.getProductCategoryName() %></option>
-            	 			 <%
-					              		}
-					            	  }
-            	 			 %>
-                        </select>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="email-bt" placeholder="Vendor Id" name='vendorId' >
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="email-bt" placeholder="Image" name='productImage' >
-                        </div>
-                        
-                       
-                         <button type="submit" class="btn btn-outline-success rounded-pill">SUBMIT</button>
+                
+                         <button type="submit" class="btn btn-outline-success rounded-pill">UPDATE</button>
                         <button type="reset" class="btn btn-outline-danger rounded-pill">CLEAR</button>
                        </form>
                     </div>
                   </div>
-                  
+                 
                </div>
             </div>
          </div>
-      </div>
+      
       <!-- contact section end -->
       <!-- footer section start -->
       <div class="footer_section layout_padding">
@@ -207,6 +182,5 @@
       <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
       <script src="../../assets/js/vendor/popper.min.js"></script>
       <script src="../../dist/js/bootstrap.min.js"></script>
-      
    </body>
 </html>

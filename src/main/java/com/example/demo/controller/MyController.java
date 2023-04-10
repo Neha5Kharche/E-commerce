@@ -77,10 +77,14 @@ public ModelAndView vendorRegister(vendor v)
 }
 
 @RequestMapping("/vLogin")
-public ModelAndView vendorLogin(@RequestParam("vEmail")String email,String vpassword)
+public ModelAndView vendorLogin(@RequestParam("vEmail")String email,String vPassword,HttpServletRequest req)
 {
-	boolean result=vService.login(email,vpassword);
+	boolean result=vService.login(email,vPassword);
 	if (result==true) {
+		ArrayList<ProductCategory> pc =	productCategoryService.getProductCategoryList();
+		  req.setAttribute("pcArray", pc);
+		  ArrayList<ServiceCategory> sc = serviceCategoryService.getServiceCategoryList();
+		  req.setAttribute("scArray", sc);
 		ModelAndView mv = new ModelAndView("vendorhome");
 		return mv;
 	}
@@ -115,15 +119,7 @@ public ModelAndView productDetailsHome(HttpServletRequest req)
 	return mv;
 }
 
-//@RequestMapping("/vhome")
-//public ModelAndView vendorHomePage(HttpServletRequest req)
-//{
-//	ArrayList<ServiceCategory> sc = serviceCategoryService.getServiceCategoryList();
-//	req.setAttribute("scArray", sc);
-//	ModelAndView mv = new ModelAndView("vendorhome");
-//	
-//	return mv;
-//}
+
 @RequestMapping("/ServiceDetails")
 public ModelAndView serviceDetailsHome(HttpServletRequest req)
 {
@@ -342,20 +338,34 @@ public ModelAndView newserviceview(HttpServletRequest req)
 	ModelAndView mv = new ModelAndView("viewservicecategorys");
     return mv;
 }
+<<<<<<< HEAD
 
 @RequestMapping("/viewproduct")
 public ModelAndView viewproductview()
 {
 	ModelAndView mv = new ModelAndView("viewproduct");
+=======
+@RequestMapping("/viewproducts")
+public ModelAndView productsview(HttpServletRequest req)
+{
+	 
+	 ArrayList<Product> pc =	productService.getProductList();
+	 req.setAttribute("productList", pc);
+	 
+	 ModelAndView mv = new ModelAndView("viewproducts");
+	
+	   return mv;
+}
+@RequestMapping("/viewservices")
+public ModelAndView serviceview(HttpServletRequest req)
+{
+	ArrayList<VendorServiceProvided> sc =	serviceService.getServiceList();
+	req.setAttribute("scArray", sc);
+	ModelAndView mv = new ModelAndView("viewservices");
+>>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
     return mv;
 }
 
-@RequestMapping("/viewservice")
-public ModelAndView viewserviceview()
-{
-	ModelAndView mv = new ModelAndView("viewservice");
-    return mv;
-}
 @RequestMapping("/viewservicecategory")
 public ModelAndView viewservicecategoryview()
 {
@@ -435,7 +445,21 @@ public ModelAndView updateproductsview(Long productId,String productPrice,String
 	
     return mv;
 }
+@RequestMapping("/editservices")
+public ModelAndView editservicesview(Long sid)
+{
+	VendorServiceProvided serviceDetails = serviceService.getByServiceId(sid);
+	ModelAndView mv = new ModelAndView("editservices");
+	mv.addObject("serviceDetails", serviceDetails);
+    return mv;
+}
 
-
-
+@RequestMapping("/updateservices")
+public ModelAndView updateservicesview(Long serviceId,String servicePrice,String serviceStatus)
+{
+	 serviceService.updateServiceDetails(serviceId, servicePrice, serviceStatus);
+	ModelAndView mv = new ModelAndView("editservices");
+	
+    return mv;
+}
 }

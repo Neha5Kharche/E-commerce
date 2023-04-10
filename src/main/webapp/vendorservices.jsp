@@ -63,8 +63,9 @@
                <div class="collapse navbar-collapse" id="navbarsExample01">
                   <ul class="navbar-nav mr-auto">
                      <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link" href="/vhome">Home</a>
                      </li>
+
                      <li class="nav-item dropdown">
                      <a class="nav-link dropdown-toggle" href="#" id="navbarsExample01" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 					            Products
@@ -90,8 +91,9 @@
           				 
 			        </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="/">Logout</a>
+                        <a class="nav-link" href="/vendorlogin">Logout</a>
                      </li>
+
                   </ul>
                </div>
             </nav>
@@ -158,8 +160,10 @@
                        <div class="text">PRICE: <%= serviceDetails.getServicePrice() %></div>  
                        <div class="text">ADDRESS: <%= serviceDetails.getServiceAddress() %></div>
                        <div class="text">CONTACTNO: <%= serviceDetails.getServiceContactNo() %></div>
+                       <div class="text">STATUS: <%= serviceDetails.getServiceStatus() %></div>
                        
-                       <a href="/editproduct">Edit Product</a></div>
+                        <a href="/editservices?sid=<%= serviceDetails.getServiceId() %>">Edit Service
+                    </a>
                         </div>
              	</div>
                <%
