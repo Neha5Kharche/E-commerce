@@ -115,15 +115,7 @@ public ModelAndView productDetailsHome(HttpServletRequest req)
 	return mv;
 }
 
-//@RequestMapping("/vhome")
-//public ModelAndView vendorHomePage(HttpServletRequest req)
-//{
-//	ArrayList<ServiceCategory> sc = serviceCategoryService.getServiceCategoryList();
-//	req.setAttribute("scArray", sc);
-//	ModelAndView mv = new ModelAndView("vendorhome");
-//	
-//	return mv;
-//}
+
 @RequestMapping("/ServiceDetails")
 public ModelAndView serviceDetailsHome(HttpServletRequest req)
 {
@@ -464,7 +456,4 @@ public ModelAndView updateproductsview(Long productId,String productPrice,String
 	
     return mv;
 }
-
-
-
 }
