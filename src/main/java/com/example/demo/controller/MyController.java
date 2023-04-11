@@ -24,6 +24,7 @@ import com.example.demo.service.ServiceService;
 import com.example.demo.service.VendorService;
 
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 
@@ -76,24 +77,6 @@ public ModelAndView vendorRegister(vendor v)
 	
 }
 
-@RequestMapping("/vLogin")
-public ModelAndView vendorLogin(@RequestParam("vEmail")String email,String vPassword,HttpServletRequest req)
-{
-	boolean result=vService.login(email,vPassword);
-	if (result==true) {
-		ArrayList<ProductCategory> pc =	productCategoryService.getProductCategoryList();
-		  req.setAttribute("pcArray", pc);
-		  ArrayList<ServiceCategory> sc = serviceCategoryService.getServiceCategoryList();
-		  req.setAttribute("scArray", sc);
-		ModelAndView mv = new ModelAndView("vendorhome");
-		return mv;
-	}
-	else {
-		ModelAndView mv = new ModelAndView("vendorlogin");
-		mv.addObject("errmsg", "Invalid Username or Password");
-		return mv;
-	}
-}
 
 
 @RequestMapping("/vhome")
@@ -454,5 +437,41 @@ public ModelAndView updateservicesview(Long serviceId,String servicePrice,String
 	ModelAndView mv = new ModelAndView("editservices");
 	
     return mv;
+}
+@RequestMapping("/logout")
+public ModelAndView vendorLogout(HttpServletRequest req)
+{
+	HttpSession session = req.getSession();
+	session.invalidate();
+	
+	ModelAndView mv = new ModelAndView("vendorlogin");
+	return mv;
+	
+}
+@RequestMapping("/vLogin")
+public ModelAndView vendorLogin(@RequestParam("vEmail")String email,String vPassword,HttpServletRequest req)
+{
+	boolean result=vService.login(email,vPassword);
+	if (result==true) {
+		HttpSession session = req.getSession();
+		session.setAttribute("user", email);
+		ArrayList<ProductCategory> pc =	productCategoryService.getProductCategoryList();
+		  req.setAttribute("pcArray", pc);
+		  ArrayList<ServiceCategory> sc = serviceCategoryService.getServiceCategoryList();
+		  req.setAttribute("scArray", sc);
+		ModelAndView mv = new ModelAndView("vendorhome");
+		return mv;
+	}
+	else {
+		ModelAndView mv = new ModelAndView("vendorlogin");
+		mv.addObject("errmsg", "Invalid Username or Password");
+		return mv;
+	}
+}
+@RequestMapping("/newfq")
+public ModelAndView newfqView()
+{
+	ModelAndView mv = new ModelAndView("newfq");
+	return mv;
 }
 }
