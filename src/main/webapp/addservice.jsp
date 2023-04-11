@@ -138,10 +138,14 @@
                         <div class="form-group">
                             <input type="text" class="email-bt" placeholder="Service Image" name='serviceImage' >
                         </div>
+                        <div class="form-group">
+                            <input type="text" class="email-bt" placeholder="Service Status" name='serviceStatus' >
+                        </div>
                         
                         
                        <button type="submit" class="btn btn-outline-success rounded-pill">SUBMIT</button>
                         <button type="reset" class="btn btn-outline-danger rounded-pill">CLEAR</button>
+                        <input type="button" class="btn btn-outline-success rounded-pill" value="Go Back" onclick="history.back()">
                      </form>
                     </div>
                   </div>

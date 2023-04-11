@@ -99,9 +99,13 @@
                         <div class="form-group">
                             <input type="text" class="email-bt" placeholder="Status" name='productStatus' value="${productDetails.getProductStatus() }">
                         </div>
+                         <div class="form-group">
+                            <input type="text" class="email-bt" placeholder="Description" name='productDescription' value="${productDetails.getProductDescription() }">
+                        </div>
                 
                          <button type="submit" class="btn btn-outline-success rounded-pill">UPDATE</button>
                         <button type="reset" class="btn btn-outline-danger rounded-pill">CLEAR</button>
+                        <input type="button" class="btn btn-outline-success rounded-pill" value="Go Back" onclick="history.back()">
                        </form>
                     </div>
                   </div>

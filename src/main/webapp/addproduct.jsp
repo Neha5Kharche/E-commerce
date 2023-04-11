@@ -139,10 +139,14 @@
                         <div class="form-group">
                             <input type="text" class="email-bt" placeholder="Image" name='productImage' >
                         </div>
+                        <div class="form-group">
+                            <input type="text" class="email-bt" placeholder="Product Description" name='productDescription' >
+                        </div>
                         
                        
-                         <button type="submit" class="btn btn-outline-success rounded-pill">SUBMIT</button>
+                         <button type="submit"class="btn btn-outline-success rounded-pill" >SUBMIT</button>
                         <button type="reset" class="btn btn-outline-danger rounded-pill">CLEAR</button>
+                        <input type="button" class="btn btn-outline-success rounded-pill" value="Go Back" onclick="history.back()">
                        </form>
                     </div>
                   </div>

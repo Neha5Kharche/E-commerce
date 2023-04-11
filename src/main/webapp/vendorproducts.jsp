@@ -157,6 +157,7 @@
                      <div><img src="<%= productDetails.getProductImage() %>" class="image_2"></div>
                        <div class="text">PRICE: <%= productDetails.getProductPrice() %></div>                
                        <div class="text">STATUS: <%= productDetails.getProductStatus() %></div>
+                       <div class="text">DESCRIPTION: <%= productDetails.getProductDescription() %></div>
 
                      <a href="/editproducts?pid=<%= productDetails.getProductId() %>">Edit Product
                     </a>

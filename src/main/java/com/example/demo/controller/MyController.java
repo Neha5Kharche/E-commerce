@@ -353,7 +353,7 @@ public ModelAndView productsview(HttpServletRequest req)
 public ModelAndView serviceview(HttpServletRequest req)
 {
 	ArrayList<VendorServiceProvided> sc =	serviceService.getServiceList();
-	req.setAttribute("scArray", sc);
+	req.setAttribute("serviceList", sc);
 	ModelAndView mv = new ModelAndView("viewservices");
     return mv;
 }
@@ -435,9 +435,9 @@ public ModelAndView editproductsview(Long pid)
 }
 
 @RequestMapping("/updateproducts")
-public ModelAndView updateproductsview(Long productId,String productPrice,String productStatus)
+public ModelAndView updateproductsview(Long productId,String productPrice,String productStatus,String productDescription)
 {
-	 productService.updateProductDetails(productId, productPrice, productStatus);
+	 productService.updateProductDetails(productId, productPrice, productStatus, productDescription);
 	ModelAndView mv = new ModelAndView("editproducts");
 	
     return mv;
