@@ -1,9 +1,10 @@
+
 <%@page import="com.example.demo.model.VendorServiceProvided"%>
-<%@page import="org.springframework.stereotype.Service"%>
 <%@page import="com.example.demo.model.ServiceCategory"%>
-<%@page import="com.example.demo.model.ProductCategory"%>
 <%@page import="java.util.Iterator"%>
-<%@page import="com.example.demo.model.Product"%>
+<%@page import="com.example.demo.model.ProductCategory"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <%@page import="java.util.ArrayList"%>
 <html lang="en">
    <head>
@@ -36,23 +37,14 @@
       <link rel="stylesheet" href="css/owl.carousel.min.css">
       <link rel="stylesheet" href="css/owl.theme.default.min.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
-      <style>
-      .horizontal-scrollable > .row {
-            overflow-x: auto;
-            white-space: normal;
-            display: flex;
-        }
-          
-        .horizontal-scrollable > .row > .col-lg-2 .col-md-5 > .beds_section {
-            display: inline-block;
-            white-space: normal;
-            float: none;
-        }
-      </style>
+
+      
+   		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+   		
    </head>
    <body>
-         <!--header section start -->
-      <div class="header_section">
+       <!--header section start -->
+       <div class="header_section">
          <div class="container">
             <nav class="navbar navbar-dark ">
                <a class="logo" href="/"><img src="images/logo.png"></a>
@@ -65,7 +57,6 @@
                      <li class="nav-item active">
                         <a class="nav-link" href="/vhome">Home</a>
                      </li>
-
                      <li class="nav-item dropdown">
                      <a class="nav-link dropdown-toggle" href="#" id="navbarsExample01" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 					            Products
@@ -74,7 +65,7 @@
 					            <li><a class="dropdown-item" href="/addproductcategory">Add Products Category</a></li>
 					            <li><a class="dropdown-item" href="/viewproductcategorys">View Products Category</a></li>
 					            <li><a class="dropdown-item" href="/addproduct">Add Products</a></li>
-					            <li><a class="dropdown-item" href="/vendorproducts">View Products</a></li>
+					            <li><a class="dropdown-item" href="/viewproducts">View Products</a></li>
 					          </ul>
           				 
 			        </li>
@@ -86,14 +77,13 @@
 					            <li><a class="dropdown-item" href="/addservicecategory">Add Service Category</a></li>
 					            <li><a class="dropdown-item" href="/viewservicecategorys">View Service Category</a></li>
 					            <li><a class="dropdown-item" href="/addservice">Add Service</a></li>
-					            <li><a class="dropdown-item" href="/vendorservices">View Service</a></li>
+					            <li><a class="dropdown-item" href="/viewservices">View Service</a></li>
 					          </ul>
           				 
 			        </li>
                      <li class="nav-item">
                         <a class="nav-link" href="/vendorlogin">Logout</a>
                      </li>
-
                   </ul>
                </div>
             </nav>
@@ -101,6 +91,7 @@
         
       </div>
       <!--header section end -->
+      
                  
       <!--category section start -->
     
@@ -117,16 +108,14 @@
           <h1 class="feature_taital">${sName}</h1>                    		
 <div class="category_section_2">
             <div class="row">
-            <% 
-              	ArrayList<VendorServiceProvided> ServiceList = (ArrayList) request.getAttribute("serviceList");
-              	if(request.getAttribute("serviceList") != null)
-            	  {
-              		Iterator<VendorServiceProvided> iterator = ServiceList.iterator();
-              		while(iterator.hasNext())
-              		{
-              			VendorServiceProvided serviceDetails = iterator.next();
-              	
-            	  %>
+            <%
+            ArrayList<VendorServiceProvided> ServiceList = (ArrayList) request.getAttribute("serviceList");
+                          	if(request.getAttribute("serviceList") != null)
+                        	  {
+                          		Iterator<VendorServiceProvided>	iterator = ServiceList.iterator();
+            				while (iterator.hasNext()) {
+            					VendorServiceProvided serviceDetails = iterator.next();
+            %>
             	  <div class="col-lg-2 col-md-5">
             	  <div class="beds_section active">
                      <h1 class="bed_text"><%= serviceDetails.getServiceName() %></h1>
@@ -230,6 +219,7 @@
       <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
       <script src="../../assets/js/vendor/popper.min.js"></script>
       <script src="../../dist/js/bootstrap.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
    </body>
 </html>
 

@@ -338,6 +338,7 @@ public ModelAndView newserviceview(HttpServletRequest req)
 	ModelAndView mv = new ModelAndView("viewservicecategorys");
     return mv;
 }
+
 @RequestMapping("/viewproducts")
 public ModelAndView productsview(HttpServletRequest req)
 {
@@ -364,12 +365,7 @@ public ModelAndView viewservicecategoryview()
 	ModelAndView mv = new ModelAndView("viewservicecategory");
     return mv;
 }
-@RequestMapping("/nav")
-public ModelAndView navview()
-{
-	ModelAndView mv = new ModelAndView("nav");
-    return mv;
-}
+
 
 
 @RequestMapping("/vendorproducts")
