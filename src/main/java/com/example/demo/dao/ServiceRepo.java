@@ -18,7 +18,7 @@ public ArrayList<VendorServiceProvided> getByserviceCategory(String serviceCateg
 
 @Transactional
 @Modifying
-@Query("update VendorServiceProvided s set s.servicePrice=:servicePrice,s.serviceStatus=:serviceStatus where s.serviceId=:serviceId")
-public void updateServiceDetails(@Param("serviceId") Long serviceId,@Param("servicePrice") String servicePrice,@Param("serviceStatus") String serviceStatus);
+@Query("update VendorServiceProvided s set s.servicePrice=:servicePrice,s.serviceStatus=:serviceStatus,s.serviceDescription=:serviceDescription where s.serviceId=:serviceId")
+public void updateServiceDetails(@Param("serviceId") Long serviceId,@Param("servicePrice") String servicePrice,@Param("serviceStatus") String serviceStatus,@Param("serviceDescription") String serviceDescription);
 
 }

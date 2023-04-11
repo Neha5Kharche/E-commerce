@@ -7,7 +7,6 @@ import jakarta.persistence.Id;
 
 @Entity
 public class VendorServiceProvided {
-	
 	@Id
 	@GeneratedValue
 	private Long serviceId;
@@ -18,6 +17,7 @@ public class VendorServiceProvided {
 	private String serviceContactNo;
 	private String serviceImage;
 	private String serviceStatus;
+	private String serviceDescription;
 	public Long getServiceId() {
 		return serviceId;
 	}
@@ -66,11 +66,17 @@ public class VendorServiceProvided {
 	public void setServiceStatus(String serviceStatus) {
 		this.serviceStatus = serviceStatus;
 	}
+	public String getServiceDescription() {
+		return serviceDescription;
+	}
+	public void setServiceDescription(String serviceDescription) {
+		this.serviceDescription = serviceDescription;
+	}
 	@Override
 	public String toString() {
 		return "VendorServiceProvided [serviceId=" + serviceId + ", serviceName=" + serviceName + ", servicePrice="
 				+ servicePrice + ", serviceAddress=" + serviceAddress + ", serviceCategory=" + serviceCategory
 				+ ", serviceContactNo=" + serviceContactNo + ", serviceImage=" + serviceImage + ", serviceStatus="
-				+ serviceStatus + "]";
+				+ serviceStatus + ", serviceDescription=" + serviceDescription + "]";
 	}
 }

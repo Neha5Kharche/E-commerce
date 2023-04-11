@@ -18,6 +18,14 @@ public class ServiceService {
 	{
 		repo.save(vendorService);
 	}
+	public VendorServiceProvided getById(Long sid)
+	{
+		VendorServiceProvided serviceDetails = repo.findById(sid).orElse(new VendorServiceProvided());
+		return serviceDetails;
+		
+	}
+	
+	
 	
    public ArrayList<VendorServiceProvided> getServiceList()
    {
@@ -40,9 +48,9 @@ public class ServiceService {
 		return  serviceDetails;
 	}
 	
-	public void updateServiceDetails(Long sid,String sPrice,String sStatus)
+	public void updateServiceDetails(Long sid,String sPrice,String sStatus, String sDescription)
 	{
-			repo.updateServiceDetails(sid, sPrice, sStatus);
+			repo.updateServiceDetails(sid, sPrice, sStatus, sDescription);
 		System.out.println(repo.findById(sid));
 	}
 	

@@ -106,6 +106,7 @@
                      <div class="email_text">
                         <div class="form-group">
                            <input type="text" class="email-bt" placeholder="Write here">
+                           <button type="submit"class="btn btn-outline-success rounded-pill" >SUBMIT</button>
                         </div>
                        </div>
                       </div>

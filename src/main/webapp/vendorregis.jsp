@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -125,10 +126,10 @@
                            <input type="password" class="email-bt" placeholder="Password" name='password' required>
                         </div>
                        
-                        <div class="send_btn"><button type="submit" class="btn btn-danger btn-lg">Register</button></div> <div class="send_btn"><button type="reset" class="btn btn-danger btn-lg">Clear</button></div> <div class="send_btn">
+                        <div class="send_btn"><button type="submit" class="btn btn-danger btn-lg">Register</button></div> <div class="send_btn"><button type="reset" class="btn btn-danger btn-lg">Clear</button></div> 
                         <br>
-                        <a href="vendorlogin">Go Back</a></div>
-                     </form>
+                        <a href="vendorlogin">Go Back</a></form></div>
+                     
                      </div>
                   </div>
                   

@@ -1,3 +1,10 @@
+<%
+   		response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
+   		response.setHeader("Pragma", "no-cache");
+   		
+   			if(session.getAttribute("user")==null)
+   				response.sendRedirect("/vendorlogin");
+%>
 <%@page import="java.util.Iterator"%>
 <%@page import="com.example.demo.model.ProductCategory"%>
 <%@page import="java.util.ArrayList"%>
@@ -35,6 +42,7 @@
       <link rel="stylesheet" href="css/owl.carousel.min.css">
       <link rel="stylesheet" href="css/owl.theme.default.min.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
    </head>
    <body>
        <!--header section start -->
@@ -50,16 +58,6 @@
                   <ul class="navbar-nav mr-auto">
                      <li class="nav-item active">
                         <a class="nav-link" href="/vhome">Home</a>
-                     </li>
-
-                     <li class="nav-item dropdown">
-                     <a class="nav-link dropdown-toggle" href="#" id="navbarsExample01" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-					            Products
-					          </a>
-					         <div class="collapse navbar-collapse" id="navbarsExample01">
-                  <ul class="navbar-nav mr-auto">
-                     <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home</a>
                      </li>
                      <li class="nav-item dropdown">
                      <a class="nav-link dropdown-toggle" href="#" id="navbarsExample01" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -91,14 +89,10 @@
                      </li>
                   </ul>
                </div>
-
-                  </ul>
-               </div>
             </nav>
          </div>
         
       </div>
-      <!--header section end -->
       <!-- contact section start -->
       <div class="contact_section layout_padding">
          <div class="container">
@@ -127,9 +121,13 @@
                         <div class="form-group">
                             <input type="text" class="email-bt" placeholder="Status" name='serviceStatus' value="${serviceDetails.getServiceStatus() }">
                         </div>
+                         <div class="form-group">
+                            <input type="text" class="email-bt" placeholder="Description" name='serviceDescription' value="${serviceDetails.getServiceDescription() }">
+                        </div>
                 
                          <button type="submit" class="btn btn-outline-success rounded-pill">UPDATE</button>
                         <button type="reset" class="btn btn-outline-danger rounded-pill">CLEAR</button>
+                        <input type="button" class="btn btn-outline-success rounded-pill" value="Go Back" onclick="history.back()">
                        </form>
                     </div>
                   </div>
@@ -139,18 +137,19 @@
          </div>
       
       <!-- contact section end -->
-      <!-- footer section start -->
       <div class="footer_section layout_padding">
          <div class="container">
             <div class="row">
                <div class="col-lg-6 col-sm-12">
-                  <h4 class="information_text">Category</h4>
-                  <p class="dummy_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim </p>
+                  <h4 class="information_text">SHOP NOW!!!</h4>
+                  <p class="dummy_text">Looking for an easy and convenient way to shop? Look no further than our ecommerce website! With a vast selection of products at competitive prices, fast shipping, and exceptional customer service, we make online shopping a breeze. Start shopping now and discover why we're the best choice for all your needs. </p>
                </div>
                <div class="col-lg-3 col-sm-6">
                   <div class="information_main">
                      <h4 class="information_text">Useful Links</h4>
-                     <p class="many_text">Contrary to popular belief, Lorem Ipsum is not simply random text. It </p>
+                     <p><a href="/help">HELP</a><br><a href="/feedback">FEEDBACK</a></br><a href="/fq">FEEDBACK QUESTIONNAIRE</a></p>                
+                     
+                 
                   </div>
                </div>
                <div class="col-lg-3 col-sm-6">
@@ -172,11 +171,10 @@
             </div>
             <div class="copyright_section">
                <h1 class="copyright_text">
-               Copyright 2020 All Right Reserved <a href="https://html.design"> Free Html Templates</a>
+               Copyright 2020 All Right Reserved 
             </div>
          </div>
       </div>
-      <!-- footer section end -->
       <!-- Javascript files-->
       <script src="js/jquery.min.js"></script>
       <script src="js/popper.min.js"></script>
