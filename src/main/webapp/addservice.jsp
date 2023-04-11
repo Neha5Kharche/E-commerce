@@ -1,3 +1,10 @@
+<%
+   		response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
+   		response.setHeader("Pragma", "no-cache");
+   		
+   			if(session.getAttribute("user")==null)
+   				response.sendRedirect("/vendorlogin");
+%>
 <%@page import="java.util.Iterator"%>
 <%@page import="com.example.demo.model.ServiceCategory"%>
 <%@page import="java.util.ArrayList"%>
@@ -140,14 +147,24 @@
                         <div class="form-group">
                             <input type="text" class="email-bt" placeholder="Service Image" name='serviceImage' >
                         </div>
+
+                       
+
                          <div class="form-group">
+
                             <input type="text" class="email-bt" placeholder="Service Status" name='serviceStatus' >
+                        </div>
+                         <div class="form-group">
+
+                            <input type="text" class="email-bt" placeholder="Service Description" name='serviceDescription' >
                         </div>
                         
                         
                        <button type="submit" class="btn btn-outline-success rounded-pill">SUBMIT</button>
                         <button type="reset" class="btn btn-outline-danger rounded-pill">CLEAR</button>
-                           <input type="button" class="btn btn-outline-success rounded-pill" value="Go Back" onclick="history.back()">
+
+                        <input type="button" class="btn btn-outline-success rounded-pill" value="Go Back" onclick="history.back()">
+
                      </form>
                     </div>
                   </div>
@@ -157,7 +174,10 @@
          </div>
       </div>
       <!-- contact section end -->
+<<<<<<< HEAD
      <!-- footer section start -->
+=======
+>>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
       <div class="footer_section layout_padding">
          <div class="container">
             <div class="row">
@@ -168,7 +188,11 @@
                <div class="col-lg-3 col-sm-6">
                   <div class="information_main">
                      <h4 class="information_text">Useful Links</h4>
+<<<<<<< HEAD
                      <p><a href="/help">HELP</a><br><a href="/feedback">FEEDBACK</a><br><a href="/fq">FEEDBACK QUESTIONNAIRE</a></p>                
+=======
+                     <p><a href="/help">HELP</a><br><a href="/feedback">FEEDBACK</a></br><a href="/fq">FEEDBACK QUESTIONNAIRE</a></p>                
+>>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
                      
                  
                   </div>
@@ -192,12 +216,15 @@
             </div>
             <div class="copyright_section">
                <h1 class="copyright_text">
+<<<<<<< HEAD
                Copyright 2020 All Right Reserved
                </h1> 
+=======
+               Copyright 2020 All Right Reserved 
+>>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
             </div>
          </div>
       </div>
-      <!-- footer section end -->
       <!-- Javascript files-->
       <script src="js/jquery.min.js"></script>
       <script src="js/popper.min.js"></script>

@@ -77,6 +77,41 @@ public ModelAndView vendorRegister(vendor v)
 	
 }
 
+<<<<<<< HEAD
+=======
+
+@RequestMapping("/logout")
+public ModelAndView vendorLogout(HttpServletRequest req)
+{
+	HttpSession session = req.getSession();
+	session.invalidate();
+	
+	ModelAndView mv = new ModelAndView("vendorlogin");
+	return mv;
+	
+}
+
+@RequestMapping("/vLogin")
+public ModelAndView vendorLogin(@RequestParam("vEmail")String email,String vPassword,HttpServletRequest req)
+{
+	boolean result=vService.login(email,vPassword);
+	if (result==true) {
+		HttpSession session = req.getSession();
+		session.setAttribute("user", email);
+		ArrayList<ProductCategory> pc =	productCategoryService.getProductCategoryList();
+		  req.setAttribute("pcArray", pc);
+		  ArrayList<ServiceCategory> sc = serviceCategoryService.getServiceCategoryList();
+		  req.setAttribute("scArray", sc);
+		ModelAndView mv = new ModelAndView("vendorhome");
+		return mv;
+	}
+	else {
+		ModelAndView mv = new ModelAndView("vendorlogin");
+		mv.addObject("errmsg", "Invalid Username or Password");
+		return mv;
+	}
+}
+>>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
 
 
 @RequestMapping("/vhome")
@@ -326,8 +361,11 @@ public ModelAndView newserviceview(HttpServletRequest req)
 public ModelAndView productsview(HttpServletRequest req)
 {
 	 
+	 ArrayList<ProductCategory> pcArray =	productCategoryService.getProductCategoryList();
+	 req.setAttribute("pcArray", pcArray);
 	 ArrayList<Product> pc =	productService.getProductList();
 	 req.setAttribute("productList", pc);
+	 
 	 
 	 ModelAndView mv = new ModelAndView("viewproducts");
 	
@@ -336,8 +374,10 @@ public ModelAndView productsview(HttpServletRequest req)
 @RequestMapping("/viewservices")
 public ModelAndView serviceview(HttpServletRequest req)
 {
+	ArrayList<ServiceCategory> scArray =	serviceCategoryService.getServiceCategoryList();
+	req.setAttribute("scArray", scArray);
 	ArrayList<VendorServiceProvided> sc =	serviceService.getServiceList();
-	req.setAttribute("serviceList", sc);
+	 req.setAttribute("serviceList", sc);
 	ModelAndView mv = new ModelAndView("viewservices");
     return mv;
 }
@@ -410,14 +450,18 @@ public ModelAndView editproductsview(Long pid)
 	Product productDetails = productService.getByProductId(pid);
 	ModelAndView mv = new ModelAndView("editproducts");
 	mv.addObject("productDetails", productDetails);
+	mv.addObject("errmsg", "");
+	mv.addObject("successfullymsg", "");
     return mv;
 }
 
 @RequestMapping("/updateproducts")
-public ModelAndView updateproductsview(Long productId,String productPrice,String productStatus)
+public ModelAndView updateproductsview(Long productId,String productPrice,String productStatus,String productDescription)
 {
-	 productService.updateProductDetails(productId, productPrice, productStatus);
+	 productService.updateProductDetails(productId, productPrice, productStatus, productDescription);
 	ModelAndView mv = new ModelAndView("editproducts");
+	mv.addObject("errmsg", "");
+	mv.addObject("successfullymsg", "Product Updated Successfully!!!");
 	
     return mv;
 }
@@ -427,14 +471,18 @@ public ModelAndView editservicesview(Long sid)
 	VendorServiceProvided serviceDetails = serviceService.getByServiceId(sid);
 	ModelAndView mv = new ModelAndView("editservices");
 	mv.addObject("serviceDetails", serviceDetails);
+	mv.addObject("errmsg", "");
+	mv.addObject("successfullymsg", "");
     return mv;
 }
 
 @RequestMapping("/updateservices")
-public ModelAndView updateservicesview(Long serviceId,String servicePrice,String serviceStatus)
+public ModelAndView updateservicesview(Long serviceId,String servicePrice,String serviceStatus,String serviceDescription)
 {
-	 serviceService.updateServiceDetails(serviceId, servicePrice, serviceStatus);
+	 serviceService.updateServiceDetails(serviceId, servicePrice, serviceStatus, serviceDescription);
 	ModelAndView mv = new ModelAndView("editservices");
+	mv.addObject("errmsg", "");
+	mv.addObject("successfullymsg", "Service Updated Successfully!!!");
 	
     return mv;
 }

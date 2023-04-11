@@ -16,6 +16,7 @@ public class Product {
 	private String productCategory;
 	private String vendorId;
 	private String productImage;
+	private String productDescription;
 	public Long getProductId() {
 		return productId;
 	}
@@ -58,10 +59,16 @@ public class Product {
 	public void setProductImage(String productImage) {
 		this.productImage = productImage;
 	}
+	public String getProductDescription() {
+		return productDescription;
+	}
+	public void setProductDescription(String productDescription) {
+		this.productDescription = productDescription;
+	}
 	@Override
 	public String toString() {
 		return "Product [productId=" + productId + ", productName=" + productName + ", productPrice=" + productPrice
 				+ ", productStatus=" + productStatus + ", productCategory=" + productCategory + ", vendorId=" + vendorId
-				+ ", productImage=" + productImage + "]";
+				+ ", productImage=" + productImage + ", productDescription=" + productDescription + "]";
 	}
 }

@@ -1,4 +1,10 @@
-
+<%
+   		response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
+   		response.setHeader("Pragma", "no-cache");
+   		
+   			if(session.getAttribute("user")==null)
+   				response.sendRedirect("/vendorlogin");
+%>
 <%@page import="com.example.demo.model.ServiceCategory"%>
 <%@page import="java.util.Iterator"%>
 <%@page import="com.example.demo.model.ProductCategory"%>
@@ -132,7 +138,7 @@
                <div class="col-lg-4 col-sm-12">
                   <div class="beauty_box">
                     
-                     <div><img src="images/img-5.png" class="image_3"></div>
+                     <div><img src="https://sc01.alicdn.com/kf/H77c86e5b927348ef927d297d6a4fc1bbq.jpg" class="image_3"></div>
                      <div class="seemore_bt"><a href="/viewproduct">see More</a></div>
                   </div>
                </div>
@@ -186,7 +192,7 @@
                <div class="col-lg-4 col-sm-12">
                   <div class="beauty_box">
                     
-                     <div><img src="images/img-5.png" class="image_3"></div>
+                     <div><img src="https://media.istockphoto.com/id/1338894509/photo/woman-choosing-a-new-style-for-herself.jpg?s=612x612&w=0&k=20&c=Ew11SGoTR-W4hO719So27fWOn9M8oRyFVQerofbBdr4=" class="image_3"></div>
                      <div class="seemore_bt"><a href="/viewproduct">see More</a></div>
                   </div>
                </div>

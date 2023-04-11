@@ -1,7 +1,17 @@
-<%@page import="com.example.demo.model.ProductCategory"%>
-<%@page import="java.util.Iterator"%>
+<%
+   		response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
+   		response.setHeader("Pragma", "no-cache");
+   		
+   			if(session.getAttribute("user")==null)
+   				response.sendRedirect("/vendorlogin");
+%>
 <%@page import="com.example.demo.model.Product"%>
+<%@page import="java.util.Iterator"%>
+<%@page import="com.example.demo.model.ProductCategory"%>
 <%@page import="java.util.ArrayList"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
 <html lang="en">
    <head>
       <meta charset="utf-8">
@@ -11,7 +21,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
-      <title>Caraft</title>
+      <title>Contact</title>
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
@@ -33,23 +43,10 @@
       <link rel="stylesheet" href="css/owl.carousel.min.css">
       <link rel="stylesheet" href="css/owl.theme.default.min.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-      <style>
-      .horizontal-scrollable > .row {
-            overflow-x: auto;
-            white-space: normal;
-            display: flex;
-        }
-          
-        .horizontal-scrollable > .row > .col-lg-2 .col-md-5 > .beds_section {
-            display: inline-block;
-            white-space: normal;
-            float: none;
-        }
-      </style>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
    </head>
    <body>
-        <!--header section start -->
+       <!--header section start -->
       <div class="header_section">
          <div class="container">
             <nav class="navbar navbar-dark ">
@@ -59,16 +56,6 @@
                <span class="navbar-toggler-icon"></span>
                </button>
                <div class="collapse navbar-collapse" id="navbarsExample01">
-                  <ul class="navbar-nav mr-auto">
-                     <li class="nav-item active">
-                        <a class="nav-link" href="/vhome">Home</a>
-                     </li>
-
-                     <li class="nav-item dropdown">
-                     <a class="nav-link dropdown-toggle" href="#" id="navbarsExample01" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-					            Products
-					          </a>
-					         <div class="collapse navbar-collapse" id="navbarsExample01">
                   <ul class="navbar-nav mr-auto">
                      <li class="nav-item active">
                         <a class="nav-link" href="/vhome">Home</a>
@@ -103,13 +90,10 @@
                      </li>
                   </ul>
                </div>
-                  </ul>
-               </div>
             </nav>
          </div>
         
       </div>
-      <!--header section end -->
                  
       <!--category section start -->
      <div class="container">
@@ -168,6 +152,7 @@
                      <div><img src="<%= productDetails.getProductImage() %>" class="image_2"></div>
                        <div class="text">PRICE: <%= productDetails.getProductPrice() %></div>                
                        <div class="text">STATUS: <%= productDetails.getProductStatus() %></div>
+                       <div class="text">DESCRIPTION: <%= productDetails.getProductDescription() %></div>
 
 
                      <a href="/editproducts?pid=<%= productDetails.getProductId() %>">Edit Product</a>
@@ -203,8 +188,7 @@
          </div>
       </div>
       <!-- newsletter section end -->
-      <!-- footer section start -->
-      <div class="footer_section layout_padding">
+     <div class="footer_section layout_padding">
          <div class="container">
             <div class="row">
                <div class="col-lg-6 col-sm-12">
@@ -214,7 +198,11 @@
                <div class="col-lg-3 col-sm-6">
                   <div class="information_main">
                      <h4 class="information_text">Useful Links</h4>
+<<<<<<< HEAD
                      <p><a href="/help">HELP</a><br><a href="/feedback">FEEDBACK</a><br><a href="/fq">FEEDBACK QUESTIONNAIRE</a></p>                
+=======
+                     <p><a href="/help">HELP</a><br><a href="/feedback">FEEDBACK</a></br><a href="/fq">FEEDBACK QUESTIONNAIRE</a></p>                
+>>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
                      
                  
                   </div>
@@ -238,12 +226,15 @@
             </div>
             <div class="copyright_section">
                <h1 class="copyright_text">
+<<<<<<< HEAD
                Copyright 2020 All Right Reserved
                </h1> 
+=======
+               Copyright 2020 All Right Reserved 
+>>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
             </div>
          </div>
       </div>
-      <!-- footer section end -->
       <!-- Javascript files-->
       <script src="js/jquery.min.js"></script>
       <script src="js/popper.min.js"></script>

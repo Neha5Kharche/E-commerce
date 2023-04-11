@@ -106,11 +106,15 @@
                      <div class="email_text">
                         <div class="form-group">
                            <input type="text" class="email-bt" placeholder="Write here">
+<<<<<<< HEAD
                             <button type="submit" class="btn btn-outline-success rounded-pill" >SUBMIT</button>
                          
                         <button type="reset" class="btn btn-outline-danger rounded-pill">CLEAR</button>
                        
                        <input type="button" class="btn btn-outline-success rounded-pill" value="Go Back" onclick="history.back()">
+=======
+                           <button type="submit"class="btn btn-outline-success rounded-pill" >SUBMIT</button>
+>>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
                         </div>
                        </div>
                       </div>

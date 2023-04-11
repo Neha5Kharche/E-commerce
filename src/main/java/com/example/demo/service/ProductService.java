@@ -15,9 +15,17 @@ public class ProductService {
 	@Autowired
 ProductRepo repo;
 	
+	
 	public void addProduct(Product product)
 	{
 		repo.save(product);
+	}
+	
+	public Product getById(Long pid)
+	{
+		Product productDetails = repo.findById(pid).orElse(new Product());
+		return productDetails;
+		
 	}
 	
 	public ArrayList<Product> getProductList()
@@ -43,9 +51,9 @@ ProductRepo repo;
 		return  productDetails;
 	}
 	
-	public void updateProductDetails(Long pid,String pPrice,String pStatus)
+	public void updateProductDetails(Long pid,String pPrice,String pStatus,String pDescription)
 	{
-			repo.updateProductDetails(pid, pPrice, pStatus);
+			repo.updateProductDetails(pid, pPrice, pStatus, pDescription);
 		System.out.println(repo.findById(pid));
 	}
 	

@@ -33,7 +33,7 @@
       <link rel="stylesheet" href="css/owl.carousel.min.css">
       <link rel="stylesheet" href="css/owl.theme.default.min.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
-       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
       <style>
       .horizontal-scrollable > .row {
             overflow-x: auto;
@@ -49,8 +49,8 @@
       </style>
    </head>
    <body>
-         <!--header section start -->
-      <div class="header_section">
+       <!--header section start -->
+       <div class="header_section">
          <div class="container">
             <nav class="navbar navbar-dark ">
                <a class="logo" href="/"><img src="images/logo.png"></a>
@@ -63,11 +63,9 @@
                      <li class="nav-item active">
                         <a class="nav-link" href="/vhome">Home</a>
                      </li>
-
                      <li class="nav-item dropdown">
                      <a class="nav-link dropdown-toggle" href="#" id="navbarsExample01" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 					            Products
-					          </a>
 					          </a>
 					          <ul class="dropdown-menu " aria-labelledby="navbarsExample01">
 					            <li><a class="dropdown-item" href="/addproductcategory">Add Products Category</a></li>
@@ -92,7 +90,6 @@
                      <li class="nav-item">
                         <a class="nav-link" href="/vendorlogin">Logout</a>
                      </li>
-
                   </ul>
                </div>
             </nav>
@@ -100,50 +97,96 @@
         
       </div>
       <!--header section end -->
+                 
       <!--category section start -->
-      <!-- category section end -->
-      <!-- beauty product section start -->   
-      <!-- new code added -->
-          <h1 class="feature_taital">Product List</h1>                    		
-<div class="category_section_2">
+     <div class="container">
+         <div class="category_section">
             <div class="row">
-            
-           
-           <h1 class="feature_taital">${cName}</h1>                    		
-<div class="category_section_2">
+               <div class="col-lg-2 col-sm-12">
+                
+                <h1 class="category_text">Category</h1>
+               </div>
+               
+               <div class="col-lg-10 col-sm-12 main">
+              <% 
+              	ArrayList<ProductCategory> pcList = (ArrayList) request.getAttribute("pcArray");
+              	if(request.getAttribute("pcArray") != null)
+            	  {
+              		Iterator<ProductCategory> iterator = pcList.iterator();
+              		while(iterator.hasNext())
+              		{
+              			ProductCategory productCategory = iterator.next();
+              	
+            	  %>
+            	   <div class="col">
+                     <div class="box_main">
+                     <a href="/vendorproducts?pid=<%= productCategory.getProductCategoryId()%>&cName=<%= productCategory.getProductCategoryName() %>"><div style="width: 50px;margin: 0 auto; height: 60px;background-size: 100%;background-repeat: no-repeat;text-align: center;display: inline-block;background-image: url(<%= productCategory.getProductCategoryIcon()%>);"></div>
+                        <h4 class="fashion_text active"><%= productCategory.getProductCategoryName() %></h4></a>
+                     </div>
+                  </div>
+            	  <%
+              		}
+            	  }
+            	  %>
+               </div>
+            </div>
+         </div>
+        
+     
+      <!-- category section end -->
+      
+      <!-- new code added -->
+      <%  
+      ArrayList<ProductCategory> productCategoryList = (ArrayList) request.getAttribute("pcArray");
+    	if(request.getAttribute("pcArray") != null)
+  	  {
+    		Iterator<ProductCategory> iterator = productCategoryList.iterator();
+    		while(iterator.hasNext())
+    		{
+    			ProductCategory productCategoryDetails = iterator.next();
+    			long pcid = (long)productCategoryDetails.getProductCategoryId();
+      %>
+          <h1 class="feature_taital"><%= productCategoryDetails.getProductCategoryName() %></h1>                    		
+			<div class="category_section_2">
             <div class="row">
             <% 
               	ArrayList<Product> ProductList = (ArrayList) request.getAttribute("productList");
               	if(request.getAttribute("productList") != null)
             	  {
-              		Iterator<Product> iterator = ProductList.iterator();
-              		while(iterator.hasNext())
+              		Iterator<Product> productiterator = ProductList.iterator();
+              		while(productiterator.hasNext())
               		{
-              			Product productDetails = iterator.next();
+              			Product productDetails = productiterator.next();
+              			long pid = Long.parseLong(productDetails.getProductCategory());
+              			if(pid == pcid)
+              			{
               	
             	  %>
-            	  <div class="col-lg-2 col-md-5">
+            	  <div class="col-lg-4 col-sm-12">
             	  <div class="beds_section active">
-            	 
                      <h1 class="bed_text"><%= productDetails.getProductName() %></h1>
                      <div><img src="<%= productDetails.getProductImage() %>" class="image_2"></div>
                        <div class="text">PRICE: <%= productDetails.getProductPrice() %></div>                
                        <div class="text">STATUS: <%= productDetails.getProductStatus() %></div>
-
-                     <a href="/editproducts?pid=<%= productDetails.getProductId() %>">Edit Product
-                    </a>
+                       <div class="text">DESCRIPTION: <%= productDetails.getProductDescription() %></div>
+                        
+                      
+                    
+                    
 
                   </div>
              	</div>
                <%
+              			}
               		}
             	  }
+    		}
+	  }
             	  %>
 
                </div>
             </div>
         
-         
          
          
          
@@ -176,7 +219,11 @@
                <div class="col-lg-3 col-sm-6">
                   <div class="information_main">
                      <h4 class="information_text">Useful Links</h4>
+<<<<<<< HEAD
                      <p><a href="/help">HELP</a><br><a href="/feedback">FEEDBACK</a><br><a href="/fq">FEEDBACK QUESTIONNAIRE</a></p>                
+=======
+                     <p><a href="/help">HELP</a><br><a href="/feedback">FEEDBACK</a></br><a href="/fq">FEEDBACK QUESTIONNAIRE</a></p>                
+>>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
                      
                  
                   </div>
@@ -200,8 +247,12 @@
             </div>
             <div class="copyright_section">
                <h1 class="copyright_text">
+<<<<<<< HEAD
                Copyright 2020 All Right Reserved
                </h1> 
+=======
+               Copyright 2020 All Right Reserved 
+>>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
             </div>
          </div>
       </div>
@@ -223,7 +274,7 @@
       <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
       <script src="../../assets/js/vendor/popper.min.js"></script>
       <script src="../../dist/js/bootstrap.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
    </body>
 </html>
-
+   		
