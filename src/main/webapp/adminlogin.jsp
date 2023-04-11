@@ -58,9 +58,6 @@
                         <a class="nav-link" href="/customerlogin">Customers</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="/clients">Client</a>
-                     </li>
-                     <li class="nav-item">
                         <a class="nav-link" href="/contact">Contact Us</a>
                      </li>
                   </ul>

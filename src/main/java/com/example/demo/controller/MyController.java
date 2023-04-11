@@ -338,13 +338,7 @@ public ModelAndView newserviceview(HttpServletRequest req)
 	ModelAndView mv = new ModelAndView("viewservicecategorys");
     return mv;
 }
-<<<<<<< HEAD
 
-@RequestMapping("/viewproduct")
-public ModelAndView viewproductview()
-{
-	ModelAndView mv = new ModelAndView("viewproduct");
-=======
 @RequestMapping("/viewproducts")
 public ModelAndView productsview(HttpServletRequest req)
 {
@@ -360,9 +354,8 @@ public ModelAndView productsview(HttpServletRequest req)
 public ModelAndView serviceview(HttpServletRequest req)
 {
 	ArrayList<VendorServiceProvided> sc =	serviceService.getServiceList();
-	req.setAttribute("scArray", sc);
+	req.setAttribute("serviceList", sc);
 	ModelAndView mv = new ModelAndView("viewservices");
->>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
     return mv;
 }
 

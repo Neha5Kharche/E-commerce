@@ -68,11 +68,21 @@
                      <a class="nav-link dropdown-toggle" href="#" id="navbarsExample01" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 					            Products
 					          </a>
+					         <div class="collapse navbar-collapse" id="navbarsExample01">
+                  <ul class="navbar-nav mr-auto">
+                     <li class="nav-item active">
+                        <a class="nav-link" href="/vhome">Home</a>
+                     </li>
+                     <li class="nav-item dropdown">
+                     <a class="nav-link dropdown-toggle" href="#" id="navbarsExample01" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+					            Products
+					          </a>
+					          </a>
 					          <ul class="dropdown-menu " aria-labelledby="navbarsExample01">
 					            <li><a class="dropdown-item" href="/addproductcategory">Add Products Category</a></li>
 					            <li><a class="dropdown-item" href="/viewproductcategorys">View Products Category</a></li>
 					            <li><a class="dropdown-item" href="/addproduct">Add Products</a></li>
-					            <li><a class="dropdown-item" href="/vendorproducts">View Products</a></li>
+					            <li><a class="dropdown-item" href="/viewproducts">View Products</a></li>
 					          </ul>
           				 
 			        </li>
@@ -84,14 +94,15 @@
 					            <li><a class="dropdown-item" href="/addservicecategory">Add Service Category</a></li>
 					            <li><a class="dropdown-item" href="/viewservicecategorys">View Service Category</a></li>
 					            <li><a class="dropdown-item" href="/addservice">Add Service</a></li>
-					            <li><a class="dropdown-item" href="/vendorservices">View Service</a></li>
+					            <li><a class="dropdown-item" href="/viewservices">View Service</a></li>
 					          </ul>
           				 
 			        </li>
                      <li class="nav-item">
                         <a class="nav-link" href="/vendorlogin">Logout</a>
                      </li>
-
+                  </ul>
+               </div>
                   </ul>
                </div>
             </nav>
@@ -158,14 +169,9 @@
                        <div class="text">PRICE: <%= productDetails.getProductPrice() %></div>                
                        <div class="text">STATUS: <%= productDetails.getProductStatus() %></div>
 
-<<<<<<< HEAD
-                     <a href="/editproducts?pid=<%= productDetails.getProductId() %>">Edit Product</a>
-                      <a href="/editproduct">Edit Product</a>
-=======
-                     <a href="/editproducts?pid=<%= productDetails.getProductId() %>">Edit Product
-                    </a>
->>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
 
+                     <a href="/editproducts?pid=<%= productDetails.getProductId() %>">Edit Product</a>
+                    
                   </div>
              	</div>
                <%

@@ -47,22 +47,7 @@
                   <ul class="navbar-nav mr-auto">
                      <li class="nav-item active">
                         <a class="nav-link" href="/">Home</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="/vhome">View Category</a>
-                     </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="category.html">Add Category</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="/viewproduct">View Products</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="products.html">Add Products</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="/">Logout</a>
-                     </li>
+                     </li>           
                   </ul>
                </div>
             </nav>
