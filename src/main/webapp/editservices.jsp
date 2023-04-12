@@ -127,7 +127,7 @@
                 
                          <button type="submit" class="btn btn-outline-success rounded-pill">UPDATE</button>
                         <button type="reset" class="btn btn-outline-danger rounded-pill">CLEAR</button>
-                        <input type="button" class="btn btn-outline-success rounded-pill" value="Go Back" onclick="history.back()">
+                       <a class="btn btn-outline-success rounded-pill" href="/vhome">Go Back</a>
                        </form>
                     </div>
                   </div>
@@ -137,6 +137,7 @@
          </div>
       
       <!-- contact section end -->
+      <!-- footer section start -->
       <div class="footer_section layout_padding">
          <div class="container">
             <div class="row">
@@ -147,11 +148,7 @@
                <div class="col-lg-3 col-sm-6">
                   <div class="information_main">
                      <h4 class="information_text">Useful Links</h4>
-<<<<<<< HEAD
                      <p><a href="/help">HELP</a><br><a href="/feedback">FEEDBACK</a><br><a href="/fq">FEEDBACK QUESTIONNAIRE</a></p>                
-=======
-                     <p><a href="/help">HELP</a><br><a href="/feedback">FEEDBACK</a></br><a href="/fq">FEEDBACK QUESTIONNAIRE</a></p>                
->>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
                      
                  
                   </div>
@@ -175,15 +172,12 @@
             </div>
             <div class="copyright_section">
                <h1 class="copyright_text">
-<<<<<<< HEAD
                Copyright 2020 All Right Reserved
                </h1> 
-=======
-               Copyright 2020 All Right Reserved 
->>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
             </div>
          </div>
       </div>
+      <!-- footer section end -->
       <!-- Javascript files-->
       <script src="js/jquery.min.js"></script>
       <script src="js/popper.min.js"></script>

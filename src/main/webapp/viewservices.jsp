@@ -212,7 +212,7 @@
          </div>
       </div>
       <!-- newsletter section end -->
-      <!-- footer section start -->
+       <!-- footer section start -->
       <div class="footer_section layout_padding">
          <div class="container">
             <div class="row">
@@ -223,11 +223,7 @@
                <div class="col-lg-3 col-sm-6">
                   <div class="information_main">
                      <h4 class="information_text">Useful Links</h4>
-<<<<<<< HEAD
                      <p><a href="/help">HELP</a><br><a href="/feedback">FEEDBACK</a><br><a href="/fq">FEEDBACK QUESTIONNAIRE</a></p>                
-=======
-                     <p><a href="/help">HELP</a><br><a href="/feedback">FEEDBACK</a></br><a href="/fq">FEEDBACK QUESTIONNAIRE</a></p>                
->>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
                      
                  
                   </div>
@@ -251,12 +247,8 @@
             </div>
             <div class="copyright_section">
                <h1 class="copyright_text">
-<<<<<<< HEAD
                Copyright 2020 All Right Reserved
                </h1> 
-=======
-               Copyright 2020 All Right Reserved 
->>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
             </div>
          </div>
       </div>

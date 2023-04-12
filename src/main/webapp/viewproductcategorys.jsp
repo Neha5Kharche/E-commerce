@@ -170,11 +170,24 @@
                <div class="col-lg-3 col-sm-6">
                   <div class="information_main">
                      <h4 class="information_text">Useful Links</h4>
-<<<<<<< HEAD
+
                      <p><a href="/help">HELP</a><br><a href="/feedback">FEEDBACK</a><br><a href="/fq">FEEDBACK QUESTIONNAIRE</a></p>                
-=======
-                     <p><a href="/help">HELP</a><br><a href="/feedback">FEEDBACK</a></br><a href="/fq">FEEDBACK QUESTIONNAIRE</a></p>                
->>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
+
+                    
+                     
+                 
+                   <!-- footer section start -->
+      <div class="footer_section layout_padding">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-6 col-sm-12">
+                  <h4 class="information_text">SHOP NOW!!!</h4>
+                  <p class="dummy_text">Looking for an easy and convenient way to shop? Look no further than our ecommerce website! With a vast selection of products at competitive prices, fast shipping, and exceptional customer service, we make online shopping a breeze. Start shopping now and discover why we're the best choice for all your needs. </p>
+               </div>
+               <div class="col-lg-3 col-sm-6">
+                  <div class="information_main">
+                     <h4 class="information_text">Useful Links</h4>
+                     <p><a href="/help">HELP</a><br><a href="/feedback">FEEDBACK</a><br><a href="/fq">FEEDBACK QUESTIONNAIRE</a></p>                
                      
                  
                   </div>
@@ -198,15 +211,12 @@
             </div>
             <div class="copyright_section">
                <h1 class="copyright_text">
-<<<<<<< HEAD
                Copyright 2020 All Right Reserved
                </h1> 
-=======
-               Copyright 2020 All Right Reserved 
->>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
             </div>
          </div>
       </div>
+      <!-- footer section end -->
       <!-- Javascript files-->
       <script src="js/jquery.min.js"></script>
       <script src="js/popper.min.js"></script>

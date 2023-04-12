@@ -94,7 +94,7 @@
          </div>
       </div>
       <!-- contact section end -->
-     <!-- footer section start -->
+   <!-- footer section start -->
       <div class="footer_section layout_padding">
          <div class="container">
             <div class="row">

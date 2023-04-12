@@ -93,6 +93,7 @@
                         <div class="form-group">
                            <input type="text" class="email-bt" placeholder="Write here">
                            <button type="submit"class="btn btn-outline-success rounded-pill" >SUBMIT</button>
+                            <a class="btn btn-outline-success rounded-pill" href="/vhome">Go Back</a>
                         </div>
                        </div>
                       </div>

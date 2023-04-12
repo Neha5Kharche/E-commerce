@@ -77,41 +77,9 @@ public ModelAndView vendorRegister(vendor v)
 	
 }
 
-<<<<<<< HEAD
-=======
 
-@RequestMapping("/logout")
-public ModelAndView vendorLogout(HttpServletRequest req)
-{
-	HttpSession session = req.getSession();
-	session.invalidate();
-	
-	ModelAndView mv = new ModelAndView("vendorlogin");
-	return mv;
-	
-}
 
-@RequestMapping("/vLogin")
-public ModelAndView vendorLogin(@RequestParam("vEmail")String email,String vPassword,HttpServletRequest req)
-{
-	boolean result=vService.login(email,vPassword);
-	if (result==true) {
-		HttpSession session = req.getSession();
-		session.setAttribute("user", email);
-		ArrayList<ProductCategory> pc =	productCategoryService.getProductCategoryList();
-		  req.setAttribute("pcArray", pc);
-		  ArrayList<ServiceCategory> sc = serviceCategoryService.getServiceCategoryList();
-		  req.setAttribute("scArray", sc);
-		ModelAndView mv = new ModelAndView("vendorhome");
-		return mv;
-	}
-	else {
-		ModelAndView mv = new ModelAndView("vendorlogin");
-		mv.addObject("errmsg", "Invalid Username or Password");
-		return mv;
-	}
-}
->>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
+
 
 
 @RequestMapping("/vhome")
@@ -520,6 +488,18 @@ public ModelAndView vendorLogin(@RequestParam("vEmail")String email,String vPass
 public ModelAndView newfqView()
 {
 	ModelAndView mv = new ModelAndView("newfq");
+	return mv;
+}
+@RequestMapping("/vendorheader")
+public ModelAndView vendorheaderView()
+{
+	ModelAndView mv = new ModelAndView("vendorheader");
+	return mv;
+}
+@RequestMapping("/adminhome")
+public ModelAndView adminhomeView()
+{
+	ModelAndView mv = new ModelAndView("adminhome");
 	return mv;
 }
 }
