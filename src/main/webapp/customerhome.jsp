@@ -1,38 +1,10 @@
+<%@page import="com.example.demo.model.ServiceCategory"%>
+<%@page import="java.util.Iterator"%>
+<%@page import="com.example.demo.model.ProductCategory"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Transparent Login Form UI</title>
-    <link rel="stylesheet" href="home.css">
-   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-  </head>
-  <body>
-  
-  
-   <div><header style="text-align:center">Customer Home</header></div>
-   <div style="display: flex;">
-      <div class="card" style="width: 18rem;">
-  <img src="../css/1.jpg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Product Details</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="/productcategory" class="btn btn-primary">View Product Details</a>
-  </div>
-</div>
-<div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Service Details</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="/servicecategory" class="btn btn-primary">View Service Details</a>
-  </div>
-</div>
-
+<%@page import="java.util.ArrayList"%>
+<html lang="en">
    <head>
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -65,43 +37,42 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
    </head>
    <body>
-      <!--header section start -->
+       <!--header section start -->
       <div class="header_section">
          <div class="container">
             <nav class="navbar navbar-dark bg-dark">
-               <a class="logo" href="index.html"><img src="images/logo.png"></a>
-               <div class="search_section">
-                  <ul>
-                     <li><a href="#"><img src="images/shopping-bag.png"></a></li>
-                     <li><a href="#"><img src="images/search-icon.png"></a></li>
-                  </ul>
-               </div>
+               <a class="logo" href="/"><img src="images/logo.png"></a>
+               
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
                <span class="navbar-toggler-icon"></span>
                </button>
                <div class="collapse navbar-collapse" id="navbarsExample01">
                   <ul class="navbar-nav mr-auto">
                      <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link" href="/chome">Home</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="category.html">Category</a>
+                        <a class="nav-link" href="/">Category</a>
+                     </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/customerViewAllProducts">Products</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="products.html">Products</a>
+                       <a class="nav-link" href="/">Services</a>
+
                      </li>
+                     
                      <li class="nav-item">
-                        <a class="nav-link" href="clients.html">Cart</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Logout</a>
+                        <a class="nav-link" href="/clogout">Logout</a>
                      </li>
                   </ul>
                </div>
             </nav>
          </div>
-         <!--banner section start -->
-         <div class="banner_section layout_padding">
+        
+      </div>
+      <!--header section end -->
+       <div class="banner_section layout_padding">
             <div id="my_slider" class="carousel slide" data-ride="carousel">
                <div class="carousel-inner">
                   <div class="carousel-item active">
@@ -164,75 +135,38 @@
                </a>
             </div>
          </div>
-         <!--banner section end -->
-      </div>
-      <!--header section end -->
       <!--category section start -->
-      <div class="container">
+     <div class="container">
+      <h1 class="category_text text-center">ProductCategory</h1>
          <div class="category_section">
+         
             <div class="row">
-               <div class="col-lg-2 col-sm-12">
-                  <h1 class="category_text">Category</h1>
-               </div>
+               
                <div class="col-lg-10 col-sm-12 main">
-                  <div class="col">
+              <% 
+              	ArrayList<ProductCategory> pcList = (ArrayList) request.getAttribute("pcArray");
+              	if(request.getAttribute("pcArray") != null)
+            	  {
+              		Iterator<ProductCategory> iterator = pcList.iterator();
+              		while(iterator.hasNext())
+              		{
+              			ProductCategory productCategory = iterator.next();
+              	
+            	  %>
+            	   <div class="col">
                      <div class="box_main">
-                        <div class="icon_1"></div>
-                        <h4 class="fashion_text active">New Fashion</h4>
+                     <a href="/customerproducts?pid=<%= productCategory.getProductCategoryId()%>&cName=<%= productCategory.getProductCategoryName() %>"><div style="width: 50px;margin: 0 auto; height: 60px;background-size: 100%;background-repeat: no-repeat;text-align: center;display: inline-block;background-image: url(<%= productCategory.getProductCategoryIcon()%>);"></div>
+                        <h4 class="fashion_text active"><%= productCategory.getProductCategoryName() %></h4></a>
                      </div>
                   </div>
-                  <div class="col">
-                     <div class="box_main">
-                        <div class="icon_2"></div>
-                        <h4 class="fashion_text">Clothing</h4>
-                     </div>
-                  </div>
-                  <div class="col">
-                     <div class="box_main">
-                        <div class="icon_3"></div>
-                        <h4 class="fashion_text">Watches</h4>
-                     </div>
-                  </div>
-                  <div class="col">
-                     <div class="box_main">
-                        <div class="icon_4"></div>
-                        <h4 class="fashion_text">Accessories</h4>
-                     </div>
-                  </div>
-                  <div class="col">
-                     <div class="box_main">
-                        <div class="icon_5"></div>
-                        <h4 class="fashion_text">Sweaters & Jackets</h4>
-                     </div>
-                  </div>
+            	  <%
+              		}
+            	  }
+            	  %>
                </div>
             </div>
          </div>
-         <div class="category_section_2">
-            <div class="row">
-               <div class="col-lg-4 col-sm-12">
-                  <div class="beds_section active">
-                     <h1 class="bed_text">Up to 50% off | Beds</h1>
-                     <div><img src="images/img-2.png" class="image_2"></div>
-                     <div class="seemore_bt"><a href="#">see More</a></div>
-                  </div>
-               </div>
-               <div class="col-lg-4 col-sm-12">
-                  <div class="beds_section">
-                     <h1 class="bed_text">organized in style</h1>
-                     <div><img src="images/img-3.png" class="image_2"></div>
-                     <div class="seemore_bt"><a href="#">see More</a></div>
-                  </div>
-               </div>
-               <div class="col-lg-4 col-sm-12">
-                  <div class="beds_section">
-                     <h1 class="bed_text">Refurbished mixer</h1>
-                     <div><img src="images/img-4.png" class="image_2"></div>
-                     <div class="seemore_bt"><a href="#">see More</a></div>
-                  </div>
-               </div>
-            </div>
-         </div>
+        
       </div>
       <!-- category section end -->
       <!-- beauty product section start -->
@@ -241,101 +175,77 @@
             <div class="row">
                <div class="col-lg-4 col-sm-12">
                   <div class="beauty_box">
-                     <h1 class="bed_text">Beauty products</h1>
+                    
                      <div><img src="images/img-5.png" class="image_3"></div>
-                     <div class="seemore_bt"><a href="#">see More</a></div>
+                     <div class="seemore_bt"><a href="/viewproduct">see More</a></div>
                   </div>
                </div>
                <div class="col-lg-8 col-sm-12">
                   <div class="beauty_box_1">
-                     <h1 class="bed_text_1">Explore trending electronics</h1>
+                    
                      <div><img src="images/img-6.png" class="image_3"></div>
-                     <div class="seemore_bt_1"><a href="#">see More</a></div>
+                     <div class="seemore_bt_1"><a href="/viewproduct">see More</a></div>
                   </div>
                </div>
             </div>
          </div>
       </div>
-      <!-- beauty product section end -->
-      <!-- product section start -->
-      <div class="product_section layout_padding">
+      
+
+             <div class="container">
+              <h1 class="category_text text-center">Service Category</h1>
+         <div class="category_section">
+         
+            <div class="row">
+               
+               <div class="col-lg-10 col-sm-12 main">
+               <%
+               ArrayList<ServiceCategory> scList = (ArrayList) request.getAttribute("scArray");
+               if(request.getAttribute("scArray") != null)
+               {
+            	   Iterator<ServiceCategory> iterator = scList.iterator();
+            	   while(iterator.hasNext())
+            	   {
+            		   ServiceCategory serviceCategory = iterator.next();
+            	   %>
+            	   <div class="col">
+                     <div class="box_main">
+                     <a href="/customerservices?sid=<%= serviceCategory.getServiceCategoryId()%>&sName=<%= serviceCategory.getServiceCategoryName()%>"><div style="width: 50px;margin: 0 auto; height: 60px;background-size: 100%;background-repeat: no-repeat;text-align: center;display: inline-block;background-image: url(<%= serviceCategory.getServiceCategoryIcon()%>);"></div>
+                        <h4 class="fashion_text active"><%= serviceCategory.getServiceCategoryName() %></h4></a>
+                         </div>
+                  </div>
+            	  <%
+              		}
+            	  }
+            	  %>
+               </div>
+            </div>
+         </div>
+        
+      </div>
+      
+      <div class="beauty_section layout_padding">
          <div class="container">
-            <h1 class="feature_taital">FEATURED PRODUCTS</h1>
-            <p class="feature_text">It is a long established fact that a reader will be distracted by the readable content of a page when looking</p>
-            <div class="product_section_2">
-               <div class="row">
-                  <div class="col-sm-5">
-                     <div class="feature_box">
-                        <h1 class="readable_text">Readable content of</h1>
-                        <div><img src="images/img-7.png" class="image_7"></div>
-                     </div>
-                     <div class="feature_box_1">
-                        <h1 class="readable_text">Readable content of</h1>
-                        <div><img src="images/img-7.png" class="image_7"></div>
-                     </div>
+            <div class="row">
+               <div class="col-lg-4 col-sm-12">
+                  <div class="beauty_box">
+                    
+                     <div><img src="images/img-5.png" class="image_3"></div>
+                     <div class="seemore_bt"><a href="/viewproduct">see More</a></div>
                   </div>
-                  <div class="col-sm-7">
-                     <div class="feature_box_2">
-                        <h1 class="readable_text">Readable content of</h1>
-                        <div><img src="images/img-8.png" class="image_8"></div>
-                        <div class="seemore_bt"><a href="#">see More</a></div>
-                     </div>
+               </div>
+               <div class="col-lg-8 col-sm-12">
+                  <div class="beauty_box_1">
+                    
+                     <div><img src="images/img-6.png" class="image_3"></div>
+                     <div class="seemore_bt_1"><a href="/viewproduct">see More</a></div>
                   </div>
                </div>
             </div>
          </div>
       </div>
-      <!-- product section end -->
-      <!-- client section start -->
-      <div class="client_section layout_padding">
-         <div id="main_slider" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-               <div class="carousel-item active">
-                  <div class="container">
-                     <h1 class="feature_taital">what is says our customer</h1>
-                     <p class="feature_text">It is a long established fact that a reader will be distracted by the readable content of a page when looking</p>
-                     <div class="client_section_2">
-                        <div class="image_9"><img src="images/img-9.png"></div>
-                        <h3 class="nolmal_text">Normal distribution</h3>
-                        <p class="ipsum_text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look</p>
-                        <div class="image_9"><img src="images/icon-10.png"></div>
-                     </div>
-                  </div>
-               </div>
-               <div class="carousel-item">
-                  <div class="container">
-                     <h1 class="feature_taital">FEATURED PRODUCTS</h1>
-                     <p class="feature_text">It is a long established fact that a reader will be distracted by the readable content of a page when looking</p>
-                     <div class="client_section_2">
-                        <div class="image_9"><img src="images/img-9.png"></div>
-                        <h3 class="nolmal_text">Normal distribution</h3>
-                        <p class="ipsum_text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look</p>
-                        <div class="image_9"><img src="images/icon-10.png"></div>
-                     </div>
-                  </div>
-               </div>
-               <div class="carousel-item">
-                  <div class="container">
-                     <h1 class="feature_taital">FEATURED PRODUCTS</h1>
-                     <p class="feature_text">It is a long established fact that a reader will be distracted by the readable content of a page when looking</p>
-                     <div class="client_section_2">
-                        <div class="image_9"><img src="images/img-9.png"></div>
-                        <h3 class="nolmal_text">Normal distribution</h3>
-                        <p class="ipsum_text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look</p>
-                        <div class="image_9"><img src="images/icon-10.png"></div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
-            <i class=""><img src="images/left-icon.png"></i>
-            </a>
-            <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
-            <i class=""><img src="images/right-icon.png"></i>
-            </a>
-         </div>
-      </div>
-      <!-- client section end -->
+      
+      
       <!-- newsletter section start -->
       <div class="newsletter_section layout_padding">
          <div class="container">
@@ -407,29 +317,5 @@
       <script src="../../assets/js/vendor/popper.min.js"></script>
       <script src="../../dist/js/bootstrap.min.js"></script>
    </body>
+
 </html>
->>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
-
-<<<<<<< HEAD
-    <script>
-      const pass_field = document.querySelector('.pass-key');
-      const showBtn = document.querySelector('.show');
-      showBtn.addEventListener('click', function(){
-       if(pass_field.type === "password"){
-         pass_field.type = "text";
-         showBtn.textContent = "HIDE";
-         showBtn.style.color = "#3498db";
-       }else{
-         pass_field.type = "password";
-         showBtn.textContent = "SHOW";
-         showBtn.style.color = "#222";
-       }
-      });
-    </script>
-
-
-  </body>
-</html>
-=======
-    
->>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git

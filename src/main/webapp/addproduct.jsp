@@ -155,11 +155,11 @@
 
                         <button type="reset" class="btn btn-outline-danger rounded-pill">CLEAR</button>
 
-                        <input type="button" class="btn btn-outline-success rounded-pill" value="Go Back" onclick="history.back()">
+                        <a href="/vhome">Go Back</a></form></div>
 
                        
-                       <
-                       </form>
+                       </div>
+                       
                     </div>
                   </div>
                   

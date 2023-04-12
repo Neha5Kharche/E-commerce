@@ -86,7 +86,7 @@
                         </div>
                    <div class="send_btn"><a href="/adminresolvehelp">Login</a></div> <div class="send_btn"><a href="/adminlogin">Clear</a></div>
 
-                        <div class="send_btn"><a href="#">Login</a></div> <div class="send_btn"><a href="adminlogin">Clear</a></div>
+                        
 
                      </div>
                   </div>

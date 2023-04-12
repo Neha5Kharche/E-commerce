@@ -15,7 +15,6 @@ public class ProductService {
 	@Autowired
 ProductRepo repo;
 	
-	
 	public void addProduct(Product product)
 	{
 		repo.save(product);
@@ -43,6 +42,20 @@ ProductRepo repo;
 		return productCategoryList;
 	}
 	
+	public ArrayList<Product> getByProductCategory(String productCategory,String vendorId)
+	{
+		ArrayList<Product> productCategoryList = new ArrayList<>();
+		productCategoryList.addAll(repo.getByproductCategory(productCategory,vendorId));
+		
+		return productCategoryList;
+	}
+	public ArrayList<Product> getByProduct(String vendorId)
+	{
+		ArrayList<Product> productCategoryList = new ArrayList<>();
+		productCategoryList.addAll(repo.getByproduct(vendorId));
+		
+		return productCategoryList;
+	}
 	
 	public Product getByProductId(Long pid)
 	{
@@ -53,14 +66,9 @@ ProductRepo repo;
 	
 	public void updateProductDetails(Long pid,String pPrice,String pStatus,String pDescription)
 	{
-			repo.updateProductDetails(pid, pPrice, pStatus, pDescription);
+			repo.updateProductDetails(pid, pPrice, pStatus);
 		System.out.println(repo.findById(pid));
 	}
 	
-	
 
 }
-
-	
-
-

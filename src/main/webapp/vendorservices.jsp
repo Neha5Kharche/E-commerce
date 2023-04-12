@@ -59,7 +59,7 @@
    </head>
    <body>
          <!--header section start -->
-      <div class="header_section">
+       <div class="header_section">
          <div class="container">
             <nav class="navbar navbar-dark ">
                <a class="logo" href="/"><img src="images/logo.png"></a>
@@ -72,19 +72,9 @@
                      <li class="nav-item active">
                         <a class="nav-link" href="/vhome">Home</a>
                      </li>
-
                      <li class="nav-item dropdown">
                      <a class="nav-link dropdown-toggle" href="#" id="navbarsExample01" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 					            Products
-					         <div class="collapse navbar-collapse" id="navbarsExample01">
-                  <ul class="navbar-nav mr-auto">
-                     <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home</a>
-                     </li>
-                     <li class="nav-item dropdown">
-                     <a class="nav-link dropdown-toggle" href="#" id="navbarsExample01" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-					            Products
-					          </a>
 					          </a>
 					          <ul class="dropdown-menu " aria-labelledby="navbarsExample01">
 					            <li><a class="dropdown-item" href="/addproductcategory">Add Products Category</a></li>
@@ -111,14 +101,12 @@
                      </li>
                   </ul>
                </div>
-
-                  </ul>
-               </div>
             </nav>
          </div>
         
       </div>
       <!--header section end -->
+      
                  
       <!--category section start -->
      <div class="container">

@@ -1,3 +1,10 @@
+<%
+   		response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
+   		response.setHeader("Pragma", "no-cache");
+   		
+   			if(session.getAttribute("user")==null)
+   				response.sendRedirect("/vendorlogin");
+%>
 <%@page import="com.example.demo.model.VendorServiceProvided"%>
 <%@page import="com.example.demo.model.ServiceCategory"%>
 <%@page import="com.example.demo.model.ProductCategory"%>

@@ -15,6 +15,13 @@ public class ProductCategory {
 	private String productCategoryIcon;
 	@Column(length=1024)
 	private String productCategoryImage;
+	private String vendorId;
+	public String getVendorId() {
+		return vendorId;
+	}
+	public void setVendorId(String vendorId) {
+		this.vendorId = vendorId;
+	}
 	public Long getProductCategoryId() {
 		return productCategoryId;
 	}
@@ -43,7 +50,7 @@ public class ProductCategory {
 	public String toString() {
 		return "ProductCategory [productCategoryId=" + productCategoryId + ", productCategoryName="
 				+ productCategoryName + ", productCategoryIcon=" + productCategoryIcon + ", productCategoryImage="
-				+ productCategoryImage + "]";
+				+ productCategoryImage + ", vendorId=" + vendorId + "]";
 	}
 	
 	
