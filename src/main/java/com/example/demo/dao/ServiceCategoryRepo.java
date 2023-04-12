@@ -1,9 +1,19 @@
 package com.example.demo.dao;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.ArrayList;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
+
+import com.example.demo.model.ProductCategory;
 import com.example.demo.model.ServiceCategory;
 
-public interface ServiceCategoryRepo extends JpaRepository<ServiceCategory, Long> {
+import jakarta.transaction.Transactional;
 
+public interface ServiceCategoryRepo extends JpaRepository<ServiceCategory, Long> {
+	@Transactional
+	@Modifying
+	@Query("from ServiceCategory p  where  p.vendorId = :vendorId")
+	public ArrayList<ServiceCategory> findServiceCategoryByVendors(String vendorId);
 }

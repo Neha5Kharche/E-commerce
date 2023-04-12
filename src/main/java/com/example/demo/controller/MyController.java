@@ -79,16 +79,39 @@ public ModelAndView vendorRegister(vendor v)
 
 
 
+<<<<<<< HEAD
 
+=======
+@RequestMapping("/vLogin")
+public ModelAndView vendorLogin(@RequestParam("vEmail")String email,String vPassword,HttpServletRequest req)
+{
+	boolean result=vService.login(email,vPassword);
+	if (result==true) {
+		HttpSession session = req.getSession();
+		session.setAttribute("user", email);
+		ArrayList<ProductCategory> pc =	productCategoryService.getProductCategoryByVendors(email);
+		  req.setAttribute("pcArray", pc);
+		  ArrayList<ServiceCategory> sc = serviceCategoryService.getServiceCategoryByVendors(email);
+		  req.setAttribute("scArray", sc);
+		ModelAndView mv = new ModelAndView("vendorhome");
+		return mv;
+	}
+	else {
+		ModelAndView mv = new ModelAndView("vendorlogin");
+		mv.addObject("errmsg", "Invalid Username or Password");
+		return mv;
+	}
+}
+>>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
 
 
 @RequestMapping("/vhome")
 public ModelAndView vendorHome(HttpServletRequest req)
 {
-  ArrayList<ProductCategory> pc =	productCategoryService.getProductCategoryList();
-  req.setAttribute("pcArray", pc);
-  ArrayList<ServiceCategory> sc = serviceCategoryService.getServiceCategoryList();
-  req.setAttribute("scArray", sc);
+	ArrayList<ProductCategory> pc =	productCategoryService.getProductCategoryByVendors(req.getSession().getAttribute("user").toString());
+	  req.setAttribute("pcArray", pc);
+	  ArrayList<ServiceCategory> sc = serviceCategoryService.getServiceCategoryByVendors(req.getSession().getAttribute("user").toString());
+	  req.setAttribute("scArray", sc);
 	ModelAndView mv = new ModelAndView("vendorhome");
   	mv.addObject("pc", pc);
   	mv.addObject("sc", sc);
@@ -98,8 +121,8 @@ public ModelAndView vendorHome(HttpServletRequest req)
 @RequestMapping("/ProductDetails")
 public ModelAndView productDetailsHome(HttpServletRequest req)
 {
-  ArrayList<ProductCategory> pc =	productCategoryService.getProductCategoryList();
-  req.setAttribute("pcArray", pc);
+	ArrayList<ProductCategory> pc =	productCategoryService.getProductCategoryByVendors(req.getSession().getAttribute("user").toString());
+	  req.setAttribute("pcArray", pc);
 	ModelAndView mv = new ModelAndView("viewproduct");
   	mv.addObject("pc", pc);
 	return mv;
@@ -109,8 +132,8 @@ public ModelAndView productDetailsHome(HttpServletRequest req)
 @RequestMapping("/ServiceDetails")
 public ModelAndView serviceDetailsHome(HttpServletRequest req)
 {
-	ArrayList<ServiceCategory> sc = serviceCategoryService.getServiceCategoryList();
-	req.setAttribute("scArray", sc);
+	ArrayList<ServiceCategory> sc = serviceCategoryService.getServiceCategoryByVendors(req.getSession().getAttribute("user").toString());
+	  req.setAttribute("scArray", sc);
 	ModelAndView mv = new ModelAndView("viewservice");
 	mv.addObject("sc", sc);
 	return mv;
@@ -155,10 +178,16 @@ public ModelAndView customerRegister(customer c)
 }
 
 @RequestMapping("/cLogin")
-public ModelAndView customerLogin(String email,String password)
+public ModelAndView customerLogin(@RequestParam("cEmail")String email,String cPassword,HttpServletRequest req)
 {
-	boolean result=cService.login(email,password);
+	boolean result=cService.login(email,cPassword);
 	if (result==true) {
+		ArrayList<ProductCategory> pc =	productCategoryService.getProductCategoryList();
+		  req.setAttribute("pcArray", pc);
+		  ArrayList<ServiceCategory> sc = serviceCategoryService.getServiceCategoryList();
+		  req.setAttribute("scArray", sc);
+		HttpSession session = req.getSession();
+		session.setAttribute("user", email);
 		ModelAndView mv = new ModelAndView("customerhome");
 		return mv;
 	}
@@ -171,10 +200,23 @@ public ModelAndView customerLogin(String email,String password)
 
 
 @RequestMapping("/chome")
-public ModelAndView customerHome()
+public ModelAndView customerhome(HttpServletRequest req)
 {
+  ArrayList<ProductCategory> pc =	productCategoryService.getProductCategoryList();
+  req.setAttribute("pcArray", pc);
 	ModelAndView mv = new ModelAndView("customerhome");
+  	mv.addObject("pc", pc);
 	return mv;
+}
+@RequestMapping("/clogout")
+public ModelAndView customerLogout(HttpServletRequest req)
+{
+	HttpSession session = req.getSession();
+	session.invalidate();
+	
+	ModelAndView mv = new ModelAndView("customerlogin");
+	return mv;
+	
 }
 
 @RequestMapping("/adminlogin")
@@ -311,29 +353,29 @@ public ModelAndView productcategoryview()
 @RequestMapping("/viewproductcategorys")
 public ModelAndView newfashionview(HttpServletRequest req)
 {
-	ArrayList<ProductCategory> pc =	productCategoryService.getProductCategoryList();
-	req.setAttribute("pcArray", pc);
+	ArrayList<ProductCategory> pc =	productCategoryService.getProductCategoryByVendors(req.getSession().getAttribute("user").toString());
+	  req.setAttribute("pcArray", pc);
+	
 	ModelAndView mv = new ModelAndView("viewproductcategorys");
     return mv;
 }
 @RequestMapping("/viewservicecategorys")
 public ModelAndView newserviceview(HttpServletRequest req)
 {
-	ArrayList<ServiceCategory> sc =	serviceCategoryService.getServiceCategoryList();
-	req.setAttribute("scArray", sc);
+	ArrayList<ServiceCategory> sc = serviceCategoryService.getServiceCategoryByVendors(req.getSession().getAttribute("user").toString());
+	  req.setAttribute("scArray", sc);
 	ModelAndView mv = new ModelAndView("viewservicecategorys");
     return mv;
 }
 
 @RequestMapping("/viewproducts")
-public ModelAndView productsview(HttpServletRequest req)
+public ModelAndView productsview(HttpServletRequest req )
 {
-	 
+	String vid = req.getSession().getAttribute("user").toString();
 	 ArrayList<ProductCategory> pcArray =	productCategoryService.getProductCategoryList();
 	 req.setAttribute("pcArray", pcArray);
-	 ArrayList<Product> pc =	productService.getProductList();
+	 ArrayList<Product> pc =	productService.getByProduct(vid);
 	 req.setAttribute("productList", pc);
-	 
 	 
 	 ModelAndView mv = new ModelAndView("viewproducts");
 	
@@ -344,28 +386,24 @@ public ModelAndView serviceview(HttpServletRequest req)
 {
 	ArrayList<ServiceCategory> scArray =	serviceCategoryService.getServiceCategoryList();
 	req.setAttribute("scArray", scArray);
+	
 	ArrayList<VendorServiceProvided> sc =	serviceService.getServiceList();
 	 req.setAttribute("serviceList", sc);
 	ModelAndView mv = new ModelAndView("viewservices");
     return mv;
 }
 
-@RequestMapping("/viewservicecategory")
-public ModelAndView viewservicecategoryview()
-{
-	ModelAndView mv = new ModelAndView("viewservicecategory");
-    return mv;
-}
 
 
 
 @RequestMapping("/vendorproducts")
 public ModelAndView vendorproductsview(@RequestParam("pid") String pid,String cName,HttpServletRequest req)
 {
-	 ArrayList<ProductCategory> pcArray =	productCategoryService.getProductCategoryList();
-	  req.setAttribute("pcArray", pcArray);
-	 ArrayList<Product> pc =	productService.getByProductCategory(pid);
-	 req.setAttribute("productList", pc);
+	String vid = req.getSession().getAttribute("user").toString();
+	ArrayList<ProductCategory> pc =	productCategoryService.getProductCategoryByVendors(req.getSession().getAttribute("user").toString());
+	  req.setAttribute("pcArray", pc);
+	 ArrayList<Product> product =	productService.getByProductCategory(pid,vid);
+	 req.setAttribute("productList", product);
 	 
 	 ModelAndView mv = new ModelAndView("vendorproducts");
 	 mv.addObject("cName", cName);
@@ -376,10 +414,11 @@ public ModelAndView vendorproductsview(@RequestParam("pid") String pid,String cN
 @RequestMapping("/vendorservices")
 public ModelAndView vendorservicesView(@RequestParam("sid") String sid,String sName,HttpServletRequest req)
 {
-	ArrayList<ServiceCategory> scArray = serviceCategoryService.getServiceCategoryList();
-	req.setAttribute("scArray", scArray);
-	ArrayList<VendorServiceProvided> sc = serviceService.getByServiceCategory(sid);
-	req.setAttribute("serviceList", sc);
+	String vid = req.getSession().getAttribute("user").toString();
+	ArrayList<ServiceCategory> sc = serviceCategoryService.getServiceCategoryByVendors(req.getSession().getAttribute("user").toString());
+	  req.setAttribute("scArray", sc);
+	ArrayList<VendorServiceProvided> service = serviceService.getByServiceCategory(sid,vid);
+	req.setAttribute("serviceList", service);
 	
 	ModelAndView mv = new ModelAndView("vendorservices");
 	mv.addObject("sName", sName);

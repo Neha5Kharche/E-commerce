@@ -127,7 +127,11 @@
                 
                          <button type="submit" class="btn btn-outline-success rounded-pill">UPDATE</button>
                         <button type="reset" class="btn btn-outline-danger rounded-pill">CLEAR</button>
+<<<<<<< HEAD
                        <a class="btn btn-outline-success rounded-pill" href="/vhome">Go Back</a>
+=======
+                       <a href="/vhome">Go Back</a></form></div>
+>>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
                        </form>
                     </div>
                   </div>

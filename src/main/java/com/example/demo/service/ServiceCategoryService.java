@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.dao.ServiceCategoryRepo;
+import com.example.demo.model.ProductCategory;
 import com.example.demo.model.ServiceCategory;
 
 @Service
@@ -24,5 +25,10 @@ public class ServiceCategoryService {
 		serviceCategoryList.addAll(repo.findAll());
 		return serviceCategoryList;
 	}
-
+	public ArrayList<ServiceCategory> getServiceCategoryByVendors(String vendorId)
+	{
+		ArrayList<ServiceCategory> serviceCategoryList = new ArrayList<>();
+		serviceCategoryList.addAll(repo.findServiceCategoryByVendors(vendorId));
+		return serviceCategoryList;
+	}
 }

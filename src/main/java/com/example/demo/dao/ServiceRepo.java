@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import com.example.demo.model.Product;
 import com.example.demo.model.VendorServiceProvided;
 
 import jakarta.transaction.Transactional;
@@ -13,6 +14,13 @@ import jakarta.transaction.Transactional;
 
 
 public interface ServiceRepo extends JpaRepository<VendorServiceProvided, Long> {
+	
+	@Transactional
+	@Modifying
+	@Query("from VendorServiceProvided s  where s.serviceCategory = :serviceCategory and s.vendorId = :vendorId")
+	public ArrayList<VendorServiceProvided> getByServiceCategory(String serviceCategory,String vendorId);
+	
+	
 	
 public ArrayList<VendorServiceProvided> getByserviceCategory(String serviceCategory);
 

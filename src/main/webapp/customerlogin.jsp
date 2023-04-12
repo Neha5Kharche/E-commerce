@@ -45,7 +45,7 @@
                <div class="collapse navbar-collapse" id="navbarsExample01">
                  <ul class="navbar-nav mr-auto">
                      <li class="nav-item active">
-                        <a class="nav-link" href="/">Home</a>
+                        <a class="nav-link" href="/chome">Home</a>
                      </li>
                      <li class="nav-item">
                         <a class="nav-link" href="/adminlogin">Admin</a>
@@ -69,13 +69,15 @@
       </div>
       <!--header section end -->
       <!-- contact section start -->
+    
       <div class="contact_section layout_padding">
          <div class="container">
-            <h1 class="touch_taital"> Customer Login</h1>
+            <h1 class="touch_taital">Customer Login</h1>
             <div class="contact_section_2">
                <div class="row">
                   <div class="col-md-6">
                      <div class="email_text">
+                     <form action="/cLogin" method="post">
                         <div class="form-group">
                            <input type="text" class="email-bt" placeholder="User Name" name="cEmail">
                         </div>
@@ -85,16 +87,16 @@
                         <div class="form-check d-flex justify-content-start mb-4">
               <input class="form-check-input" type="checkbox" value="" id="customerlogin" />
               <label class="form-check-label" for="customerlogin"> Remember password </label>
-              <a href="#!">&nbsp;&nbsp;&nbsp;Forgot password?</a>
+              <a href="/resetpassword">&nbsp;&nbsp;&nbsp;Forgot password?</a>
             
         
             </div>
             
             
                        
-                        <div class="send_btn"><a href="chome">Login</a></div><div class="send_btn"><a href="customerlogin">Clear</a></div>
+                      <div class="send_btn"><button type="submit" class="btn btn-danger btn-lg">Login</button></div> <div class="send_btn"><button type="reset" class="btn btn-danger btn-lg">Clear</button></div>
                         
-                     
+                     </form>
                      </div>
                      <br>
                      <p>Don't have an account? <a href="customerregis" class="link-info">Register here</a></p>
@@ -107,6 +109,7 @@
             </div>
          </div>
       </div>
+      </form>
       <!-- contact section end -->
      <!-- footer section start -->
       <div class="footer_section layout_padding">

@@ -105,6 +105,10 @@
                   <h2 style="text-align: center;color: green;" >${successfullymsg }</h2>
                   <form action="creatingServiceCategory" method="post">
                      <div class="email_text">
+                     
+                     <div class="form-group">
+                           <input type="text" class="email-bt" placeholder="Vendor Id" name='vendorId' value="<%= session.getAttribute("user") %>" readonly>
+                        </div>
                        <div class="form-group">
                            <input type="text" class="email-bt" placeholder="Category Name" name='serviceCategoryName' >
                         </div>
@@ -117,7 +121,11 @@
                         
                         <button type="submit" class="btn btn-outline-danger rounded-pill">SUBMIT</button>
                         <button type="reset" class="btn btn-outline-warning rounded-pill">CLEAR</button>
+<<<<<<< HEAD
                         <a class="btn btn-outline-success rounded-pill" href="/vhome">Go Back</a>
+=======
+                       <a href="/vhome">Go Back</a></form></div>
+>>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
                      
                      </div>
                   </div>

@@ -33,11 +33,18 @@ public class ServiceService {
 	   ArrayList<VendorServiceProvided> serviceList = new ArrayList<>();
 	   serviceList.addAll(repo.findAll());
 	   return serviceList;
+	   
    }
    public ArrayList<VendorServiceProvided> getByServiceCategory(String serviceCategory)
    {
 	   ArrayList<VendorServiceProvided> serviceCategoryList = new ArrayList<>();
 	   serviceCategoryList.addAll(repo.getByserviceCategory(serviceCategory));
+	   return serviceCategoryList;
+   }
+   public ArrayList<VendorServiceProvided> getByServiceCategory(String serviceCategory,String vendorId)
+   {
+	   ArrayList<VendorServiceProvided> serviceCategoryList = new ArrayList<>();
+//	   serviceCategoryList.addAll(repo.getByserviceCategory(serviceCategory,vendorId));
 	   return serviceCategoryList;
    }
    

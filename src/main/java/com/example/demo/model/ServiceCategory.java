@@ -15,6 +15,13 @@ public class ServiceCategory {
 	private String serviceCategoryIcon;
 	@Column(length = 1024)
 	private String serviceCategoryImage;
+	private String vendorId;
+	public String getVendorId() {
+		return vendorId;
+	}
+	public void setVendorId(String vendorId) {
+		this.vendorId = vendorId;
+	}
 	public Long getServiceCategoryId() {
 		return serviceCategoryId;
 	}
@@ -43,7 +50,7 @@ public class ServiceCategory {
 	public String toString() {
 		return "ServiceCategory [serviceCategoryId=" + serviceCategoryId + ", serviceCategoryName="
 				+ serviceCategoryName + ", serviceCategoryIcon=" + serviceCategoryIcon + ", serviceCategoryImage="
-				+ serviceCategoryImage + "]";
+				+ serviceCategoryImage + ", vendorId=" + vendorId + "]";
 	}
 	
 

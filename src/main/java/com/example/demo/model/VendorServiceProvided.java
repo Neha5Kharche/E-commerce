@@ -18,6 +18,13 @@ public class VendorServiceProvided {
 	private String serviceImage;
 	private String serviceStatus;
 	private String serviceDescription;
+	private Long vendorId;
+	public Long getVendorId() {
+		return vendorId;
+	}
+	public void setVendorId(Long vendorId) {
+		this.vendorId = vendorId;
+	}
 	public Long getServiceId() {
 		return serviceId;
 	}
@@ -77,6 +84,6 @@ public class VendorServiceProvided {
 		return "VendorServiceProvided [serviceId=" + serviceId + ", serviceName=" + serviceName + ", servicePrice="
 				+ servicePrice + ", serviceAddress=" + serviceAddress + ", serviceCategory=" + serviceCategory
 				+ ", serviceContactNo=" + serviceContactNo + ", serviceImage=" + serviceImage + ", serviceStatus="
-				+ serviceStatus + ", serviceDescription=" + serviceDescription + "]";
+				+ serviceStatus + ", serviceDescription=" + serviceDescription + ", vendorId=" + vendorId + "]";
 	}
 }

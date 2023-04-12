@@ -13,11 +13,21 @@ import jakarta.transaction.Transactional;
 
 public interface ProductRepo extends JpaRepository<Product, Long> {
 	
+	
+	@Transactional
+	@Modifying
+	@Query("from Product p  where p.productCategory = :productCategory and p.vendorId = :vendorId")
+	public ArrayList<Product> getByproductCategory(String productCategory,String vendorId);
+	
+	@Transactional
+	@Modifying
+	@Query("from Product p  where  p.vendorId = :vendorId")
+	public ArrayList<Product> getByproduct(String vendorId);
 	public ArrayList<Product> getByproductCategory(String productCategory);
 	
 	@Transactional
 	@Modifying
-	@Query("update Product p set p.productPrice=:productPrice,p.productStatus=:productStatus,p.productDescription=:productDescription where p.productId=:productId")
-	public void updateProductDetails(@Param("productId") Long productId,@Param("productPrice") String productPrice,@Param("productStatus")String productStatus,@Param("productDescription")String productDescription);
+	@Query("update Product p set p.productPrice=:productPrice,p.productStatus=:productStatus where p.productId=:productId")
+	public void updateProductDetails(@Param("productId") Long productId,@Param("productPrice") String productPrice,@Param("productStatus")String productStatus);
 	
 }
