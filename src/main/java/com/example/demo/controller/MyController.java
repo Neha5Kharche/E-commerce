@@ -249,7 +249,8 @@ public ModelAndView addproductView(HttpServletRequest req)
 public ModelAndView createproductview(Product product)
 {
 	productService.addProduct(product);
-	ModelAndView mv = new ModelAndView("addproduct");
+	ModelAndView mv = new ModelAndView("success");
+	mv.addObject("product", product);
 	mv.addObject("errmsg", "");
 	mv.addObject("successfullymsg", "Product Create Successfully!!!");
 	return mv;
@@ -268,7 +269,7 @@ public ModelAndView addserviceView(HttpServletRequest req)
 public ModelAndView createserviceView(VendorServiceProvided vendorService)
 {
 	serviceService.addService(vendorService);
-	ModelAndView mv = new ModelAndView("addservice");
+	ModelAndView mv = new ModelAndView("success");
 	mv.addObject("errmsg", "");
 	mv.addObject("successfullymsg", "Service Create Successfully!!!");
 	return mv;
@@ -300,7 +301,7 @@ public ModelAndView createproductcategoryview(ProductCategory productCategory)
 {
 	productCategoryService.addProductCategory(productCategory);
 	
-	ModelAndView mv = new ModelAndView("addproductcategory");
+	ModelAndView mv = new ModelAndView("success");
 	mv.addObject("errmsg", "");
 	mv.addObject("successfullymsg", "ProductCategory Create Successfully!!!");
 	return mv;
@@ -318,7 +319,7 @@ public ModelAndView addservicecategoryView()
 public ModelAndView createservicecategoryview(ServiceCategory serviceCategory)
 {
 	serviceCategoryService.addServiceCategory(serviceCategory);
-	ModelAndView mv = new ModelAndView("addservicecategory");
+	ModelAndView mv = new ModelAndView("success");
 	mv.addObject("errmsg", "");
 	mv.addObject("successfullymsg", "ServiceCategory create Successfully!!!");
 	return mv;
@@ -390,10 +391,11 @@ public ModelAndView productsview(HttpServletRequest req )
 @RequestMapping("/viewservices")
 public ModelAndView serviceview(HttpServletRequest req)
 {
+	String vid = req.getSession().getAttribute("user").toString();
 	ArrayList<ServiceCategory> scArray =	serviceCategoryService.getServiceCategoryList();
 	req.setAttribute("scArray", scArray);
 	
-	ArrayList<VendorServiceProvided> sc =	serviceService.getServiceList();
+	ArrayList<VendorServiceProvided> sc =	serviceService.getByService(vid);
 	 req.setAttribute("serviceList", sc);
 	ModelAndView mv = new ModelAndView("viewservices");
     return mv;

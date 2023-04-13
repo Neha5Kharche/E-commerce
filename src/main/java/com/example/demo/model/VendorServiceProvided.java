@@ -18,11 +18,12 @@ public class VendorServiceProvided {
 	private String serviceImage;
 	private String serviceStatus;
 	private String serviceDescription;
-	private Long vendorId;
-	public Long getVendorId() {
+	private String vendorId;
+	
+	public String getVendorId() {
 		return vendorId;
 	}
-	public void setVendorId(Long vendorId) {
+	public void setVendorId(String vendorId) {
 		this.vendorId = vendorId;
 	}
 	public Long getServiceId() {
