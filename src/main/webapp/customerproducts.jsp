@@ -33,6 +33,7 @@
       <link rel="stylesheet" href="css/owl.carousel.min.css">
       <link rel="stylesheet" href="css/owl.theme.default.min.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
       <style>
       .horizontal-scrollable > .row {
             overflow-x: auto;
@@ -48,10 +49,10 @@
       </style>
    </head>
    <body>
-       <!--header section start -->
+        <!--header section start -->
       <div class="header_section">
          <div class="container">
-            <nav class="navbar navbar-dark bg-dark">
+            <nav class="navbar navbar-dark ">
                <a class="logo" href="/"><img src="images/logo.png"></a>
                
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
@@ -60,22 +61,21 @@
                <div class="collapse navbar-collapse" id="navbarsExample01">
                   <ul class="navbar-nav mr-auto">
                      <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link" href="/chome">Home</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="/vhome">View Category</a>
+                        <a class="nav-link" href="/">Category</a>
                      </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="/addproductcategory">Add Category</a>
+                        <a class="nav-link" href="/customerproducts">Products</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="/viewproduct">View Products</a>
+                       <a class="nav-link" href="/">Services</a>
+
                      </li>
+                     
                      <li class="nav-item">
-                        <a class="nav-link" href="/addproduct">Add Products</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="/">Logout</a>
+                        <a class="nav-link" href="/clogout">Logout</a>
                      </li>
                   </ul>
                </div>
@@ -84,14 +84,16 @@
         
       </div>
       <!--header section end -->
-      
+                 
       <!--category section start -->
      <div class="container">
          <div class="category_section">
             <div class="row">
                <div class="col-lg-2 col-sm-12">
-                  <h1 class="category_text">Category</h1>
+                
+                <h1 class="category_text">Category</h1>
                </div>
+               
                <div class="col-lg-10 col-sm-12 main">
               <% 
               	ArrayList<ProductCategory> pcList = (ArrayList) request.getAttribute("pcArray");
@@ -105,7 +107,7 @@
             	  %>
             	   <div class="col">
                      <div class="box_main">
-                     <a href="/vendorproducts?pid=<%= productCategory.getProductCategoryId()%>&cName=<%= productCategory.getProductCategoryName() %>"><div class="<%= productCategory.getProductCategoryIcon() %>"></div>
+                     <a href="/customerproducts?pid=<%= productCategory.getProductCategoryId()%>&cName=<%= productCategory.getProductCategoryName() %>"><div style="width: 50px;margin: 0 auto; height: 60px;background-size: 100%;background-repeat: no-repeat;text-align: center;display: inline-block;background-image: url(<%= productCategory.getProductCategoryIcon()%>);"></div>
                         <h4 class="fashion_text active"><%= productCategory.getProductCategoryName() %></h4></a>
                      </div>
                   </div>
@@ -117,9 +119,9 @@
             </div>
          </div>
         
-      </div>
+     
       <!-- category section end -->
-      <!-- beauty product section start -->   
+      
       <!-- new code added -->
           <h1 class="feature_taital">${cName}</h1>                    		
 <div class="category_section_2">
@@ -134,14 +136,19 @@
               			Product productDetails = iterator.next();
               	
             	  %>
-            	  <div class="col-lg-2 col-md-5">
+            	  <div class="col-lg-4 col-sm-12">
             	  <div class="beds_section active">
+            	  
                      <h1 class="bed_text"><%= productDetails.getProductName() %></h1>
                      <div><img src="<%= productDetails.getProductImage() %>" class="image_2"></div>
                        <div class="text">PRICE: <%= productDetails.getProductPrice() %></div>                
                        <div class="text">STATUS: <%= productDetails.getProductStatus() %></div>
-                       <a href="url">Add to cart</a>
-                     
+                       <a href="/cProductDetails?pid=<%= productDetails.getProductId() %>" class="link-danger btn btn-outline-danger">Details</a>
+                       <a href="#" class="link-danger btn btn-outline-danger">Buy Now</a>
+                       <a href="/addCart?pid=<%= productDetails %>" class="link-danger btn btn-outline-danger">Add to Cart</a>
+                    
+                    
+
                   </div>
              	</div>
                <%
@@ -228,6 +235,6 @@
       <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
       <script src="../../assets/js/vendor/popper.min.js"></script>
       <script src="../../dist/js/bootstrap.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
    </body>
 </html>
-

@@ -46,22 +46,22 @@
                <div class="collapse navbar-collapse" id="navbarsExample01">
                   <ul class="navbar-nav mr-auto">
                      <li class="nav-item active">
-                        <a class="nav-link" href="/">Home</a>
+                        <a class="nav-link" href="/chome">Home</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="/vhome">View Category</a>
-                     </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="category.html">Add Category</a>
+                        <a class="nav-link" href="/adminlogin">Admin</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="/viewproduct">View Products</a>
+                        <a class="nav-link" href="/vendorlogin">Vendor</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="products.html">Add Products</a>
+                        <a class="nav-link" href="/customerlogin">Customers</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="/">Logout</a>
+                        <a class="nav-link" href="/clients">Client</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/contact">Contact Us</a>
                      </li>
                   </ul>
                </div>
@@ -104,10 +104,11 @@
                   </div>
                   <div class="col-md-6">
                      <div class="email_text">
+                     <form action="" method="post">
                         <div class="form-group">
-                           <input type="text" class="email-bt" placeholder="Write here">
-                           <button type="submit"class="btn btn-outline-success rounded-pill" >SUBMIT</button>
+                           <textarea class="massage-bt" placeholder="feedback" rows="5" required ></textarea>
                         </div>
+                        </form>
                        </div>
                       </div>
                      </div>
@@ -173,4 +174,3 @@
    </body>
 
 </html>
-      
