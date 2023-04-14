@@ -9,9 +9,9 @@
     </head>
     <body class="wrapper style3">
        <script>
-           swal("${product.getProductName()} added successfully!", "", "success").then(function() {window.location = "/viewproducts";}); 
-           swal("${productCategory.getProductCategoryName()} added successfully!", "", "success").then(function() {window.location = "/viewproductcategorys";}); 
-          
+           swal("${vendorServiceProvided.getServiceName()} added successfully!", "", "success").then(function() {window.location = "/viewservices";});
+           swal("${serviceCategory.getServiceCategoryName()} added successfully!", "", "success").then(function() {window.location = "/viewservicecategorys";});
+           
            
             </script>
     </body>

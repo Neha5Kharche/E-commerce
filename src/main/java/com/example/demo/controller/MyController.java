@@ -269,7 +269,7 @@ public ModelAndView addserviceView(HttpServletRequest req)
 public ModelAndView createserviceView(VendorServiceProvided vendorService)
 {
 	serviceService.addService(vendorService);
-	ModelAndView mv = new ModelAndView("success");
+	ModelAndView mv = new ModelAndView("servicesuccess");
 	mv.addObject("errmsg", "");
 	mv.addObject("successfullymsg", "Service Create Successfully!!!");
 	return mv;
@@ -319,7 +319,7 @@ public ModelAndView addservicecategoryView()
 public ModelAndView createservicecategoryview(ServiceCategory serviceCategory)
 {
 	serviceCategoryService.addServiceCategory(serviceCategory);
-	ModelAndView mv = new ModelAndView("success");
+	ModelAndView mv = new ModelAndView("servicesuccess");
 	mv.addObject("errmsg", "");
 	mv.addObject("successfullymsg", "ServiceCategory create Successfully!!!");
 	return mv;
