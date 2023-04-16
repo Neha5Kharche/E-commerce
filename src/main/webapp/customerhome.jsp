@@ -55,7 +55,7 @@
                         <a class="nav-link" href="/">Category</a>
                      </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="/customerproducts">Products</a>
+                        <a class="nav-link" href="/customerViewAllProducts">Products</a>
                      </li>
                      <li class="nav-item">
                        <a class="nav-link" href="/">Services</a>

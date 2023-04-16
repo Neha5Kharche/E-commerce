@@ -248,6 +248,8 @@ public ModelAndView customerViewAllProductsView(HttpServletRequest req)
 	 ArrayList<Product> pc =	productService.getProductList();
 	 req.setAttribute("productList", pc);
 	 
+	 
+	 
 	 ModelAndView mv = new ModelAndView("cviewallproducts");
 	 
 	return mv;
@@ -274,8 +276,10 @@ public ModelAndView feedbackview()
     return mv;
 }
 @RequestMapping("/cart")
-public ModelAndView cartview()
+public ModelAndView cartview(HttpServletRequest req,String cid)
 {
+	ArrayList<Cart> cartProduct = cartService.getCartProductByCustomer(cid);
+	req.setAttribute("cartProduct", cartProduct);
 	ModelAndView mv = new ModelAndView("cart");
     return mv;
 }
@@ -288,17 +292,18 @@ public ModelAndView addToCartView(HttpServletRequest req,String pid,String cid)
 	Product product = productService.getById(new Long(pid));
 	System.out.println(product);
 	cartService.addToCart(product,customerId);	
-	ArrayList<Cart> cartProduct = cartService.getCartProductByCustomer(cid);
-	req.setAttribute("cartProduct", cartProduct);
-	ModelAndView mv = new ModelAndView("cviewallproducts");
-	mv.addObject("cartProduct", cartProduct);
+	ModelAndView mv = new ModelAndView("productsuccess");
+	mv.addObject("cid", cid);
 	return mv;
 }
 
+
 @RequestMapping("/purchase")
-public ModelAndView purchaseview()
+public ModelAndView purchaseview(HttpServletRequest req,String pid,String cid)
 {
+	Product product = productService.getById(new Long(pid));
 	ModelAndView mv = new ModelAndView("purchase");
+	mv.addObject("product", product);
     return mv;
 }
 
@@ -317,7 +322,7 @@ public ModelAndView addproductView(HttpServletRequest req)
 public ModelAndView createproductview(Product product)
 {
 	productService.addProduct(product);
-	ModelAndView mv = new ModelAndView("success");
+	ModelAndView mv = new ModelAndView("productsuccess");
 	mv.addObject("product", product);
 	mv.addObject("errmsg", "");
 	mv.addObject("successfullymsg", "Product Create Successfully!!!");
@@ -361,7 +366,7 @@ public ModelAndView createproductcategoryview(ProductCategory productCategory)
 {
 	productCategoryService.addProductCategory(productCategory);
 	
-	ModelAndView mv = new ModelAndView("success");
+	ModelAndView mv = new ModelAndView("productcategorysuccess");
 	mv.addObject("errmsg", "");
 	mv.addObject("successfullymsg", "ProductCategory Create Successfully!!!");
 	return mv;
@@ -379,7 +384,7 @@ public ModelAndView addservicecategoryView()
 public ModelAndView createservicecategoryview(ServiceCategory serviceCategory)
 {
 	serviceCategoryService.addServiceCategory(serviceCategory);
-	ModelAndView mv = new ModelAndView("servicesuccess");
+	ModelAndView mv = new ModelAndView("servicecategorysuccess");
 	mv.addObject("errmsg", "");
 	mv.addObject("successfullymsg", "ServiceCategory create Successfully!!!");
 	return mv;
@@ -411,10 +416,10 @@ public ModelAndView adminresolvehelpview()
     return mv;
 }
 
-@RequestMapping("/productcategory")
+@RequestMapping("/filter")
 public ModelAndView productcategoryview()
 {
-	ModelAndView mv = new ModelAndView("productcategory");
+	ModelAndView mv = new ModelAndView("filter");
     return mv;
 }
 @RequestMapping("/viewproductcategorys")

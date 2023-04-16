@@ -98,12 +98,14 @@
             <div class="contact_section_2">
                <div class="row">
                <div class="col-md-6">
-                  <img alt="purchase image" src="https://www.shutterstock.com/image-photo/purchase-order-form-payslip-concept-260nw-487416538.jpg" width="100" height="100" style="border:0; width: 100%;">
+                  <img alt="purchase image" src="${product.getProductImage() }" width="100" height="100" style="border:0; width: 100%;">
                      
                   </div>
                   <div class="col-md-6">
                      <div class="email_text">
-                     Amount to be pay:
+                     <h2> ${product.getProductName() } </h2>
+                     <h2> ${product.getProductDescription() } </h2>
+                    <h2> Amount to be pay: ${product.getProductPrice() }</h2>
                         <div class="send_btn"><button type="submit" class="btn btn-danger btn-lg">Pay</button></div>
                        </div>
                       </div>
@@ -111,26 +113,6 @@
                     </div>
                    </div>
                  </div>
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
       
        <!-- footer section start -->
         

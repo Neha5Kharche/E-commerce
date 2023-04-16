@@ -84,7 +84,14 @@
         
       </div>
       <!--header section end -->
-                 
+     
+  
+
+
+
+
+    
+
       <!--category section start -->
      <div class="container">
          <div class="category_section">
@@ -157,7 +164,7 @@
                        <div class="text">PRICE: <%= productDetails.getProductPrice() %></div>                
                        <div class="text">STATUS: <%= productDetails.getProductStatus() %></div>
                        <a href="/cProductDetails?pid=<%= productDetails.getProductId() %>" class="link-danger btn btn-outline-danger">Details</a>
-                       <a href="#" class="link-danger btn btn-outline-danger">Buy Now</a>
+                       <a href="/purchase?pid=<%= productDetails.getProductId() %>&cid=<%= request.getSession().getAttribute("user").toString() %>" class="link-danger btn btn-outline-danger">Buy Now</a>
                        <a href="/addCart?pid=<%= productDetails.getProductId() %>&cid=<%= request.getSession().getAttribute("user").toString() %>" class="link-danger btn btn-outline-danger">Add to Cart</a>
                     
                     

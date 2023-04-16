@@ -9,8 +9,8 @@
     </head>
     <body class="wrapper style3">
        <script>
-           swal("${vendorServiceProvided.getServiceName()} added successfully!", "", "success").then(function() {window.location = "/viewservices";});
            
+           swal("${serviceCategory.getServiceCategoryName()} added successfully!", "", "success").then(function() {window.location = "/viewservicecategorys";}); 
            
             </script>
     </body>

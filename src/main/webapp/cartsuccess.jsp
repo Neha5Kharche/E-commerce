@@ -9,9 +9,7 @@
     </head>
     <body class="wrapper style3">
        <script>
-           swal("${product.getProductName()} added successfully!", "", "success").then(function() {window.location = "/viewproducts";}); 
-           swal("${productCategory.getProductCategoryName()} added successfully!", "", "success").then(function() {window.location = "/viewproductcategorys";}); 
-          
+           swal("${product.getProductName()} added to cart successfully!", "", "success").then(function() {window.location = "/cart?cid=${cid}";}); 
            
             </script>
     </body>
