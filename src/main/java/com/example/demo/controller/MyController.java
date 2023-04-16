@@ -79,9 +79,6 @@ public ModelAndView vendorRegister(vendor v)
 
 
 
-<<<<<<< HEAD
-
-=======
 @RequestMapping("/vLogin")
 public ModelAndView vendorLogin(@RequestParam("vEmail")String email,String vPassword,HttpServletRequest req)
 {
@@ -102,7 +99,7 @@ public ModelAndView vendorLogin(@RequestParam("vEmail")String email,String vPass
 		return mv;
 	}
 }
->>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
+
 
 
 @RequestMapping("/vhome")
@@ -503,26 +500,8 @@ public ModelAndView vendorLogout(HttpServletRequest req)
 	return mv;
 	
 }
-@RequestMapping("/vLogin")
-public ModelAndView vendorLogin(@RequestParam("vEmail")String email,String vPassword,HttpServletRequest req)
-{
-	boolean result=vService.login(email,vPassword);
-	if (result==true) {
-		HttpSession session = req.getSession();
-		session.setAttribute("user", email);
-		ArrayList<ProductCategory> pc =	productCategoryService.getProductCategoryList();
-		  req.setAttribute("pcArray", pc);
-		  ArrayList<ServiceCategory> sc = serviceCategoryService.getServiceCategoryList();
-		  req.setAttribute("scArray", sc);
-		ModelAndView mv = new ModelAndView("vendorhome");
-		return mv;
-	}
-	else {
-		ModelAndView mv = new ModelAndView("vendorlogin");
-		mv.addObject("errmsg", "Invalid Username or Password");
-		return mv;
-	}
-}
+
+
 @RequestMapping("/newfq")
 public ModelAndView newfqView()
 {
@@ -541,4 +520,37 @@ public ModelAndView adminhomeView()
 	ModelAndView mv = new ModelAndView("adminhome");
 	return mv;
 }
+@RequestMapping("/adminhelp")
+public ModelAndView adminhelpView()
+{
+	ModelAndView mv = new ModelAndView("adminhelp");
+	return mv;
+}
+@RequestMapping("/adminfeedback")
+public ModelAndView adminfeedbackView()
+{
+	ModelAndView mv = new ModelAndView("adminfeedback");
+	return mv;
+}
+@RequestMapping("/dummy")
+public ModelAndView dummyView()
+{
+	ModelAndView mv = new ModelAndView("dummy");
+	return mv;
+}
+
+@RequestMapping("/adminproducts")
+public ModelAndView adminproductsview(@RequestParam("pid") String pid,String cName,HttpServletRequest req)
+{
+	String vid = req.getSession().getAttribute("user").toString();
+	ArrayList<ProductCategory> pc =	productCategoryService.getProductCategoryByVendors(req.getSession().getAttribute("user").toString());
+	  req.setAttribute("pcArray", pc);
+	 ArrayList<Product> product =	productService.getByProductCategory(pid,vid);
+	 req.setAttribute("productList", product);
+	 
+	 ModelAndView mv = new ModelAndView("adminproducts");
+	 mv.addObject("cName", cName);
+	   return mv;
+}
+
 }

@@ -49,7 +49,7 @@
       <div class="header_section">
          <div class="container">
             <nav class="navbar navbar-dark ">
-               <a class="logo" href="/"><img src="images/logo.png"></a>
+               <a class="logo" href="/"><img src="images/logoo.png"></a>
                
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
                <span class="navbar-toggler-icon"></span>
@@ -155,26 +155,25 @@
 
                         <button type="reset" class="btn btn-outline-danger rounded-pill">CLEAR</button>
 
-<<<<<<< HEAD
+
                         <a class="btn btn-outline-success rounded-pill" href="/vhome">Go Back</a>
-=======
+                        
                         <a href="/vhome">Go Back</a></form></div>
->>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
+
 
                        
-<<<<<<< HEAD
+
                        
-                       </form>
-=======
+                     
+
                        </div>
                        
->>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
+
                     </div>
                   </div>
                   
                </div>
-            </div>
-         </div>
+            
     
       <!-- contact section end -->
    <!-- footer section start -->

@@ -139,8 +139,7 @@
                </div>
             </div>
         
-            </div>
-         </div>
+          
          
          
          
@@ -174,7 +173,12 @@
                      <h4 class="information_text">Useful Links</h4>
 
                      <p><a href="/help">HELP</a><br><a href="/feedback">FEEDBACK</a><br><a href="/fq">FEEDBACK QUESTIONNAIRE</a></p>                
-
+                   </div>
+                  </div>
+                 </div>
+                </div>
+              </div>
+              
                     
                      
                   <!-- footer section start -->

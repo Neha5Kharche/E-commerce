@@ -50,7 +50,53 @@
    <body>
        <!--header section start -->
        
-       <jsp:include page="vendorheader.jsp" />
+        <div class="header_section">
+         <div class="container">
+            <nav class="navbar navbar-dark ">
+               <a class="logo" href="/"><img src="images/logo.png"></a>
+               
+               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse" id="navbarsExample01">
+                  <ul class="navbar-nav mr-auto">
+                     <li class="nav-item active">
+                        <a class="nav-link" href="/vhome">Home</a>
+                     </li>
+                     <li class="nav-item dropdown">
+                     <a class="nav-link dropdown-toggle" href="#" id="navbarsExample01" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+					            Products
+					          </a>
+					          </a>
+					          <ul class="dropdown-menu " aria-labelledby="navbarsExample01">
+					            <li><a class="dropdown-item" href="/addproductcategory">Add Products Category</a></li>
+					            <li><a class="dropdown-item" href="/viewproductcategorys">View Products Category</a></li>
+					            <li><a class="dropdown-item" href="/addproduct">Add Products</a></li>
+					            <li><a class="dropdown-item" href="/viewproducts">View Products</a></li>
+					          </ul>
+          				 
+			        </li>
+			        <li class="nav-item dropdown">
+                     <a class="nav-link dropdown-toggle" href="#" id="navbarsExample01" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+					            Service
+					          </a>
+					          <ul class="dropdown-menu " aria-labelledby="navbarsExample01">
+					            <li><a class="dropdown-item" href="/addservicecategory">Add Service Category</a></li>
+					            <li><a class="dropdown-item" href="/viewservicecategorys">View Service Category</a></li>
+					            <li><a class="dropdown-item" href="/addservice">Add Service</a></li>
+					            <li><a class="dropdown-item" href="/viewservices">View Service</a></li>
+					          </ul>
+          				 
+			        </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/vendorlogin">Logout</a>
+                     </li>
+                  </ul>
+               </div>
+            </nav>
+         </div>
+        
+      </div>
       
       <!--header section end -->
       
@@ -102,7 +148,7 @@
                <div class="col-lg-8 col-sm-12">
                   <div class="beauty_box_1">
                     
-                     <div><img src="images/img-6.png" class="image_3"></div>
+                     <div><img src="https://images.squarespace-cdn.com/content/v1/5432e8d7e4b0fd126503b83b/1548682388873-240C7ICW5RLAT2YL8EDE/still+life+christmas+gifts+mens+fashion+accesories.jpg?format=1000w" class="image_3"></div>
                      <div class="seemore_bt_1"><a href="/viewproduct">see More</a></div>
                   </div>
                </div>
@@ -149,17 +195,19 @@
                <div class="col-lg-4 col-sm-12">
                   <div class="beauty_box">
                     
-                     <div><img src="https://media.istockphoto.com/id/1338894509/photo/woman-choosing-a-new-style-for-herself.jpg?s=612x612&w=0&k=20&c=Ew11SGoTR-W4hO719So27fWOn9M8oRyFVQerofbBdr4=" class="image_3"></div>
+                     <div><img src="https://5.imimg.com/data5/OV/IM/DN/SELLER-65987030/ac-installation-services-500x500.jpg"></div>
                      <div class="seemore_bt"><a href="/viewproduct">see More</a></div>
                   </div>
                </div>
+
                <div class="col-lg-8 col-sm-12">
                   <div class="beauty_box_1">
                     
-                     <div><img src="images/img-6.png" class="image_3"></div>
+                     <div><img src="https://media.istockphoto.com/id/1286682876/photo/beauty-treatment-items-for-spa-procedures-on-white-wooden-table-massage-stones-essential-oils.jpg?s=612x612&w=0&k=20&c=Q6ENnCDbjQxkggfSLZq4WleuY0_IrMZ9MxMXRfNcsl8=" class="image_3"></div>
                      <div class="seemore_bt_1"><a href="/viewproduct">see More</a></div>
                   </div>
                </div>
+               
             </div>
          </div>
       </div>

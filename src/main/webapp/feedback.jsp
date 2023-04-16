@@ -105,15 +105,16 @@
                   <div class="col-md-6">
                      <div class="email_text">
                         <div class="form-group">
-                           <input type="text" class="email-bt" placeholder="Write here">
+                         <input type="text" class="email-bt" placeholder="Name">
+                           <input type="text" class="email-bt" placeholder="Feedback">
 
                             <button type="submit" class="btn btn-outline-success rounded-pill" >SUBMIT</button>
                          
                         <button type="reset" class="btn btn-outline-danger rounded-pill">CLEAR</button>
                        
-                     <a href="/vhome">Go Back<\a>
+                                       <a href="/vhome">Go Back</a>
 
-                           <button type="submit"class="btn btn-outline-success rounded-pill" >SUBMIT</button>
+                         
 
                         </div>
                        </div>

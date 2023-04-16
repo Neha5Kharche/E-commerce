@@ -76,19 +76,11 @@
                      <li class="nav-item dropdown">
                      <a class="nav-link dropdown-toggle" href="#" id="navbarsExample01" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 					            Products
-<<<<<<< HEAD
-					         <div class="collapse navbar-collapse" id="navbarsExample01">
-                  <ul class="navbar-nav mr-auto">
-                     <li class="nav-item active">
-                        <a class="nav-link" href="/">Home</a>
-                     </li>
-                     <li class="nav-item dropdown">
-                     <a class="nav-link dropdown-toggle" href="#" id="navbarsExample01" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-					            Products
+
+					        
 					          </a>
-=======
->>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
-					          </a>
+
+					  
 					          <ul class="dropdown-menu " aria-labelledby="navbarsExample01">
 					            <li><a class="dropdown-item" href="/addproductcategory">Add Products Category</a></li>
 					            <li><a class="dropdown-item" href="/viewproductcategorys">View Products Category</a></li>

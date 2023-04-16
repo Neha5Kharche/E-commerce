@@ -107,7 +107,7 @@
                          
                         <button type="reset" class="btn btn-outline-danger rounded-pill">CLEAR</button>
                        
-                       <a href="/vhome">Go Back<\a>
+                       <a href="/vhome">Go Back</a>
                         </div>
                        </div>
                       </div>
