@@ -1,8 +1,7 @@
+<!DOCTYPE html>
 <%@page import="com.example.demo.model.ServiceCategory"%>
 <%@page import="java.util.Iterator"%>
 <%@page import="com.example.demo.model.ProductCategory"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
 <%@page import="java.util.ArrayList"%>
 <html lang="en">
    <head>
@@ -37,15 +36,16 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
    </head>
    <body>
-       <!--header section start -->
+      <!--header section start -->
       <div class="header_section">
          <div class="container">
             <nav class="navbar navbar-dark bg-dark">
-               <a class="logo" href="/"><img src="images/logo.png"></a>
+               <a class="logo" href="index.html"><img src="images/logo.png"></a>
                
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
                <span class="navbar-toggler-icon"></span>
                </button>
+               
                <div class="collapse navbar-collapse" id="navbarsExample01">
                   <ul class="navbar-nav mr-auto">
                      <li class="nav-item active">
@@ -72,7 +72,8 @@
         
       </div>
       <!--header section end -->
-       <div class="banner_section layout_padding">
+         <!--banner section start -->
+         <div class="banner_section layout_padding">
             <div id="my_slider" class="carousel slide" data-ride="carousel">
                <div class="carousel-inner">
                   <div class="carousel-item active">
@@ -135,6 +136,14 @@
                </a>
             </div>
          </div>
+         <!--banner section end -->
+      </div>
+      <!--header section end -->
+     
+
+      
+     
+     
       <!--category section start -->
      <div class="container">
       <h1 class="category_text text-center">ProductCategory</h1>
@@ -200,7 +209,7 @@
                
                <div class="col-lg-10 col-sm-12 main">
                <%
-               ArrayList<ServiceCategory> scList = (ArrayList) request.getAttribute("scArray");
+              ArrayList<ServiceCategory> scList = (ArrayList) request.getAttribute("scArray");
                if(request.getAttribute("scArray") != null)
                {
             	   Iterator<ServiceCategory> iterator = scList.iterator();

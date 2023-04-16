@@ -18,8 +18,12 @@ public interface ServiceRepo extends JpaRepository<VendorServiceProvided, Long> 
 	@Transactional
 	@Modifying
 	@Query("from VendorServiceProvided s  where s.serviceCategory = :serviceCategory and s.vendorId = :vendorId")
-	public ArrayList<VendorServiceProvided> getByServiceCategory(String serviceCategory,String vendorId);
+	public ArrayList<VendorServiceProvided> getByserviceCategory(String serviceCategory,String vendorId);
 	
+	@Transactional
+	@Modifying
+	@Query("from VendorServiceProvided s  where  s.vendorId = :vendorId")
+	public ArrayList<VendorServiceProvided> getByservice(String vendorId);
 	
 	
 public ArrayList<VendorServiceProvided> getByserviceCategory(String serviceCategory);

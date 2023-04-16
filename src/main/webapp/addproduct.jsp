@@ -110,6 +110,9 @@
                   <h2 style="text-align: center;color: green;" >${successfullymsg }</h2>
                   <form action="creatingProduct" method="post">
                      <div class="email_text">
+                     <div class="form-group">
+                            <input type="text" class="email-bt" placeholder="Vendor Id" name='vendorId' value="<%= session.getAttribute("user") %>" readonly >
+                        </div>
                         <div class="form-group">
                            <input type="text" class="email-bt" placeholder="Product Name" name='productName' >
                         </div>
@@ -141,9 +144,7 @@
             	 			 %>
                         </select>
                         </div>
-                        <div class="form-group">
-                            <input type="text" class="email-bt" placeholder="Vendor Id" name='vendorId' >
-                        </div>
+                        
                         <div class="form-group">
                             <input type="text" class="email-bt" placeholder="Image" name='productImage' >
                         </div>

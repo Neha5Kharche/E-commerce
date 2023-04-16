@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import com.example.demo.model.Product;
+import com.example.demo.model.ProductCategory;
 
 import jakarta.transaction.Transactional;
 
@@ -27,7 +28,12 @@ public interface ProductRepo extends JpaRepository<Product, Long> {
 	
 	@Transactional
 	@Modifying
-	@Query("update Product p set p.productPrice=:productPrice,p.productStatus=:productStatus where p.productId=:productId")
-	public void updateProductDetails(@Param("productId") Long productId,@Param("productPrice") String productPrice,@Param("productStatus")String productStatus);
+	@Query("update Product p set p.productPrice=:productPrice,p.productStatus=:productStatus,p.productDescription=:productDescription where p.productId=:productId")
+	public void updateProductDetails(@Param("productId") Long productId,@Param("productPrice") String productPrice,@Param("productStatus")String productStatus,@Param("productDescription")String productDescription);
+	
+
+	
+	
+
 	
 }

@@ -66,7 +66,7 @@ ProductRepo repo;
 	
 	public void updateProductDetails(Long pid,String pPrice,String pStatus,String pDescription)
 	{
-			repo.updateProductDetails(pid, pPrice, pStatus);
+			repo.updateProductDetails(pid, pPrice, pStatus, pDescription);
 		System.out.println(repo.findById(pid));
 	}
 	
