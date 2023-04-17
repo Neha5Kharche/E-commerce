@@ -1,16 +1,9 @@
-<%
-   		response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
-   		response.setHeader("Pragma", "no-cache");
-   		
-   			if(session.getAttribute("user")==null)
-   				response.sendRedirect("/vendorlogin");
-%>
+
 <%@page import="java.util.Iterator"%>
 <%@page import="com.example.demo.model.ProductCategory"%>
-<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
+<%@page import="java.util.ArrayList"%>
 <html lang="en">
    <head>
       <meta charset="utf-8">
@@ -20,7 +13,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
-      <title>Contact</title>
+      <title>Caraft</title>
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
@@ -42,13 +35,12 @@
       <link rel="stylesheet" href="css/owl.carousel.min.css">
       <link rel="stylesheet" href="css/owl.theme.default.min.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
    </head>
    <body>
        <!--header section start -->
       <div class="header_section">
          <div class="container">
-            <nav class="navbar navbar-dark ">
+            <nav class="navbar navbar-dark bg-dark">
                <a class="logo" href="/"><img src="images/logo.png"></a>
                
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
@@ -57,35 +49,23 @@
                <div class="collapse navbar-collapse" id="navbarsExample01">
                   <ul class="navbar-nav mr-auto">
                      <li class="nav-item active">
-                        <a class="nav-link" href="/vhome">Home</a>
+                        <a class="nav-link" href="index.html">Home</a>
                      </li>
-                     <li class="nav-item dropdown">
-                     <a class="nav-link dropdown-toggle" href="#" id="navbarsExample01" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-					            Products
-					          </a>
-					          </a>
-					          <ul class="dropdown-menu " aria-labelledby="navbarsExample01">
-					            <li><a class="dropdown-item" href="/addproductcategory">Add Products Category</a></li>
-					            <li><a class="dropdown-item" href="/viewproductcategorys">View Products Category</a></li>
-					            <li><a class="dropdown-item" href="/addproduct">Add Products</a></li>
-					            <li><a class="dropdown-item" href="/viewproducts">View Products</a></li>
-					          </ul>
-          				 
-			        </li>
-			        <li class="nav-item dropdown">
-                     <a class="nav-link dropdown-toggle" href="#" id="navbarsExample01" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-					            Service
-					          </a>
-					          <ul class="dropdown-menu " aria-labelledby="navbarsExample01">
-					            <li><a class="dropdown-item" href="/addservicecategory">Add Service Category</a></li>
-					            <li><a class="dropdown-item" href="/viewservicecategorys">View Service Category</a></li>
-					            <li><a class="dropdown-item" href="/addservice">Add Service</a></li>
-					            <li><a class="dropdown-item" href="/viewservices">View Service</a></li>
-					          </ul>
-          				 
-			        </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="/vendorlogin">Logout</a>
+                        <a class="nav-link" href="/viewcategorys">View Category</a>
+                     </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="addproductcategory">Add Category</a>
+                     </li>
+                     <li class="nav-item">
+<a class="nav-link" href="/viewproduct">View Products</a>
+
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="addproduct">Add Products</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/">Logout</a>
                      </li>
                   </ul>
                </div>
@@ -94,52 +74,93 @@
         
       </div>
       <!--header section end -->
-      <!-- contact section start -->
-      <div class="contact_section layout_padding">
-         <div class="container">
-            <h1 class="touch_taital">EDIT PRODUCTS</h1>
-            <div class="contact_section_2">
-               <div class="row">
-               <div class="col-md-6">
-                  <img alt="Login image" src="https://img.freepik.com/free-vector/maternity-care-products-abstract-concept-vector-illustration-maternity-special-products-healthy-natural-cosmetics-clean-care-goods-pregnant-newborn-skin-treatment-abstract-metaphor_335657-4100.jpg?w=2000" width="500" height="300" style="border:0; width: 100%">
-                     
+      
+      <!--category section start -->
+      <div class="container">
+         <div class="category_section">
+            <div class="row">
+               <div class="col-lg-2 col-sm-12">
+                  <h1 class="category_text">Category</h1>
+               </div>
+               <div class="col-lg-10 col-sm-12 main">
+              <% 
+              	ArrayList<ProductCategory> pcList = (ArrayList) request.getAttribute("pcArray");
+              	if(request.getAttribute("pcArray") != null)
+            	  {
+              		Iterator<ProductCategory> iterator = pcList.iterator();
+              		while(iterator.hasNext())
+              		{
+              			ProductCategory productCategory = iterator.next();
+              	
+            	  %>
+            	   <div class="col">
+                     <div class="box_main">
+                     <a href="/customerproducts?pid=<%= productCategory.getProductCategoryId()%>&cName=<%= productCategory.getProductCategoryName() %>"><div class="<%= productCategory.getProductCategoryIcon() %>"></div>
+                        <h4 class="fashion_text active"><%= productCategory.getProductCategoryName() %></h4></a>
+                     </div>
                   </div>
-                 
-                 
-                  <div class="col-md-6">
-                  <h2 style="text-align: center;color: green;" >${successfullymsg }</h2>
-                  <form action="updateproducts" method="post">
-                     <div class="email_text">
-                       <div class="form-group">
-                           <input type="text" class="email-bt" placeholder="Product Name" name='productId' value="${productDetails.getProductId() }" readonly>
-                        </div>
-                 <div class="form-group">
-                           <input type="text" class="email-bt" placeholder="Product Name" name='productName' value="${productDetails.getProductName() }" readonly>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="email-bt" placeholder="Price" name='productPrice' value="${productDetails.getProductPrice() }">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="email-bt" placeholder="Status" name='productStatus' value="${productDetails.getProductStatus() }">
-                        </div>
-                         <div class="form-group">
-                            <input type="text" class="email-bt" placeholder="Description" name='productDescription' value="${productDetails.getProductDescription() }">
-                        </div>
-                
-                         <button type="submit" class="btn btn-outline-success rounded-pill">UPDATE</button>
-                        <button type="reset" class="btn btn-outline-danger rounded-pill">CLEAR</button>
-
-                        <a class="btn btn-outline-success rounded-pill" href="/vhome">Go Back</a>
-                        </div>
-                   </form>
-                    </div>
-                  </div>
-                 
+            	  <%
+              		}
+            	  }
+            	  %>
                </div>
             </div>
-         
-      <!-- contact section end -->
-     <!-- footer section start -->
+         </div>
+        
+      </div>
+      <!-- category section end -->
+      <!-- beauty product section start -->
+      <div class="beauty_section layout_padding">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-4 col-sm-12">
+                  <div class="beauty_box">
+                    
+                     <div><img src="images/img-5.png" class="image_3"></div>
+                     <div class="seemore_bt"><a href="/viewproduct">see More</a></div>
+                  </div>
+               </div>
+               <div class="col-lg-8 col-sm-12">
+                  <div class="beauty_box_1">
+                    
+                     <div><img src="images/img-6.png" class="image_3"></div>
+                     <div class="seemore_bt_1"><a href="/viewproduct">see More</a></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      
+      <!-- beauty product section end -->
+      <div class="container">
+         <div class="category_section">
+            <div class="row">
+               <div class="col-lg-2 col-sm-12">
+                  <h1 class="category_text">Category</h1>
+               </div>
+               <div class="col-lg-10 col-sm-12 main">
+             </div>
+             </div>
+             </div>
+             </div>
+      
+      
+      <!-- newsletter section start -->
+      <div class="newsletter_section layout_padding">
+         <div class="container">
+            <h6 class="conect_text">Connect to caraft</h6>
+            <h1 class="newsletter_taital">Join Our Newsletter</h1>
+            <p class="newsletter_text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration </p>
+            <div class="input-group mb-3">
+               <input type="text" class="form-control" placeholder="Enter your email" aria-label="Enter your email" aria-describedby="basic-addon2">
+               <div class="input-group-append">
+                  <span class="input-group-text" id="basic-addon2">Subscribe</span>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- newsletter section end -->
+    <!-- footer section start -->
       <div class="footer_section layout_padding">
          <div class="container">
             <div class="row">
@@ -197,6 +218,7 @@
       <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
       <script src="../../assets/js/vendor/popper.min.js"></script>
       <script src="../../dist/js/bootstrap.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
    </body>
+
 </html>
+

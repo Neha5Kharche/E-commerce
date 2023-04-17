@@ -30,3 +30,4 @@
 
   </body>
 </html>
+  <div class="send_btn"><a href="/adminhome">Login</a></div> <div class="send_btn"><a href="/adminlogin">Clear</a></div>

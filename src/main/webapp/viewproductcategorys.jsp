@@ -80,7 +80,7 @@
 					            <li><a class="dropdown-item" href="/addproductcategory">Add Products Category</a></li>
 					            <li><a class="dropdown-item" href="/viewproductcategorys">View Products Category</a></li>
 					            <li><a class="dropdown-item" href="/addproduct">Add Products</a></li>
-					            <li><a class="dropdown-item" href="/vendorproducts">View Products</a></li>
+					            <li><a class="dropdown-item" href="/viewproducts">View Products</a></li>
 					          </ul>
           				 
 			        </li>
@@ -92,7 +92,7 @@
 					            <li><a class="dropdown-item" href="/addservicecategory">Add Service Category</a></li>
 					            <li><a class="dropdown-item" href="/viewservicecategorys">View Service Category</a></li>
 					            <li><a class="dropdown-item" href="/addservice">Add Service</a></li>
-					            <li><a class="dropdown-item" href="/vendorservices">View Service</a></li>
+					            <li><a class="dropdown-item" href="/viewservices">View Service</a></li>
 					          </ul>
           				 
 			        </li>
@@ -139,9 +139,7 @@
                </div>
             </div>
         
-            </div>
-         </div>
-         
+            
          
          
       <!-- beauty product section end -->
@@ -162,6 +160,11 @@
          </div>
       </div>
       <!-- newsletter section end -->
+     
+                    
+                     
+                 
+                   <!-- footer section start -->
       <div class="footer_section layout_padding">
          <div class="container">
             <div class="row">
@@ -172,7 +175,7 @@
                <div class="col-lg-3 col-sm-6">
                   <div class="information_main">
                      <h4 class="information_text">Useful Links</h4>
-                     <p><a href="/help">HELP</a><br><a href="/feedback">FEEDBACK</a></br><a href="/fq">FEEDBACK QUESTIONNAIRE</a></p>                
+                     <p><a href="/help">HELP</a><br><a href="/feedback">FEEDBACK</a><br><a href="/fq">FEEDBACK QUESTIONNAIRE</a></p>                
                      
                  
                   </div>
@@ -196,10 +199,12 @@
             </div>
             <div class="copyright_section">
                <h1 class="copyright_text">
-               Copyright 2020 All Right Reserved 
+               Copyright 2020 All Right Reserved
+               </h1> 
             </div>
          </div>
       </div>
+      <!-- footer section end -->
       <!-- Javascript files-->
       <script src="js/jquery.min.js"></script>
       <script src="js/popper.min.js"></script>

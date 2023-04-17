@@ -59,47 +59,51 @@
      <!--header section end -->
       
       
-      <!-- Javascript files-->
-      <script src="js/jquery.min.js"></script>
-      <script src="js/popper.min.js"></script>
-      <script src="js/bootstrap.bundle.min.js"></script>
-      <script src="js/jquery-3.0.0.min.js"></script>
-      <script src="js/plugin.js"></script>
-      <!-- sidebar -->
-      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-      <script src="js/custom.js"></script>
-      <!-- javascript --> 
-      <script src="js/owl.carousel.js"></script>
-      <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script> 
-      <script type="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2//2.0.0-beta.2.4/owl.carousel.min.js"></script>
-      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-      <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-      <script src="../../assets/js/vendor/popper.min.js"></script>
-      <script src="../../dist/js/bootstrap.min.js"></script>
-      
-      
-      
-   <div class="contact_section layout_padding">
+  <div class="contact_section layout_padding">
          <div class="container">
             <h1 class="touch_taital">HELP</h1>
             <div class="contact_section_2">
                <div class="row">
                <div class="col-md-6">
-                  <img alt="Login image" src="helpimg.png" width="100" height="100" style="border:0; width: 100%;">
+                  <img alt="feedback image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr0RyOCE2FfjhUvOGOQ9B9Rw7E55F3mw79UOJiMghWoXi5tIEbHMIE-t9t9A7I3pdi8ko&usqp=CAU" width="100" height="100" style="border:0; width: 100%;">
                      
                   </div>
                   <div class="col-md-6">
                      <div class="email_text">
+                     <form action="/postQuery" method="post">
                         <div class="form-group">
-                           <input type="text" class="email-bt" placeholder="Write here">
-                           <button type="submit"class="btn btn-outline-success rounded-pill" >SUBMIT</button>
+                         <input type="text" class="email-bt" name="customerId" value="<%= request.getSession().getAttribute("user") %>" readonly>
+                         <input type="text" class="email-bt" name="customerName" value="<%= request.getSession().getAttribute("cName") %>" readonly>
+                          <textarea class="massage-bt" placeholder="Query" rows="5" required name="query"></textarea>
+                          
+
+                            <button type="submit" class="btn btn-outline-success rounded-pill" >SUBMIT</button>
+                         
+                        <button type="reset" class="btn btn-outline-danger rounded-pill">CLEAR</button>
+                       
+                                       <a href="/vhome">Go Back</a>
+
+                         
+
+
+                          
+
                         </div>
+                        </form>
                        </div>
                       </div>
                      </div>
                     </div>
                    </div>
                  </div>
+                 
+                
+
+
+                 
+                 
+                  
+
       
       
       
@@ -120,17 +124,20 @@
       
        <!-- footer section start -->
         
+      <!-- footer section start -->
       <div class="footer_section layout_padding">
          <div class="container">
             <div class="row">
                <div class="col-lg-6 col-sm-12">
-                  <h4 class="information_text">Category</h4>
-                  <p class="dummy_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim </p>
+                  <h4 class="information_text">SHOP NOW!!!</h4>
+                  <p class="dummy_text">Looking for an easy and convenient way to shop? Look no further than our ecommerce website! With a vast selection of products at competitive prices, fast shipping, and exceptional customer service, we make online shopping a breeze. Start shopping now and discover why we're the best choice for all your needs. </p>
                </div>
                <div class="col-lg-3 col-sm-6">
                   <div class="information_main">
                      <h4 class="information_text">Useful Links</h4>
-                     <p class="many_text">Contrary to popular belief, Lorem Ipsum is not simply random text. It </p>
+                     <p><a href="/help">HELP</a><br><a href="/feedback">FEEDBACK</a><br><a href="/fq">FEEDBACK QUESTIONNAIRE</a></p>                
+                     
+                 
                   </div>
                </div>
                <div class="col-lg-3 col-sm-6">
@@ -150,8 +157,32 @@
                   </div>
                </div>
             </div>
-           </div>
-          </div>
+            <div class="copyright_section">
+               <h1 class="copyright_text">
+               Copyright 2020 All Right Reserved
+               </h1> 
+            </div>
+         </div>
+      </div>
+      <!-- footer section end -->
+       <!-- Javascript files-->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery-3.0.0.min.js"></script>
+      <script src="js/plugin.js"></script>
+      <!-- sidebar -->
+      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="js/custom.js"></script>
+      <!-- javascript --> 
+      <script src="js/owl.carousel.js"></script>
+      <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script> 
+      <script type="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2//2.0.0-beta.2.4/owl.carousel.min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+      <script src="../../assets/js/vendor/popper.min.js"></script>
+      <script src="../../dist/js/bootstrap.min.js"></script>
+      
              
    </body>
 

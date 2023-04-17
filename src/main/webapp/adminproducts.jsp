@@ -1,10 +1,5 @@
-<%
-   		response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
-   		response.setHeader("Pragma", "no-cache");
-   		
-   			if(session.getAttribute("user")==null)
-   				response.sendRedirect("/vendorlogin");
-%>
+
+<%@page import="com.example.demo.model.Product"%>
 <%@page import="java.util.Iterator"%>
 <%@page import="com.example.demo.model.ProductCategory"%>
 <%@page import="java.util.ArrayList"%>
@@ -45,7 +40,7 @@
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
    </head>
    <body>
-       <!--header section start -->
+      <!--header section start -->
       <div class="header_section">
          <div class="container">
             <nav class="navbar navbar-dark ">
@@ -94,52 +89,104 @@
         
       </div>
       <!--header section end -->
-      <!-- contact section start -->
-      <div class="contact_section layout_padding">
-         <div class="container">
-            <h1 class="touch_taital">EDIT PRODUCTS</h1>
-            <div class="contact_section_2">
-               <div class="row">
-               <div class="col-md-6">
-                  <img alt="Login image" src="https://img.freepik.com/free-vector/maternity-care-products-abstract-concept-vector-illustration-maternity-special-products-healthy-natural-cosmetics-clean-care-goods-pregnant-newborn-skin-treatment-abstract-metaphor_335657-4100.jpg?w=2000" width="500" height="300" style="border:0; width: 100%">
-                     
-                  </div>
                  
-                 
-                  <div class="col-md-6">
-                  <h2 style="text-align: center;color: green;" >${successfullymsg }</h2>
-                  <form action="updateproducts" method="post">
-                     <div class="email_text">
-                       <div class="form-group">
-                           <input type="text" class="email-bt" placeholder="Product Name" name='productId' value="${productDetails.getProductId() }" readonly>
-                        </div>
-                 <div class="form-group">
-                           <input type="text" class="email-bt" placeholder="Product Name" name='productName' value="${productDetails.getProductName() }" readonly>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="email-bt" placeholder="Price" name='productPrice' value="${productDetails.getProductPrice() }">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="email-bt" placeholder="Status" name='productStatus' value="${productDetails.getProductStatus() }">
-                        </div>
-                         <div class="form-group">
-                            <input type="text" class="email-bt" placeholder="Description" name='productDescription' value="${productDetails.getProductDescription() }">
-                        </div>
+      <!--category section start -->
+     <div class="container">
+         <div class="category_section">
+            <div class="row">
+               <div class="col-lg-2 col-sm-12">
                 
-                         <button type="submit" class="btn btn-outline-success rounded-pill">UPDATE</button>
-                        <button type="reset" class="btn btn-outline-danger rounded-pill">CLEAR</button>
-
-                        <a class="btn btn-outline-success rounded-pill" href="/vhome">Go Back</a>
-                        </div>
-                   </form>
-                    </div>
+                <h1 class="category_text">Category</h1>
+               </div>
+               
+               <div class="col-lg-10 col-sm-12 main">
+              <% 
+              	ArrayList<ProductCategory> pcList = (ArrayList) request.getAttribute("pcArray");
+              	if(request.getAttribute("pcArray") != null)
+            	  {
+              		Iterator<ProductCategory> iterator = pcList.iterator();
+              		while(iterator.hasNext())
+              		{
+              			ProductCategory productCategory = iterator.next();
+              	
+            	  %>
+            	   <div class="col">
+                     <div class="box_main">
+                     <a href="/vendorproducts?pid=<%= productCategory.getProductCategoryId()%>&cName=<%= productCategory.getProductCategoryName() %>"><div style="width: 50px;margin: 0 auto; height: 60px;background-size: 100%;background-repeat: no-repeat;text-align: center;display: inline-block;background-image: url(<%= productCategory.getProductCategoryIcon()%>);"></div>
+                        <h4 class="fashion_text active"><%= productCategory.getProductCategoryName() %></h4></a>
+                     </div>
                   </div>
-                 
+            	  <%
+              		}
+            	  }
+            	  %>
                </div>
             </div>
+         </div>
+         </div>
+        
+     
+      <!-- category section end -->
+      
+      <!-- new code added -->
+          <h1 class="feature_taital">${cName}</h1>                    		
+<div class="category_section_2">
+            <div class="row">
+            <% 
+              	ArrayList<Product> ProductList = (ArrayList) request.getAttribute("productList");
+              	if(request.getAttribute("productList") != null)
+            	  {
+              		Iterator<Product> iterator = ProductList.iterator();
+              		while(iterator.hasNext())
+              		{
+              			Product productDetails = iterator.next();
+              	
+            	  %>
+            	  <div class="col-lg-2 col-md-5">
+            	  <div class="beds_section active">
+                     <h1 class="bed_text"><%= productDetails.getProductName() %></h1>
+                     <div><img src="<%= productDetails.getProductImage() %>" class="image_2"></div>
+                       <div class="text">PRICE: <%= productDetails.getProductPrice() %></div>                
+                       <div class="text">STATUS: <%= productDetails.getProductStatus() %></div>
+                       <div class="text">DESCRIPTION: <%= productDetails.getProductDescription() %></div>
+
+
+                     <a href="/editproducts?pid=<%= productDetails.getProductId() %>">Edit Product</a>
+                    
+                  </div>
+             	</div>
+               <%
+              		}
+            	  }
+            	  %>
+
+               </div>
+            </div>
+        
          
-      <!-- contact section end -->
-     <!-- footer section start -->
+         
+         
+      <!-- beauty product section end -->
+      
+      
+      <!-- newsletter section start -->
+      <div class="newsletter_section layout_padding">
+         <div class="container">
+            <h6 class="conect_text">Connect to caraft</h6>
+            <h1 class="newsletter_taital">Join Our Newsletter</h1>
+            <p class="newsletter_text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration </p>
+            <div class="input-group mb-3">
+               <input type="text" class="form-control" placeholder="Enter your email" aria-label="Enter your email" aria-describedby="basic-addon2">
+               <div class="input-group-append">
+                  <span class="input-group-text" id="basic-addon2">Subscribe</span>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- newsletter section end -->
+     
+                 
+                   <!-- footer section start -->
       <div class="footer_section layout_padding">
          <div class="container">
             <div class="row">
@@ -200,3 +247,4 @@
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
    </body>
 </html>
+

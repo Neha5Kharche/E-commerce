@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -128,7 +127,7 @@
                        
                         <div class="send_btn"><button type="submit" class="btn btn-danger btn-lg">Register</button></div> <div class="send_btn"><button type="reset" class="btn btn-danger btn-lg">Clear</button></div> 
                         <br>
-                        <a href="vendorlogin">Go Back</a></form></div>
+                         <a class="btn btn-outline-success rounded-pill" href="/vhome">Go Back</a>
                      
                      </div>
                   </div>

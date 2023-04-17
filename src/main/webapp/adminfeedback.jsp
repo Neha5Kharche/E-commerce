@@ -1,16 +1,5 @@
-<%
-   		response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
-   		response.setHeader("Pragma", "no-cache");
-   		
-   			if(session.getAttribute("user")==null)
-   				response.sendRedirect("/vendorlogin");
-%>
-<%@page import="java.util.Iterator"%>
-<%@page import="com.example.demo.model.ProductCategory"%>
-<%@page import="java.util.ArrayList"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
+<meta charset="ISO-8859-1">
+
 <html lang="en">
    <head>
       <meta charset="utf-8">
@@ -20,7 +9,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
-      <title>Contact</title>
+      <title>ECONOMY SHARING PLATFORM</title>
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
@@ -42,22 +31,24 @@
       <link rel="stylesheet" href="css/owl.carousel.min.css">
       <link rel="stylesheet" href="css/owl.theme.default.min.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+        
    </head>
    <body>
+   
        <!--header section start -->
       <div class="header_section">
          <div class="container">
-            <nav class="navbar navbar-dark ">
+            <nav class="navbar navbar-dark bg-dark">
                <a class="logo" href="/"><img src="images/logo.png"></a>
                
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
                <span class="navbar-toggler-icon"></span>
                </button>
-               <div class="collapse navbar-collapse" id="navbarsExample01">
+              <div class="collapse navbar-collapse" id="navbarsExample01">
                   <ul class="navbar-nav mr-auto">
                      <li class="nav-item active">
-                        <a class="nav-link" href="/vhome">Home</a>
+                        <a class="nav-link" href="index.html">Home</a>
                      </li>
                      <li class="nav-item dropdown">
                      <a class="nav-link dropdown-toggle" href="#" id="navbarsExample01" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -93,52 +84,60 @@
          </div>
         
       </div>
-      <!--header section end -->
-      <!-- contact section start -->
-      <div class="contact_section layout_padding">
-         <div class="container">
-            <h1 class="touch_taital">EDIT PRODUCTS</h1>
-            <div class="contact_section_2">
-               <div class="row">
-               <div class="col-md-6">
-                  <img alt="Login image" src="https://img.freepik.com/free-vector/maternity-care-products-abstract-concept-vector-illustration-maternity-special-products-healthy-natural-cosmetics-clean-care-goods-pregnant-newborn-skin-treatment-abstract-metaphor_335657-4100.jpg?w=2000" width="500" height="300" style="border:0; width: 100%">
-                     
-                  </div>
-                 
-                 
-                  <div class="col-md-6">
-                  <h2 style="text-align: center;color: green;" >${successfullymsg }</h2>
-                  <form action="updateproducts" method="post">
-                     <div class="email_text">
-                       <div class="form-group">
-                           <input type="text" class="email-bt" placeholder="Product Name" name='productId' value="${productDetails.getProductId() }" readonly>
-                        </div>
-                 <div class="form-group">
-                           <input type="text" class="email-bt" placeholder="Product Name" name='productName' value="${productDetails.getProductName() }" readonly>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="email-bt" placeholder="Price" name='productPrice' value="${productDetails.getProductPrice() }">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="email-bt" placeholder="Status" name='productStatus' value="${productDetails.getProductStatus() }">
-                        </div>
-                         <div class="form-group">
-                            <input type="text" class="email-bt" placeholder="Description" name='productDescription' value="${productDetails.getProductDescription() }">
-                        </div>
-                
-                         <button type="submit" class="btn btn-outline-success rounded-pill">UPDATE</button>
-                        <button type="reset" class="btn btn-outline-danger rounded-pill">CLEAR</button>
+      
+      
+     <!--header section end -->
+     
+     
+         <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap 5 Simple Datatable Example</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <!-- bootstrap5 dataTables css cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css"
+    />
+  </head>
 
-                        <a class="btn btn-outline-success rounded-pill" href="/vhome">Go Back</a>
-                        </div>
-                   </form>
-                    </div>
-                  </div>
-                 
-               </div>
-            </div>
-         
-      <!-- contact section end -->
+  <body>
+    <div class="container mt-4">
+     <h1 class="touch_taital">ADMIN FEEDBACK</h1>
+      <table
+        id="datatable"
+        class="table"
+      >
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Product ID</th>
+            <th>Feedback</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Jhon doe</td>
+            <td>Good</td>
+           
+          </tr>
+          
+          
+        </tbody>
+      </table>
+    </div>
+    
+    
      <!-- footer section start -->
       <div class="footer_section layout_padding">
          <div class="container">
@@ -180,7 +179,8 @@
          </div>
       </div>
       <!-- footer section end -->
-      <!-- Javascript files-->
+            <!-- Javascript files-->
+            
       <script src="js/jquery.min.js"></script>
       <script src="js/popper.min.js"></script>
       <script src="js/bootstrap.bundle.min.js"></script>
@@ -198,5 +198,18 @@
       <script src="../../assets/js/vendor/popper.min.js"></script>
       <script src="../../dist/js/bootstrap.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+       
+       <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $('#datatable').DataTable();
+      });
+    </script>
+             
    </body>
+
 </html>
+     
+     

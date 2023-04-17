@@ -1,5 +1,4 @@
-
-%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,11 +43,11 @@
                <span class="navbar-toggler-icon"></span>
                </button>
                <div class="collapse navbar-collapse" id="navbarsExample01">
-                  <ul class="navbar-nav mr-auto">
+                 <ul class="navbar-nav mr-auto">
                      <li class="nav-item active">
-                        <a class="nav-link" href="/">Home</a>
+                        <a class="nav-link" href="/chome">Home</a>
                      </li>
-                     <li class="nav-item active">
+                     <li class="nav-item">
                         <a class="nav-link" href="/adminlogin">Admin</a>
                      </li>
                      <li class="nav-item">
@@ -58,7 +57,13 @@
                         <a class="nav-link" href="/customerlogin">Customers</a>
                      </li>
                      <li class="nav-item">
+                        <a class="nav-link" href="/clients">Client</a>
+                     </li>
+                     <li class="nav-item">
                         <a class="nav-link" href="/contact">Contact Us</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/logout">Logout</a>
                      </li>
                   </ul>
                </div>
@@ -67,47 +72,66 @@
       </div>
       <!--header section end -->
       <!-- contact section start -->
+    
       <div class="contact_section layout_padding">
          <div class="container">
             <h1 class="touch_taital">Admin Login</h1>
             <div class="contact_section_2">
                <div class="row">
-               <div class="col-md-6">
-                  <img alt="Login image" src="images/login.jpeg" width="500" height="300" style="border:0; width: 100%;">
+                  <div class="col-md-6">
+                     <div class="email_text">
+                     <form action="/adminhome" method="post">
+                        <div class="form-group">
+                           <input type="text" class="email-bt" placeholder="User Name" name="aEmail">
+                        </div>
+                        <div class="form-group">
+                           <input type="password" class="email-bt" placeholder="Password" name="aPassword">
+                        </div>
+                        <div class="form-check d-flex justify-content-start mb-4">
+              <input class="form-check-input" type="checkbox" value="" id="adminlogin" />
+              <label class="form-check-label" for="adminlogin"> Remember password </label>
+              
+            
+        
+            </div>
+            
+            
+                       
+                    <div class="send_btn"><button type="submit" class="btn btn-danger btn-lg">Login</button></div> <div class="send_btn"><button type="reset" class="btn btn-danger btn-lg">Clear</button></div>
+                        
+                     </form>
+                     </div>
                      
                   </div>
                   <div class="col-md-6">
-                     <div class="email_text">
-                        <div class="form-group">
-                           <input type="text" class="email-bt" placeholder="User Name" name="vEmail">
-                        </div>
-                        <div class="form-group">
-                           <input type="password" class="email-bt" placeholder="Password" name="vPassword">
-                        </div>
-                   <div class="send_btn"><a href="/adminresolvehelp">Login</a></div> <div class="send_btn"><a href="/adminlogin">Clear</a></div>
-
-                        
-
-                     </div>
+                     <img alt="Login image" src="images/customerlogin.avif" width="500" height="300" style="border:0; width: 100%;">
                   </div>
                   
                </div>
             </div>
          </div>
       </div>
+      
+      
+     
+      
+    
+      
       <!-- contact section end -->
       <!-- footer section start -->
-      <div class="footer_section layout_padding">
+       <div class="footer_section layout_padding">
          <div class="container">
             <div class="row">
                <div class="col-lg-6 col-sm-12">
-                  <h4 class="information_text">Category</h4>
-                  <p class="dummy_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim </p>
+                  <h4 class="information_text">SHOP NOW!!!</h4>
+                  <p class="dummy_text">Looking for an easy and convenient way to shop? Look no further than our ecommerce website! With a vast selection of products at competitive prices, fast shipping, and exceptional customer service, we make online shopping a breeze. Start shopping now and discover why we're the best choice for all your needs. </p>
                </div>
                <div class="col-lg-3 col-sm-6">
                   <div class="information_main">
                      <h4 class="information_text">Useful Links</h4>
-                     <p class="many_text">Contrary to popular belief, Lorem Ipsum is not simply random text. It </p>
+                     <p><a href="/help">HELP</a><br><a href="/feedback">FEEDBACK</a><br><a href="/fq">FEEDBACK QUESTIONNAIRE</a></p>                
+                     
+                 
                   </div>
                </div>
                <div class="col-lg-3 col-sm-6">
@@ -129,11 +153,12 @@
             </div>
             <div class="copyright_section">
                <h1 class="copyright_text">
-               Copyright 2020 All Right Reserved <a href="https://html.design"> Free Html Templates</a>
+               Copyright 2020 All Right Reserved
+               </h1> 
             </div>
          </div>
       </div>
-      <!-- footer section end -->
+            <!-- footer section end -->
       <!-- Javascript files-->
       <script src="js/jquery.min.js"></script>
       <script src="js/popper.min.js"></script>
@@ -153,4 +178,3 @@
       <script src="../../dist/js/bootstrap.min.js"></script>
    </body>
 </html>
-
