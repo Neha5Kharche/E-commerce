@@ -292,7 +292,7 @@ public ModelAndView addToCartView(HttpServletRequest req,String pid,String cid)
 	Product product = productService.getById(new Long(pid));
 	System.out.println(product);
 	cartService.addToCart(product,customerId);	
-	ModelAndView mv = new ModelAndView("productsuccess");
+	ModelAndView mv = new ModelAndView("cartsuccess");
 	mv.addObject("cid", cid);
 	return mv;
 }
