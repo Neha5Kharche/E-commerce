@@ -94,48 +94,42 @@
       
       <!--header section end -->
       
-       <body style="background-color:rgb(140, 140, 140);">
-
+       
+         
+         
+          <body >
+      
 <div class="container mt-100">
                             		
 <div class="category_section_2">
             <div class="row">
-               <div class="col-lg-4 col-sm-6">
+               <div class="col-lg-4 col-sm-12">
                   <div class="beds_section active">
-                     
-                     <a class="logo" href="/adminhelp"><img src="https://img.freepik.com/premium-vector/voip-telephony-calls-icon_116137-4506.jpg"></a>
-                     <div class="seemore_bt"><a href="/adminhelp">Admin resolve</a></div>
+                     <h1 class="bed_text"></h1>
+                     <div><img src="https://img.freepik.com/premium-vector/voip-telephony-calls-icon_116137-4506.jpg" class="image_2"></div>
+                     <div class="seemore_bt"><a href="/adminhelp">Admin Help</a></div>
                   </div>
                </div>
-               <div class="col-lg-4 col-sm-6">
+               <div class="col-lg-4 col-sm-12">
                   <div class="beds_section">
-                     
-                    <a class="logo" href="/adminfeedback"><img src="https://img.freepik.com/premium-vector/idea-insight-icon-web_116137-1802.jpg"></a>
+                     <h1 class="bed_text"></h1>
+                     <div><img src="https://img.freepik.com/premium-vector/idea-insight-icon-web_116137-1802.jpg" class="image_2"></div>
                      <div class="seemore_bt"><a href="/adminfeedback">View Feedback</a></div>
                   </div>
                </div>
-               <div class="col-lg-4 col-sm-6">
+               <div class="col-lg-4 col-sm-12">
                   <div class="beds_section">
-                    
-                    <a class="logo" href="/vhome"><img src="https://img.freepik.com/premium-photo/businessman-icon-with-head-icon-3d-render-illustration_567294-2960.jpg"></a>
-                     <div class="seemore_bt"><a href="/vhome">Vendor Home</a></div>
+                     <h1 class="bed_text"></h1>
+                     <div><img src="https://img.freepik.com/premium-photo/businessman-icon-with-head-icon-3d-render-illustration_567294-2960.jpg" class="image_2"></div>
+                     <div class="seemore_bt"><a href="/vhome">Vendor Handle</a></div>
                   </div>
                </div>
             </div>
          </div>
          </div>
-         </body>
          
            
-           <body style="background-color:rgb(140, 140, 140);">
-
-<div class="container mt-100">
-                            		
-<div class="category_section_2">
-         <img src="https://img.freepik.com/premium-vector/voip-telephony-calls-icon_116137-4506.jpg" class="rounded float-left" alt="...">
-         <img src="https://img.freepik.com/premium-photo/businessman-icon-with-head-icon-3d-render-illustration_567294-2960.jpg" class="rounded float-right" alt="...">
-   </div>
-   </div>  
+          
      
       <!-- newsletter section start -->
       <div class="newsletter_section layout_padding">

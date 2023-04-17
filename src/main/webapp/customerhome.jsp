@@ -41,7 +41,14 @@
          <div class="container">
             <nav class="navbar navbar-dark bg-dark">
                <a class="logo" href="index.html"><img src="images/logo.png"></a>
-               
+               <div class="search_section">
+                  <ul>
+                    
+                     <li><a href="/cart"><img src="images/shopping-bag.png"></a></li>
+                     <li><a href="/chome"><img src="images/home.png" width="19px" height="19px" ></a></li>
+                     <li><a href="/help"><img src="images/help.png"></a></li>
+                  </ul>
+               </div>
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
                <span class="navbar-toggler-icon"></span>
                </button>

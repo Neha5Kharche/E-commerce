@@ -80,7 +80,7 @@
                <div class="row">
                   <div class="col-md-6">
                      <div class="email_text">
-                     <form action="/aLogin" method="post">
+                     <form action="/adminhome" method="post">
                         <div class="form-group">
                            <input type="text" class="email-bt" placeholder="User Name" name="aEmail">
                         </div>
@@ -97,7 +97,7 @@
             
             
                        
-                    <div class="send_btn"><a href="/adminhome">Login</a></div> <div class="send_btn"><a href="/adminlogin">Clear</a></div>
+                    <div class="send_btn"><button type="submit" class="btn btn-danger btn-lg">Login</button></div> <div class="send_btn"><button type="reset" class="btn btn-danger btn-lg">Clear</button></div>
                         
                      </form>
                      </div>
@@ -111,6 +111,11 @@
             </div>
          </div>
       </div>
+      
+      
+     
+      
+    
       
       <!-- contact section end -->
       <!-- footer section start -->

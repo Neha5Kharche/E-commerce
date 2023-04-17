@@ -1,4 +1,7 @@
 
+<%@page import="java.util.Iterator"%>
+<%@page import="com.example.demo.model.Help"%>
+<%@page import="java.util.ArrayList"%>
 <meta charset="ISO-8859-1">
 
 <html lang="en">
@@ -118,49 +121,42 @@
       >
         <thead>
           <tr>
-            <th>S.No</th>
-            <th>Product ID</th>
+          	<th>#</th>
+            <th>Name</th>
             <th>Query</th>
+            <th>Action</th>
             
           </tr>
         </thead>
         <tbody>
+        <%
+        ArrayList<Help> queryList = (ArrayList) request.getAttribute("ql");
+        int i=0;
+      	if(request.getAttribute("ql") != null)
+    	  {
+      		Iterator<Help> iterator = queryList.iterator();
+      		while(iterator.hasNext())
+      		{
+      			Help help = iterator.next();
+      	
+        %>
           <tr>
-            <td>1</td>
-            <td>Jhon doe</td>
-            <td>Jhondoe@gmail.com</td>
-           
+            <td><%= ++i %></td>
+            <td><%= help.getCustomerName() %></td>
+            <td><%= help.getQuery() %></td>
+           <td><a href="/adminresolvehelp" class="btn btn-outline-light">Resolve</a></td>
           </tr>
-          
+          <%
+      		}
+    	  }
+      	
+          %>
           
         </tbody>
       </table>
     </div>
      
-     <div class="contact_section layout_padding">
-         <div class="container">
-            <h1 class="touch_taital">ADMIN RESOLVE PROBLEM</h1>
-            <div class="contact_section_2">
-               <div class="row">
-               <div class="col-md-6">
-                  <img alt="Login image" src="resolveimg.jpg" width="100" height="100" style="border:0; width: 100%;">
-                     
-                  </div>
-                  <div class="col-md-6">
-                     <div class="email_text">
-                        <div class="form-group">
-                           <input type="text" class="email-bt" placeholder="SOLUTION">
-                            <button type="submit" class="btn btn-outline-success rounded-pill" >SUBMIT</button>
-                         
-                        <button type="reset" class="btn btn-outline-danger rounded-pill">CLEAR</button>
-                       
-                       <a href="/vhome">Go Back</a>
-                        </div>
-                       </div>
-                      </div>
-                     </div>
-                    </div>
-                   </div>
+     
      
      
      

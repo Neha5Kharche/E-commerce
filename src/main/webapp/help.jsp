@@ -59,32 +59,43 @@
      <!--header section end -->
       
       
-   <div class="contact_section layout_padding">
+  <div class="contact_section layout_padding">
          <div class="container">
-     <div class="form-outline mb-4">
-    <input type="text" id="form4Example1" class="form-control" />
-    <label class="form-label" for="form4Example1">Name</label>
-  </div>
+            <h1 class="touch_taital">HELP</h1>
+            <div class="contact_section_2">
+               <div class="row">
+               <div class="col-md-6">
+                  <img alt="feedback image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr0RyOCE2FfjhUvOGOQ9B9Rw7E55F3mw79UOJiMghWoXi5tIEbHMIE-t9t9A7I3pdi8ko&usqp=CAU" width="100" height="100" style="border:0; width: 100%;">
+                     
+                  </div>
+                  <div class="col-md-6">
+                     <div class="email_text">
+                     <form action="/postQuery" method="post">
+                        <div class="form-group">
+                         <input type="text" class="email-bt" name="customerId" value="<%= request.getSession().getAttribute("user") %>" readonly>
+                         <input type="text" class="email-bt" name="customerName" value="<%= request.getSession().getAttribute("cName") %>" readonly>
+                          <textarea class="massage-bt" placeholder="Query" rows="5" required name="query"></textarea>
+                          
 
-  <!-- Email input -->
-  <div class="form-outline mb-4">
-    <input type="email" id="form4Example2" class="form-control" />
-    <label class="form-label" for="form4Example2">Product ID</label>
-  </div>
+                            <button type="submit" class="btn btn-outline-success rounded-pill" >SUBMIT</button>
+                         
+                        <button type="reset" class="btn btn-outline-danger rounded-pill">CLEAR</button>
+                       
+                                       <a href="/vhome">Go Back</a>
 
-  <!-- Message input -->
-  <div class="form-outline mb-4">
-    <textarea class="form-control" id="form4Example3" rows="4"></textarea>
-    <label class="form-label" for="form4Example3">Feedback</label>
-  </div>
+                         
 
- 
 
-  <!-- Submit button -->
-  <button type="submit" class="btn btn-primary btn-block mb-4">Send</button> 
-      
-   </div>
-   </div>
+                          
+
+                        </div>
+                        </form>
+                       </div>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                 </div>
                  
                 
 

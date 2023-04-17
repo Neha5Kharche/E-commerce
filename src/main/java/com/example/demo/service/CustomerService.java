@@ -26,4 +26,11 @@ public class CustomerService {
 			 
 		 
 	 }
+	 
+	 public customer getByEmail(String email)
+	 {
+		 customer c = crepo.findByEmail(email);
+		 
+		 return c;
+	 }
 }

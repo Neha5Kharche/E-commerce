@@ -106,9 +106,11 @@
                      <div class="email_text">
                      <form action="" method="post">
                         <div class="form-group">
-<<<<<<< HEAD
+
                          <input type="text" class="email-bt" placeholder="Name">
-                           <input type="text" class="email-bt" placeholder="Feedback">
+                         <input type="text" class="email-bt" placeholder="Product ID">
+                          <textarea class="massage-bt" placeholder="feedback" rows="5" required ></textarea>
+                          
 
                             <button type="submit" class="btn btn-outline-success rounded-pill" >SUBMIT</button>
                          
@@ -118,9 +120,9 @@
 
                          
 
-=======
-                           <textarea class="massage-bt" placeholder="feedback" rows="5" required ></textarea>
->>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
+
+                          
+
                         </div>
                         </form>
                        </div>

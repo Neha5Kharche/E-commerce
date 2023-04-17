@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.demo.model.Cart;
+import com.example.demo.model.Help;
 import com.example.demo.model.Product;
 import com.example.demo.model.ProductCategory;
 import com.example.demo.model.ServiceCategory;
@@ -19,6 +21,7 @@ import com.example.demo.model.customer;
 import com.example.demo.model.vendor;
 import com.example.demo.service.CartService;
 import com.example.demo.service.CustomerService;
+import com.example.demo.service.HelpService;
 import com.example.demo.service.ProductCategoryService;
 import com.example.demo.service.ProductService;
 import com.example.demo.service.ServiceCategoryService;
@@ -45,6 +48,8 @@ public class MyController {
 	ServiceService serviceService;
 	@Autowired
 	CartService cartService;
+	@Autowired
+	HelpService helpService;
 	
 
 	
@@ -60,6 +65,14 @@ public ModelAndView vendorloginview()
 {
 	ModelAndView mv = new ModelAndView("vendorlogin");
 	mv.addObject("errmsg","");
+	return mv;
+}
+@RequestMapping("/adminlogin")
+public ModelAndView hospitalloginView() {
+	ModelAndView mv = new ModelAndView("adminlogin");
+	mv.addObject("smsg", "");
+	mv.addObject("emsg", "");
+	mv.addObject("name", mv);
 	return mv;
 }
 
@@ -189,7 +202,11 @@ public ModelAndView customerLogin(@RequestParam("cEmail")String email,String cPa
 		  req.setAttribute("scArray", sc);
 		HttpSession session = req.getSession();
 		session.setAttribute("user", email);
+		
+		customer c = cService.getByEmail(email);
+		session.setAttribute("cName",c.getCfirstname()+" "+c.getClastname());
 		ModelAndView mv = new ModelAndView("customerhome");
+		mv.addObject("customer", c);
 		return mv;
 	}
 	else {
@@ -396,14 +413,26 @@ public ModelAndView fqview()
 public ModelAndView helpview()
 {
 	ModelAndView mv = new ModelAndView("help");
-	mv.addObject("errmsg", "");
+	mv.addObject("successMsg", "");
     return mv;
 }
-@RequestMapping("/adminresolvehelp")
-public ModelAndView adminresolvehelpview()
+
+@RequestMapping("/postQuery")
+public ModelAndView postQuery(Help helpQuery)
 {
+	helpService.postQuery(helpQuery);
+	ModelAndView mv = new ModelAndView("help");
+	mv.addObject("successMsg", "");
+	return mv;
+}
+@RequestMapping("/adminresolvehelp")
+public ModelAndView adminresolvehelpview(HttpServletRequest request)
+{
+	List<Help> queryList = helpService.getQuerys();
+	System.out.println(queryList);
+	request.getSession().setAttribute("ql", queryList);
 	ModelAndView mv = new ModelAndView("adminresolvehelp");
-	mv.addObject("errmsg", "");
+	
     return mv;
 }
 
@@ -564,10 +593,16 @@ public ModelAndView adminhomeView()
 	return mv;
 }
 @RequestMapping("/adminhelp")
-public ModelAndView adminhelpView()
+public ModelAndView adminhelpView(HttpServletRequest request)
 {
+	List<Help> queryList = helpService.getQuerys();
+	
+	request.setAttribute("ql", queryList);
+	System.out.println();
 	ModelAndView mv = new ModelAndView("adminhelp");
-	return mv;
+	
+    return mv;
+	
 }
 @RequestMapping("/adminfeedback")
 public ModelAndView adminfeedbackView()

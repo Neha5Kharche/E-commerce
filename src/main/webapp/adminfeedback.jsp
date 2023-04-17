@@ -118,8 +118,8 @@
       >
         <thead>
           <tr>
-            <th>S.No</th>
             <th>Name</th>
+            <th>Product ID</th>
             <th>Feedback</th>
             
           </tr>

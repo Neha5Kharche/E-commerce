@@ -116,30 +116,7 @@
                    </div>
                    
                    
-                    <div class="container">
-            <h1 class="touch_taital">FEEDBACK</h1>
-            <div class="contact_section_2">
-               <div class="row">
-               <div class="col-md-6">
-                  <img alt="Login image" src="resolveimg.jpg" width="100" height="100" style="border:0; width: 100%;">
-                     
-                  </div>
-                  <div class="col-md-6">
-                     <div class="email_text">
-                        <div class="form-group">
-                           <input type="text" class="email-bt" placeholder="REVIEW">
-                            <button type="submit" class="btn btn-outline-success rounded-pill" >SUBMIT</button>
-                         
-                        <button type="reset" class="btn btn-outline-danger rounded-pill">CLEAR</button>
-                       
-                        <a class="btn btn-outline-success rounded-pill" href="/vhome">Go Back</a>
-                        </div>
-                       </div>
-                      </div>
-                     </div>
-                    </div>
-                   </div>
-                 </div>
+                
       
       
       
