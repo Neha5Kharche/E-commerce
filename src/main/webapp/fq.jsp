@@ -34,28 +34,40 @@
    </head>
    <body>
    
-       <!--header section start -->
+      <!--header section start -->
       <div class="header_section">
          <div class="container">
             <nav class="navbar navbar-dark bg-dark">
-               <a class="logo" href="/"><img src="images/logo.png"></a>
-               
+               <a class="logo"></a>
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
                <span class="navbar-toggler-icon"></span>
                </button>
                <div class="collapse navbar-collapse" id="navbarsExample01">
-                  <ul class="navbar-nav mr-auto">
+                 <ul class="navbar-nav mr-auto">
                      <li class="nav-item active">
                         <a class="nav-link" href="/">Home</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/adminlogin">Admin</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/vendorlogin">Vendor</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/customerlogin">Customers</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/clients">Client</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/contact">Contact Us</a>
                      </li>
                   </ul>
                </div>
             </nav>
          </div>
-        
       </div>
       <!--header section end -->
-      
       
       <!-- Javascript files-->
       <script src="js/jquery.min.js"></script>

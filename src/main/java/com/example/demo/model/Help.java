@@ -13,6 +13,13 @@ public class Help {
 	private String customerId;
 	private String customerName;
 	private String query;
+	private String solution;
+	public String getSolution() {
+		return solution;
+	}
+	public void setSolution(String solution) {
+		this.solution = solution;
+	}
 	public Long getHelpId() {
 		return helpId;
 	}
@@ -40,7 +47,7 @@ public class Help {
 	@Override
 	public String toString() {
 		return "Help [helpId=" + helpId + ", customerId=" + customerId + ", customerName=" + customerName + ", query="
-				+ query + "]";
+				+ query + ", solution=" + solution + "]";
 	}
 	
 	

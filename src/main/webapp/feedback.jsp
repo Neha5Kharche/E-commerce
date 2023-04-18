@@ -38,15 +38,14 @@
       <div class="header_section">
          <div class="container">
             <nav class="navbar navbar-dark bg-dark">
-               <a class="logo" href="/"><img src="images/logo.png"></a>
-               
+               <a class="logo"></a>
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
                <span class="navbar-toggler-icon"></span>
                </button>
                <div class="collapse navbar-collapse" id="navbarsExample01">
-                  <ul class="navbar-nav mr-auto">
+                 <ul class="navbar-nav mr-auto">
                      <li class="nav-item active">
-                        <a class="nav-link" href="/chome">Home</a>
+                        <a class="nav-link" href="/">Home</a>
                      </li>
                      <li class="nav-item">
                         <a class="nav-link" href="/adminlogin">Admin</a>
@@ -67,10 +66,8 @@
                </div>
             </nav>
          </div>
-        
       </div>
       <!--header section end -->
-      
       
       <!-- Javascript files-->
       <script src="js/jquery.min.js"></script>
@@ -104,12 +101,13 @@
                   </div>
                   <div class="col-md-6">
                      <div class="email_text">
-                     <form action="" method="post">
+                      <h2 style="text-align: center;color: green;" >${successfullymsg }</h2>
+                     <form action="/postFeedback" method="post">
                         <div class="form-group">
 
-                         <input type="text" class="email-bt" placeholder="Name">
-                         <input type="text" class="email-bt" placeholder="Product ID">
-                          <textarea class="massage-bt" placeholder="feedback" rows="5" required ></textarea>
+                          <input type="text" class="email-bt" name="customerId" value="<%= request.getSession().getAttribute("user") %>" readonly >
+                         <input type="text" class="email-bt" name="customerName" value="<%= request.getSession().getAttribute("cName") %>" readonly >
+                          <textarea class="massage-bt" placeholder="Feedback" rows="5" required name="customerFeedback"></textarea>
                           
 
                             <button type="submit" class="btn btn-outline-success rounded-pill" >SUBMIT</button>
@@ -165,7 +163,7 @@
                <div class="col-lg-3 col-sm-6">
                   <div class="information_main">
                      <h4 class="information_text">Useful Links</h4>
-                     <p><a href="/help">HELP</a><br><a href="/feedback">FEEDBACK</a><br><a href="/fq">FEEDBACK QUESTIONNAIRE</a></p>                
+                     <p><a style="color:#FFFFFF" href="/help">HELP</a><br><a style="color:#FFFFFF" href="/feedback">FEEDBACK</a><br><a style="color:#FFFFFF" href="/fq">FEEDBACK QUESTIONNAIRE</a></p>                
                      
                  
                   </div>

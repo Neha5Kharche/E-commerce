@@ -1,3 +1,6 @@
+<%@page import="java.util.Iterator"%>
+<%@page import="com.example.demo.model.Feedback"%>
+<%@page import="java.util.ArrayList"%>
 <meta charset="ISO-8859-1">
 
 <html lang="en">
@@ -36,58 +39,40 @@
    </head>
    <body>
    
-       <!--header section start -->
+      <!--header section start -->
       <div class="header_section">
          <div class="container">
             <nav class="navbar navbar-dark bg-dark">
-               <a class="logo" href="/"><img src="images/logo.png"></a>
-               
+               <a class="logo"></a>
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
                <span class="navbar-toggler-icon"></span>
                </button>
-              <div class="collapse navbar-collapse" id="navbarsExample01">
-                  <ul class="navbar-nav mr-auto">
+               <div class="collapse navbar-collapse" id="navbarsExample01">
+                 <ul class="navbar-nav mr-auto">
                      <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link" href="/">Home</a>
                      </li>
-                     <li class="nav-item dropdown">
-                     <a class="nav-link dropdown-toggle" href="#" id="navbarsExample01" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-					            Products
-					          </a>
-					          </a>
-					          <ul class="dropdown-menu " aria-labelledby="navbarsExample01">
-					            <li><a class="dropdown-item" href="/addproductcategory">Add Products Category</a></li>
-					            <li><a class="dropdown-item" href="/viewproductcategorys">View Products Category</a></li>
-					            <li><a class="dropdown-item" href="/addproduct">Add Products</a></li>
-					            <li><a class="dropdown-item" href="/viewproducts">View Products</a></li>
-					          </ul>
-          				 
-			        </li>
-			        <li class="nav-item dropdown">
-                     <a class="nav-link dropdown-toggle" href="#" id="navbarsExample01" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-					            Service
-					          </a>
-					          <ul class="dropdown-menu " aria-labelledby="navbarsExample01">
-					            <li><a class="dropdown-item" href="/addservicecategory">Add Service Category</a></li>
-					            <li><a class="dropdown-item" href="/viewservicecategorys">View Service Category</a></li>
-					            <li><a class="dropdown-item" href="/addservice">Add Service</a></li>
-					            <li><a class="dropdown-item" href="/viewservices">View Service</a></li>
-					          </ul>
-          				 
-			        </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="/vendorlogin">Logout</a>
+                        <a class="nav-link" href="/adminlogin">Admin</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/vendorlogin">Vendor</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/customerlogin">Customers</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/clients">Client</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/contact">Contact Us</a>
                      </li>
                   </ul>
                </div>
             </nav>
          </div>
-        
       </div>
-      
-      
-     <!--header section end -->
-     
+      <!--header section end -->
      
          <!DOCTYPE html>
 <html lang="en">
@@ -118,27 +103,45 @@
       >
         <thead>
           <tr>
+          <th>#</th>
             <th>Name</th>
-            <th>Product ID</th>
+            
             <th>Feedback</th>
             
           </tr>
         </thead>
         <tbody>
+         <%
+        ArrayList<Feedback> feedbackList = (ArrayList) request.getAttribute("f");
+        int i=0;
+      	if(request.getAttribute("f") != null)
+    	  {
+      		Iterator<Feedback> iterator = feedbackList.iterator();
+      		while(iterator.hasNext())
+      		{
+      			Feedback feedback = iterator.next();
+      	
+        %>
+        
           <tr>
-            <td>1</td>
-            <td>Jhon doe</td>
-            <td>Good</td>
-           
+            <td><%= ++i %></td>
+            <td><%= feedback.getCustomerName() %></td>
+            <td><%= feedback.getCustomerFeedback() %></td>
           </tr>
           
           
         </tbody>
+        <%
+      		}
+    	  }
+      	
+          %>
+          
       </table>
     </div>
     
     
-     <!-- footer section start -->
+    <!-- footer section start -->
       <div class="footer_section layout_padding">
          <div class="container">
             <div class="row">
@@ -149,7 +152,7 @@
                <div class="col-lg-3 col-sm-6">
                   <div class="information_main">
                      <h4 class="information_text">Useful Links</h4>
-                     <p><a href="/help">HELP</a><br><a href="/feedback">FEEDBACK</a><br><a href="/fq">FEEDBACK QUESTIONNAIRE</a></p>                
+                     <p><a style="color:#FFFFFF" href="/help">HELP</a><br><a style="color:#FFFFFF" href="/feedback">FEEDBACK</a><br><a style="color:#FFFFFF" href="/fq">FEEDBACK QUESTIONNAIRE</a></p>                
                      
                  
                   </div>

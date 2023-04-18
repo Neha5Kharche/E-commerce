@@ -1,3 +1,6 @@
+<%@page import="java.util.Iterator"%>
+<%@page import="com.example.demo.model.Help"%>
+<%@page import="java.util.ArrayList"%>
 <meta charset="ISO-8859-1">
 
 <html lang="en">
@@ -34,35 +37,84 @@
    </head>
    <body>
    
-       <!--header section start -->
+      <!--header section start -->
       <div class="header_section">
          <div class="container">
             <nav class="navbar navbar-dark bg-dark">
-               <a class="logo" href="/"><img src="images/logo.png"></a>
-               
+               <a class="logo"></a>
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
                <span class="navbar-toggler-icon"></span>
                </button>
                <div class="collapse navbar-collapse" id="navbarsExample01">
-                  <ul class="navbar-nav mr-auto">
+                 <ul class="navbar-nav mr-auto">
                      <li class="nav-item active">
                         <a class="nav-link" href="/">Home</a>
-                     </li>           
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/adminlogin">Admin</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/vendorlogin">Vendor</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/customerlogin">Customers</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/clients">Client</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/contact">Contact Us</a>
+                     </li>
                   </ul>
                </div>
             </nav>
          </div>
-        
       </div>
-      
-      
-     <!--header section end -->
-      
+      <!--header section end -->
       
   <div class="contact_section layout_padding">
          <div class="container">
             <h1 class="touch_taital">HELP</h1>
             <div class="contact_section_2">
+            <table
+        id="datatable"
+        class="table"
+      >
+        <thead>
+          <tr>
+          	<th>#</th>
+            <th>Name</th>
+            <th>Query</th>
+            <th>Solution</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+        <%
+        ArrayList<Help> queryList = (ArrayList) request.getAttribute("ql");
+        int i=0;
+      	if(request.getAttribute("ql") != null)
+    	  {
+      		Iterator<Help> iterator = queryList.iterator();
+      		while(iterator.hasNext())
+      		{
+      			Help help = iterator.next();
+      	
+        %>
+          <tr>
+            <td><%= ++i %></td>
+            <td><%= help.getCustomerName() %></td>
+            <td><%= help.getQuery() %></td>
+          <td><%= help.getSolution() %></td>
+          </tr>
+          <%
+      		}
+    	  }
+      	
+          %>
+          
+        </tbody>
+      </table>
                <div class="row">
                <div class="col-md-6">
                   <img alt="feedback image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr0RyOCE2FfjhUvOGOQ9B9Rw7E55F3mw79UOJiMghWoXi5tIEbHMIE-t9t9A7I3pdi8ko&usqp=CAU" width="100" height="100" style="border:0; width: 100%;">
@@ -70,6 +122,7 @@
                   </div>
                   <div class="col-md-6">
                      <div class="email_text">
+                      <h2 style="text-align: center;color: green;" >${successfullymsg }</h2>
                      <form action="/postQuery" method="post">
                         <div class="form-group">
                          <input type="text" class="email-bt" name="customerId" value="<%= request.getSession().getAttribute("user") %>" readonly>
@@ -135,7 +188,7 @@
                <div class="col-lg-3 col-sm-6">
                   <div class="information_main">
                      <h4 class="information_text">Useful Links</h4>
-                     <p><a href="/help">HELP</a><br><a href="/feedback">FEEDBACK</a><br><a href="/fq">FEEDBACK QUESTIONNAIRE</a></p>                
+                     <p><a style="color:#FFFFFF" href="/help">HELP</a><br><a style="color:#FFFFFF" href="/feedback">FEEDBACK</a><br><a style="color:#FFFFFF" href="/fq">FEEDBACK QUESTIONNAIRE</a></p>                
                      
                  
                   </div>

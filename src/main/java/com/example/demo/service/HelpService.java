@@ -30,4 +30,16 @@ public class HelpService {
 		
 		return querysList;
 	}
+	public void updateSolution(Long queryId,String solution)
+	{
+		repo.updateSolutionDetails(queryId, solution);
+	}
+	public List<Help> getqueryBycustomerId(String customerId)
+	{
+List<Help> querysList = new ArrayList<>();
+		
+		querysList.addAll(repo.findBycustomerId(customerId));
+		
+		return querysList;
+	}
 }

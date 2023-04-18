@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.demo.model.Cart;
+import com.example.demo.model.Feedback;
 import com.example.demo.model.Help;
 import com.example.demo.model.Product;
 import com.example.demo.model.ProductCategory;
@@ -21,6 +22,7 @@ import com.example.demo.model.customer;
 import com.example.demo.model.vendor;
 import com.example.demo.service.CartService;
 import com.example.demo.service.CustomerService;
+import com.example.demo.service.FeedbackService;
 import com.example.demo.service.HelpService;
 import com.example.demo.service.ProductCategoryService;
 import com.example.demo.service.ProductService;
@@ -50,6 +52,9 @@ public class MyController {
 	CartService cartService;
 	@Autowired
 	HelpService helpService;
+	@Autowired
+	FeedbackService feedbackService;
+
 	
 
 	
@@ -277,12 +282,7 @@ public ModelAndView customerProductDetailsView(HttpServletRequest req,String pid
 	 
 	return mv;
 }
-@RequestMapping("/feedback")
-public ModelAndView feedbackview()
-{
-	ModelAndView mv = new ModelAndView("feedback");
-    return mv;
-}
+
 @RequestMapping("/cart")
 public ModelAndView cartview(HttpServletRequest req,String cid)
 {
@@ -410,38 +410,78 @@ public ModelAndView fqview()
     return mv;
 }
 @RequestMapping("/help")
-public ModelAndView helpview()
+public ModelAndView helpview(HttpServletRequest request)
 {
+	List<Help> queryList = helpService.getqueryBycustomerId(request.getSession().getAttribute("user").toString());
+	System.out.println(queryList);
+	request.setAttribute("ql", queryList);
 	ModelAndView mv = new ModelAndView("help");
 	mv.addObject("successMsg", "");
     return mv;
 }
 
 @RequestMapping("/postQuery")
-public ModelAndView postQuery(Help helpQuery)
+public ModelAndView postQuery(Help helpQuery,HttpServletRequest request)
 {
+	List<Help> queryList = helpService.getqueryBycustomerId(request.getSession().getAttribute("user").toString());
+	System.out.println(queryList);
+	request.setAttribute("ql", queryList);
 	helpService.postQuery(helpQuery);
 	ModelAndView mv = new ModelAndView("help");
-	mv.addObject("successMsg", "");
+	mv.addObject("successfullymsg", "Query raised successfully!!!");
 	return mv;
 }
 @RequestMapping("/adminresolvehelp")
-public ModelAndView adminresolvehelpview(HttpServletRequest request)
+public ModelAndView adminresolvehelpview(HttpServletRequest request,String cid,String query,Long queryId)
 {
 	List<Help> queryList = helpService.getQuerys();
 	System.out.println(queryList);
 	request.getSession().setAttribute("ql", queryList);
 	ModelAndView mv = new ModelAndView("adminresolvehelp");
-	
+	mv.addObject("cid", cid);
+	mv.addObject("query", query);
+	mv.addObject("queryId", queryId);
     return mv;
+}
+@RequestMapping("/solution")
+public ModelAndView solutionView(Long queryId,String query,String solution)
+{
+	helpService.updateSolution(queryId, solution);
+	ModelAndView mv = new ModelAndView("adminresolvehelp");
+	return mv;
 }
 
-@RequestMapping("/filter")
-public ModelAndView productcategoryview()
+@RequestMapping("/feedback")
+public ModelAndView feedbackview()
 {
-	ModelAndView mv = new ModelAndView("filter");
+	ModelAndView mv = new ModelAndView("feedback");
+	mv.addObject("successMsg", "");
     return mv;
 }
+@RequestMapping("/postFeedback")
+public ModelAndView postFeedback(Feedback feedback)
+{
+	System.out.println(feedback);
+	feedbackService.postFeedback(feedback);
+	
+	ModelAndView mv = new ModelAndView("feedback");
+	mv.addObject("successfullymsg", "Thanks for your feedback!!");
+	return mv;
+}
+@RequestMapping("/adminfeedback")
+public ModelAndView adminfeedbackView(HttpServletRequest request)
+{
+	List<Feedback> feedbackList = feedbackService.getFeedbacks();
+	
+	request.setAttribute("f", feedbackList);
+	System.out.println();
+	ModelAndView mv = new ModelAndView("adminfeedback");
+	
+    return mv;
+	
+}
+
+
 @RequestMapping("/viewproductcategorys")
 public ModelAndView newfashionview(HttpServletRequest req)
 {
@@ -604,31 +644,10 @@ public ModelAndView adminhelpView(HttpServletRequest request)
     return mv;
 	
 }
-@RequestMapping("/adminfeedback")
-public ModelAndView adminfeedbackView()
-{
-	ModelAndView mv = new ModelAndView("adminfeedback");
-	return mv;
-}
-@RequestMapping("/dummy")
-public ModelAndView dummyView()
-{
-	ModelAndView mv = new ModelAndView("dummy");
-	return mv;
-}
 
-@RequestMapping("/adminproducts")
-public ModelAndView adminproductsview(@RequestParam("pid") String pid,String cName,HttpServletRequest req)
-{
-	String vid = req.getSession().getAttribute("user").toString();
-	ArrayList<ProductCategory> pc =	productCategoryService.getProductCategoryByVendors(req.getSession().getAttribute("user").toString());
-	  req.setAttribute("pcArray", pc);
-	 ArrayList<Product> product =	productService.getByProductCategory(pid,vid);
-	 req.setAttribute("productList", product);
-	 
-	 ModelAndView mv = new ModelAndView("adminproducts");
-	 mv.addObject("cName", cName);
-	   return mv;
-}
+
+
+
+
 
 }
