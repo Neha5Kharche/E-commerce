@@ -1,8 +1,9 @@
 <%@page import="java.util.Iterator"%>
 <%@page import="com.example.demo.model.Feedback"%>
 <%@page import="java.util.ArrayList"%>
-<meta charset="ISO-8859-1">
-
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
 <html lang="en">
    <head>
       <meta charset="utf-8">
@@ -12,7 +13,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
-      <title>ECONOMY SHARING PLATFORM</title>
+      <title>Contact</title>
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
@@ -34,11 +35,8 @@
       <link rel="stylesheet" href="css/owl.carousel.min.css">
       <link rel="stylesheet" href="css/owl.theme.default.min.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-        
    </head>
    <body>
-   
       <!--header section start -->
       <div class="header_section">
          <div class="container">
@@ -73,7 +71,7 @@
          </div>
       </div>
       <!--header section end -->
-     
+         
          <!DOCTYPE html>
 <html lang="en">
   <head>

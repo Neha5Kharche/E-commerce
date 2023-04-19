@@ -77,12 +77,14 @@
                <div class="row">
                   <div class="col-md-6">
                      <div class="email_text">
-                     <form action="/adminhome" method="post">
+                     <form action="/loginCheck" method="post">
+                     <h3 class="text-center" style="color: green">${smsg }</h3>
+                     <h3 class="text-center" style="color: red">${emsg }</h3>
                         <div class="form-group">
-                           <input type="text" class="email-bt" placeholder="User Name" name="aEmail">
+                           <input type="text" class="email-bt" placeholder="User Name" name="userid">
                         </div>
                         <div class="form-group">
-                           <input type="password" class="email-bt" placeholder="Password" name="aPassword">
+                           <input type="password" class="email-bt" placeholder="Password" name="password">
                         </div>
                         <div class="form-check d-flex justify-content-start mb-4">
               <input class="form-check-input" type="checkbox" value="" id="adminlogin" />
@@ -101,7 +103,7 @@
                      
                   </div>
                   <div class="col-md-6">
-                     <img alt="Login image" src="images/customerlogin.avif" width="500" height="300" style="border:0; width: 100%;">
+                     <img alt="Login image" src="https://viragtea.com/backend/img/admin-login.jpg" width="500" height="300" style="border:0; width: 100%;">
                   </div>
                   
                </div>

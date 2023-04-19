@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.dao.ProductCategoryRepo;
+import com.example.demo.model.Product;
 import com.example.demo.model.ProductCategory;
 
 @Service
@@ -17,6 +18,12 @@ public class ProductCategoryService {
 	public void addProductCategory(ProductCategory productCategory)
 	{
 		repo.save(productCategory);
+	}
+	public ProductCategory getById(Long pid)
+	{
+		ProductCategory productCategory = repo.findById(pid).orElse(new ProductCategory());
+		return productCategory;
+		
 	}
 	
 	public ArrayList<ProductCategory> getProductCategoryList()
@@ -32,6 +39,19 @@ public class ProductCategoryService {
 		productCategoryList.addAll(repo.findProductCategoryByVendors(vendorId));
 		return productCategoryList;
 	}
+	public ProductCategory getByProductCategoryId(Long pid)
+	{
+		ProductCategory productCategory = repo.findById(pid).orElse(new ProductCategory());
+		
+		return  productCategory;
+	}
 	
+	
+	
+	public void updateProductCategoryDetails(Long pid,String pName,String pImage)
+	{
+			repo.updateProductCategoryDetails(pid, pName, pImage);
+		System.out.println(repo.findById(pid));
+	}
 
 }

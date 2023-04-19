@@ -94,7 +94,7 @@
                          
                         <button type="reset" class="btn btn-outline-danger rounded-pill">CLEAR</button>
                        </form>
-                       <a href="/vhome">Go Back</a>
+                       <a href="/adminhome">Go Back</a>
                         </div>
                        </div>
                       </div>

@@ -1,14 +1,11 @@
-<%
-   		response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
-   		response.setHeader("Pragma", "no-cache");
-   		
-   			if(session.getAttribute("user")==null)
-   				response.sendRedirect("/vendorlogin");
-%>
+<%@page import="com.example.demo.model.ServiceCategory"%>
 <%@page import="com.example.demo.model.ProductCategory"%>
 <%@page import="java.util.Iterator"%>
 <%@page import="com.example.demo.model.Product"%>
 <%@page import="java.util.ArrayList"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
 <html lang="en">
    <head>
       <meta charset="utf-8">
@@ -18,7 +15,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
-      <title>Caraft</title>
+      <title>Contact</title>
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
@@ -40,73 +37,43 @@
       <link rel="stylesheet" href="css/owl.carousel.min.css">
       <link rel="stylesheet" href="css/owl.theme.default.min.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-      
-      <style>
-      .horizontal-scrollable > .row {
-            overflow-x: auto;
-            white-space: normal;
-            display: flex;
-        }
-          
-        .horizontal-scrollable > .row > .col-lg-2 .col-md-5 > .beds_section {
-            display: inline-block;
-            white-space: normal;
-            float: none;
-        }
-      </style>
    </head>
    <body>
-         <!--header section start -->
+      <!--header section start -->
       <div class="header_section">
          <div class="container">
-            <nav class="navbar navbar-dark ">
-               <a class="logo" href="/"><img src="images/logo.png"></a>
-               
+            <nav class="navbar navbar-dark bg-dark">
+               <a class="logo"></a>
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
                <span class="navbar-toggler-icon"></span>
                </button>
                <div class="collapse navbar-collapse" id="navbarsExample01">
-                  <ul class="navbar-nav mr-auto">
+                 <ul class="navbar-nav mr-auto">
                      <li class="nav-item active">
-                        <a class="nav-link" href="/vhome">Home</a>
+                        <a class="nav-link" href="/">Home</a>
                      </li>
-
-                     <li class="nav-item dropdown">
-                     <a class="nav-link dropdown-toggle" href="#" id="navbarsExample01" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-					            Products
-					          </a>
-					          <ul class="dropdown-menu " aria-labelledby="navbarsExample01">
-					            <li><a class="dropdown-item" href="/addproductcategory">Add Products Category</a></li>
-					            <li><a class="dropdown-item" href="/viewproductcategorys">View Products Category</a></li>
-					            <li><a class="dropdown-item" href="/addproduct">Add Products</a></li>
-					            <li><a class="dropdown-item" href="/viewproducts">View Products</a></li>
-					          </ul>
-          				 
-			        </li>
-			        <li class="nav-item dropdown">
-                     <a class="nav-link dropdown-toggle" href="#" id="navbarsExample01" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-					            Service
-					          </a>
-					          <ul class="dropdown-menu " aria-labelledby="navbarsExample01">
-					            <li><a class="dropdown-item" href="/addservicecategory">Add Service Category</a></li>
-					            <li><a class="dropdown-item" href="/viewservicecategorys">View Service Category</a></li>
-					            <li><a class="dropdown-item" href="/addservice">Add Service</a></li>
-					            <li><a class="dropdown-item" href="/viewservices">View Service</a></li>
-					          </ul>
-          				 
-			        </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="/vendorlogin">Logout</a>
+                        <a class="nav-link" href="/adminlogin">Admin</a>
                      </li>
-
+                     <li class="nav-item">
+                        <a class="nav-link" href="/vendorlogin">Vendor</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/customerlogin">Customers</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/clients">Client</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/contact">Contact Us</a>
+                     </li>
                   </ul>
                </div>
             </nav>
          </div>
-        
       </div>
       <!--header section end -->
+         
       <!--category section start -->
       <!-- category section end -->
       <!-- beauty product section start -->   
@@ -139,7 +106,34 @@
                </div>
             </div>
         
-            
+              <h1 class="feature_taital">Service Category List</h1>                    		
+<div class="category_section_2">
+            <div class="row">
+            <% 
+              	ArrayList<ServiceCategory> ServiceList = (ArrayList) request.getAttribute("scArray");
+              	if(request.getAttribute("scArray") != null)
+            	  {
+              		Iterator<ServiceCategory> iterator = ServiceList.iterator();
+              		while(iterator.hasNext())
+              		{
+              			ServiceCategory serviceCategory = iterator.next();
+              	
+            	  %>
+            	  <div class="col-lg-4 col-sm-12">
+            	  <div class="beds_section active">
+                     <h1 class="bed_text"><%= serviceCategory.getServiceCategoryName() %></h1>
+                     <div><img src="<%= serviceCategory.getServiceCategoryImage() %>" class="image_2"></div>
+                     <div class="seemore_bt"><a href="/serviceproducts?sid=<%= serviceCategory.getServiceCategoryId()%>&sName=<%= serviceCategory.getServiceCategoryName() %>"><a href="/editservicecategory?sid=<%= serviceCategory.getServiceCategoryId()%>" >Edit</a></a></div>
+                  </div>
+             	</div>
+               <%
+              		}
+            	  }
+            	  %>
+              		
+               </div>
+            </div>
+        
          
          
       <!-- beauty product section end -->

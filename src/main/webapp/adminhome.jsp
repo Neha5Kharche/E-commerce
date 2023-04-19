@@ -100,7 +100,7 @@
                   <div class="beds_section">
                      <h1 class="bed_text"></h1>
                      <div><img src="https://img.freepik.com/premium-photo/businessman-icon-with-head-icon-3d-render-illustration_567294-2960.jpg" class="image_2"></div>
-                     <div class="seemore_bt"><a href="/vhome">Vendor Handle</a></div>
+                     <div class="seemore_bt"><a href="/adminhandle">Admin Handle</a></div>
                   </div>
                </div>
             </div>

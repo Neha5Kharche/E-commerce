@@ -20,6 +20,7 @@ import com.example.demo.model.ServiceCategory;
 import com.example.demo.model.VendorServiceProvided;
 import com.example.demo.model.customer;
 import com.example.demo.model.vendor;
+import com.example.demo.service.AdminService;
 import com.example.demo.service.CartService;
 import com.example.demo.service.CustomerService;
 import com.example.demo.service.FeedbackService;
@@ -54,6 +55,8 @@ public class MyController {
 	HelpService helpService;
 	@Autowired
 	FeedbackService feedbackService;
+	@Autowired
+	AdminService adService;
 
 	
 
@@ -80,6 +83,28 @@ public ModelAndView hospitalloginView() {
 	mv.addObject("name", mv);
 	return mv;
 }
+@RequestMapping("/loginCheck")
+public ModelAndView loginCheckView(String userid, String password) {
+	ModelAndView mv = new ModelAndView();
+	if (adService.adminLoginCheck(userid, password)) {
+		mv.addObject("userid",userid);
+
+		mv.setViewName("adminhome");
+
+		return mv;
+	}
+
+	else {
+		
+		mv.setViewName("adminlogin");
+		mv.addObject("smsg", "");
+		mv.addObject("emsg", "Invalid userid or password");
+		return mv;
+	}
+
+}
+
+
 
 @RequestMapping("/vendorregis")
 public ModelAndView vendorregisView(vendor v)
@@ -581,6 +606,50 @@ public ModelAndView updateproductsview(Long productId,String productPrice,String
 	
     return mv;
 }
+@RequestMapping("/editproductcategory")
+public ModelAndView editproductcategoryView(Long pid)
+{
+	ProductCategory productCategory = productCategoryService.getByProductCategoryId(pid);
+	ModelAndView mv = new ModelAndView("editproductcategory");
+	mv.addObject("productCategory", productCategory);
+	mv.addObject("errmsg", "");
+	mv.addObject("successfullymsg", "");
+    return mv;
+}
+
+@RequestMapping("/updateproductcategories")
+public ModelAndView updateproductcategoriesview(Long productCategoryId,String productCategoryName,String productCategoryImage)
+{
+	 productCategoryService.updateProductCategoryDetails(productCategoryId, productCategoryName, productCategoryImage);
+	ModelAndView mv = new ModelAndView("editproductcategory");
+	mv.addObject("errmsg", "");
+	mv.addObject("successfullymsg", "ProductCategory Updated Successfully!!!");
+	
+    return mv;
+}
+@RequestMapping("/editservicecategory")
+public ModelAndView editservicecategoryView(Long sid)
+{
+	ServiceCategory serviceCategory = serviceCategoryService.getByServiceCategoryId(sid);
+	ModelAndView mv = new ModelAndView("editservicecategory");
+	mv.addObject("serviceCategory", serviceCategory);
+	mv.addObject("errmsg", "");
+	mv.addObject("successfullymsg", "");
+    return mv;
+}
+
+@RequestMapping("/updateservicecategories")
+public ModelAndView updateservicecategoriesview(Long serviceCategoryId,String serviceCategoryName,String serviceCategoryImage)
+{
+	 serviceCategoryService.updateServiceCategoryDetails(serviceCategoryId, serviceCategoryName, serviceCategoryImage);
+	ModelAndView mv = new ModelAndView("editservicecategory");
+	mv.addObject("errmsg", "");
+	mv.addObject("successfullymsg", "ServiceCategory Updated Successfully!!!");
+	
+    return mv;
+}
+
+
 @RequestMapping("/editservices")
 public ModelAndView editservicesview(Long sid)
 {
@@ -645,7 +714,16 @@ public ModelAndView adminhelpView(HttpServletRequest request)
 	
 }
 
-
+@RequestMapping("/adminhandle")
+public ModelAndView adminhandleView(HttpServletRequest req)
+{
+	ArrayList<ProductCategory> pc = productCategoryService.getProductCategoryList();
+	ArrayList<ServiceCategory> sc = serviceCategoryService.getServiceCategoryList();
+	req.setAttribute("pcArray", pc);
+	req.setAttribute("scArray", sc);
+	ModelAndView mv = new ModelAndView("adminhandle");
+	return mv;
+}
 
 
 

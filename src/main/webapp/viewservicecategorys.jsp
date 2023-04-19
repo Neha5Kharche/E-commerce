@@ -128,7 +128,7 @@
             	  <div class="beds_section active">
                      <h1 class="bed_text"><%= serviceCategory.getServiceCategoryName() %></h1>
                      <div><img src="<%= serviceCategory.getServiceCategoryImage() %>" class="image_2"></div>
-                     <div class="seemore_bt"><a href="/serviceproducts?sid=<%= serviceCategory.getServiceCategoryId()%>&sName=<%= serviceCategory.getServiceCategoryName() %>"><a href="/vhome">See More</a></a></div>
+                     <div class="seemore_bt"><a href="/serviceproducts?sid=<%= serviceCategory.getServiceCategoryId()%>&sName=<%= serviceCategory.getServiceCategoryName() %>"><a href="/editservicecategory?sid=<%= serviceCategory.getServiceCategoryId()%>" >Edit</a></a></div>
                   </div>
              	</div>
                <%
