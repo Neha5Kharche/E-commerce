@@ -56,8 +56,7 @@ public class MyController {
 	@Autowired
 	FeedbackService feedbackService;
 	@Autowired
-	AdminService adService;
-
+AdminService adService;
 	
 
 	
@@ -343,7 +342,7 @@ public ModelAndView purchaseview(HttpServletRequest req,String pid,String cid)
 @RequestMapping("/addproduct")
 public ModelAndView addproductView(HttpServletRequest req)
 {
-	ArrayList<ProductCategory> pc =	productCategoryService.getProductCategoryList();
+	ArrayList<ProductCategory> pc =	productCategoryService.getProductCategoryByVendors(req.getSession().getAttribute("user").toString());
 	  req.setAttribute("pcArray", pc);
 	ModelAndView mv = new ModelAndView("addproduct");
 	mv.addObject("errmsg", "");
@@ -364,7 +363,7 @@ public ModelAndView createproductview(Product product)
 @RequestMapping("/addservice")
 public ModelAndView addserviceView(HttpServletRequest req)
 {
-	ArrayList<ServiceCategory> sc = serviceCategoryService.getServiceCategoryList();
+	ArrayList<ServiceCategory> sc = serviceCategoryService.getServiceCategoryByVendors(req.getSession().getAttribute("user").toString());
 	req.setAttribute("scArray", sc);
 	ModelAndView mv = new ModelAndView("addservice");
 	mv.addObject("errmsg", "");
