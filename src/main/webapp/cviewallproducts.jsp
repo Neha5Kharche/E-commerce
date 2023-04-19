@@ -34,6 +34,7 @@
       <link rel="stylesheet" href="css/owl.theme.default.min.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <style>
       .horizontal-scrollable > .row {
             overflow-x: auto;
@@ -46,6 +47,20 @@
             white-space: normal;
             float: none;
         }
+        
+        .btn {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: RoyalBlue;
+}
       </style>
    </head>
    <body>
@@ -62,9 +77,6 @@
                   <ul class="navbar-nav mr-auto">
                      <li class="nav-item active">
                         <a class="nav-link" href="/chome">Home</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="/">Category</a>
                      </li>
                       <li class="nav-item">
                         <a class="nav-link" href="/customerproducts">Products</a>
@@ -84,18 +96,21 @@
         
       </div>
       <!--header section end -->
-     
-  
-
-
+    
 
 
     
 
       <!--category section start -->
      <div class="container">
+    
+    
          <div class="category_section">
+          <div class="d-flex bd-highlight mb-3">
+     <a href="/filter" class="btn ms-auto p-2 bd-highlight" style="padding-right: 3%"><i class="fa fa-filter"></i></a>
+     </div>
             <div class="row">
+            
                <div class="col-lg-2 col-sm-12">
                 
                 <h1 class="category_text">Category</h1>
