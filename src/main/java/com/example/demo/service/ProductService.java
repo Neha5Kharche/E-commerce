@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -68,6 +69,14 @@ ProductRepo repo;
 	{
 			repo.updateProductDetails(pid, pPrice, pStatus, pDescription);
 		System.out.println(repo.findById(pid));
+	}
+	
+	public ArrayList<Product> getFilterByproduct(List<String> pNames)
+	{
+		ArrayList<Product> filterList = new ArrayList<>();
+		filterList.addAll(repo.getFilterByproduct(pNames));
+//		System.out.println(filterList);
+		return filterList;
 	}
 	
 

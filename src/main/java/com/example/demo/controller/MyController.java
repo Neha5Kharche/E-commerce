@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.demo.model.Cart;
+
 import com.example.demo.model.Product;
 import com.example.demo.model.ProductCategory;
 import com.example.demo.model.ServiceCategory;
@@ -292,9 +294,29 @@ public ModelAndView addToCartView(HttpServletRequest req,String pid,String cid)
 	Product product = productService.getById(new Long(pid));
 	System.out.println(product);
 	cartService.addToCart(product,customerId);	
-	ModelAndView mv = new ModelAndView("productsuccess");
+	ModelAndView mv = new ModelAndView("cartsuccess");
 	mv.addObject("cid", cid);
 	return mv;
+}
+
+@RequestMapping("/remove")
+public ModelAndView removeFromCart(String cartId,HttpServletRequest req)
+{
+	cartService.removeCartItem(new Long(cartId));
+	ArrayList<Cart> cartProduct = cartService.getCartProductByCustomer(req.getSession().getAttribute("user").toString());
+	req.setAttribute("cartProduct", cartProduct);
+	ModelAndView mv = new ModelAndView("cart");
+    return mv;
+}
+
+@RequestMapping("/clearCart")
+public ModelAndView clearCar(HttpServletRequest req)
+{
+	cartService.clearCart();
+	ArrayList<Cart> cartProduct = cartService.getCartProductByCustomer(req.getSession().getAttribute("user").toString());
+	req.setAttribute("cartProduct", cartProduct);
+	ModelAndView mv = new ModelAndView("cart");
+    return mv;
 }
 
 
@@ -417,11 +439,42 @@ public ModelAndView adminresolvehelpview()
 }
 
 @RequestMapping("/filter")
-public ModelAndView productcategoryview()
+public ModelAndView productcategoryview(HttpServletRequest req)
 {
+	ArrayList<ProductCategory> pcArray =	productCategoryService.getProductCategoryList();
+	  req.setAttribute("pcArray", pcArray);
+	  System.out.println("424");
+	  System.out.println(pcArray);
+	 ArrayList<Product> pc =	productService.getProductList();
+	 req.setAttribute("productList", pc);
 	ModelAndView mv = new ModelAndView("filter");
     return mv;
 }
+
+@RequestMapping("/applyFilter")
+public ModelAndView applyFiterView(HttpServletRequest request)
+{ 
+	
+	String pNames[] = request.getParameterValues("productname");
+	
+	List<String> queryFilterProducyBy = new ArrayList<>();
+	for(String pName:pNames)
+	{
+		queryFilterProducyBy.add(pName);
+	}
+	System.out.println(queryFilterProducyBy);
+	ArrayList<ProductCategory> pcArray =	productCategoryService.getProductCategoryList();
+	request.setAttribute("pcArray", pcArray);
+	ArrayList<Product> filterList =	productService.getFilterByproduct(queryFilterProducyBy);
+	request.setAttribute("productList", filterList);
+	System.out.println("449"+filterList);
+	ModelAndView mv = new ModelAndView("cviewallproducts");
+	 
+	return mv;
+}
+
+
+
 @RequestMapping("/viewproductcategorys")
 public ModelAndView newfashionview(HttpServletRequest req)
 {
@@ -484,6 +537,8 @@ public ModelAndView vendorproductsview(@RequestParam("pid") String pid,String cN
 }
 
 
+
+
 @RequestMapping("/vendorservices")
 public ModelAndView vendorservicesView(@RequestParam("sid") String sid,String sName,HttpServletRequest req)
 {
@@ -540,6 +595,12 @@ public ModelAndView updateservicesview(Long serviceId,String servicePrice,String
 	mv.addObject("errmsg", "");
 	mv.addObject("successfullymsg", "Service Updated Successfully!!!");
 	
+    return mv;
+}
+@RequestMapping("/billgeneration")
+public ModelAndView billgenerationview()
+{
+	ModelAndView mv = new ModelAndView("billgeneration");
     return mv;
 }
 }

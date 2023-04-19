@@ -1,6 +1,7 @@
 package com.example.demo.dao;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
@@ -24,6 +25,7 @@ public interface ProductRepo extends JpaRepository<Product, Long> {
 	@Modifying
 	@Query("from Product p  where  p.vendorId = :vendorId")
 	public ArrayList<Product> getByproduct(String vendorId);
+	
 	public ArrayList<Product> getByproductCategory(String productCategory);
 	
 	@Transactional
@@ -31,7 +33,10 @@ public interface ProductRepo extends JpaRepository<Product, Long> {
 	@Query("update Product p set p.productPrice=:productPrice,p.productStatus=:productStatus,p.productDescription=:productDescription where p.productId=:productId")
 	public void updateProductDetails(@Param("productId") Long productId,@Param("productPrice") String productPrice,@Param("productStatus")String productStatus,@Param("productDescription")String productDescription);
 	
-
+	@Transactional
+	@Modifying
+	@Query("from Product p  where  p.productName IN (:productName)")
+	public ArrayList<Product> getFilterByproduct(@Param("productName") List<String> productName);
 	
 	
 

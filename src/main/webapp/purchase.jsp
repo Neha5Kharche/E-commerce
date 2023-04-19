@@ -32,8 +32,9 @@
       <link rel="stylesheet" href="css/owl.theme.default.min.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
    </head>
+  
    <body>
-   
+      
       <!--header section start -->
       <div class="header_section">
          <div class="container">
@@ -47,9 +48,6 @@
                   <ul class="navbar-nav mr-auto">
                      <li class="nav-item active">
                         <a class="nav-link" href="/chome">Home</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="/">Category</a>
                      </li>
                       <li class="nav-item">
                         <a class="nav-link" href="/customerproducts">Products</a>
@@ -89,7 +87,8 @@
       <script src="../../assets/js/vendor/popper.min.js"></script>
       <script src="../../dist/js/bootstrap.min.js"></script>
       
-      
+       <form action="/billgeneration" method="post">
+       
       
       
       <div class="contact_section layout_padding">
@@ -113,7 +112,7 @@
                     </div>
                    </div>
                  </div>
-      
+      </form>
        <!-- footer section start -->
         
       <div class="footer_section layout_padding">

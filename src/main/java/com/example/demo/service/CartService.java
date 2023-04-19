@@ -42,6 +42,16 @@ public class CartService {
 		return cartProduct;
 	}
 	
+	public void removeCartItem(Long cartId)
+	{
+		repo.deleteById(cartId);
+	}
+	
+	public void clearCart()
+	{
+		repo.deleteAll();
+	}
+	
 	
 
 }
