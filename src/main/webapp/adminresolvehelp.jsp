@@ -35,58 +35,40 @@
    </head>
    <body>
    
-       <!--header section start -->
+      <!--header section start -->
       <div class="header_section">
          <div class="container">
             <nav class="navbar navbar-dark bg-dark">
-               <a class="logo" href="/"><img src="images/logo.png"></a>
-               
+               <a class="logo"></a>
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
                <span class="navbar-toggler-icon"></span>
                </button>
-              <div class="collapse navbar-collapse" id="navbarsExample01">
-                  <ul class="navbar-nav mr-auto">
+               <div class="collapse navbar-collapse" id="navbarsExample01">
+                 <ul class="navbar-nav mr-auto">
                      <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link" href="/">Home</a>
                      </li>
-                     <li class="nav-item dropdown">
-                     <a class="nav-link dropdown-toggle" href="#" id="navbarsExample01" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-					            Products
-					          </a>
-					          </a>
-					          <ul class="dropdown-menu " aria-labelledby="navbarsExample01">
-					            <li><a class="dropdown-item" href="/addproductcategory">Add Products Category</a></li>
-					            <li><a class="dropdown-item" href="/viewproductcategorys">View Products Category</a></li>
-					            <li><a class="dropdown-item" href="/addproduct">Add Products</a></li>
-					            <li><a class="dropdown-item" href="/viewproducts">View Products</a></li>
-					          </ul>
-          				 
-			        </li>
-			        <li class="nav-item dropdown">
-                     <a class="nav-link dropdown-toggle" href="#" id="navbarsExample01" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-					            Service
-					          </a>
-					          <ul class="dropdown-menu " aria-labelledby="navbarsExample01">
-					            <li><a class="dropdown-item" href="/addservicecategory">Add Service Category</a></li>
-					            <li><a class="dropdown-item" href="/viewservicecategorys">View Service Category</a></li>
-					            <li><a class="dropdown-item" href="/addservice">Add Service</a></li>
-					            <li><a class="dropdown-item" href="/viewservices">View Service</a></li>
-					          </ul>
-          				 
-			        </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="/vendorlogin">Logout</a>
+                        <a class="nav-link" href="/adminlogin">Admin</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/vendorlogin">Vendor</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/customerlogin">Customers</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/clients">Client</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/contact">Contact Us</a>
                      </li>
                   </ul>
                </div>
             </nav>
          </div>
-        
       </div>
-      
-      
-     <!--header section end -->
-      
+      <!--header section end -->
       
       
       
@@ -101,15 +83,27 @@
                   </div>
                   <div class="col-md-6">
                      <div class="email_text">
+                     
                         <div class="form-group">
-                           <input type="text" class="email-bt" placeholder="SOLUTION">
+                        <h3>${query }</h3>
+                        <form action="/solution">
+                        <input type="text" class="email-bt" name="queryId" value="${queryId }" style="display:none">
+                        <input type="text" class="email-bt" name="query" value="${query }" style="display:none">
+                           <input type="text" class="email-bt" placeholder="SOLUTION" name="solution">
+                            <button type="submit" class="btn btn-outline-success rounded-pill" >SUBMIT</button>
+                         
+                        <button type="reset" class="btn btn-outline-danger rounded-pill">CLEAR</button>
+                       </form>
+                       <a href="/adminhome">Go Back</a>
                         </div>
                        </div>
                       </div>
                      </div>
                     </div>
                    </div>
-                 </div>
+                   
+                   
+                
       
       
       
@@ -128,19 +122,20 @@
       
       
       
-       <!-- footer section start -->
-        
+     <!-- footer section start -->
       <div class="footer_section layout_padding">
          <div class="container">
             <div class="row">
                <div class="col-lg-6 col-sm-12">
-                  <h4 class="information_text">Category</h4>
-                  <p class="dummy_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim </p>
+                  <h4 class="information_text">SHOP NOW!!!</h4>
+                  <p class="dummy_text">Looking for an easy and convenient way to shop? Look no further than our ecommerce website! With a vast selection of products at competitive prices, fast shipping, and exceptional customer service, we make online shopping a breeze. Start shopping now and discover why we're the best choice for all your needs. </p>
                </div>
                <div class="col-lg-3 col-sm-6">
                   <div class="information_main">
                      <h4 class="information_text">Useful Links</h4>
-                     <p class="many_text">Contrary to popular belief, Lorem Ipsum is not simply random text. It </p>
+                     <p><a style="color:#FFFFFF" href="/help">HELP</a><br><a style="color:#FFFFFF" href="/feedback">FEEDBACK</a><br><a style="color:#FFFFFF" href="/fq">FEEDBACK QUESTIONNAIRE</a></p>                
+                     
+                 
                   </div>
                </div>
                <div class="col-lg-3 col-sm-6">
@@ -160,8 +155,14 @@
                   </div>
                </div>
             </div>
-           </div>
-          </div>
+            <div class="copyright_section">
+               <h1 class="copyright_text">
+               Copyright 2020 All Right Reserved
+               </h1> 
+            </div>
+         </div>
+      </div>
+      <!-- footer section end -->
             <!-- Javascript files-->
       <script src="js/jquery.min.js"></script>
       <script src="js/popper.min.js"></script>

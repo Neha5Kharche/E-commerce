@@ -1,3 +1,6 @@
+<%@page import="java.util.Iterator"%>
+<%@page import="com.example.demo.model.Help"%>
+<%@page import="java.util.ArrayList"%>
 <meta charset="ISO-8859-1">
 
 <html lang="en">
@@ -34,72 +37,126 @@
    </head>
    <body>
    
-       <!--header section start -->
+      <!--header section start -->
       <div class="header_section">
          <div class="container">
             <nav class="navbar navbar-dark bg-dark">
-               <a class="logo" href="/"><img src="images/logo.png"></a>
-               
+               <a class="logo"></a>
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
                <span class="navbar-toggler-icon"></span>
                </button>
                <div class="collapse navbar-collapse" id="navbarsExample01">
-                  <ul class="navbar-nav mr-auto">
+                 <ul class="navbar-nav mr-auto">
                      <li class="nav-item active">
                         <a class="nav-link" href="/">Home</a>
-                     </li>           
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/adminlogin">Admin</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/vendorlogin">Vendor</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/customerlogin">Customers</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/clients">Client</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/contact">Contact Us</a>
+                     </li>
                   </ul>
                </div>
             </nav>
          </div>
-        
       </div>
+      <!--header section end -->
       
-      
-     <!--header section end -->
-      
-      
-      <!-- Javascript files-->
-      <script src="js/jquery.min.js"></script>
-      <script src="js/popper.min.js"></script>
-      <script src="js/bootstrap.bundle.min.js"></script>
-      <script src="js/jquery-3.0.0.min.js"></script>
-      <script src="js/plugin.js"></script>
-      <!-- sidebar -->
-      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-      <script src="js/custom.js"></script>
-      <!-- javascript --> 
-      <script src="js/owl.carousel.js"></script>
-      <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script> 
-      <script type="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2//2.0.0-beta.2.4/owl.carousel.min.js"></script>
-      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-      <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-      <script src="../../assets/js/vendor/popper.min.js"></script>
-      <script src="../../dist/js/bootstrap.min.js"></script>
-      
-      
-      
-   <div class="contact_section layout_padding">
+  <div class="contact_section layout_padding">
          <div class="container">
             <h1 class="touch_taital">HELP</h1>
             <div class="contact_section_2">
+            <table
+        id="datatable"
+        class="table"
+      >
+        <thead>
+          <tr>
+          	<th>#</th>
+            <th>Name</th>
+            <th>Query</th>
+            <th>Solution</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+        <%
+        ArrayList<Help> queryList = (ArrayList) request.getAttribute("ql");
+        int i=0;
+      	if(request.getAttribute("ql") != null)
+    	  {
+      		Iterator<Help> iterator = queryList.iterator();
+      		while(iterator.hasNext())
+      		{
+      			Help help = iterator.next();
+      	
+        %>
+          <tr>
+            <td><%= ++i %></td>
+            <td><%= help.getCustomerName() %></td>
+            <td><%= help.getQuery() %></td>
+          <td><%= help.getSolution() %></td>
+          </tr>
+          <%
+      		}
+    	  }
+      	
+          %>
+          
+        </tbody>
+      </table>
                <div class="row">
                <div class="col-md-6">
-                  <img alt="Login image" src="helpimg.png" width="100" height="100" style="border:0; width: 100%;">
+                  <img alt="feedback image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr0RyOCE2FfjhUvOGOQ9B9Rw7E55F3mw79UOJiMghWoXi5tIEbHMIE-t9t9A7I3pdi8ko&usqp=CAU" width="100" height="100" style="border:0; width: 100%;">
                      
                   </div>
                   <div class="col-md-6">
                      <div class="email_text">
+                      <h2 style="text-align: center;color: green;" >${successfullymsg }</h2>
+                     <form action="/postQuery" method="post">
                         <div class="form-group">
-                           <input type="text" class="email-bt" placeholder="Write here">
-                           <button type="submit"class="btn btn-outline-success rounded-pill" >SUBMIT</button>
+                         <input type="text" class="email-bt" name="customerId" value="<%= request.getSession().getAttribute("user") %>" readonly>
+                         <input type="text" class="email-bt" name="customerName" value="<%= request.getSession().getAttribute("cName") %>" readonly>
+                          <textarea class="massage-bt" placeholder="Query" rows="5" required name="query"></textarea>
+                          
+
+                            <button type="submit" class="btn btn-outline-success rounded-pill" >SUBMIT</button>
+                         
+                        <button type="reset" class="btn btn-outline-danger rounded-pill">CLEAR</button>
+                       
+                                       <a href="/chome">Go Back</a>
+
+                         
+
+
+                          
+
                         </div>
+                        </form>
                        </div>
                       </div>
                      </div>
                     </div>
                    </div>
                  </div>
+                 
+                
+
+
+                 
+                 
+                  
+
       
       
       
@@ -120,17 +177,20 @@
       
        <!-- footer section start -->
         
+      <!-- footer section start -->
       <div class="footer_section layout_padding">
          <div class="container">
             <div class="row">
                <div class="col-lg-6 col-sm-12">
-                  <h4 class="information_text">Category</h4>
-                  <p class="dummy_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim </p>
+                  <h4 class="information_text">SHOP NOW!!!</h4>
+                  <p class="dummy_text">Looking for an easy and convenient way to shop? Look no further than our ecommerce website! With a vast selection of products at competitive prices, fast shipping, and exceptional customer service, we make online shopping a breeze. Start shopping now and discover why we're the best choice for all your needs. </p>
                </div>
                <div class="col-lg-3 col-sm-6">
                   <div class="information_main">
                      <h4 class="information_text">Useful Links</h4>
-                     <p class="many_text">Contrary to popular belief, Lorem Ipsum is not simply random text. It </p>
+                     <p><a style="color:#FFFFFF" href="/help">HELP</a><br><a style="color:#FFFFFF" href="/feedback">FEEDBACK</a><br><a style="color:#FFFFFF" href="/fq">FEEDBACK QUESTIONNAIRE</a></p>                
+                     
+                 
                   </div>
                </div>
                <div class="col-lg-3 col-sm-6">
@@ -150,8 +210,32 @@
                   </div>
                </div>
             </div>
-           </div>
-          </div>
+            <div class="copyright_section">
+               <h1 class="copyright_text">
+               Copyright 2020 All Right Reserved
+               </h1> 
+            </div>
+         </div>
+      </div>
+      <!-- footer section end -->
+       <!-- Javascript files-->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery-3.0.0.min.js"></script>
+      <script src="js/plugin.js"></script>
+      <!-- sidebar -->
+      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="js/custom.js"></script>
+      <!-- javascript --> 
+      <script src="js/owl.carousel.js"></script>
+      <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script> 
+      <script type="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2//2.0.0-beta.2.4/owl.carousel.min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+      <script src="../../assets/js/vendor/popper.min.js"></script>
+      <script src="../../dist/js/bootstrap.min.js"></script>
+      
              
    </body>
 

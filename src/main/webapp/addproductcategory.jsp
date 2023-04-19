@@ -123,22 +123,22 @@
                         
                         <button type="submit" class="btn btn-outline-danger rounded-pill">SUBMIT</button>
                         <button type="reset" class="btn btn-outline-warning rounded-pill">CLEAR</button>
-                      <a href="/vhome">Go Back</a></form></div>
-                       </form>
-                       <!-- <div class="send_btn"><a href="#">SUBMIT</a></div> <div class="send_btn"><a href="index">GO BACK</a></div> 
-                          <div class="send_btn">
-                        <br>
-                        
+
+                       <a class="btn btn-outline-success rounded-pill" href="/vhome">Go Back</a>
+
                      
-                     </div>-->
+
+                      
+                      
                   </div>
                   
                </div>
             </div>
          </div>
-      </div>
+      
       <!-- contact section end -->
-     <div class="footer_section layout_padding">
+      <!-- footer section start -->
+      <div class="footer_section layout_padding">
          <div class="container">
             <div class="row">
                <div class="col-lg-6 col-sm-12">
@@ -148,7 +148,7 @@
                <div class="col-lg-3 col-sm-6">
                   <div class="information_main">
                      <h4 class="information_text">Useful Links</h4>
-                     <p><a href="/help">HELP</a><br><a href="/feedback">FEEDBACK</a></br><a href="/fq">FEEDBACK QUESTIONNAIRE</a></p>                
+                     <p><a href="/help">HELP</a><br><a href="/feedback">FEEDBACK</a><br><a href="/fq">FEEDBACK QUESTIONNAIRE</a></p>                
                      
                  
                   </div>
@@ -172,10 +172,12 @@
             </div>
             <div class="copyright_section">
                <h1 class="copyright_text">
-               Copyright 2020 All Right Reserved 
+               Copyright 2020 All Right Reserved
+               </h1> 
             </div>
          </div>
       </div>
+      <!-- footer section end -->
       <!-- Javascript files-->
       <script src="js/jquery.min.js"></script>
       <script src="js/popper.min.js"></script>

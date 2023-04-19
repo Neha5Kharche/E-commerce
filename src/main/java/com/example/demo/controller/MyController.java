@@ -12,15 +12,23 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.demo.model.Cart;
+<<<<<<< HEAD
 
+=======
+import com.example.demo.model.Feedback;
+import com.example.demo.model.Help;
+>>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
 import com.example.demo.model.Product;
 import com.example.demo.model.ProductCategory;
 import com.example.demo.model.ServiceCategory;
 import com.example.demo.model.VendorServiceProvided;
 import com.example.demo.model.customer;
 import com.example.demo.model.vendor;
+import com.example.demo.service.AdminService;
 import com.example.demo.service.CartService;
 import com.example.demo.service.CustomerService;
+import com.example.demo.service.FeedbackService;
+import com.example.demo.service.HelpService;
 import com.example.demo.service.ProductCategoryService;
 import com.example.demo.service.ProductService;
 import com.example.demo.service.ServiceCategoryService;
@@ -47,6 +55,13 @@ public class MyController {
 	ServiceService serviceService;
 	@Autowired
 	CartService cartService;
+	@Autowired
+	HelpService helpService;
+	@Autowired
+	FeedbackService feedbackService;
+	@Autowired
+	AdminService adService;
+
 	
 
 	
@@ -64,6 +79,36 @@ public ModelAndView vendorloginview()
 	mv.addObject("errmsg","");
 	return mv;
 }
+@RequestMapping("/adminlogin")
+public ModelAndView hospitalloginView() {
+	ModelAndView mv = new ModelAndView("adminlogin");
+	mv.addObject("smsg", "");
+	mv.addObject("emsg", "");
+	mv.addObject("name", mv);
+	return mv;
+}
+@RequestMapping("/loginCheck")
+public ModelAndView loginCheckView(String userid, String password) {
+	ModelAndView mv = new ModelAndView();
+	if (adService.adminLoginCheck(userid, password)) {
+		mv.addObject("userid",userid);
+
+		mv.setViewName("adminhome");
+
+		return mv;
+	}
+
+	else {
+		
+		mv.setViewName("adminlogin");
+		mv.addObject("smsg", "");
+		mv.addObject("emsg", "Invalid userid or password");
+		return mv;
+	}
+
+}
+
+
 
 @RequestMapping("/vendorregis")
 public ModelAndView vendorregisView(vendor v)
@@ -84,16 +129,6 @@ public ModelAndView vendorRegister(vendor v)
 }
 
 
-@RequestMapping("/logout")
-public ModelAndView vendorLogout(HttpServletRequest req)
-{
-	HttpSession session = req.getSession();
-	session.invalidate();
-	
-	ModelAndView mv = new ModelAndView("vendorlogin");
-	return mv;
-	
-}
 
 @RequestMapping("/vLogin")
 public ModelAndView vendorLogin(@RequestParam("vEmail")String email,String vPassword,HttpServletRequest req)
@@ -115,6 +150,7 @@ public ModelAndView vendorLogin(@RequestParam("vEmail")String email,String vPass
 		return mv;
 	}
 }
+
 
 
 @RequestMapping("/vhome")
@@ -200,7 +236,11 @@ public ModelAndView customerLogin(@RequestParam("cEmail")String email,String cPa
 		  req.setAttribute("scArray", sc);
 		HttpSession session = req.getSession();
 		session.setAttribute("user", email);
+		
+		customer c = cService.getByEmail(email);
+		session.setAttribute("cName",c.getCfirstname()+" "+c.getClastname());
 		ModelAndView mv = new ModelAndView("customerhome");
+		mv.addObject("customer", c);
 		return mv;
 	}
 	else {
@@ -271,12 +311,7 @@ public ModelAndView customerProductDetailsView(HttpServletRequest req,String pid
 	 
 	return mv;
 }
-@RequestMapping("/feedback")
-public ModelAndView feedbackview()
-{
-	ModelAndView mv = new ModelAndView("feedback");
-    return mv;
-}
+
 @RequestMapping("/cart")
 public ModelAndView cartview(HttpServletRequest req,String cid)
 {
@@ -424,23 +459,25 @@ public ModelAndView fqview()
     return mv;
 }
 @RequestMapping("/help")
-public ModelAndView helpview()
+public ModelAndView helpview(HttpServletRequest request)
 {
+	List<Help> queryList = helpService.getqueryBycustomerId(request.getSession().getAttribute("user").toString());
+	System.out.println(queryList);
+	request.setAttribute("ql", queryList);
 	ModelAndView mv = new ModelAndView("help");
-	mv.addObject("errmsg", "");
-    return mv;
-}
-@RequestMapping("/adminresolvehelp")
-public ModelAndView adminresolvehelpview()
-{
-	ModelAndView mv = new ModelAndView("adminresolvehelp");
-	mv.addObject("errmsg", "");
+	mv.addObject("successMsg", "");
     return mv;
 }
 
+<<<<<<< HEAD
 @RequestMapping("/filter")
 public ModelAndView productcategoryview(HttpServletRequest req)
+=======
+@RequestMapping("/postQuery")
+public ModelAndView postQuery(Help helpQuery,HttpServletRequest request)
+>>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
 {
+<<<<<<< HEAD
 	ArrayList<ProductCategory> pcArray =	productCategoryService.getProductCategoryList();
 	  req.setAttribute("pcArray", pcArray);
 	  System.out.println("424");
@@ -448,8 +485,29 @@ public ModelAndView productcategoryview(HttpServletRequest req)
 	 ArrayList<Product> pc =	productService.getProductList();
 	 req.setAttribute("productList", pc);
 	ModelAndView mv = new ModelAndView("filter");
+=======
+	List<Help> queryList = helpService.getqueryBycustomerId(request.getSession().getAttribute("user").toString());
+	System.out.println(queryList);
+	request.setAttribute("ql", queryList);
+	helpService.postQuery(helpQuery);
+	ModelAndView mv = new ModelAndView("help");
+	mv.addObject("successfullymsg", "Query raised successfully!!!");
+	return mv;
+}
+@RequestMapping("/adminresolvehelp")
+public ModelAndView adminresolvehelpview(HttpServletRequest request,String cid,String query,Long queryId)
+{
+	List<Help> queryList = helpService.getQuerys();
+	System.out.println(queryList);
+	request.getSession().setAttribute("ql", queryList);
+	ModelAndView mv = new ModelAndView("adminresolvehelp");
+	mv.addObject("cid", cid);
+	mv.addObject("query", query);
+	mv.addObject("queryId", queryId);
+>>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
     return mv;
 }
+<<<<<<< HEAD
 
 @RequestMapping("/applyFilter")
 public ModelAndView applyFiterView(HttpServletRequest request)
@@ -473,6 +531,45 @@ public ModelAndView applyFiterView(HttpServletRequest request)
 	return mv;
 }
 
+=======
+@RequestMapping("/solution")
+public ModelAndView solutionView(Long queryId,String query,String solution)
+{
+	helpService.updateSolution(queryId, solution);
+	ModelAndView mv = new ModelAndView("adminresolvehelp");
+	return mv;
+}
+
+@RequestMapping("/feedback")
+public ModelAndView feedbackview()
+{
+	ModelAndView mv = new ModelAndView("feedback");
+	mv.addObject("successMsg", "");
+    return mv;
+}
+@RequestMapping("/postFeedback")
+public ModelAndView postFeedback(Feedback feedback)
+{
+	System.out.println(feedback);
+	feedbackService.postFeedback(feedback);
+	
+	ModelAndView mv = new ModelAndView("feedback");
+	mv.addObject("successfullymsg", "Thanks for your feedback!!");
+	return mv;
+}
+@RequestMapping("/adminfeedback")
+public ModelAndView adminfeedbackView(HttpServletRequest request)
+{
+	List<Feedback> feedbackList = feedbackService.getFeedbacks();
+	
+	request.setAttribute("f", feedbackList);
+	System.out.println();
+	ModelAndView mv = new ModelAndView("adminfeedback");
+	
+    return mv;
+	
+}
+>>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
 
 
 @RequestMapping("/viewproductcategorys")
@@ -576,6 +673,50 @@ public ModelAndView updateproductsview(Long productId,String productPrice,String
 	
     return mv;
 }
+@RequestMapping("/editproductcategory")
+public ModelAndView editproductcategoryView(Long pid)
+{
+	ProductCategory productCategory = productCategoryService.getByProductCategoryId(pid);
+	ModelAndView mv = new ModelAndView("editproductcategory");
+	mv.addObject("productCategory", productCategory);
+	mv.addObject("errmsg", "");
+	mv.addObject("successfullymsg", "");
+    return mv;
+}
+
+@RequestMapping("/updateproductcategories")
+public ModelAndView updateproductcategoriesview(Long productCategoryId,String productCategoryName,String productCategoryImage)
+{
+	 productCategoryService.updateProductCategoryDetails(productCategoryId, productCategoryName, productCategoryImage);
+	ModelAndView mv = new ModelAndView("editproductcategory");
+	mv.addObject("errmsg", "");
+	mv.addObject("successfullymsg", "ProductCategory Updated Successfully!!!");
+	
+    return mv;
+}
+@RequestMapping("/editservicecategory")
+public ModelAndView editservicecategoryView(Long sid)
+{
+	ServiceCategory serviceCategory = serviceCategoryService.getByServiceCategoryId(sid);
+	ModelAndView mv = new ModelAndView("editservicecategory");
+	mv.addObject("serviceCategory", serviceCategory);
+	mv.addObject("errmsg", "");
+	mv.addObject("successfullymsg", "");
+    return mv;
+}
+
+@RequestMapping("/updateservicecategories")
+public ModelAndView updateservicecategoriesview(Long serviceCategoryId,String serviceCategoryName,String serviceCategoryImage)
+{
+	 serviceCategoryService.updateServiceCategoryDetails(serviceCategoryId, serviceCategoryName, serviceCategoryImage);
+	ModelAndView mv = new ModelAndView("editservicecategory");
+	mv.addObject("errmsg", "");
+	mv.addObject("successfullymsg", "ServiceCategory Updated Successfully!!!");
+	
+    return mv;
+}
+
+
 @RequestMapping("/editservices")
 public ModelAndView editservicesview(Long sid)
 {
@@ -597,10 +738,70 @@ public ModelAndView updateservicesview(Long serviceId,String servicePrice,String
 	
     return mv;
 }
+<<<<<<< HEAD
 @RequestMapping("/billgeneration")
 public ModelAndView billgenerationview()
 {
 	ModelAndView mv = new ModelAndView("billgeneration");
     return mv;
 }
+=======
+@RequestMapping("/logout")
+public ModelAndView vendorLogout(HttpServletRequest req)
+{
+	HttpSession session = req.getSession();
+	session.invalidate();
+	
+	ModelAndView mv = new ModelAndView("vendorlogin");
+	return mv;
+	
+}
+
+
+@RequestMapping("/newfq")
+public ModelAndView newfqView()
+{
+	ModelAndView mv = new ModelAndView("newfq");
+	return mv;
+}
+@RequestMapping("/vendorheader")
+public ModelAndView vendorheaderView()
+{
+	ModelAndView mv = new ModelAndView("vendorheader");
+	return mv;
+}
+@RequestMapping("/adminhome")
+public ModelAndView adminhomeView()
+{
+	ModelAndView mv = new ModelAndView("adminhome");
+	return mv;
+}
+@RequestMapping("/adminhelp")
+public ModelAndView adminhelpView(HttpServletRequest request)
+{
+	List<Help> queryList = helpService.getQuerys();
+	
+	request.setAttribute("ql", queryList);
+	System.out.println();
+	ModelAndView mv = new ModelAndView("adminhelp");
+	
+    return mv;
+	
+}
+
+@RequestMapping("/adminhandle")
+public ModelAndView adminhandleView(HttpServletRequest req)
+{
+	ArrayList<ProductCategory> pc = productCategoryService.getProductCategoryList();
+	ArrayList<ServiceCategory> sc = serviceCategoryService.getServiceCategoryList();
+	req.setAttribute("pcArray", pc);
+	req.setAttribute("scArray", sc);
+	ModelAndView mv = new ModelAndView("adminhandle");
+	return mv;
+}
+
+
+
+
+>>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
 }

@@ -18,6 +18,12 @@ public class ServiceCategoryService {
 	{
 		repo.save(serviceCategory);
 	}
+	public ServiceCategory getById(Long sid)
+	{
+		ServiceCategory serviceCategory = repo.findById(sid).orElse(new ServiceCategory());
+		return serviceCategory;
+		
+	}
 	public ArrayList<ServiceCategory> getServiceCategoryList()
 	{
 		System.out.println(repo.findAll());
@@ -31,4 +37,20 @@ public class ServiceCategoryService {
 		serviceCategoryList.addAll(repo.findServiceCategoryByVendors(vendorId));
 		return serviceCategoryList;
 	}
+	public ServiceCategory getByServiceCategoryId(Long sid)
+	{
+		ServiceCategory serviceCategory = repo.findById(sid).orElse(new ServiceCategory());
+		
+		return  serviceCategory;
+	}
+	
+	
+	
+	public void updateServiceCategoryDetails(Long sid,String sName,String sImage)
+	{
+			repo.updateServiceCategoryDetails(sid, sName, sImage);
+		System.out.println(repo.findById(sid));
+	}
+	
+	
 }
