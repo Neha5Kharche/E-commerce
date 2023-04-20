@@ -12,14 +12,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.demo.model.Cart;
-<<<<<<< HEAD
 
-=======
+
+
 import com.example.demo.model.Feedback;
 import com.example.demo.model.Help;
->>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
+
 import com.example.demo.model.Product;
 import com.example.demo.model.ProductCategory;
+
 import com.example.demo.model.ServiceCategory;
 import com.example.demo.model.VendorServiceProvided;
 import com.example.demo.model.customer;
@@ -31,6 +32,7 @@ import com.example.demo.service.FeedbackService;
 import com.example.demo.service.HelpService;
 import com.example.demo.service.ProductCategoryService;
 import com.example.demo.service.ProductService;
+
 import com.example.demo.service.ServiceCategoryService;
 import com.example.demo.service.ServiceService;
 import com.example.demo.service.VendorService;
@@ -255,8 +257,11 @@ public ModelAndView customerhome(HttpServletRequest req)
 {
   ArrayList<ProductCategory> pc =	productCategoryService.getProductCategoryList();
   req.setAttribute("pcArray", pc);
+  ArrayList<ServiceCategory> sc =	serviceCategoryService.getServiceCategoryList();
+  req.setAttribute("scArray", sc);
 	ModelAndView mv = new ModelAndView("customerhome");
   	mv.addObject("pc", pc);
+  	mv.addObject("sc", sc);
 	return mv;
 }
 @RequestMapping("/clogout")
@@ -279,6 +284,18 @@ public ModelAndView customerproductsview(@RequestParam("pid") String pid,String 
 	 
 	 ModelAndView mv = new ModelAndView("customerproducts");
 	 mv.addObject("cName", cName);
+	return mv;
+}
+@RequestMapping("/customerservices")
+public ModelAndView customerservicesview(@RequestParam("sid") String sid,String sName,HttpServletRequest req)
+{
+	 ArrayList<ServiceCategory> scArray =	serviceCategoryService.getServiceCategoryList();
+	  req.setAttribute("scArray", scArray);
+	 ArrayList<VendorServiceProvided> sc =	serviceService.getByServiceCategory(sid);
+	 req.setAttribute("serviceList", sc);
+	 
+	 ModelAndView mv = new ModelAndView("customerservices");
+	 mv.addObject("sName", sName);
 	return mv;
 }
 @RequestMapping("/customerViewAllProducts")
@@ -310,6 +327,32 @@ public ModelAndView customerProductDetailsView(HttpServletRequest req,String pid
 	 
 	return mv;
 }
+@RequestMapping("/customerViewAllServices")
+public ModelAndView customerViewAllServicesView(HttpServletRequest req)
+{
+	 ArrayList<ServiceCategory> scArray =	serviceCategoryService.getServiceCategoryList();
+	  req.setAttribute("scArray", scArray);
+	 ArrayList<VendorServiceProvided> sc =	serviceService.getServiceList();
+	 req.setAttribute("serviceList", sc);
+	 
+	 
+	 
+	 ModelAndView mv = new ModelAndView("cviewallservices");
+	 
+	return mv;
+}
+@RequestMapping("/cServiceDetails")
+public ModelAndView customerServiceDetailsView(HttpServletRequest req,String sid)
+{
+
+	
+	VendorServiceProvided serviceDetails = serviceService.getById(new Long(sid));
+	req.setAttribute("serviceDetails", serviceDetails);
+	 
+	 ModelAndView mv = new ModelAndView("viewservicedetails");
+	 
+	return mv;
+}
 
 @RequestMapping("/cart")
 public ModelAndView cartview(HttpServletRequest req,String cid)
@@ -333,6 +376,7 @@ public ModelAndView addToCartView(HttpServletRequest req,String pid,String cid)
 	return mv;
 }
 
+
 @RequestMapping("/remove")
 public ModelAndView removeFromCart(String cartId,HttpServletRequest req)
 {
@@ -354,12 +398,13 @@ public ModelAndView clearCar(HttpServletRequest req)
 }
 
 
-@RequestMapping("/purchase")
-public ModelAndView purchaseview(HttpServletRequest req,String pid,String cid)
+
+@RequestMapping("/spurchase")
+public ModelAndView purchaseview(HttpServletRequest req,String sid,String cid)
 {
-	Product product = productService.getById(new Long(pid));
-	ModelAndView mv = new ModelAndView("purchase");
-	mv.addObject("product", product);
+	VendorServiceProvided service = serviceService.getById(new Long(sid));
+	ModelAndView mv = new ModelAndView("spurchase");
+	mv.addObject("service", service);
     return mv;
 }
 
@@ -468,23 +513,37 @@ public ModelAndView helpview(HttpServletRequest request)
     return mv;
 }
 
-<<<<<<< HEAD
+
 @RequestMapping("/filter")
 public ModelAndView productcategoryview(HttpServletRequest req)
-=======
+{
+ArrayList<ProductCategory> pcArray =	productCategoryService.getProductCategoryList();
+req.setAttribute("pcArray", pcArray);
+System.out.println("424");
+System.out.println(pcArray);
+ArrayList<Product> pc =	productService.getProductList();
+req.setAttribute("productList", pc);
+ModelAndView mv = new ModelAndView("filter");
+return mv;
+}
+@RequestMapping("/sfilter")
+public ModelAndView servicecategoryview(HttpServletRequest req)
+{
+ArrayList<ServiceCategory> scArray =	serviceCategoryService.getServiceCategoryList();
+req.setAttribute("scArray", scArray);
+System.out.println("424");
+System.out.println(scArray);
+ArrayList<VendorServiceProvided> sc =	serviceService.getServiceList();
+req.setAttribute("serviceList", sc);
+ModelAndView mv = new ModelAndView("sfilter");
+return mv;
+}
+
 @RequestMapping("/postQuery")
 public ModelAndView postQuery(Help helpQuery,HttpServletRequest request)
->>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
+
 {
-<<<<<<< HEAD
-	ArrayList<ProductCategory> pcArray =	productCategoryService.getProductCategoryList();
-	  req.setAttribute("pcArray", pcArray);
-	  System.out.println("424");
-	  System.out.println(pcArray);
-	 ArrayList<Product> pc =	productService.getProductList();
-	 req.setAttribute("productList", pc);
-	ModelAndView mv = new ModelAndView("filter");
-=======
+
 	List<Help> queryList = helpService.getqueryBycustomerId(request.getSession().getAttribute("user").toString());
 	System.out.println(queryList);
 	request.setAttribute("ql", queryList);
@@ -503,10 +562,10 @@ public ModelAndView adminresolvehelpview(HttpServletRequest request,String cid,S
 	mv.addObject("cid", cid);
 	mv.addObject("query", query);
 	mv.addObject("queryId", queryId);
->>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
+
     return mv;
 }
-<<<<<<< HEAD
+
 
 @RequestMapping("/applyFilter")
 public ModelAndView applyFiterView(HttpServletRequest request)
@@ -530,7 +589,29 @@ public ModelAndView applyFiterView(HttpServletRequest request)
 	return mv;
 }
 
-=======
+@RequestMapping("/applySFilter")
+public ModelAndView applySFiterView(HttpServletRequest request)
+{ 
+	
+	String sNames[] = request.getParameterValues("servicename");
+	
+	List<String> queryFilterServiceBy = new ArrayList<>();
+	for(String sName:sNames)
+	{
+		queryFilterServiceBy.add(sName);
+	}
+	System.out.println(queryFilterServiceBy);
+	ArrayList<ServiceCategory> scArray =	serviceCategoryService.getServiceCategoryList();
+	request.setAttribute("scArray", scArray);
+	ArrayList<VendorServiceProvided> filterList =	serviceService.getFilterByservice(queryFilterServiceBy);
+	request.setAttribute("serviceList", filterList);
+	System.out.println("449"+filterList);
+	ModelAndView mv = new ModelAndView("cviewallservices");
+	 
+	return mv;
+}
+
+
 @RequestMapping("/solution")
 public ModelAndView solutionView(Long queryId,String query,String solution)
 {
@@ -568,7 +649,7 @@ public ModelAndView adminfeedbackView(HttpServletRequest request)
     return mv;
 	
 }
->>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
+
 
 
 @RequestMapping("/viewproductcategorys")
@@ -684,9 +765,9 @@ public ModelAndView editproductcategoryView(Long pid)
 }
 
 @RequestMapping("/updateproductcategories")
-public ModelAndView updateproductcategoriesview(Long productCategoryId,String productCategoryName,String productCategoryImage)
+public ModelAndView updateproductcategoriesview(Long productCategoryId,String productCategoryName,String productCategoryIcon,String productCategoryImage)
 {
-	 productCategoryService.updateProductCategoryDetails(productCategoryId, productCategoryName, productCategoryImage);
+	 productCategoryService.updateProductCategoryDetails(productCategoryId, productCategoryName, productCategoryIcon, productCategoryImage);
 	ModelAndView mv = new ModelAndView("editproductcategory");
 	mv.addObject("errmsg", "");
 	mv.addObject("successfullymsg", "ProductCategory Updated Successfully!!!");
@@ -737,14 +818,14 @@ public ModelAndView updateservicesview(Long serviceId,String servicePrice,String
 	
     return mv;
 }
-<<<<<<< HEAD
+
 @RequestMapping("/billgeneration")
 public ModelAndView billgenerationview()
 {
 	ModelAndView mv = new ModelAndView("billgeneration");
     return mv;
 }
-=======
+
 @RequestMapping("/logout")
 public ModelAndView vendorLogout(HttpServletRequest req)
 {
@@ -798,9 +879,8 @@ public ModelAndView adminhandleView(HttpServletRequest req)
 	ModelAndView mv = new ModelAndView("adminhandle");
 	return mv;
 }
-
-
-
-
->>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
 }
+
+
+
+

@@ -48,9 +48,9 @@ public class ProductCategoryService {
 	
 	
 	
-	public void updateProductCategoryDetails(Long pid,String pName,String pImage)
+	public void updateProductCategoryDetails(Long pid,String pName,String pIcon,String pImage)
 	{
-			repo.updateProductCategoryDetails(pid, pName, pImage);
+			repo.updateProductCategoryDetails(pid, pName, pIcon, pImage);
 		System.out.println(repo.findById(pid));
 	}
 

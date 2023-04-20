@@ -1,11 +1,13 @@
 package com.example.demo.service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.dao.ServiceRepo;
+import com.example.demo.model.Product;
 import com.example.demo.model.VendorServiceProvided;
 
 
@@ -68,6 +70,14 @@ ServiceRepo repo;
 	{
 			repo.updateServiceDetails(sid, sPrice, sStatus, sDescription);
 		System.out.println(repo.findById(sid));
+	}
+
+	public ArrayList<VendorServiceProvided> getFilterByservice(List<String> sNames)
+	{
+		ArrayList<VendorServiceProvided> filterList = new ArrayList<>();
+		filterList.addAll(repo.getFilterByservice(sNames));
+//		System.out.println(filterList);
+		return filterList;
 	}
 	
 

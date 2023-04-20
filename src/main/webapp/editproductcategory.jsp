@@ -109,6 +109,9 @@
                        <div class="form-group">
                            <input type="text" class="email-bt" placeholder="Product Category Name" name='productCategoryName' value="${productCategory.getProductCategoryName() }" >
                         </div>
+                         <div class="form-group">
+                           <input type="text" class="email-bt" placeholder="Product Category Icon" name='productCategoryIcon' value="${productCategory.getProductCategoryIcon() }" >
+                        </div>
                  <div class="form-group">
                            <input type="text" class="email-bt" placeholder="Product Category Image" name='productCategoryImage' value="${productCategory.getProductCategoryImage() }" >
                         </div>

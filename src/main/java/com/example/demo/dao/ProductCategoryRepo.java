@@ -21,7 +21,7 @@ public interface ProductCategoryRepo extends JpaRepository<ProductCategory, Long
 
 	@Transactional
 	@Modifying
-	@Query("update ProductCategory p set p.productCategoryName=:productCategoryName,p.productCategoryImage=:productCategoryImage where p.productCategoryId=:productCategoryId")
-	public void updateProductCategoryDetails(@Param("productCategoryId") Long productCategoryId,@Param("productCategoryName") String productCategoryName,@Param("productCategoryImage")String productCategoryImage);
+	@Query("update ProductCategory p set p.productCategoryName=:productCategoryName,p.productCategoryIcon=:productCategoryIcon,p.productCategoryImage=:productCategoryImage where p.productCategoryId=:productCategoryId")
+	public void updateProductCategoryDetails(@Param("productCategoryId") Long productCategoryId,@Param("productCategoryName") String productCategoryName,@Param("productCategoryIcon") String productCategoryIcon,@Param("productCategoryImage")String productCategoryImage);
 	
 }
