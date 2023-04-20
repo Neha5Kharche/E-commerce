@@ -49,25 +49,33 @@
       </style>
    </head>
    <body>
-        <!--header section start -->
+       <!--header section start -->
       <div class="header_section">
          <div class="container">
-            <nav class="navbar navbar-dark ">
-               <a class="logo" href="/"><img src="images/logo.png"></a>
-               
+            <nav class="navbar navbar-dark bg-dark">
+               <a class="logo" href="index.html"><img src="images/logo.png"></a>
+               <div class="search_section">
+                  <ul>
+                    
+                     <li><a href="/cart"><img src="images/shopping-bag.png"></a></li>
+                     <li><a href="/chome"><img src="images/home.png" width="19px" height="19px" ></a></li>
+                     <li><a href="/help"><img src="images/help.png"></a></li>
+                  </ul>
+               </div>
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
                <span class="navbar-toggler-icon"></span>
                </button>
+               
                <div class="collapse navbar-collapse" id="navbarsExample01">
                   <ul class="navbar-nav mr-auto">
                      <li class="nav-item active">
                         <a class="nav-link" href="/chome">Home</a>
                      </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="/customerproducts">Products</a>
+                        <a class="nav-link" href="/customerViewAllProducts">Products</a>
                      </li>
                      <li class="nav-item">
-                       <a class="nav-link" href="/">Services</a>
+                       <a class="nav-link" href="/customerViewAllServices">Services</a>
 
                      </li>
                      
@@ -81,7 +89,6 @@
         
       </div>
       <!--header section end -->
-                 
       <!--category section start -->
      <div class="container">
          <div class="category_section">
@@ -141,8 +148,8 @@
                        <div class="text">PRICE: <%= productDetails.getProductPrice() %></div>                
                        <div class="text">STATUS: <%= productDetails.getProductStatus() %></div>
                        <a href="/cProductDetails?pid=<%= productDetails.getProductId() %>" class="link-danger btn btn-outline-danger">Details</a>
-                       <a href="#" class="link-danger btn btn-outline-danger">Buy Now</a>
-                       <a href="/addCart?pid=<%= productDetails %>" class="link-danger btn btn-outline-danger">Add to Cart</a>
+                       <a href="/purchase?pid=<%= productDetails.getProductId() %>&cid=<%= request.getSession().getAttribute("user").toString() %>" class="link-danger btn btn-outline-danger">Buy Now</a>
+                       <a href="/addCart?pid=<%= productDetails.getProductId() %>&cid=<%= request.getSession().getAttribute("user").toString() %>" class="link-danger btn btn-outline-danger">Add to Cart</a>
                     
                     
 

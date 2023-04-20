@@ -106,8 +106,6 @@
         
       </div>
       <!--header section end -->
-
-
     
 
       <!--category section start -->

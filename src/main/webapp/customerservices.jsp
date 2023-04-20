@@ -89,7 +89,6 @@
         
       </div>
       <!--header section end -->
-                 
       <!--category section start -->
      <div class="container">
          <div class="category_section">

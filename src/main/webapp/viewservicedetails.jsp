@@ -50,7 +50,7 @@
       </style>
    </head>
    <body>
-        <!--header section start -->
+     <!--header section start -->
       <div class="header_section">
          <div class="container">
             <nav class="navbar navbar-dark bg-dark">
@@ -90,7 +90,6 @@
         
       </div>
       <!--header section end -->
-                 
      <!-- product section start -->
       <div class="product_section layout_padding">
          
