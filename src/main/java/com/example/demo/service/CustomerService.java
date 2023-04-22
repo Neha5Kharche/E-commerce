@@ -27,10 +27,18 @@ public class CustomerService {
 		 
 	 }
 	 
+	
 	 public customer getByEmail(String email)
 	 {
 		 customer c = crepo.findByEmail(email);
 		 
 		 return c;
+	 }
+	 
+	 public void resetPassword(String email,String password)
+	 {
+		 customer c=crepo.getById(email);
+		 c.setPassword(password);
+		 crepo.save(c);
 	 }
 }

@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.dao.VendorRepository;
+import com.example.demo.model.customer;
 import com.example.demo.model.vendor;
 
 @Service
@@ -25,5 +26,18 @@ public class VendorService {
 		 }
 			 
 		 
+	 }
+	 public vendor getByEmail(String email)
+	 {
+		 vendor v = vrepo.findByEmail(email);
+		 
+		 return v;
+	 }
+	 
+	 public void resetPassword(String email,String password)
+	 {
+		 vendor v=vrepo.getById(email);
+		 v.setPassword(password);
+		 vrepo.save(v);
 	 }
 }

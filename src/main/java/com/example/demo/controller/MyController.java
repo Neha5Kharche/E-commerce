@@ -786,9 +786,9 @@ public ModelAndView editservicecategoryView(Long sid)
 }
 
 @RequestMapping("/updateservicecategories")
-public ModelAndView updateservicecategoriesview(Long serviceCategoryId,String serviceCategoryName,String serviceCategoryImage)
+public ModelAndView updateservicecategoriesview(Long serviceCategoryId,String serviceCategoryName,String serviceCategoryIcon,String serviceCategoryImage)
 {
-	 serviceCategoryService.updateServiceCategoryDetails(serviceCategoryId, serviceCategoryName, serviceCategoryImage);
+	 serviceCategoryService.updateServiceCategoryDetails(serviceCategoryId, serviceCategoryName, serviceCategoryIcon, serviceCategoryImage);
 	ModelAndView mv = new ModelAndView("editservicecategory");
 	mv.addObject("errmsg", "");
 	mv.addObject("successfullymsg", "ServiceCategory Updated Successfully!!!");
@@ -825,6 +825,12 @@ public ModelAndView billgenerationview()
 	ModelAndView mv = new ModelAndView("billgeneration");
     return mv;
 }
+@RequestMapping("/servicebillgeneration")
+public ModelAndView servicebillgenerationview()
+{
+	ModelAndView mv = new ModelAndView("servicebillgeneration");
+    return mv;
+}
 
 @RequestMapping("/logout")
 public ModelAndView vendorLogout(HttpServletRequest req)
@@ -833,6 +839,16 @@ public ModelAndView vendorLogout(HttpServletRequest req)
 	session.invalidate();
 	
 	ModelAndView mv = new ModelAndView("vendorlogin");
+	return mv;
+	
+}
+@RequestMapping("/alogout")
+public ModelAndView adminLogout(HttpServletRequest req)
+{
+	HttpSession session = req.getSession();
+	session.invalidate();
+	
+	ModelAndView mv = new ModelAndView("adminlogin");
 	return mv;
 	
 }
@@ -879,7 +895,113 @@ public ModelAndView adminhandleView(HttpServletRequest req)
 	ModelAndView mv = new ModelAndView("adminhandle");
 	return mv;
 }
+@RequestMapping("/resetpassword")
+public ModelAndView resetpasswordview(String cEmail)
+{
+	customer cust = cService.getByEmail(cEmail);
+	System.out.println(cust);
+	ModelAndView mv = new ModelAndView();
+	if(cust != null)
+	{
+		mv.setViewName("resetpassword");
+		mv.addObject("user",cEmail);
+	}
+	else
+	{
+		mv.setViewName("forgotpassword");
+		mv.addObject("errorMsg", "Account does not Exist");
+	}
+	
+    return mv;
 }
+
+@RequestMapping("/updatePassword")
+public ModelAndView updatePasswordView(String cEmail,String cPassword,String cNewPassword)
+{
+	ModelAndView mv = new ModelAndView();
+	if(cPassword.equals(cNewPassword))
+	{
+		cService.resetPassword(cEmail,cPassword);
+		mv.setViewName("customerlogin");
+	}
+	else
+	{
+		mv.setViewName("resetpassword");
+		mv.addObject("user",cEmail);
+		mv.addObject("errorMsg", "Password and confirm Password didn't Match");
+	}
+	
+	
+	return mv;
+}
+@RequestMapping("/forgotpassword")
+public ModelAndView forgotpasswordview()
+{
+	
+	ModelAndView mv = new ModelAndView("forgotpassword");
+	mv.addObject("errorMsg", "");
+    return mv;
+}
+
+@RequestMapping("/resetvpassword")
+public ModelAndView resetvpasswordview(String vEmail)
+{
+	vendor vendor = vService.getByEmail(vEmail);
+	System.out.println(vendor);
+	ModelAndView mv = new ModelAndView();
+	if(vendor != null)
+	{
+		mv.setViewName("resetvpassword");
+		mv.addObject("user",vEmail);
+	}
+	else
+	{
+		mv.setViewName("forgotvpassword");
+		mv.addObject("errorMsg", "Account does not Exist");
+	}
+	
+    return mv;
+}
+
+@RequestMapping("/updatevPassword")
+public ModelAndView updatevPasswordView(String vEmail,String vPassword,String vNewPassword)
+{
+	ModelAndView mv = new ModelAndView();
+	if(vPassword.equals(vNewPassword))
+	{
+		vService.resetPassword(vEmail,vPassword);
+		mv.setViewName("vendorlogin");
+	}
+	else
+	{
+		mv.setViewName("resetvpassword");
+		mv.addObject("user",vEmail);
+		mv.addObject("errorMsg", "Password and confirm Password didn't Match");
+	}
+	
+	
+	return mv;
+}
+@RequestMapping("/forgotvpassword")
+public ModelAndView forgotvpasswordview()
+{
+	
+	ModelAndView mv = new ModelAndView("forgotvpassword");
+	mv.addObject("errorMsg", "");
+    return mv;
+}
+@RequestMapping("/search")
+public ModelAndView searchView()
+{
+	
+	ModelAndView mv = new ModelAndView("search");
+	mv.addObject("errorMsg", "");
+    return mv;
+}
+
+
+}
+
 
 
 

@@ -41,7 +41,7 @@
       <div class="header_section">
          <div class="container">
             <nav class="navbar navbar-dark bg-dark">
-               <a class="logo"></a>
+               <a class="logo" href="/"><img src="images/sep.jpg"></a>
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
                <span class="navbar-toggler-icon"></span>
                </button>
@@ -58,13 +58,7 @@
                      </li>
                      <li class="nav-item">
                         <a class="nav-link" href="/customerlogin">Customers</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="/clients">Client</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="/contact">Contact Us</a>
-                     </li>
+                     
                   </ul>
                </div>
             </nav>
@@ -137,9 +131,21 @@
           
       </table>
     </div>
+    <button onclick="history.back()">Go Back</button>
+     <!-- newsletter section start -->
+      <div class="newsletter_section layout_padding">
+         <div class="container">
+            <h6 class="conect_text">SHARING ECONOMY PLATFORM</h6>
+            <h1 class="newsletter_taital">#MONTH END SALE</h1>
+            <p class="newsletter_text">Upgrade your wardrobe with our high-quality, affordable fashion. </p>
+            
+              
+               </div>
+            </div>
+        
+      <!-- newsletter section end -->
     
-    
-    <!-- footer section start -->
+   <!-- footer section start -->
       <div class="footer_section layout_padding">
          <div class="container">
             <div class="row">
@@ -150,7 +156,8 @@
                <div class="col-lg-3 col-sm-6">
                   <div class="information_main">
                      <h4 class="information_text">Useful Links</h4>
-                     <p><a style="color:#FFFFFF" href="/help">HELP</a><br><a style="color:#FFFFFF" href="/feedback">FEEDBACK</a><br><a style="color:#FFFFFF" href="/fq">FEEDBACK QUESTIONNAIRE</a></p>                
+                     <p><a style="color:blue;" href="/feedback">FEEDBACK</a><br><a style="color:blue;" href="/fq">FAQ's</a></p>                
+                     
                      
                  
                   </div>

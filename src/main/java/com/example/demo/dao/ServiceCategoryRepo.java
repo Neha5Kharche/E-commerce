@@ -20,6 +20,6 @@ public interface ServiceCategoryRepo extends JpaRepository<ServiceCategory, Long
 
 	@Transactional
 	@Modifying
-	@Query("update ServiceCategory s set s.serviceCategoryName=:serviceCategoryName,s.serviceCategoryImage=:serviceCategoryImage where s.serviceCategoryId=:serviceCategoryId")
-	public void updateServiceCategoryDetails(@Param("serviceCategoryId") Long serviceCategoryId,@Param("serviceCategoryName") String serviceCategoryName,@Param("serviceCategoryImage")String serviceCategoryImage);
+	@Query("update ServiceCategory s set s.serviceCategoryName=:serviceCategoryName,s.serviceCategoryIcon=:serviceCategoryIcon,s.serviceCategoryImage=:serviceCategoryImage where s.serviceCategoryId=:serviceCategoryId")
+	public void updateServiceCategoryDetails(@Param("serviceCategoryId") Long serviceCategoryId,@Param("serviceCategoryName") String serviceCategoryName,@Param("serviceCategoryIcon") String serviceCategoryIcon,@Param("serviceCategoryImage")String serviceCategoryImage);
 }

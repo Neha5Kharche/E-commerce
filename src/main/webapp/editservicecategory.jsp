@@ -42,7 +42,8 @@
       <div class="header_section">
          <div class="container">
             <nav class="navbar navbar-dark ">
-               <a class="logo" href="/"><img src="images/logo.png"></a>
+               <a class="logo" href="/"><img src="images/sep.jpg"></a>
+               
                
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
                <span class="navbar-toggler-icon"></span>
@@ -50,7 +51,7 @@
                <div class="collapse navbar-collapse" id="navbarsExample01">
                   <ul class="navbar-nav mr-auto">
                      <li class="nav-item active">
-                        <a class="nav-link" href="/vhome">Home</a>
+                       <a class="logo" href="/"><img src="images/sep.jpg"></a>
                      </li>
                      <li class="nav-item dropdown">
                      <a class="nav-link dropdown-toggle" href="#" id="navbarsExample01" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -109,6 +110,9 @@
                            <input type="text" class="email-bt" placeholder="Service Category Name" name='serviceCategoryName' value="${serviceCategory.getServiceCategoryName() }" >
                         </div>
                         <div class="form-group">
+                           <input type="text" class="email-bt" placeholder="Service Category Icon" name='serviceCategoryIcon' value="${serviceCategory.getServiceCategoryIcon() }" >
+                        </div>
+                        <div class="form-group">
                             <input type="text" class="email-bt" placeholder="Service Category Image" name='serviceCategoryImage' value="${serviceCategory.getServiceCategoryImage() }">
                         </div>
                         
@@ -124,7 +128,18 @@
                </div>
             </div>
             </div>
-         
+         <!-- newsletter section start -->
+      <div class="newsletter_section layout_padding">
+         <div class="container">
+            <h6 class="conect_text">SHARING ECONOMY PLATFORM</h6>
+            <h1 class="newsletter_taital">#MONTH END SALE</h1>
+            <p class="newsletter_text">Upgrade your wardrobe with our high-quality, affordable fashion. </p>
+            
+              
+               </div>
+            </div>
+        
+      <!-- newsletter section end -->
       
       <!-- contact section end -->
       <!-- footer section start -->
@@ -138,7 +153,8 @@
                <div class="col-lg-3 col-sm-6">
                   <div class="information_main">
                      <h4 class="information_text">Useful Links</h4>
-                     <p><a href="/help">HELP</a><br><a href="/feedback">FEEDBACK</a><br><a href="/fq">FEEDBACK QUESTIONNAIRE</a></p>                
+                     <p><a style="color:blue;" href="/feedback">FEEDBACK</a><br><a style="color:blue;" href="/fq">FAQ's</a></p>                
+                     
                      
                  
                   </div>

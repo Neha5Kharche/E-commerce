@@ -38,7 +38,7 @@
       <div class="header_section">
          <div class="container">
             <nav class="navbar navbar-dark bg-dark">
-               <a class="logo" href="index.html"><img src="images/logo.png"></a>
+               <a class="logo" href="/"><img src="images/sep.jpg"></a>
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
                <span class="navbar-toggler-icon"></span>
                </button>
@@ -53,15 +53,7 @@
                      <li class="nav-item">
                         <a class="nav-link" href="/vendorlogin">Vendor</a>
                      </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="/customerlogin">Customers</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="/clients">Client</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="/contact">Contact Us</a>
-                     </li>
+                     
                   </ul>
                </div>
             </nav>
@@ -87,7 +79,7 @@
                         <div class="form-check d-flex justify-content-start mb-4">
               <input class="form-check-input" type="checkbox" value="" id="customerlogin" />
               <label class="form-check-label" for="customerlogin"> Remember password </label>
-              <a href="/resetpassword">&nbsp;&nbsp;&nbsp;Forgot password?</a>
+              <a href="/forgotpassword">&nbsp;&nbsp;&nbsp;Forgot password?</a>
             
         
             </div>
@@ -111,7 +103,7 @@
       </div>
       </form>
       <!-- contact section end -->
-     <!-- footer section start -->
+    <!-- footer section start -->
       <div class="footer_section layout_padding">
          <div class="container">
             <div class="row">
@@ -122,7 +114,8 @@
                <div class="col-lg-3 col-sm-6">
                   <div class="information_main">
                      <h4 class="information_text">Useful Links</h4>
-                     <p><a style="color:#FFFFFF" href="/help">HELP</a><br><a style="color:#FFFFFF" href="/feedback">FEEDBACK</a><br><a style="color:#FFFFFF" href="/fq">FEEDBACK QUESTIONNAIRE</a></p>                
+                     <p><a style="color:blue;" href="/feedback">FEEDBACK</a><br><a style="color:blue;" href="/fq">FAQ's</a></p>                
+                     
                      
                  
                   </div>

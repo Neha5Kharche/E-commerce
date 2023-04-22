@@ -125,7 +125,7 @@
 <link href="checkout.css" rel="stylesheet">
    </head>
    <body>
-       <!--header section start -->
+      <!--header section start -->
       <div class="header_section">
          <div class="container">
             <nav class="navbar navbar-dark bg-dark">
@@ -165,23 +165,32 @@
         
       </div>
       <!--header section end -->
-      <h1 class="touch_taital">PAYMENT DETAILS</h1>
-      <div class="form-group">
+    
+      <h1 class="category_text">PAYMENT DETAILS</h1>
       
-                           <input type="text" class="email-bt" placeholder="Contact Number" name='ccontact'>
-                        </div>
-                        <div class="form-group">
-                           <textarea class="massage-bt" placeholder="Customer address" rows="5" id="comment" name="caddress"></textarea>
-                        </div>
-                        <div class="form-group">
-                           <input type="text" class="email-bt" placeholder="City" name='city'>
-                        </div>
-                        <div class="form-group">
-                           <input type="text" class="email-bt" placeholder="State" name='state'>
-                        </div>
-                        <div class="form-group">
-                           <input type="text" class="email-bt" placeholder="Zip Code" name='zipcode'>
-                        </div>
+      <div class="col-md-3">
+              <label for="ccontact" class="form-label">Contact Number</label>
+              <input type="text" class="form-control" id="ccontact" placeholder="" required>
+      </div>
+      <div class="col-md-3">
+              <label for="customeraddress" class="form-label">Customer address</label>
+              <textarea class="form-control" id="comment" placeholder="" rows="5" required></textarea>
+      </div>
+      <div class="col-md-3">
+              <label for="city" class="form-label">City</label>
+              <input type="text" class="form-control" id="city" placeholder="" required>
+      </div>
+      <div class="col-md-3">
+              <label for="state" class="form-label">State</label>
+              <input type="text" class="form-control" id="state" placeholder="" required>
+      </div>
+     
+      <div class="col-md-3">
+              <label for="zipcode" class="form-label">Zip Code</label>
+              <input type="text" class="form-control" id="Zip Code" placeholder="" required>
+      </div>
+     
+           
           <div class="my-3">
             <div class="form-check">
               <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required>
@@ -234,7 +243,7 @@
 
           <hr class="my-4">
 
-          <button class="w-100 btn btn-primary btn-lg" type="submit">Continue to checkout</button>
+          <button class="w-100 btn btn-primary btn-lg" type="submit">Make Payment</button>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 <script src="checkout.js"></script>
       

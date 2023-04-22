@@ -1,5 +1,15 @@
-<meta charset="ISO-8859-1">
-
+<%
+   		response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
+   		response.setHeader("Pragma", "no-cache");
+   		
+   			if(session.getAttribute("user")==null)
+   				response.sendRedirect("/vendorlogin");
+%>
+<!DOCTYPE html>
+<%@page import="com.example.demo.model.ServiceCategory"%>
+<%@page import="java.util.Iterator"%>
+<%@page import="com.example.demo.model.ProductCategory"%>
+<%@page import="java.util.ArrayList"%>
 <html lang="en">
    <head>
       <meta charset="utf-8">
@@ -9,7 +19,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
-      <title>ECONOMY SHARING PLATFORM</title>
+      <title>Caraft</title>
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
@@ -32,21 +42,13 @@
       <link rel="stylesheet" href="css/owl.theme.default.min.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
    </head>
-  
    <body>
-    <!--header section start -->
+      <!--header section start -->
       <div class="header_section">
          <div class="container">
             <nav class="navbar navbar-dark bg-dark">
-             
-               <div class="search_section">
-                  <ul>
-                    
-                     <li><a href="/cart"><img src="images/shopping-bag.png"></a></li>
-                     <li><a href="/chome"><img src="images/home.png" width="19px" height="19px" ></a></li>
-                     <li><a href="/help"><img src="images/help.png"></a></li>
-                  </ul>
-               </div>
+               <a class="logo" href="/"><img src="images/sep.jpg"></a>
+               
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
                <span class="navbar-toggler-icon"></span>
                </button>
@@ -74,9 +76,20 @@
         
       </div>
       <!--header section end -->
-      
-      
-      <!-- Javascript files-->
+         <!--banner section start -->
+         <div class="banner_section layout_padding">
+            <div id="my_slider" class="carousel slide" data-ride="carousel">
+               <div class="carousel-inner">
+                  <div class="carousel-item active">
+                     <div class="container">
+                        
+                        <div class="button_main"><button class="all_text">All</button><input type="text" class="Enter_text" placeholder="Enter keywords" name=""><button class="search_text">Search</button></div>
+                     </div>
+                  </div>
+                  
+                  
+                  
+                    <!-- Javascript files-->
       <script src="js/jquery.min.js"></script>
       <script src="js/popper.min.js"></script>
       <script src="js/bootstrap.bundle.min.js"></script>
@@ -93,76 +106,10 @@
       <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
       <script src="../../assets/js/vendor/popper.min.js"></script>
       <script src="../../dist/js/bootstrap.min.js"></script>
-      
-       <form action="/billgeneration" method="post">
-       
-      
-      
-      <div class="contact_section layout_padding">
-         <div class="container">
-            <h1 class="touch_taital">PURCHASE</h1>
-            <div class="contact_section_2">
-               <div class="row">
-               <div class="col-md-6">
-                  <img alt="purchase image" src="${product.getProductImage() }" width="100" height="100" style="border:0; width: 100%;">
-                     
-                  </div>
-                  <div class="col-md-6">
-                     <div class="email_text">
-                     <h2> ${product.getProductName() } </h2>
-                     <h2> ${product.getProductDescription() } </h2>
-                    <h2> Amount to be pay: ${product.getProductPrice() }</h2>
-                        <div class="send_btn"><button type="submit" class="btn btn-danger btn-lg">Pay</button></div>
-                       </div>
-                      </div>
-                     </div>
-                    </div>
-                   </div>
-                 </div>
-      </form>
-       <!-- footer section start -->
-      <div class="footer_section layout_padding">
-         <div class="container">
-            <div class="row">
-               <div class="col-lg-6 col-sm-12">
-                  <h4 class="information_text">SHOP NOW!!!</h4>
-                  <p class="dummy_text">Looking for an easy and convenient way to shop? Look no further than our ecommerce website! With a vast selection of products at competitive prices, fast shipping, and exceptional customer service, we make online shopping a breeze. Start shopping now and discover why we're the best choice for all your needs. </p>
-               </div>
-               <div class="col-lg-3 col-sm-6">
-                  <div class="information_main">
-                     <h4 class="information_text">Useful Links</h4>
-                     <p><a style="color:blue;" href="/feedback">FEEDBACK</a><br><a style="color:blue;" href="/fq">FAQ's</a></p>                
-                     
-                     
-                 
-                  </div>
-               </div>
-               <div class="col-lg-3 col-sm-6">
-                  <div class="information_main">
-                     <h4 class="information_text">Contact Us</h4>
-                     <p class="call_text"><a href="#">+01 1234567890</a></p>
-                     <p class="call_text"><a href="#">+01 9876543210</a></p>
-                     <p class="call_text"><a href="#">demo@gmail.com</a></p>
-                     <div class="social_icon">
-                        <ul>
-                           <li><a href="#"><img src="images/fb-icon.png"></a></li>
-                           <li><a href="#"><img src="images/twitter-icon.png"></a></li>
-                           <li><a href="#"><img src="images/linkedin-icon.png"></a></li>
-                           <li><a href="#"><img src="images/instagram-icon.png"></a></li>
-                        </ul>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="copyright_section">
-               <h1 class="copyright_text">
-               Copyright 2020 All Right Reserved
-               </h1> 
-            </div>
-         </div>
-      </div>
-      <!-- footer section end -->
-             
    </body>
 
+
+
+
 </html>
+

@@ -46,7 +46,7 @@
       <div class="header_section">
          <div class="container">
             <nav class="navbar navbar-dark ">
-               <a class="logo" href="/"><img src="images/logo.png"></a>
+              <a class="logo" href="/"><img src="images/sep.jpg"></a>
                
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
                <span class="navbar-toggler-icon"></span>
@@ -137,7 +137,7 @@
          </div>
       
       <!-- contact section end -->
-      <!-- footer section start -->
+       <!-- footer section start -->
       <div class="footer_section layout_padding">
          <div class="container">
             <div class="row">
@@ -148,7 +148,8 @@
                <div class="col-lg-3 col-sm-6">
                   <div class="information_main">
                      <h4 class="information_text">Useful Links</h4>
-                     <p><a href="/help">HELP</a><br><a href="/feedback">FEEDBACK</a><br><a href="/fq">FEEDBACK QUESTIONNAIRE</a></p>                
+                     <p><a style="color:blue;" href="/feedback">FEEDBACK</a><br><a style="color:blue;" href="/fq">FAQ's</a></p>                
+                     
                      
                  
                   </div>

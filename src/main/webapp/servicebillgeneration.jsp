@@ -34,7 +34,6 @@
       <link rel="stylesheet" href="css/owl.theme.default.min.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <style>
       .horizontal-scrollable > .row {
             overflow-x: auto;
@@ -47,30 +46,97 @@
             white-space: normal;
             float: none;
         }
-        
-        .btn {
-  background-color: DodgerBlue;
-  border: none;
-  color: white;
-  padding: 12px 16px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-/* Darker background on mouse-over */
-.btn:hover {
-  background-color: RoyalBlue;
-}
       </style>
+      <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+    </style>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+<link href="checkout.css" rel="stylesheet">
    </head>
    <body>
-       <!--header section start -->
+      <!--header section start -->
       <div class="header_section">
          <div class="container">
             <nav class="navbar navbar-dark bg-dark">
                <a class="logo" href="/"><img src="images/sep.jpg"></a>
                <div class="search_section">
-                 
+                  <ul>
+                    
+                     <li><a href="/cart"><img src="images/shopping-bag.png"></a></li>
+                     <li><a href="/chome"><img src="images/home.png" width="19px" height="19px" ></a></li>
+                     <li><a href="/help"><img src="images/help.png"></a></li>
+                  </ul>
                </div>
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
                <span class="navbar-toggler-icon"></span>
@@ -99,112 +165,89 @@
         
       </div>
       <!--header section end -->
-
-
     
-
-      <!--category section start -->
-     <div class="container">
-    
-    
-         <div class="category_section">
-          <div class="d-flex bd-highlight mb-3">
-     <a href="/filter" class="btn ms-auto p-2 bd-highlight" style="padding-right: 3%"><i class="fa fa-filter"></i></a>
-     </div>
-            <div class="row">
-            
-               <div class="col-lg-2 col-sm-12">
-                
-                <h1 class="category_text">Category</h1>
-               </div>
-               
-               <div class="col-lg-10 col-sm-12 main">
-              <% 
-              	ArrayList<ProductCategory> pcList = (ArrayList) request.getAttribute("pcArray");
-              	if(request.getAttribute("pcArray") != null)
-            	  {
-              		Iterator<ProductCategory> iterator = pcList.iterator();
-              		while(iterator.hasNext())
-              		{
-              			ProductCategory productCategory = iterator.next();
-              	
-            	  %>
-            	   <div class="col">
-                     <div class="box_main">
-                     <a href="/customerproducts?pid=<%= productCategory.getProductCategoryId()%>&cName=<%= productCategory.getProductCategoryName() %>"><div style="width: 50px;margin: 0 auto; height: 60px;background-size: 100%;background-repeat: no-repeat;text-align: center;display: inline-block;background-image: url(<%= productCategory.getProductCategoryIcon()%>);"></div>
-                        <h4 class="fashion_text active"><%= productCategory.getProductCategoryName() %></h4></a>
-                     </div>
-                  </div>
-            	  <%
-              		}
-            	  }
-            	  %>
-               </div>
-            </div>
-         </div>
-        
+      <h1 class="category_text">PAYMENT DETAILS</h1>
+      
+      <div class="col-md-3">
+              <label for="ccontact" class="form-label">Contact Number</label>
+              <input type="text" class="form-control" id="ccontact" placeholder="" required>
+      </div>
+      <div class="col-md-3">
+              <label for="customeraddress" class="form-label">Customer address</label>
+              <textarea class="form-control" id="comment" placeholder="" rows="5" required></textarea>
+      </div>
+      <div class="col-md-3">
+              <label for="city" class="form-label">City</label>
+              <input type="text" class="form-control" id="city" placeholder="" required>
+      </div>
+      <div class="col-md-3">
+              <label for="state" class="form-label">State</label>
+              <input type="text" class="form-control" id="state" placeholder="" required>
+      </div>
      
-      <!-- category section end -->
-      
-      <!-- new code added -->
-      <%  
-      ArrayList<ProductCategory> productCategoryList = (ArrayList) request.getAttribute("pcArray");
-    	if(request.getAttribute("pcArray") != null)
-  	  {
-    		Iterator<ProductCategory> iterator = productCategoryList.iterator();
-    		while(iterator.hasNext())
-    		{
-    			ProductCategory productCategoryDetails = iterator.next();
-    			long pcid = (long)productCategoryDetails.getProductCategoryId();
-      %>
-          <h1 class="feature_taital"><%= productCategoryDetails.getProductCategoryName() %></h1>                    		
-			<div class="category_section_2">
-            <div class="row">
-            <% 
-              	ArrayList<Product> ProductList = (ArrayList) request.getAttribute("productList");
-              	if(request.getAttribute("productList") != null)
-            	  {
-              		Iterator<Product> productiterator = ProductList.iterator();
-              		while(productiterator.hasNext())
-              		{
-              			Product productDetails = productiterator.next();
-              			long pid = Long.parseLong(productDetails.getProductCategory());
-              			if(pid == pcid)
-              			{
-              	
-            	  %>
-            	  <div class="col-lg-4 col-sm-12">
-            	  <div class="beds_section active">
-            	  <% request.setAttribute("productDetails", productDetails); %>
-                     <h1 class="bed_text"><%= productDetails.getProductName() %></h1>
-                     <div><img src="<%= productDetails.getProductImage() %>" class="image_2"></div>
-                       <div class="text">PRICE: <%= productDetails.getProductPrice() %></div>                
-                       <div class="text">STATUS: <%= productDetails.getProductStatus() %></div>
-                       <a href="/cProductDetails?pid=<%= productDetails.getProductId() %>" class="link-danger btn btn-outline-danger">Details</a>
-                       <a href="/purchase?pid=<%= productDetails.getProductId() %>&cid=<%= request.getSession().getAttribute("user").toString() %>" class="link-danger btn btn-outline-danger">Buy Now</a>
-                       <a href="/addCart?pid=<%= productDetails.getProductId() %>&cid=<%= request.getSession().getAttribute("user").toString() %>" class="link-danger btn btn-outline-danger">Add to Cart</a>
-                    
-                    
-
-                  </div>
-             	</div>
-               <%
-              			}
-              		}
-            	  }
-    		}
-	  }
-            	  %>
-
-               </div>
+      <div class="col-md-3">
+              <label for="zipcode" class="form-label">Zip Code</label>
+              <input type="text" class="form-control" id="Zip Code" placeholder="" required>
+      </div>
+     
+           
+          <div class="my-3">
+            <div class="form-check">
+              <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required>
+              <label class="form-check-label" for="credit">Credit card</label>
             </div>
-        
-         
-         
-         
-      <!-- beauty product section end -->
+            <div class="form-check">
+              <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required>
+              <label class="form-check-label" for="debit">Debit card</label>
+            </div>
+            <div class="form-check">
+              <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required>
+              <label class="form-check-label" for="paypal">PayPal</label>
+            </div>
+          </div>
+
+          <div class="row gy-3">
+            <div class="col-md-6">
+              <label for="cc-name" class="form-label">Name on card</label>
+              <input type="text" class="form-control" id="cc-name" placeholder="" required>
+              <small class="text-body-secondary">Full name as displayed on card</small>
+              <div class="invalid-feedback">
+                Name on card is required
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <label for="cc-number" class="form-label">Credit card number</label>
+              <input type="text" class="form-control" id="cc-number" placeholder="" required>
+              <div class="invalid-feedback">
+                Credit card number is required
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="cc-expiration" class="form-label">Expiration</label>
+              <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
+              <div class="invalid-feedback">
+                Expiration date required
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="cc-cvv" class="form-label">CVV</label>
+              <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
+              <div class="invalid-feedback">
+                Security code required
+              </div>
+            </div>
+          </div>
+
+          <hr class="my-4">
+
+          <button class="w-100 btn btn-primary btn-lg" type="submit">Make Payment</button>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+<script src="checkout.js"></script>
       
-    
+     
      <!-- footer section start -->
       <div class="footer_section layout_padding">
          <div class="container">

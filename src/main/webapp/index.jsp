@@ -8,7 +8,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
-      <title>Caraft</title>
+      <title>SHARING ECONOMY PLATFORM</title>
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
@@ -36,7 +36,7 @@
       <div class="header_section">
          <div class="container">
             <nav class="navbar navbar-dark bg-dark">
-               <a class="logo" href="index.html"><img src="images/sep.jpg"></a>
+               <a class="logo" href="/"><img src="images/sep.jpg"></a>
                
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
                <span class="navbar-toggler-icon"></span>
@@ -55,12 +55,7 @@
                      <li class="nav-item">
                         <a class="nav-link" href="/customerlogin">Customers</a>
                      </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="/clients">Client</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="/contact">Contact Us</a>
-                     </li>
+                     
                   </ul>
                </div>
             </nav>
@@ -76,14 +71,14 @@
                               <div class="taital_main">
                                  <h4 class="banner_taital"><span class="font_size_90">50%</span> Discount Online Shop</h4>
                                  <p class="banner_text">Enjoy exclusive deals on our ecommerce website today. Shop now! </p>
-                                 <div class="book_bt"><a href="#">Shop Now</a></div>
+                                 <div class="book_bt"><a href="/customerlogin">Shop Now</a></div>
                               </div>
                            </div>
                            <div class="col-md-6">
                               <div><img src="images/img-1.png" class="image_1"></div>
                            </div>
                         </div>
-                        <div class="button_main"><button class="all_text">All</button><input type="text" class="Enter_text" placeholder="Enter keywords" name=""><button class="search_text">Search</button></div>
+                       
                      </div>
                   </div>
                   <div class="carousel-item">
@@ -93,14 +88,14 @@
                               <div class="taital_main">
                                  <h4 class="banner_taital"><span class="font_size_90">50%</span> Discount Online Shop</h4>
                                  <p class="banner_text">Enjoy exclusive deals on our ecommerce website today. Shop now! </p>
-                                 <div class="book_bt"><a href="#">Shop Now</a></div>
+                                 <div class="book_bt"><a href="/customerlogin">Shop Now</a></div>
                               </div>
                            </div>
                            <div class="col-md-6">
                               <div><img src="images/img-1.png" class="image_1"></div>
                            </div>
                         </div>
-                        <div class="button_main"><button class="all_text">All</button><input type="text" class="Enter_text" placeholder="Enter keywords" name=""><button class="search_text">Search</button></div>
+                       
                      </div>
                   </div>
                   <div class="carousel-item">
@@ -110,14 +105,14 @@
                               <div class="taital_main">
                                  <h4 class="banner_taital"><span class="font_size_90">50%</span> Discount Online Shop</h4>
                                  <p class="banner_text">Enjoy exclusive deals on our ecommerce website today. Shop now! </p>
-                                 <div class="book_bt"><a href="#">Shop Now</a></div>
+                                 <div class="book_bt"><a href="/customerlogin">Shop Now</a></div>
                               </div>
                            </div>
                            <div class="col-md-6">
                               <div><img src="images/img-1.png" class="image_1"></div>
                            </div>
                         </div>
-                        <div class="button_main"><button class="all_text">All</button><input type="text" class="Enter_text" placeholder="Enter keywords" name=""><button class="search_text">Search</button></div>
+                       
                      </div>
                   </div>
                </div>
@@ -139,17 +134,14 @@
       <!-- newsletter section start -->
       <div class="newsletter_section layout_padding">
          <div class="container">
-            <h6 class="conect_text">Connect to caraft</h6>
-            <h1 class="newsletter_taital">Join Our Newsletter</h1>
-            <p class="newsletter_text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration </p>
-            <div class="input-group mb-3">
-               <input type="text" class="form-control" placeholder="Enter your email" aria-label="Enter your email" aria-describedby="basic-addon2">
-               <div class="input-group-append">
-                  <span class="input-group-text" id="basic-addon2">Subscribe</span>
+            <h6 class="conect_text">SHARING ECONOMY PLATFORM</h6>
+            <h1 class="newsletter_taital">#MONTH END SALE</h1>
+            <p class="newsletter_text">Upgrade your wardrobe with our high-quality, affordable fashion. </p>
+            
+              
                </div>
             </div>
-         </div>
-      </div>
+        
       <!-- newsletter section end -->
       <!-- footer section start -->
       <div class="footer_section layout_padding">
@@ -162,7 +154,8 @@
                <div class="col-lg-3 col-sm-6">
                   <div class="information_main">
                      <h4 class="information_text">Useful Links</h4>
-                     <p><a style="color:#FFFFFF" href="/help">HELP</a><br><a style="color:#FFFFFF" href="/feedback">FEEDBACK</a><br><a style="color:#FFFFFF" href="/fq">FEEDBACK QUESTIONNAIRE</a></p>                
+                     <p><a style="color:blue;" href="/feedback">FEEDBACK</a><br><a style="color:blue;" href="/fq">FAQ's</a></p>                
+                     
                      
                  
                   </div>
@@ -210,4 +203,4 @@
       <script src="../../assets/js/vendor/popper.min.js"></script>
       <script src="../../dist/js/bootstrap.min.js"></script>
    </body>
-</html>         
+</html>

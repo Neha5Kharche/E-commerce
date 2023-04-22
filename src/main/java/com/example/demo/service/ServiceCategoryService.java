@@ -46,9 +46,9 @@ public class ServiceCategoryService {
 	
 	
 	
-	public void updateServiceCategoryDetails(Long sid,String sName,String sImage)
+	public void updateServiceCategoryDetails(Long sid,String sName,String sIcon,String sImage)
 	{
-			repo.updateServiceCategoryDetails(sid, sName, sImage);
+			repo.updateServiceCategoryDetails(sid, sName, sImage, sIcon);
 		System.out.println(repo.findById(sid));
 	}
 	

@@ -1,13 +1,3 @@
-<%
-   		response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
-   		response.setHeader("Pragma", "no-cache");
-   		
-   			if(session.getAttribute("user")==null)
-   				response.sendRedirect("/vendorlogin");
-%>
-<%@page import="java.util.Iterator"%>
-<%@page import="com.example.demo.model.ServiceCategory"%>
-<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -42,145 +32,72 @@
       <link rel="stylesheet" href="css/owl.carousel.min.css">
       <link rel="stylesheet" href="css/owl.theme.default.min.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
    </head>
    <body>
-        <!--header section start -->
+      <!--header section start -->
       <div class="header_section">
          <div class="container">
-            <nav class="navbar navbar-dark ">
-             <a class="logo" href="/"><img src="images/sep.jpg"></a>
+            <nav class="navbar navbar-dark bg-dark">
+               <a class="logo" href="/"><img src="images/sep.jpg"></a>
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
                <span class="navbar-toggler-icon"></span>
                </button>
                <div class="collapse navbar-collapse" id="navbarsExample01">
-                  <ul class="navbar-nav mr-auto">
+                 <ul class="navbar-nav mr-auto">
                      <li class="nav-item active">
-                        <a class="nav-link" href="/vhome">Home</a>
+                        <a class="nav-link" href="/chome">Home</a>
                      </li>
-                     <li class="nav-item dropdown">
-                     <a class="nav-link dropdown-toggle" href="#" id="navbarsExample01" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-					            Products
-					          </a>
-					          </a>
-					          <ul class="dropdown-menu " aria-labelledby="navbarsExample01">
-					            <li><a class="dropdown-item" href="/addproductcategory">Add Products Category</a></li>
-					            <li><a class="dropdown-item" href="/viewproductcategorys">View Products Category</a></li>
-					            <li><a class="dropdown-item" href="/addproduct">Add Products</a></li>
-					            <li><a class="dropdown-item" href="/viewproducts">View Products</a></li>
-					          </ul>
-          				 
-			        </li>
-			        <li class="nav-item dropdown">
-                     <a class="nav-link dropdown-toggle" href="#" id="navbarsExample01" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-					            Service
-					          </a>
-					          <ul class="dropdown-menu " aria-labelledby="navbarsExample01">
-					            <li><a class="dropdown-item" href="/addservicecategory">Add Service Category</a></li>
-					            <li><a class="dropdown-item" href="/viewservicecategorys">View Service Category</a></li>
-					            <li><a class="dropdown-item" href="/addservice">Add Service</a></li>
-					            <li><a class="dropdown-item" href="/viewservices">View Service</a></li>
-					          </ul>
-          				 
-			        </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="/vendorlogin">Logout</a>
+                        <a class="nav-link" href="/adminlogin">Admin</a>
                      </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/vendorlogin">Vendor</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/customerlogin">Customers</a>
+                     
                   </ul>
                </div>
             </nav>
          </div>
-        
       </div>
       <!--header section end -->
       <!-- contact section start -->
+    
       <div class="contact_section layout_padding">
          <div class="container">
-            <h1 class="touch_taital">ADD SERVICES</h1>
+            <h1 class="touch_taital">Vendor Login</h1>
             <div class="contact_section_2">
                <div class="row">
-               <div class="col-md-6">
-                  <img alt="Login image" src="https://img.freepik.com/free-vector/hand-drawn-flat-design-omnichannel-illustration_23-2149344703.jpg?w=360" width="500" height="500" style="border:0; width: 100%">
+                  <div class="col-md-6">
+                     <div class="email_text">
+                    <h4 style="color: red;">${errorMsg }</h4> 
+                     <form action="/resetvpassword" method="post">
+                        <div class="form-group">
+                           <input type="text" class="email-bt" placeholder="User Name" name="vEmail">
+                        </div>
+                        
+                        
+            
+            
+                       
+                      <div class="send_btn"><button type="submit" class="btn btn-danger btn-lg">Check Account</button></div> <div class="send_btn"><button type="reset" class="btn btn-danger btn-lg">Clear</button></div>
+                        
+                     </form>
+                     </div>
                      
                   </div>
-                 
                   <div class="col-md-6">
-                  <h2 style="text-align: center;color: green;" >${successfullymsg }</h2>
-                  <form action="creatingService" method="post">
-                     <div class="email_text">
-                     <div class="form-group">
-                           <input type="text" class="email-bt" placeholder="VendorId" name='vendorId' value="<%= session.getAttribute("user") %>" readonly  >
-                        </div>
-                        <div class="form-group">
-                           <input type="text" class="email-bt" placeholder="Service Name" name='serviceName' >
-                        </div>
-                        
-                        <div class="form-group">
-                            <input type="text" class="email-bt" placeholder="Price" name='servicePrice' >
-                        </div>
-                        
-                        <div class="form-group">
-                        
-                        <select class="email-bt" name='serviceCategory'>
-                        	<option>--Select Category --</option>
-                        	<% 
-					              	ArrayList<ServiceCategory> scList = (ArrayList) request.getAttribute("scArray");
-					              	if(request.getAttribute("scArray") != null)
-					            	  {
-					              		Iterator<ServiceCategory> iterator = scList.iterator();
-					              		while(iterator.hasNext())
-					              		{
-					              			ServiceCategory serviceCategory = iterator.next();
-              	
-            	 			 %>
-            	 			<option value="<%= serviceCategory.getServiceCategoryId() %>"><%= serviceCategory.getServiceCategoryName() %></option>
-            	 			 <%
-					              		}
-					            	  }
-            	 			 %>
-                        </select>
-                        
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="email-bt" placeholder="Contact No" name='serviceContactNo' >
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="email-bt" placeholder="Address" name='serviceAddress' >
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="email-bt" placeholder="Service Image" name='serviceImage' >
-                        </div>
-
-                       
-
-                         <div class="form-group">
-
-                            <input type="text" class="email-bt" placeholder="Service Status" name='serviceStatus' >
-                        </div>
-                         <div class="form-group">
-
-                            <input type="text" class="email-bt" placeholder="Service Description" name='serviceDescription' >
-                        </div>
-                        
-                        
-                       <button type="submit" class="btn btn-outline-success rounded-pill">SUBMIT</button>
-                        <button type="reset" class="btn btn-outline-danger rounded-pill">CLEAR</button>
-
-
-                        <a class="btn btn-outline-success rounded-pill" href="/vhome">Go Back</a>
-
-                      
-
-
-                    
-                    </div>
+                     <img alt="Login image" src="images/customerlogin.avif" width="500" height="300" style="border:0; width: 100%;">
                   </div>
                   
                </div>
             </div>
-        
-      <!-- contact section end-->
-       <!-- footer section start -->
+         </div>
+      </div>
+      </form>
+      <!-- contact section end -->
+      <!-- footer section start -->
       <div class="footer_section layout_padding">
          <div class="container">
             <div class="row">
@@ -239,6 +156,5 @@
       <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
       <script src="../../assets/js/vendor/popper.min.js"></script>
       <script src="../../dist/js/bootstrap.min.js"></script>
-       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
    </body>
 </html>

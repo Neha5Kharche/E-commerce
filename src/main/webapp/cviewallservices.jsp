@@ -70,7 +70,7 @@
       <div class="header_section">
          <div class="container">
             <nav class="navbar navbar-dark bg-dark">
-               <a class="logo" href="index.html"><img src="images/logo.png"></a>
+                <a class="logo" href="/"><img src="images/sep.jpg"></a>
                <div class="search_section">
                   <ul>
                     
@@ -212,21 +212,7 @@
       <!-- beauty product section end -->
       
       
-      <!-- newsletter section start -->
-      <div class="newsletter_section layout_padding">
-         <div class="container">
-            <h6 class="conect_text">Connect to caraft</h6>
-            <h1 class="newsletter_taital">Join Our Newsletter</h1>
-            <p class="newsletter_text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration </p>
-            <div class="input-group mb-3">
-               <input type="text" class="form-control" placeholder="Enter your email" aria-label="Enter your email" aria-describedby="basic-addon2">
-               <div class="input-group-append">
-                  <span class="input-group-text" id="basic-addon2">Subscribe</span>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- newsletter section end -->
+     
      <!-- footer section start -->
       <div class="footer_section layout_padding">
          <div class="container">
@@ -238,7 +224,8 @@
                <div class="col-lg-3 col-sm-6">
                   <div class="information_main">
                      <h4 class="information_text">Useful Links</h4>
-                     <p><a style="color:#FFFFFF" href="/help">HELP</a><br><a style="color:#FFFFFF" href="/feedback">FEEDBACK</a><br><a style="color:#FFFFFF" href="/fq">FEEDBACK QUESTIONNAIRE</a></p>                
+                     <p><a style="color:blue;" href="/feedback">FEEDBACK</a><br><a style="color:blue;" href="/fq">FAQ's</a></p>                
+                     
                      
                  
                   </div>

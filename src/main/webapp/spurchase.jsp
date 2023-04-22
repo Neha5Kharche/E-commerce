@@ -38,7 +38,7 @@
       <div class="header_section">
          <div class="container">
             <nav class="navbar navbar-dark bg-dark">
-               <a class="logo" href="index.html"><img src="images/logo.png"></a>
+              <a class="logo" href="/"><img src="images/sep.jpg"></a>
                <div class="search_section">
                   <ul>
                     
@@ -93,7 +93,7 @@
       <script src="../../assets/js/vendor/popper.min.js"></script>
       <script src="../../dist/js/bootstrap.min.js"></script>
       
-       <form action="/billgeneration" method="post">
+       <form action="/servicebillgeneration" method="post">
        
       
       
@@ -119,19 +119,21 @@
                    </div>
                  </div>
       </form>
-       <!-- footer section start -->
-        
+        <!-- footer section start -->
       <div class="footer_section layout_padding">
          <div class="container">
             <div class="row">
                <div class="col-lg-6 col-sm-12">
-                  <h4 class="information_text">Category</h4>
-                  <p class="dummy_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim </p>
+                  <h4 class="information_text">SHOP NOW!!!</h4>
+                  <p class="dummy_text">Looking for an easy and convenient way to shop? Look no further than our ecommerce website! With a vast selection of products at competitive prices, fast shipping, and exceptional customer service, we make online shopping a breeze. Start shopping now and discover why we're the best choice for all your needs. </p>
                </div>
                <div class="col-lg-3 col-sm-6">
                   <div class="information_main">
                      <h4 class="information_text">Useful Links</h4>
-                     <p class="many_text">Contrary to popular belief, Lorem Ipsum is not simply random text. It </p>
+                     <p><a style="color:blue;" href="/feedback">FEEDBACK</a><br><a style="color:blue;" href="/fq">FAQ's</a></p>                
+                     
+                     
+                 
                   </div>
                </div>
                <div class="col-lg-3 col-sm-6">
@@ -151,8 +153,14 @@
                   </div>
                </div>
             </div>
-           </div>
-          </div>
+            <div class="copyright_section">
+               <h1 class="copyright_text">
+               Copyright 2020 All Right Reserved
+               </h1> 
+            </div>
+         </div>
+      </div>
+      <!-- footer section end -->
              
    </body>
 
