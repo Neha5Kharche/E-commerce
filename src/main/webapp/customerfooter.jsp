@@ -1,10 +1,3 @@
-<%
-   		response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
-   		response.setHeader("Pragma", "no-cache");
-   		
-   			if(session.getAttribute("user")==null)
-   				response.sendRedirect("/vendorlogin");
-%>
 <!DOCTYPE html>
 <%@page import="com.example.demo.model.ServiceCategory"%>
 <%@page import="java.util.Iterator"%>
@@ -43,57 +36,49 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
    </head>
    <body>
-      <!--header section start -->
-      <div class="header_section">
+   <!-- footer section start -->
+      <div class="footer_section layout_padding">
          <div class="container">
-            <nav class="navbar navbar-dark bg-dark">
-               <a class="logo" href="/"><img src="images/sep.jpg"></a>
-               
-               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
-               <span class="navbar-toggler-icon"></span>
-               </button>
-               
-               <div class="collapse navbar-collapse" id="navbarsExample01">
-                  <ul class="navbar-nav mr-auto">
-                     <li class="nav-item active">
-                        <a class="nav-link" href="/chome">Home</a>
-                     </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="/customerViewAllProducts">Products</a>
-                     </li>
-                     <li class="nav-item">
-                       <a class="nav-link" href="/customerViewAllServices">Services</a>
-
-                     </li>
-                     
-                     <li class="nav-item">
-                        <a class="nav-link" href="/clogout">Logout</a>
-                     </li>
-                  </ul>
+            <div class="row">
+               <div class="col-lg-6 col-sm-12">
+                  <h4 class="information_text">SHOP NOW!!!</h4>
+                  <p class="dummy_text">Looking for an easy and convenient way to shop? Look no further than our ecommerce website! With a vast selection of products at competitive prices, fast shipping, and exceptional customer service, we make online shopping a breeze. Start shopping now and discover why we're the best choice for all your needs. </p>
                </div>
-            </nav>
+               <div class="col-lg-3 col-sm-6">
+                  <div class="information_main">
+                     <h4 class="information_text">Useful Links</h4>
+                     <p><a style="color:blue;" href="/feedback">FEEDBACK</a><br><a style="color:blue;" href="/fq">FAQ's</a></p>                
+                     
+                     
+                 
+                  </div>
+               </div>
+               <div class="col-lg-3 col-sm-6">
+                  <div class="information_main">
+                     <h4 class="information_text">Contact Us</h4>
+                     <p class="call_text"><a href="#">+01 1234567890</a></p>
+                     <p class="call_text"><a href="#">+01 9876543210</a></p>
+                     <p class="call_text"><a href="#">demo@gmail.com</a></p>
+                     <div class="social_icon">
+                        <ul>
+                           <li><a href="#"><img src="images/fb-icon.png"></a></li>
+                           <li><a href="#"><img src="images/twitter-icon.png"></a></li>
+                           <li><a href="#"><img src="images/linkedin-icon.png"></a></li>
+                           <li><a href="#"><img src="images/instagram-icon.png"></a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="copyright_section">
+               <h1 class="copyright_text">
+               Copyright 2020 All Right Reserved
+               </h1> 
+            </div>
          </div>
-        
       </div>
-      <!--header section end -->
-    
-         <!--banner section start -->
-         <div class="banner_section layout_padding">
-            <div id="my_slider" class="carousel slide" data-ride="carousel">
-               <div class="carousel-inner">
-                  <div class="carousel-item active">
-                     <div class="container">
-                        
-                        <div class="button_main"><form action="/searchkey"><a href="/customerViewAllProducts" class="all_text">All</a><input type="text" class="Enter_text" placeholder="Enter keywords" name="key" ><button type="submit" class="search_text" >Search</button></form></div>
-                         </div>
-                  </div>
-                  </div>
-                  </div>
-                  </div>
-                  
-                  
-                  
-                    <!-- Javascript files-->
+      <!-- footer section end -->
+      <!-- Javascript files-->
       <script src="js/jquery.min.js"></script>
       <script src="js/popper.min.js"></script>
       <script src="js/bootstrap.bundle.min.js"></script>

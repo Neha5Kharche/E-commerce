@@ -1,3 +1,10 @@
+<%
+   		response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
+   		response.setHeader("Pragma", "no-cache");
+   		
+   			if(session.getAttribute("user")==null)
+   				response.sendRedirect("/customerlogin");
+%>
 <!DOCTYPE html>
 <%@page import="com.example.demo.model.ServiceCategory"%>
 <%@page import="java.util.Iterator"%>
@@ -40,7 +47,7 @@
       <div class="header_section">
          <div class="container">
             <nav class="navbar navbar-dark bg-dark">
-                 <a class="logo" href="/"><img src="images/sep.jpg"></a>
+                <a class="logo" href="/"><img src="images/sep.jpg"></a>
                <div class="search_section">
                   <ul>
                     
@@ -259,7 +266,7 @@
       </div>
       
       
-      <!-- newsletter section start -->
+     <!-- newsletter section start -->
       <div class="newsletter_section layout_padding">
          <div class="container">
             <h6 class="conect_text">SHARING ECONOMY PLATFORM</h6>
@@ -271,7 +278,7 @@
             </div>
         
       <!-- newsletter section end -->
-   <!-- footer section start -->
+      <!-- footer section start -->
       <div class="footer_section layout_padding">
          <div class="container">
             <div class="row">
@@ -331,9 +338,4 @@
       <script src="../../assets/js/vendor/popper.min.js"></script>
       <script src="../../dist/js/bootstrap.min.js"></script>
    </body>
-
-
-
-
 </html>
-

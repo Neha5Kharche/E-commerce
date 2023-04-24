@@ -3,14 +3,14 @@
    		response.setHeader("Pragma", "no-cache");
    		
    			if(session.getAttribute("user")==null)
-   				response.sendRedirect("/customerlogin");
+   				response.sendRedirect("/vendorlogin");
 %>
-<%@page import="com.example.demo.model.ServiceCategory"%>
-<%@page import="com.example.demo.model.VendorServiceProvided"%>
 <%@page import="com.example.demo.model.ProductCategory"%>
 <%@page import="java.util.Iterator"%>
 <%@page import="com.example.demo.model.Product"%>
 <%@page import="java.util.ArrayList"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <html lang="en">
    <head>
       <meta charset="utf-8">
@@ -77,7 +77,8 @@
       <div class="header_section">
          
             <nav class="navbar navbar-dark ">
-              <a class="logo" href="/"><img src="images/sep.jpg"></a>
+             <a class="logo" href="/"><img src="images/sep.jpg"></a>
+             
                <div class="search_section">
                  
                </div>
@@ -88,66 +89,97 @@
                <div class="collapse navbar-collapse" id="navbarsExample01" style="padding-left: 2%">
                   <ul class="navbar-nav mr-auto">
                      <li class="nav-item active">
-                        <a class="nav-link" href="/chome">Home</a>
+                        <a class="nav-link" href="/vhome">Home</a>
                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="/customerViewAllProducts">Products</a>
-                     </li>
+                     <li class="nav-item dropdown">
+                     <a class="nav-link dropdown-toggle" href="#" id="navbarsExample01" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+					            Products
+					          </a>
+					          <ul class="dropdown-menu " aria-labelledby="navbarsExample01">
+					            <li><a class="dropdown-item" href="/addproductcategory">Add Products Category</a></li>
+					            <li><a class="dropdown-item" href="/viewproductcategorys">View Products Category</a></li>
+					            <li><a class="dropdown-item" href="/addproduct">Add Products</a></li>
+					            <li><a class="dropdown-item" href="/viewproducts">View Products</a></li>
+					          </ul>
+          				 
+			        </li>
+			        <li class="nav-item dropdown">
+                     <a class="nav-link dropdown-toggle" href="#" id="navbarsExample01" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+					            Service
+					          </a>
+					          <ul class="dropdown-menu " aria-labelledby="navbarsExample01">
+					            <li><a class="dropdown-item" href="/addservicecategory">Add Service Category</a></li>
+					            <li><a class="dropdown-item" href="/viewservicecategorys">View Service Category</a></li>
+					            <li><a class="dropdown-item" href="/addservice">Add Service</a></li>
+					            <li><a class="dropdown-item" href="/viewservices">View Service</a></li>
+					          </ul>
+          				 
+			        </li>
                      <li class="nav-item">
-                       <a class="nav-link" href="/customerViewAllServices">Services</a>
-
-                     </li>
-                     
-                     <li class="nav-item">
-                        <a class="nav-link" href="/clogout">Logout</a>
+                        <a class="nav-link" href="/vendorlogin">Logout</a>
                      </li>
                   </ul>
                </div>
             </nav>
-         
+         </div>
         
       </div>
       <!--header section end -->
-
-
-     <!-- product section start -->
-      <div class="product_section layout_padding">
-         
-            <h1 class="feature_taital">${serviceDetails.getServiceName() }</h1>
-            
-            
-            
-            <div class="product_section_2">
-               <div class="row">
                  
-                  <div class="col-sm-7">
-                     <div class="feature_box_2">
+      <!--category section start -->
+     
+     <div class="container">
+     
+                      		
+			<div class="category_section_2">
+            <div class="row">
+            <% 
+              	ArrayList<Product> ProductList = (ArrayList) request.getAttribute("productList");
+              	if(request.getAttribute("productList") != null)
+            	  {
+              		Iterator<Product> iterator = ProductList.iterator();
+              		while(iterator.hasNext())
+              		{
+              			Product productDetails = iterator.next();
+              	
+            	  %>
+            	  <div class="col-lg-4 col-sm-12">
+            	  <div class="beds_section active">
+                     <h1 class="bed_text"><%= productDetails.getProductName() %></h1>
+                     <div><img src="<%= productDetails.getProductImage() %>" class="image_2"></div>
+                       <div class="text">PRICE: <%= productDetails.getProductPrice() %></div>                
+                       <div class="text">STATUS: <%= productDetails.getProductStatus() %></div>
+                       <div class="text">DESCRIPTION: <%= productDetails.getProductDescription() %></div>
                         
-                        <div><img src="${serviceDetails.getServiceImage() }" class="image_8"></div>
-                       
-                        
-                        <div class="seemore_bt"><p class="feature_text">${serviceDetails.getServiceDescription() }</p></div>
-                        
-                        
-                     </div>
-                   <a href="/spurchase?sid=${serviceDetails.getServiceId()}&cid=<%= request.getSession().getAttribute("user").toString() %>" class="link-danger btn btn-outline-danger">Book Now</a>
                       
+                    
+                    
+
                   </div>
+             	</div>
+               <%
+              			}
+              		}
+            	  
+    		
+	  
+            	  %>
+
                </div>
             </div>
-            
-         </div>
-      </div>
-      <!-- product section end -->
-      <div class="product_section layout_padding">
-         <div class="container">
-         </div></div>
+        </div>
+       
+         
+      <!-- beauty product section end -->
       
-     
+      
+      
+      
      <!-- footer section start -->
       <%@ include file="customerfooter.jsp" %>
       <!-- footer section end -->
-      <!-- Javascript files-->
+    
+    <!-- Javascript files-->
       <script src="js/jquery.min.js"></script>
       <script src="js/popper.min.js"></script>
       <script src="js/bootstrap.bundle.min.js"></script>

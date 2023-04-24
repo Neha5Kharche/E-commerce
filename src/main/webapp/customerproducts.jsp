@@ -1,3 +1,10 @@
+<%
+   		response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
+   		response.setHeader("Pragma", "no-cache");
+   		
+   			if(session.getAttribute("user")==null)
+   				response.sendRedirect("/customerlogin");
+%>
 <%@page import="com.example.demo.model.ProductCategory"%>
 <%@page import="java.util.Iterator"%>
 <%@page import="com.example.demo.model.Product"%>
@@ -34,6 +41,7 @@
       <link rel="stylesheet" href="css/owl.theme.default.min.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <style>
       .horizontal-scrollable > .row {
             overflow-x: auto;
@@ -46,25 +54,39 @@
             white-space: normal;
             float: none;
         }
+        
+        .btn {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: RoyalBlue;
+}
       </style>
    </head>
    <body>
        <!--header section start -->
       <div class="header_section">
-         <div class="container">
-            <nav class="navbar navbar-dark bg-dark">
-              
+         
+            <nav class="navbar navbar-dark ">
+              <a class="logo" href="/"><img src="images/sep.jpg"></a>
                <div class="search_section">
-                  
+                 
                </div>
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
                <span class="navbar-toggler-icon"></span>
                </button>
                
-               <div class="collapse navbar-collapse" id="navbarsExample01">
+               <div class="collapse navbar-collapse" id="navbarsExample01" style="padding-left: 2%">
                   <ul class="navbar-nav mr-auto">
                      <li class="nav-item active">
-                       
+                        <a class="nav-link" href="/chome">Home</a>
                      </li>
                       <li class="nav-item">
                         <a class="nav-link" href="/customerViewAllProducts">Products</a>
@@ -80,10 +102,14 @@
                   </ul>
                </div>
             </nav>
-         </div>
+         
         
       </div>
       <!--header section end -->
+
+
+
+    
       <!--category section start -->
      <div class="container">
          <div class="category_section">
@@ -117,13 +143,14 @@
                </div>
             </div>
          </div>
-        
+        </div>
      
       <!-- category section end -->
       
       <!-- new code added -->
           <h1 class="feature_taital">${cName}</h1>                    		
 <div class="category_section_2">
+  
             <div class="row">
             <% 
               	ArrayList<Product> ProductList = (ArrayList) request.getAttribute("productList");
@@ -156,8 +183,8 @@
             	  %>
 
                </div>
-            </div>
-        
+          
+        </div>
          
          
          
@@ -166,46 +193,7 @@
       
      
      <!-- footer section start -->
-      <div class="footer_section layout_padding">
-         <div class="container">
-            <div class="row">
-               <div class="col-lg-6 col-sm-12">
-                  <h4 class="information_text">SHOP NOW!!!</h4>
-                  <p class="dummy_text">Looking for an easy and convenient way to shop? Look no further than our ecommerce website! With a vast selection of products at competitive prices, fast shipping, and exceptional customer service, we make online shopping a breeze. Start shopping now and discover why we're the best choice for all your needs. </p>
-               </div>
-               <div class="col-lg-3 col-sm-6">
-                  <div class="information_main">
-                     <h4 class="information_text">Useful Links</h4>
-                     <p><a style="color:blue;" href="/feedback">FEEDBACK</a><br><a style="color:blue;" href="/fq">FAQ's</a></p>                
-                     
-                     
-                 
-                  </div>
-               </div>
-               <div class="col-lg-3 col-sm-6">
-                  <div class="information_main">
-                     <h4 class="information_text">Contact Us</h4>
-                     <p class="call_text"><a href="#">+01 1234567890</a></p>
-                     <p class="call_text"><a href="#">+01 9876543210</a></p>
-                     <p class="call_text"><a href="#">demo@gmail.com</a></p>
-                     <div class="social_icon">
-                        <ul>
-                           <li><a href="#"><img src="images/fb-icon.png"></a></li>
-                           <li><a href="#"><img src="images/twitter-icon.png"></a></li>
-                           <li><a href="#"><img src="images/linkedin-icon.png"></a></li>
-                           <li><a href="#"><img src="images/instagram-icon.png"></a></li>
-                        </ul>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="copyright_section">
-               <h1 class="copyright_text">
-               Copyright 2020 All Right Reserved
-               </h1> 
-            </div>
-         </div>
-      </div>
+      <%@ include file="customerfooter.jsp" %>
       <!-- footer section end -->
       <!-- Javascript files-->
       <script src="js/jquery.min.js"></script>

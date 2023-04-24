@@ -79,5 +79,11 @@ ProductRepo repo;
 		return filterList;
 	}
 	
+	
+	public List<Product> searchProduct(String productName)
+	{
+		return repo.findByProductNameLike(productName);
+		
+	}
 
 }

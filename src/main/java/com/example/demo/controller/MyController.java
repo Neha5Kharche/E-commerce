@@ -400,7 +400,7 @@ public ModelAndView clearCar(HttpServletRequest req)
 
 
 @RequestMapping("/spurchase")
-public ModelAndView purchaseview(HttpServletRequest req,String sid,String cid)
+public ModelAndView spurchaseview(HttpServletRequest req,String sid,String cid)
 {
 	VendorServiceProvided service = serviceService.getById(new Long(sid));
 	ModelAndView mv = new ModelAndView("spurchase");
@@ -839,19 +839,11 @@ public ModelAndView vendorLogout(HttpServletRequest req)
 	session.invalidate();
 	
 	ModelAndView mv = new ModelAndView("vendorlogin");
+	
 	return mv;
 	
 }
-@RequestMapping("/alogout")
-public ModelAndView adminLogout(HttpServletRequest req)
-{
-	HttpSession session = req.getSession();
-	session.invalidate();
-	
-	ModelAndView mv = new ModelAndView("adminlogin");
-	return mv;
-	
-}
+
 
 
 @RequestMapping("/newfq")
@@ -999,6 +991,38 @@ public ModelAndView searchView()
     return mv;
 }
 
+@RequestMapping("/searchkey")
+public ModelAndView searchKeyView(String key,HttpServletRequest request)
+{
+	System.out.println(key);
+	List<Product> plist = productService.searchProduct(key);
+	request.setAttribute("productList", plist);
+	System.out.println(plist);
+	ModelAndView mv = new ModelAndView("searchresult");
+	mv.addObject("errorMsg", "");
+    return mv;
+}
+@RequestMapping("/searchresult")
+public ModelAndView searchresultView(HttpServletRequest req )
+{
+	String vid = req.getSession().getAttribute("user").toString();
+	
+	 ArrayList<Product> pc =	productService.getByProduct(vid);
+	 req.setAttribute("productList", pc);
+	 
+	 ModelAndView mv = new ModelAndView("viewproducts");
+	
+	   return mv;
+}
+
+@RequestMapping("/purchase")
+public ModelAndView purchaseview(HttpServletRequest req,String pid,String cid)
+{
+	Product product = productService.getById(new Long(pid));
+	ModelAndView mv = new ModelAndView("purchase");
+	mv.addObject("product", product);
+	return mv;
+}
 
 }
 

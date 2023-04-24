@@ -56,9 +56,7 @@
                 <a class="logo" href="/"><img src="images/sep.jpg"></a>
                 <div class="search_section">
                   <ul>
-                    
-                     
-                     <li><a href="/search"><img src="images/searchicon.jpg"></a></li>
+                    <li><a href="/search"><img src="images/search-icon.png"></a></li>
                   </ul>
                </div>
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
