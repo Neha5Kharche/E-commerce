@@ -146,6 +146,7 @@
       <!-- category section end -->
       
       <!-- new code added -->
+      <div class="container">
           <h1 class="feature_taital">${sName}</h1>                    		
 <div class="category_section_2">
             <div class="row">
@@ -170,9 +171,11 @@
                        <div class="text">STATUS: <%= serviceDetails.getServiceStatus() %></div>
                        <div class="text">DESCRIPTION: <%= serviceDetails.getServiceDescription() %></div>
                       <a href="/cServiceDetails?sid=<%= serviceDetails.getServiceId() %>" class="link-danger btn btn-outline-danger">Details</a>
+                       <% if(serviceDetails.getServiceStatus().equals("Available")){ %>
                        <a href="/spurchase?sid=<%= serviceDetails.getServiceId() %>&cid=<%= request.getSession().getAttribute("user").toString() %>" class="link-danger btn btn-outline-danger">Book Now</a>
-                       
-                    
+                        <% } else { %>
+                        <a href="/spurchase?sid=<%= serviceDetails.getServiceId() %>&cid=<%= request.getSession().getAttribute("user").toString() %>" class="link-danger btn btn-outline-danger" style="pointer-events: none;">Book Now</a>
+                    <%} %>
 
                   </div>
              	</div>
@@ -184,7 +187,7 @@
                </div>
             </div>
         
-         
+         </div>
          
          
       <!-- beauty product section end -->

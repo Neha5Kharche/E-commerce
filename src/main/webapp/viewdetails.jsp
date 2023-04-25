@@ -126,12 +126,22 @@
                         
                         
                      </div>
+<<<<<<< HEAD
                     <% Product productDetails =(Product)request.getAttribute("productDetails");
                     if(productDetails.getProductStatus().equals("Available")) { %>
                       <a href="/purchase?pid=${productDetails.getProductId()}&cid=<%= request.getSession().getAttribute("user").toString() %>" class="link-danger btn btn-outline-danger">Buy Now</a>
                   <% } else { %>
                     <a href="/purchase?pid=${productDetails.getProductId()}&cid=<%= request.getSession().getAttribute("user").toString() %>" class="link-danger btn btn-outline-danger" style="pointer-events: none;">Buy Now</a>
                  <% } %>
+=======
+                     <% Product productDetails=(Product)request.getAttribute("productDetails");
+                    if (productDetails.getProductStatus().equals("Available")) { %>
+    <a href="/purchase?pid=${productDetails.getProductId()}&cid=<%= request.getSession().getAttribute("user").toString() %>" class="link-danger btn btn-outline-danger">Buy Now</a>
+<% } else { %>
+    <a href="/purchase?pid=${productDetails.getProductId()}&cid=<%= request.getSession().getAttribute("user").toString() %>" class="link-danger btn btn-outline-danger" style="pointer-events: none;">Buy Now</a>
+<% } %>
+                  
+>>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
                        <a href="/addCart?pid=${productDetails.getProductId()}&cid=<%= request.getSession().getAttribute("user").toString() %>" class="link-danger btn btn-outline-danger">Add to Cart</a>
                   </div>
                </div>

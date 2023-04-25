@@ -130,7 +130,12 @@
                         
                         
                      </div>
-                   <a href="/spurchase?sid=${serviceDetails.getServiceId()}&cid=<%= request.getSession().getAttribute("user").toString() %>" class="link-danger btn btn-outline-danger">Book Now</a>
+                    <% VendorServiceProvided serviceDetails=(VendorServiceProvided)request.getAttribute("serviceDetails");
+                    if (serviceDetails.getServiceStatus().equals("Available")) { %>
+    <a href="/spurchase?sid=${serviceDetails.getServiceId()}&cid=<%= request.getSession().getAttribute("user").toString() %>" class="link-danger btn btn-outline-danger">Book Now</a>
+<% } else { %>
+    <a href="/spurchase?sid=${serviceDetails.getServiceId()}&cid=<%= request.getSession().getAttribute("user").toString() %>" class="link-danger btn btn-outline-danger" style="pointer-events: none;">Book Now</a>
+<% } %>
                       
                   </div>
                </div>

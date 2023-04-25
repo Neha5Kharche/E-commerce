@@ -148,6 +148,7 @@
       <!-- category section end -->
       
       <!-- new code added -->
+      <div class="container">
           <h1 class="feature_taital">${cName}</h1>                    		
 <div class="category_section_2">
   
@@ -189,7 +190,7 @@
                </div>
           
         </div>
-         
+         </div>
          
          
       <!-- beauty product section end -->
