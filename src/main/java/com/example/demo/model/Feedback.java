@@ -12,6 +12,9 @@ public class Feedback {
 	public String customerId;
 	
 	public String customerName;
+	
+	
+
 	public String customerFeedback;
 	public String getCustomerFeedback() {
 		return customerFeedback;
