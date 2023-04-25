@@ -127,8 +127,13 @@
                <div class="col-md-6">
                   <img alt="cart image" src="<%= cartDetails.getProductImage() %>" width="20" height="20" style="border:0; width: 75%;"> 
                   </div>
-                  <div class="col-md-6" style="padding-top: 5%;padding-bottom: 5%">    
+                  <div class="col-md-6" style="padding-top: 5%;padding-bottom: 5%">  
+                    
+                    <%if(cartDetails.getProductStatus().equals("Available")) { %>  
                        <a href="/purchase?pid=<%= cartDetails.getProductId() %>&cid=<%= request.getSession().getAttribute("user").toString() %>" class="btn btn-outline-primary">Purchase</a>
+                       <% } else { %>
+                       <a href="/purchase?pid=<%= cartDetails.getProductId() %>&cid=<%= request.getSession().getAttribute("user").toString() %>" class="btn btn-outline-primary" style="pointer-events: none;">Purchase</a>
+                       <% } %>
                        <a href="/remove?cartId=<%= cartDetails.getCartId()  %>" class="btn btn-outline-danger">Remove</a>             
 				</div>
        

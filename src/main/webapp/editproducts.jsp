@@ -142,10 +142,10 @@
                   <form action="updateproducts" method="post">
                      <div class="email_text">
                        <div class="form-group">
-                           <input type="hidden" name="productId" value="${productDetails.getProductId()}">
+                            <input type="text" class="email-bt" placeholder="Product Id" name='productId' value="${productDetails.getProductId() }" readonly>
                         </div>
                  <div class="form-group">
-                         <input type="hidden" name="productId" value="${productDetails.getProductName()}">
+                         <input type="text" class="email-bt" placeholder="Product Name" name='productName' value="${productDetails.getProductName() }" readonly>
                         </div>
                         <div class="form-group">
                             <input type="text" class="email-bt" placeholder="Price" name='productPrice' value="${productDetails.getProductPrice() }">

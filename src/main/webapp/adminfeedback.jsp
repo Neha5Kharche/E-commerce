@@ -132,7 +132,7 @@
           <tr>
           <th>#</th>
             <th>Name</th>
-            
+            <th>Rating</th>
             <th>Feedback</th>
             
           </tr>
@@ -140,6 +140,7 @@
         <tbody>
          <%
         ArrayList<Feedback> feedbackList = (ArrayList) request.getAttribute("f");
+         
         int i=0;
       	if(request.getAttribute("f") != null)
     	  {
@@ -149,10 +150,12 @@
       			Feedback feedback = iterator.next();
       	
         %>
+         
         
           <tr>
             <td><%= ++i %></td>
             <td><%= feedback.getCustomerName() %></td>
+            <td><%= feedback.getCustomerFeedbackValue() %></td>
             <td><%= feedback.getCustomerFeedback() %></td>
           </tr>
           

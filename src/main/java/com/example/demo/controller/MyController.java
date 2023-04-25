@@ -315,10 +315,7 @@ public ModelAndView customerViewAllProductsView(HttpServletRequest req)
 @RequestMapping("/cProductDetails")
 public ModelAndView customerProductDetailsView(HttpServletRequest req,String pid)
 {
-//	 ArrayList<ProductCategory> pcArray =	productCategoryService.getProductCategoryList();
-//	  req.setAttribute("pcArray", pcArray);
-//	 ArrayList<Product> pc =	productService.getProductList();
-//	 req.setAttribute("productList", pc);
+
 	
 	Product productDetails = productService.getById(new Long(pid));
 	req.setAttribute("productDetails", productDetails);
@@ -643,6 +640,7 @@ public ModelAndView adminfeedbackView(HttpServletRequest request)
 	List<Feedback> feedbackList = feedbackService.getFeedbacks();
 	
 	request.setAttribute("f", feedbackList);
+	
 	System.out.println();
 	ModelAndView mv = new ModelAndView("adminfeedback");
 	
@@ -674,7 +672,7 @@ public ModelAndView newserviceview(HttpServletRequest req)
 public ModelAndView productsview(HttpServletRequest req )
 {
 	String vid = req.getSession().getAttribute("user").toString();
-	 ArrayList<ProductCategory> pcArray =	productCategoryService.getProductCategoryList();
+	 ArrayList<ProductCategory> pcArray =	productCategoryService.getProductCategoryByVendors(req.getSession().getAttribute("user").toString());;
 	 req.setAttribute("pcArray", pcArray);
 	 ArrayList<Product> pc =	productService.getByProduct(vid);
 	 req.setAttribute("productList", pc);
@@ -687,7 +685,7 @@ public ModelAndView productsview(HttpServletRequest req )
 public ModelAndView serviceview(HttpServletRequest req)
 {
 	String vid = req.getSession().getAttribute("user").toString();
-	ArrayList<ServiceCategory> scArray =	serviceCategoryService.getServiceCategoryList();
+	ArrayList<ServiceCategory> scArray =	serviceCategoryService.getServiceCategoryByVendors(req.getSession().getAttribute("user").toString());
 	req.setAttribute("scArray", scArray);
 	
 	ArrayList<VendorServiceProvided> sc =	serviceService.getByService(vid);
@@ -1002,18 +1000,18 @@ public ModelAndView searchKeyView(String key,HttpServletRequest request)
 	mv.addObject("errorMsg", "");
     return mv;
 }
-@RequestMapping("/searchresult")
-public ModelAndView searchresultView(HttpServletRequest req )
-{
-	String vid = req.getSession().getAttribute("user").toString();
-	
-	 ArrayList<Product> pc =	productService.getByProduct(vid);
-	 req.setAttribute("productList", pc);
-	 
-	 ModelAndView mv = new ModelAndView("viewproducts");
-	
-	   return mv;
-}
+//@RequestMapping("/searchresult")
+//public ModelAndView searchresultView(HttpServletRequest req )
+//{
+//	String vid = req.getSession().getAttribute("user").toString();
+//	
+//	 ArrayList<Product> pc =	productService.getByProduct(vid);
+//	 req.setAttribute("productList", pc);
+//	 
+//	 ModelAndView mv = new ModelAndView("");
+//	
+//	   return mv;
+//}
 
 @RequestMapping("/purchase")
 public ModelAndView purchaseview(HttpServletRequest req,String pid,String cid)

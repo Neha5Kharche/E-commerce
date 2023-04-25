@@ -14,6 +14,14 @@
       <meta name="description" content="">
       <meta name="author" content="">
       <!-- owl carousel style -->
+      
+
+    <meta name="author" content="Codeconvey" />
+    
+    <link rel="stylesheet" href="css/feedback.css">
+    <!--Only for demo purpose - no need to add.-->
+    <link rel="stylesheet" href="css/demo.css" />
+      
       <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.2.4/assets/owl.carousel.min.css" />
       <!-- bootstrap css -->
       <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
@@ -121,7 +129,7 @@
       
       
       <div class="contact_section layout_padding">
-         <div class="container">
+         
             <h1 class="touch_taital">FEEDBACK</h1>
             <div class="contact_section_2">
                <div class="row">
@@ -134,9 +142,90 @@
                       <h2 style="text-align: center;color: green;" >${successfullymsg }</h2>
                      <form action="/postFeedback" method="post">
                         <div class="form-group">
+<div class="ScriptTop">
+    <div class="container">
+        <div class="col-rt-4" id="float-right">
+ 
+            <!-- Ad Here -->
+            
+        </div>
+        <div class="col-rt-2">
+            
+        </div>
+    </div>
+</div>
 
-                          <input type="text" class="email-bt" name="customerId" value="<%= request.getSession().getAttribute("user") %>" readonly >
-                         <input type="text" class="email-bt" name="customerName" value="<%= request.getSession().getAttribute("cName") %>" readonly >
+<header class="ScriptHeader">
+    <div class="rt-container">
+    	<div class="col-rt-12">
+        	<div class="rt-heading">
+            	>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section>
+   
+               
+                         <input type="text" class="email-bt" name="customerName" value="<%= request.getSession().getAttribute("cName") %>" readonly>           
+       
+<div class="feedback">
+
+
+
+
+<label> Your overall experience with us ?</label><br>
+
+ 
+ <span class="scale-rating">
+  <label value="1">
+  <input type="radio" name="customerFeedbackValue" value="1">
+  <label style="width:100%;"></label>
+  </label>
+  <label value="2">
+  <input type="radio" name="customerFeedbackValue" value="2" >
+  <label style="width:100%;"></label>
+  </label>
+  <label value="3">
+  <input type="radio" name="customerFeedbackValue" value="3">
+  <label style="width:100%;"></label>
+  </label>
+  <label value="4">
+  <input type="radio" name="customerFeedbackValue" value="4">
+  <label style="width:100%;"></label>
+  </label>
+  <label value="5">
+  <input type="radio" name="customerFeedbackValue" value="5">
+  <label style="width:100%;"></label>
+  </label>
+  <label value="6">
+  <input type="radio" name="customerFeedbackValue" value="6">
+  <label style="width:100%;"></label>
+  </label>
+  <label value="7">
+  <input type="radio" name="customerFeedbackValue" value="7">
+  <label style="width:100%;"></label>
+  </label>
+  <label value="8">
+  <input type="radio" name="customerFeedbackValue" value="8">
+  <label style="width:100%;"></label>
+  </label>
+  <label value="9">
+  <input type="radio" name="customerFeedbackValue" value="9">
+  <label style="width:100%;"></label>
+  </label>
+  <label value="10">
+  <input type="radio" name="customerFeedbackValue" value="10">
+  <label style="width:100%;"></label>
+  </label>
+</span>
+ 
+
+
+
+
+                         
                           <textarea class="massage-bt" placeholder="Feedback" rows="5" required name="customerFeedback"></textarea>
                           
 

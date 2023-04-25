@@ -141,7 +141,7 @@
                   <form action="updateservices" method="post">
                      <div class="email_text">
                        <div class="form-group">
-                           <input type="text" class="email-bt" placeholder="Service Name" name='serviceId' value="${serviceDetails.getServiceId() }" readonly>
+                           <input type="text" class="email-bt" placeholder="Service Id" name='serviceId' value="${serviceDetails.getServiceId() }" readonly>
                         </div>
                  <div class="form-group">
                            <input type="text" class="email-bt" placeholder="Service Name" name='serviceName' value="${serviceDetails.getServiceName() }" readonly>

@@ -148,6 +148,7 @@
       <!-- category section end -->
       
       <!-- new code added -->
+      <div class="container">
           <h1 class="feature_taital">${cName}</h1>                    		
 <div class="category_section_2">
   
@@ -170,7 +171,11 @@
                        <div class="text">PRICE: <%= productDetails.getProductPrice() %></div>                
                        <div class="text">STATUS: <%= productDetails.getProductStatus() %></div>
                        <a href="/cProductDetails?pid=<%= productDetails.getProductId() %>" class="link-danger btn btn-outline-danger">Details</a>
+                       <% if(productDetails.getProductStatus().equals("Available")){ %>
                        <a href="/purchase?pid=<%= productDetails.getProductId() %>&cid=<%= request.getSession().getAttribute("user").toString() %>" class="link-danger btn btn-outline-danger">Buy Now</a>
+                       <% } else { %>
+                        <a href="/purchase?pid=<%= productDetails.getProductId() %>&cid=<%= request.getSession().getAttribute("user").toString() %>" class="link-danger btn btn-outline-danger" style="pointer-events: none;">Buy Now</a>
+                       <%} %>
                        <a href="/addCart?pid=<%= productDetails.getProductId() %>&cid=<%= request.getSession().getAttribute("user").toString() %>" class="link-danger btn btn-outline-danger">Add to Cart</a>
                     
                     
@@ -185,7 +190,7 @@
                </div>
           
         </div>
-         
+         </div>
          
          
       <!-- beauty product section end -->
