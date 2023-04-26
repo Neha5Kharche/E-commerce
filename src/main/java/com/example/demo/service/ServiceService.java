@@ -80,5 +80,14 @@ ServiceRepo repo;
 		return filterList;
 	}
 	
-
+	public List<VendorServiceProvided> searchService(String serviceName)
+	{
+		return repo.findByServiceNameLike(serviceName);
+		
+	}
+	public void deleteservice (Long sid)
+	{
+		repo.deleteById(sid);
+		
+	}
 }

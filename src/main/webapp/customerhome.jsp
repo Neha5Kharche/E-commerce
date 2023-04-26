@@ -84,69 +84,7 @@
       </div>
       <!--header section end -->
          <!--banner section start -->
-         <div class="banner_section layout_padding">
-            <div id="my_slider" class="carousel slide" data-ride="carousel">
-               <div class="carousel-inner">
-                  <div class="carousel-item active">
-                     <div class="container">
-                        <div class="row">
-                           <div class="col-md-6">
-                              <div class="taital_main">
-                                 <h4 class="banner_taital"><span class="font_size_90">50%</span> Discount Online Shop</h4>
-                                 <p class="banner_text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration </p>
-                                 <div class="book_bt"><a href="#">Shop Now</a></div>
-                              </div>
-                           </div>
-                           <div class="col-md-6">
-                              <div><img src="images/img-1.png" class="image_1"></div>
-                           </div>
-                        </div>
-                        <div class="button_main"><button class="all_text">All</button><input type="text" class="Enter_text" placeholder="Enter keywords" name=""><button class="search_text">Search</button></div>
-                     </div>
-                  </div>
-                  <div class="carousel-item">
-                     <div class="container">
-                        <div class="row">
-                           <div class="col-md-6">
-                              <div class="taital_main">
-                                 <h4 class="banner_taital"><span class="font_size_90">50%</span> Discount Online Shop</h4>
-                                 <p class="banner_text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration </p>
-                                 <div class="book_bt"><a href="#">Shop Now</a></div>
-                              </div>
-                           </div>
-                           <div class="col-md-6">
-                              <div><img src="images/img-1.png" class="image_1"></div>
-                           </div>
-                        </div>
-                        <div class="button_main"><button class="all_text">All</button><input type="text" class="Enter_text" placeholder="Enter keywords" name=""><button class="search_text">Search</button></div>
-                     </div>
-                  </div>
-                  <div class="carousel-item">
-                     <div class="container">
-                        <div class="row">
-                           <div class="col-md-6">
-                              <div class="taital_main">
-                                 <h4 class="banner_taital"><span class="font_size_90">50%</span> Discount Online Shop</h4>
-                                 <p class="banner_text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration </p>
-                                 <div class="book_bt"><a href="#">Shop Now</a></div>
-                              </div>
-                           </div>
-                           <div class="col-md-6">
-                              <div><img src="images/img-1.png" class="image_1"></div>
-                           </div>
-                        </div>
-                        <div class="button_main"><button class="all_text">All</button><input type="text" class="Enter_text" placeholder="Enter keywords" name=""><button class="search_text">Search</button></div>
-                     </div>
-                  </div>
-               </div>
-               <a class="carousel-control-prev" href="#my_slider" role="button" data-slide="prev">
-               <i class=""><img src="images/left-icon.png"></i>
-               </a>
-               <a class="carousel-control-next" href="#my_slider" role="button" data-slide="next">
-               <i class=""><img src="images/right-icon.png"></i>
-               </a>
-            </div>
-         </div>
+         
          <!--banner section end -->
       </div>
       <!--header section end -->
@@ -196,15 +134,15 @@
                <div class="col-lg-4 col-sm-12">
                   <div class="beauty_box">
                     
-                     <div><img src="images/img-5.png" class="image_3"></div>
-                     <div class="seemore_bt"><a href="/viewproduct">see More</a></div>
+                     <div><img src="https://sc01.alicdn.com/kf/H77c86e5b927348ef927d297d6a4fc1bbq.jpg" class="image_3"></div>
+                    
                   </div>
                </div>
                <div class="col-lg-8 col-sm-12">
                   <div class="beauty_box_1">
                     
-                     <div><img src="images/img-6.png" class="image_3"></div>
-                     <div class="seemore_bt_1"><a href="/viewproduct">see More</a></div>
+                     <div><img src="https://images.squarespace-cdn.com/content/v1/5432e8d7e4b0fd126503b83b/1548682388873-240C7ICW5RLAT2YL8EDE/still+life+christmas+gifts+mens+fashion+accesories.jpg?format=1000w" class="image_3" class="image_3"></div>
+                     
                   </div>
                </div>
             </div>
@@ -244,21 +182,21 @@
         
       </div>
       
-      <div class="beauty_section layout_padding">
+     <div class="beauty_section layout_padding">
          <div class="container">
             <div class="row">
                <div class="col-lg-4 col-sm-12">
                   <div class="beauty_box">
                     
-                     <div><img src="images/img-5.png" class="image_3"></div>
-                     <div class="seemore_bt"><a href="/viewproduct">see More</a></div>
+                     <div><img src="https://sc01.alicdn.com/kf/H77c86e5b927348ef927d297d6a4fc1bbq.jpg" class="image_3"></div>
+                    
                   </div>
                </div>
                <div class="col-lg-8 col-sm-12">
                   <div class="beauty_box_1">
                     
-                     <div><img src="images/img-6.png" class="image_3"></div>
-                     <div class="seemore_bt_1"><a href="/viewproduct">see More</a></div>
+                     <div><img src="https://images.squarespace-cdn.com/content/v1/5432e8d7e4b0fd126503b83b/1548682388873-240C7ICW5RLAT2YL8EDE/still+life+christmas+gifts+mens+fashion+accesories.jpg?format=1000w" class="image_3" class="image_3"></div>
+                     
                   </div>
                </div>
             </div>

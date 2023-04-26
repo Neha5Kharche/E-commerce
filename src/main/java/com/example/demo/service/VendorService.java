@@ -24,7 +24,7 @@ public class VendorService {
 		 }else {
 			 return false;
 		 }
-			 
+			
 		 
 	 }
 	 public vendor getByEmail(String email)

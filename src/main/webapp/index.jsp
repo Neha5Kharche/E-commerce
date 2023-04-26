@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
 <html lang="en">
    <head>
       <meta charset="utf-8">
@@ -31,8 +30,6 @@
       <link rel="stylesheet" href="css/owl.carousel.min.css">
       <link rel="stylesheet" href="css/owl.theme.default.min.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <style>
       .horizontal-scrollable > .row {
             overflow-x: auto;
@@ -62,19 +59,16 @@
       </style>
    </head>
    <body>
-       <!--header section start -->
+      <!--header section start -->
       <div class="header_section">
-         
-            <nav class="navbar navbar-dark ">
-              <a class="logo" href="/"><img src="images/sep.jpg"></a>
-               <div class="search_section">
-                 
-               </div>
+         <div class="container">
+            <nav class="navbar navbar-dark bg-dark">
+               <a class="logo" href="/"><img src="images/sep.jpg"></a>
+               
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
                <span class="navbar-toggler-icon"></span>
                </button>
-               
-               <div class="collapse navbar-collapse" id="navbarsExample01" style="padding-left: 2%">
+               <div class="collapse navbar-collapse" id="navbarsExample01">
                   <ul class="navbar-nav mr-auto">
                      <li class="nav-item active">
                         <a class="nav-link" href="/index">Home</a>
@@ -93,11 +87,7 @@
                   </ul>
                </div>
             </nav>
-         
-        
-      </div>
-      <!--header section end -->
-
+         </div>
          <!--banner section start -->
          <div class="banner_section layout_padding">
             <div id="my_slider" class="carousel slide" data-ride="carousel">
@@ -107,8 +97,8 @@
                         <div class="row">
                            <div class="col-md-6">
                               <div class="taital_main">
-                                 <h4 class="banner_taital"><span class="font_size_90">50%</span> Discount Online Shop</h4>
-                                 <p class="banner_text">Enjoy exclusive deals on our ecommerce website today. Shop now! </p>
+                                 <h4 class="banner_taital"><span class="font_size_90">40%</span> Discount on all products and services</h4>
+                                 <p class="banner_text">Enjoy exclusive deals throughout the month. Shop now!</p>
                                  <div class="book_bt"><a href="/customerlogin">Shop Now</a></div>
                               </div>
                            </div>
@@ -116,7 +106,7 @@
                               <div><img src="images/img-1.png" class="image_1"></div>
                            </div>
                         </div>
-                       
+                        
                      </div>
                   </div>
                   <div class="carousel-item">
@@ -124,16 +114,17 @@
                         <div class="row">
                            <div class="col-md-6">
                               <div class="taital_main">
-                                 <h4 class="banner_taital"><span class="font_size_90">50%</span> Discount Online Shop</h4>
-                                 <p class="banner_text">Enjoy exclusive deals on our ecommerce website today. Shop now! </p>
+                                 <h4 class="banner_taital"><span class="font_size_90">40%</span> Discount on all products and services</h4>
+                                 <p class="banner_text">Enjoy exclusive deals throughout the month. Shop now! </p>
                                  <div class="book_bt"><a href="/customerlogin">Shop Now</a></div>
                               </div>
                            </div>
                            <div class="col-md-6">
                               <div><img src="images/img-1.png" class="image_1"></div>
                            </div>
+                           
                         </div>
-                       
+                        
                      </div>
                   </div>
                   <div class="carousel-item">
@@ -141,16 +132,18 @@
                         <div class="row">
                            <div class="col-md-6">
                               <div class="taital_main">
-                                 <h4 class="banner_taital"><span class="font_size_90">50%</span> Discount Online Shop</h4>
-                                 <p class="banner_text">Enjoy exclusive deals on our ecommerce website today. Shop now! </p>
+                                 <h4 class="banner_taital"><span class="font_size_90">40%</span> Discount on all products and services</h4>
+                                 <p class="banner_text">Enjoy exclusive deals throughout the month. Shop now! </p>
                                  <div class="book_bt"><a href="/customerlogin">Shop Now</a></div>
                               </div>
                            </div>
                            <div class="col-md-6">
                               <div><img src="images/img-1.png" class="image_1"></div>
                            </div>
+                           
                         </div>
-                       
+                        
+                        
                      </div>
                   </div>
                </div>
@@ -165,10 +158,9 @@
          <!--banner section end -->
       </div>
       <!--header section end -->
-     
-
+      <!--category section start -->
       
-     
+      <!-- client section end -->
       <!-- newsletter section start -->
       <div class="newsletter_section layout_padding">
          <div class="container">
@@ -179,7 +171,6 @@
               
                </div>
             </div>
-        
       <!-- newsletter section end -->
       <!-- footer section start -->
       <div class="footer_section layout_padding">

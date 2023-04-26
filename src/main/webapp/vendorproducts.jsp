@@ -189,7 +189,8 @@
 
 
                      <a href="/editproducts?pid=<%= productDetails.getProductId() %>">Edit Product</a>
-                    
+                                       <div> <a href="/deleteproducts?pid=<%= productDetails.getProductId() %>&cName=${cName}&cid=${pid}">Delete</a></div>
+                   
                   </div>
              	</div>
                <%

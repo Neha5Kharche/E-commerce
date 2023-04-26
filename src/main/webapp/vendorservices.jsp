@@ -194,8 +194,8 @@
                        <div class="text">DESCRIPTION: <%= serviceDetails.getServiceDescription() %></div>
                        
                        
-                        <a href="/editservices?sid=<%= serviceDetails.getServiceId() %>">Edit Service
-                    </a>
+                        <a href="/editservices?sid=<%= serviceDetails.getServiceId() %>">Edit Service</a>
+                         <div> <a href="/deleteservices?sid=<%= serviceDetails.getServiceId() %>&sName=${cName}&scid=${sid}">Delete</a></div>
                         </div>
              	</div>
                <%

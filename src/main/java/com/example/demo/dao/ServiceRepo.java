@@ -25,7 +25,11 @@ public interface ServiceRepo extends JpaRepository<VendorServiceProvided, Long> 
 	@Modifying
 	@Query("from VendorServiceProvided s  where  s.vendorId = :vendorId")
 	public ArrayList<VendorServiceProvided> getByservice(String vendorId);
-	
+
+	@Transactional
+	@Modifying
+	@Query("from VendorServiceProvided s  where  s.serviceName like '%:serviceName%'")
+	List<VendorServiceProvided> findByServiceName(String serviceName);
 	
 public ArrayList<VendorServiceProvided> getByserviceCategory(String serviceCategory);
 
@@ -39,4 +43,6 @@ public void updateServiceDetails(@Param("serviceId") Long serviceId,@Param("serv
 @Query("from VendorServiceProvided s  where  s.serviceName IN (:serviceName)")
 public ArrayList<VendorServiceProvided> getFilterByservice(@Param("serviceName") List<String> serviceName);
 
+
+public List<VendorServiceProvided> findByServiceNameLike(String serviceName);
 }
