@@ -79,6 +79,10 @@ ServiceRepo repo;
 //		System.out.println(filterList);
 		return filterList;
 	}
-	
+	public void deleteservice (Long sid)
+	{
+		repo.deleteById(sid);
+		
+	}
 
 }

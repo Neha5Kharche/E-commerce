@@ -86,7 +86,7 @@
                         <a class="nav-link" href="/index">Home</a>
                      </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="/adminlogin">Admin</a>
+                        <a class="nav-link" href="/addproductcategory">Add Products Category</a>
                      </li>
                      <li class="nav-item">
                        <a class="nav-link" href="/vendorlogin">Vendor</a>

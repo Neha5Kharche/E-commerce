@@ -33,12 +33,12 @@ public class ProductCategoryService {
 		productCategoryList.addAll(repo.findAll());
 		return productCategoryList;
 	}
-	public ArrayList<ProductCategory> getProductCategoryByVendors(String vendorId)
-	{
-		ArrayList<ProductCategory> productCategoryList = new ArrayList<>();
-		productCategoryList.addAll(repo.findProductCategoryByVendors(vendorId));
-		return productCategoryList;
-	}
+//	public ArrayList<ProductCategory> getProductCategoryByVendors(String vendorId)
+//	{
+//		ArrayList<ProductCategory> productCategoryList = new ArrayList<>();
+//		productCategoryList.addAll(repo.findProductCategoryByVendors(vendorId));
+//		return productCategoryList;
+//	}
 	public ProductCategory getByProductCategoryId(Long pid)
 	{
 		ProductCategory productCategory = repo.findById(pid).orElse(new ProductCategory());

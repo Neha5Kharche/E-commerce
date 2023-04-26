@@ -16,9 +16,19 @@ public class ProductService {
 	@Autowired
 ProductRepo repo;
 	
-	public void addProduct(Product product)
+	public boolean addProduct(Product product)
 	{
-		repo.save(product);
+		Product p = repo.findByProductName(product.getProductName());
+		if(p==null)
+		{
+			repo.save(product);
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+		
 	}
 	
 	public Product getById(Long pid)
@@ -85,5 +95,9 @@ ProductRepo repo;
 		return repo.findByProductNameLike(productName);
 		
 	}
-
+public void deleteproduct (Long pid)
+{
+	repo.deleteById(pid);
+	
+}
 }

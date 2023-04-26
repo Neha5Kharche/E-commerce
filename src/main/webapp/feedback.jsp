@@ -225,14 +225,7 @@
 
 
 
-<<<<<<< HEAD
-                          <input type="text" class="email-bt" name="customerId" value="<%= request.getSession().getAttribute("user") %>" readonly >
-                         <input type="text" class="email-bt" name="customerName" value="<%= request.getSession().getAttribute("cName") %>" readonly >
-                      
- 
-=======
                          
->>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
                           <textarea class="massage-bt" placeholder="Feedback" rows="5" required name="customerFeedback"></textarea>
                           
 

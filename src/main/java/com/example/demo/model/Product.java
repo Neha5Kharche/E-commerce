@@ -10,11 +10,13 @@ public class Product {
 	@Id
 	@GeneratedValue
 	private Long productId;
+	@Column(unique = true)
 	private String productName;
 	private String productPrice;
 	private String productStatus;
 	private String productCategory;
 	private String vendorId;
+	@Column(unique = true)
 	private String productImage;
 	private String productDescription;
 	public Long getProductId() {

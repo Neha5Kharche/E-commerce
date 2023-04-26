@@ -10,22 +10,11 @@ public class Feedback {
 	@GeneratedValue
 	private Long feedbackId;
 	private String customerId;
-	
-<<<<<<< HEAD
-	public String customerName;
-	
-	
-
-	public String customerFeedback;
-	public String getCustomerFeedback() {
-		return customerFeedback;
-=======
 	private String customerName;
 	private String customerFeedbackValue;
 	private String customerFeedback;
 	public Long getFeedbackId() {
 		return feedbackId;
->>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
 	}
 	public void setFeedbackId(Long feedbackId) {
 		this.feedbackId = feedbackId;

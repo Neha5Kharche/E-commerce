@@ -26,10 +26,10 @@ public interface ProductRepo extends JpaRepository<Product, Long> {
 	@Query("from Product p  where  p.vendorId = :vendorId")
 	public ArrayList<Product> getByproduct(String vendorId);
 	
-	@Transactional
-	@Modifying
-	@Query("from Product p  where  p.productName like '%:productName%'")
-	List<Product> findByProductName(String productName);
+//	@Transactional
+//	@Modifying
+//	@Query("from Product p  where  p.productName like '%:productName%'")
+//	List<Product> findByProductName(String productName);
 	
 	public ArrayList<Product> getByproductCategory(String productCategory);
 	
@@ -44,6 +44,8 @@ public interface ProductRepo extends JpaRepository<Product, Long> {
 	public ArrayList<Product> getFilterByproduct(@Param("productName") List<String> productName);
 
 	public List<Product> findByProductNameLike(String productName);
+	
+	public Product findByProductName(String productName);
 	
 	
 
