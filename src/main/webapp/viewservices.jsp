@@ -196,7 +196,8 @@
             	  <div class="beds_section active">
                      <h1 class="bed_text"><%= serviceDetails.getServiceName() %></h1>
                     <div><img src="<%= serviceDetails.getServiceImage() %>" class="image_2"></div>
-                       <div class="text">PRICE: <%= serviceDetails.getServicePrice() %></div>  
+                    
+                       <div class="text">SERVICE PRICE: <%= serviceDetails.getServicePrice() %></div>  
                        <div class="text">ADDRESS: <%= serviceDetails.getServiceAddress() %></div>
                        <div class="text">CONTACTNO: <%= serviceDetails.getServiceContactNo() %></div>
                        <div class="text">STATUS: <%= serviceDetails.getServiceStatus() %></div>

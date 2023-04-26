@@ -31,12 +31,12 @@ public class ServiceCategoryService {
 		serviceCategoryList.addAll(repo.findAll());
 		return serviceCategoryList;
 	}
-	public ArrayList<ServiceCategory> getServiceCategoryByVendors(String vendorId)
-	{
-		ArrayList<ServiceCategory> serviceCategoryList = new ArrayList<>();
-		serviceCategoryList.addAll(repo.findServiceCategoryByVendors(vendorId));
-		return serviceCategoryList;
-	}
+	//public ArrayList<ServiceCategory> getServiceCategoryByVendors(String vendorId)
+	//{
+	//	ArrayList<ServiceCategory> serviceCategoryList = new ArrayList<>();
+	//	serviceCategoryList.addAll(repo.findServiceCategoryByVendors(vendorId));
+	//	return serviceCategoryList;
+	//}
 	public ServiceCategory getByServiceCategoryId(Long sid)
 	{
 		ServiceCategory serviceCategory = repo.findById(sid).orElse(new ServiceCategory());

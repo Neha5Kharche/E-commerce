@@ -79,18 +79,34 @@
                <div class="collapse navbar-collapse" id="navbarsExample01" style="padding-left: 2%">
                   <ul class="navbar-nav mr-auto">
                      <li class="nav-item active">
-                        <a class="nav-link" href="/index">Home</a>
+                        <a class="nav-link" href="/vhome">Home</a>
                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="/addproductcategory">Add Products Category</a>
-                     </li>
+                     <li class="nav-item dropdown">
+                     <a class="nav-link dropdown-toggle" href="#" id="navbarsExample01" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+					            Products
+					          </a>
+					          <ul class="dropdown-menu " aria-labelledby="navbarsExample01">
+					            <li><a class="dropdown-item" href="/addproductcategory">Add Products Category</a></li>
+					            <li><a class="dropdown-item" href="/viewproductcategorys">View Products Category</a></li>
+					            <li><a class="dropdown-item" href="/addproduct">Add Products</a></li>
+					            <li><a class="dropdown-item" href="/viewproducts">View Products</a></li>
+					          </ul>
+          				 
+			        </li>
+			        <li class="nav-item dropdown">
+                     <a class="nav-link dropdown-toggle" href="#" id="navbarsExample01" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+					            Service
+					          </a>
+					          <ul class="dropdown-menu " aria-labelledby="navbarsExample01">
+					            <li><a class="dropdown-item" href="/addservicecategory">Add Service Category</a></li>
+					            <li><a class="dropdown-item" href="/viewservicecategorys">View Service Category</a></li>
+					            <li><a class="dropdown-item" href="/addservice">Add Service</a></li>
+					            <li><a class="dropdown-item" href="/viewservices">View Service</a></li>
+					          </ul>
+          				 
+			        </li>
                      <li class="nav-item">
-                       <a class="nav-link" href="/vendorlogin">Vendor</a>
-
-                     </li>
-                     
-                     <li class="nav-item">
-                        <a class="nav-link" href="/customerlogin">Customer</a>
+                        <a class="nav-link" href="/vendorlogin">Logout</a>
                      </li>
                   </ul>
                </div>
@@ -143,6 +159,13 @@
          </div>
       </div>
       </div>
+      <button onclick="goBack()">Go Back</button>
+
+	<script>
+		function goBack() {
+			window.history.back();
+		}
+	</script>
       <!-- contact section end -->
        <!-- footer section start -->
       <%@ include file="customerfooter.jsp" %>

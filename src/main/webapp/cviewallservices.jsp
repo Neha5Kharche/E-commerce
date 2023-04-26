@@ -122,6 +122,7 @@
      </div>
             <div class="row">
             
+            
                <div class="col-lg-2 col-sm-12">
                 
                 <h1 class="category_text">Category</h1>

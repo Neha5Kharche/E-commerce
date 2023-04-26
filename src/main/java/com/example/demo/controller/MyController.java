@@ -140,7 +140,7 @@ public ModelAndView vendorLogin(@RequestParam("vEmail")String email,String vPass
 		session.setAttribute("user", email);
 		ArrayList<ProductCategory> pc =	productCategoryService.getProductCategoryList();
 		  req.setAttribute("pcArray", pc);
-		  ArrayList<ServiceCategory> sc = serviceCategoryService.getServiceCategoryByVendors(email);
+		  ArrayList<ServiceCategory> sc = serviceCategoryService.getServiceCategoryList();
 		  req.setAttribute("scArray", sc);
 		ModelAndView mv = new ModelAndView("vendorhome");
 		return mv;
@@ -159,7 +159,7 @@ public ModelAndView vendorHome(HttpServletRequest req)
 {
 	ArrayList<ProductCategory> pc =	productCategoryService.getProductCategoryList();
 	  req.setAttribute("pcArray", pc);
-	  ArrayList<ServiceCategory> sc = serviceCategoryService.getServiceCategoryByVendors(req.getSession().getAttribute("user").toString());
+	  ArrayList<ServiceCategory> sc = serviceCategoryService.getServiceCategoryList();
 	  req.setAttribute("scArray", sc);
 	ModelAndView mv = new ModelAndView("vendorhome");
   	mv.addObject("pc", pc);
@@ -181,7 +181,7 @@ public ModelAndView productDetailsHome(HttpServletRequest req)
 @RequestMapping("/ServiceDetails")
 public ModelAndView serviceDetailsHome(HttpServletRequest req)
 {
-	ArrayList<ServiceCategory> sc = serviceCategoryService.getServiceCategoryByVendors(req.getSession().getAttribute("user").toString());
+	ArrayList<ServiceCategory> sc = serviceCategoryService.getServiceCategoryList();
 	  req.setAttribute("scArray", sc);
 	ModelAndView mv = new ModelAndView("viewservice");
 	mv.addObject("sc", sc);
@@ -425,24 +425,33 @@ public ModelAndView createproductview(Product product)
 @RequestMapping("/addservice")
 public ModelAndView addserviceView(HttpServletRequest req)
 {
-	ArrayList<ServiceCategory> sc = serviceCategoryService.getServiceCategoryByVendors(req.getSession().getAttribute("user").toString());
+	ArrayList<ServiceCategory> sc = serviceCategoryService.getServiceCategoryList();
 	req.setAttribute("scArray", sc);
 	ModelAndView mv = new ModelAndView("addservice");
 	mv.addObject("errmsg", "");
 	mv.addObject("successfullymsg", "");
 	return mv;
 }
+
 @RequestMapping("/creatingService")
 public ModelAndView createserviceView(VendorServiceProvided vendorService)
 {
-	serviceService.addService(vendorService);
-	ModelAndView mv = new ModelAndView("servicesuccess");
-	mv.addObject("errmsg", "");
-	mv.addObject("successfullymsg", "Service Create Successfully!!!");
+	boolean status = serviceService.addService(vendorService);
+	ModelAndView mv = new ModelAndView();
+	if(status)
+	{
+		mv.addObject("Service", vendorService);
+		mv.addObject("errmsg", "");
+		mv.addObject("successfullymsg", "Service Create Successfully!!!");
+		mv.setViewName("servicesuccess");
+	}
+	else
+	{
+		mv.addObject("service", vendorService);
+		mv.setViewName("serviceerror");
+	}
 	return mv;
 }
-
-
 
 
 
@@ -658,7 +667,7 @@ public ModelAndView newfashionview(HttpServletRequest req)
 @RequestMapping("/viewservicecategorys")
 public ModelAndView newserviceview(HttpServletRequest req)
 {
-	ArrayList<ServiceCategory> sc = serviceCategoryService.getServiceCategoryByVendors(req.getSession().getAttribute("user").toString());
+	ArrayList<ServiceCategory> sc = serviceCategoryService.getServiceCategoryList();
 	  req.setAttribute("scArray", sc);
 	ModelAndView mv = new ModelAndView("viewservicecategorys");
     return mv;
@@ -681,7 +690,7 @@ public ModelAndView productsview(HttpServletRequest req )
 public ModelAndView serviceview(HttpServletRequest req)
 {
 	String vid = req.getSession().getAttribute("user").toString();
-	ArrayList<ServiceCategory> scArray =	serviceCategoryService.getServiceCategoryByVendors(req.getSession().getAttribute("user").toString());
+	ArrayList<ServiceCategory> scArray =	serviceCategoryService.getServiceCategoryList();
 	req.setAttribute("scArray", scArray);
 	
 	ArrayList<VendorServiceProvided> sc =	serviceService.getByService(vid);
@@ -825,26 +834,7 @@ public ModelAndView editservicesview(Long sid)
 	mv.addObject("successfullymsg", "");
     return mv;
 }
-@RequestMapping("/deleteservices")
-public ModelAndView deleteservicesview(Long sid)
-{
-	serviceService.deleteservice(sid);
-	VendorServiceProvided serviceDetails = serviceService.getByServiceId(sid);
-	ModelAndView mv = new ModelAndView();
-	if(serviceDetails==null) {
-		mv.addObject("errmsg", "service deleted");
-		mv.setViewName("vendorservices");
-	}
-	else {
-		mv.addObject("serviceDetails", serviceDetails);
-		mv.addObject("errmsg", "");
-		mv.addObject("successfullymsg", "");
-		mv.setViewName("vendorservices");
-	}
-	
-	
-    return mv;
-}
+
 @RequestMapping("/updateservices")
 public ModelAndView updateservicesview(Long serviceId,String servicePrice,String serviceStatus,String serviceDescription)
 {

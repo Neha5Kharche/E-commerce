@@ -1,10 +1,4 @@
-<%
-   		response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
-   		response.setHeader("Pragma", "no-cache");
-   		
-   			if(session.getAttribute("user")==null)
-   				response.sendRedirect("/vendorlogin");
-%>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <html lang="en">
@@ -137,9 +131,7 @@
                   <form action="creatingServiceCategory" method="post">
                      <div class="email_text">
                      
-                     <div class="form-group">
-                           <input type="text" class="email-bt" placeholder="Vendor Id" name='vendorId' value="<%= session.getAttribute("user") %>" readonly>
-                        </div>
+                   
                        <div class="form-group">
                            <input type="text" class="email-bt" placeholder="Category Name" name='serviceCategoryName' >
                         </div>
@@ -163,6 +155,7 @@
             </div>
          </div>
          </div>
+        
       <!-- contact section end -->
        <!-- footer section start -->
       <%@ include file="customerfooter.jsp" %>

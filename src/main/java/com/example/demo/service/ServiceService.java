@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.dao.ProductRepo;
 import com.example.demo.dao.ServiceRepo;
 import com.example.demo.model.Product;
 import com.example.demo.model.VendorServiceProvided;
@@ -17,9 +18,19 @@ public class ServiceService {
 	@Autowired
 ServiceRepo repo;
 	
-	public void addService(VendorServiceProvided service)
+	public boolean addService(VendorServiceProvided service)
 	{
-		repo.save(service);
+		VendorServiceProvided s = repo.findByServiceName(service.getServiceName());
+		if(s==null)
+		{
+			repo.save(service);
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+		
 	}
 	
 	public VendorServiceProvided getById(Long sid)
@@ -79,14 +90,6 @@ ServiceRepo repo;
 //		System.out.println(filterList);
 		return filterList;
 	}
-<<<<<<< HEAD
-	public void deleteservice (Long sid)
-	{
-		repo.deleteById(sid);
-		
-	}
-
-=======
 	
 	public List<VendorServiceProvided> searchService(String serviceName)
 	{
@@ -98,5 +101,4 @@ ServiceRepo repo;
 		repo.deleteById(sid);
 		
 	}
->>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
 }

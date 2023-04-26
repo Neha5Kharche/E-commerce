@@ -134,8 +134,12 @@
                  
       <!--category section start -->
      <div class="container">
+     
          <div class="category_section">
             <div class="row">
+             <div class="d-flex bd-highlight mb-3">
+             <a href="/addservice" class="btn ms-auto p-2 bd-highlight" style="padding-right: 3%"><i class="fa fa-plus"></i></a>
+             </div>
                <div class="col-lg-2 col-sm-12">
                 
                 <h1 class="category_text">Category</h1>
@@ -196,9 +200,9 @@
                        
                         <a href="/editservices?sid=<%= serviceDetails.getServiceId() %>">Edit Service</a>
 
-                          <div> <a href="/deleteservices?sid=<%= serviceDetails.getServiceId() %>">Delete</a></div>
+                         
 
-                         <div> <a href="/deleteservices?sid=<%= serviceDetails.getServiceId() %>&sName=${cName}&scid=${sid}">Delete</a></div>
+                         <div> <a href="/deleteservices?sid=<%= serviceDetails.getServiceId() %>&sName=${cName}&scid=${sid}" style="color:red;">Delete</a></div>
 
                         </div>
              	</div>

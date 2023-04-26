@@ -13,10 +13,10 @@ import com.example.demo.model.ServiceCategory;
 import jakarta.transaction.Transactional;
 
 public interface ServiceCategoryRepo extends JpaRepository<ServiceCategory, Long> {
-	@Transactional
-	@Modifying
-	@Query("from ServiceCategory s  where  s.vendorId = :vendorId")
-	public ArrayList<ServiceCategory> findServiceCategoryByVendors(String vendorId);
+	//@Transactional
+	//@Modifying
+	//@Query("from ServiceCategory s  where  s.vendorId = :vendorId")
+	//public ArrayList<ServiceCategory> findServiceCategoryByVendors(String vendorId);
 
 	@Transactional
 	@Modifying

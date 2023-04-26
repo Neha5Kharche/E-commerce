@@ -129,8 +129,12 @@
                  
       <!--category section start -->
      <div class="container">
+     
          <div class="category_section">
             <div class="row">
+            <div class="d-flex bd-highlight mb-3">
+             <a href="/addproduct" class="btn ms-auto p-2 bd-highlight" style="padding-right: 3%"><i class="fa fa-plus"></i></a>
+             </div>
                <div class="col-lg-2 col-sm-12">
                 
                 <h1 class="category_text">Category</h1>
@@ -189,7 +193,7 @@
 
 
                      <a href="/editproducts?pid=<%= productDetails.getProductId() %>">Edit Product</a>
-                    <div> <a href="/deleteproducts?pid=<%= productDetails.getProductId() %>&cName=${cName}&cid=${pid}">Delete</a></div>
+                    <div> <a href="/deleteproducts?pid=<%= productDetails.getProductId() %>&cName=${cName}&cid=${pid}" style="color:red;">Delete</a></div>
                     
 
                   </div>

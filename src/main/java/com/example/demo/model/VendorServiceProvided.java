@@ -1,5 +1,6 @@
 package com.example.demo.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -10,6 +11,7 @@ public class VendorServiceProvided {
 	@Id
 	@GeneratedValue
 	private Long serviceId;
+	@Column(unique = true)
 	private String serviceName;
 	private String servicePrice;
 	private String serviceAddress;

@@ -88,14 +88,10 @@
                       <li class="nav-item">
                         <a class="nav-link" href="/addproductcategory">Add Products Category</a>
                      </li>
-                     <li class="nav-item">
-                       <a class="nav-link" href="/vendorlogin">Vendor</a>
-
+                      <li class="nav-item">
+                        <a class="nav-link" href="/addservicecategory">Add Services Category</a>
                      </li>
-                     
-                     <li class="nav-item">
-                        <a class="nav-link" href="/customerlogin">Customer</a>
-                     </li>
+                    
                   </ul>
                </div>
             </nav>
