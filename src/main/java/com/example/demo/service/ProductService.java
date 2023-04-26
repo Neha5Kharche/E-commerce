@@ -95,9 +95,11 @@ ProductRepo repo;
 		return repo.findByProductNameLike(productName);
 		
 	}
-public void deleteproduct (Long pid)
-{
-	repo.deleteById(pid);
-	
-}
+
+	public void deleteproduct (Long pid)
+	{
+		repo.deleteById(pid);
+		
+	}
+
 }

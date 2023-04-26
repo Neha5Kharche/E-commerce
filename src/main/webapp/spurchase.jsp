@@ -112,7 +112,7 @@
       
       <div class="contact_section layout_padding">
          <div class="container">
-            <h1 class="touch_taital">PURCHASE</h1>
+            <h1 class="touch_taital">BOOK SERVICE</h1>
             <div class="contact_section_2">
                <div class="row">
                <div class="col-md-6">

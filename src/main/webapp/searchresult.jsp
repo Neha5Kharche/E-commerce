@@ -1,3 +1,4 @@
+<%@page import="com.example.demo.model.VendorServiceProvided"%>
 <%
    		response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
    		response.setHeader("Pragma", "no-cache");
@@ -164,6 +165,36 @@
     		
 	  
             	  %>
+ <% 
+              	ArrayList<VendorServiceProvided> ServiceList = (ArrayList) request.getAttribute("serviceList");
+              	if(request.getAttribute("serviceList") != null)
+            	  {
+              		Iterator<VendorServiceProvided> iterator = ServiceList.iterator();
+              		while(iterator.hasNext())
+              		{
+              			VendorServiceProvided serviceDetails = iterator.next();
+              	
+            	  %>
+            	  <div class="col-lg-2 col-md-5">
+            	  <div class="beds_section active">
+                     <h1 class="bed_text"><%= serviceDetails.getServiceName() %></h1>
+                    <div><img src="<%= serviceDetails.getServiceImage() %>" class="image_2"></div>
+                       <div class="text">PRICE: <%= serviceDetails.getServicePrice() %></div>  
+                       <div class="text">ADDRESS: <%= serviceDetails.getServiceAddress() %></div>
+                       <div class="text">CONTACTNO: <%= serviceDetails.getServiceContactNo() %></div>
+                       <div class="text">STATUS: <%= serviceDetails.getServiceStatus() %></div>
+                       <div class="text">DESCRIPTION: <%= serviceDetails.getServiceDescription() %></div>
+                       
+                       
+                        <a href="/editservices?sid=<%= serviceDetails.getServiceId() %>">Edit Service
+                    </a>
+                        </div>
+             	</div>
+               <%
+              		}
+            	  }
+            	  %>
+
 
                </div>
             </div>

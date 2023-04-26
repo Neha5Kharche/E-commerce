@@ -79,10 +79,24 @@ ServiceRepo repo;
 //		System.out.println(filterList);
 		return filterList;
 	}
+<<<<<<< HEAD
 	public void deleteservice (Long sid)
 	{
 		repo.deleteById(sid);
 		
 	}
 
+=======
+	
+	public List<VendorServiceProvided> searchService(String serviceName)
+	{
+		return repo.findByServiceNameLike(serviceName);
+		
+	}
+	public void deleteservice (Long sid)
+	{
+		repo.deleteById(sid);
+		
+	}
+>>>>>>> branch 'master' of https://github.com/Neha5Kharche/e-Commerce.git
 }
